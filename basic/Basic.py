@@ -103,16 +103,31 @@ print(a%b)  # a/b
 print(a%c)  # a/c 
 
 #String operator
-#slice
+#slice with string
 a="india"
 print (a[1])
+
+#slice with list
+list1=['a1','b2','c3','d4','5re']
+
+print(list1[2])
+print(list1[2:10])
+print(list1[10:])
+
+#slice With tuple
+list1=('a1','b2','c3','d4','5re')
+print(list1[2])
+print(list1[2:10])
+print(list1[10:])
+
+#slice With dics -- not possible
+#slice with set -- not possible
+
 #split
 print(a.split('d'))
 #Range
 print(a[1:3])
-#Membership
-print("d" in a)
-print("x" not in a)
+
 #concatenate
 b=" Is Country"
 print(a+b)

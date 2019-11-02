@@ -1,4 +1,8 @@
-a=20
-a += 1
-while a<25:
-	print(a)
+
+import pandas as pd
+
+List1=['a','b']
+df1=pd.DataFrame(List1)
+print(df1)
+
+Lis2=[]

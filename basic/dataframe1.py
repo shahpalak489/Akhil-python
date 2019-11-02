@@ -6,15 +6,21 @@ print("***empty DataFrame***")
 df = pd.DataFrame()
 print(df)
 
-print("***DataFrame from list- 1column***")
+print("*DataFrame from list- 1column without column name**")
 List1=[34,63,85,14,96]
 df1=pd.DataFrame(List1)
 print(df1)
 
-print("*** DataFrame from list- 2columns***")
+print("**DataFrame from list- 2columns without column name*")
 List2=[['alex',10],['bob',20],['mike',30]]
 df2=pd.DataFrame(List2)
 print(df2)
+
+#To create 1 column with column name
+lst= {"city":["baroda","bangalore"],
+		"state":["GJ","KA"]}
+df=pd.DataFrame(lst)
+print(df)
 
 print("***give data type,row names,columns names***")
 List3=[['shah',25],['patel',28],['kumar',11]]
@@ -171,3 +177,36 @@ print(df28)
 print("** filter with < ")
 df28=df27.query('Age<=40')
 print(df28)
+
+
+# iloc , loc and ix
+# Tips: iloc = i am loc = based on location = perfection
+lst={"city":["baroda","surat"],
+		"zip":["06","05"]}
+df=pd.DataFrame(lst)
+print(df)
+
+print("-------1")
+lst2= {"city":["baroda","bangalore","surat","mang"],
+		"state":["GJ","KA","GJ","KA"]}
+df2=pd.DataFrame(lst2)
+print(df2)
+print("-------2 not possible ")
+#print(df2.loc[2,1]) # row-2 :col-1   
+print("-------3")
+print(df2.iloc[2,1]) # row-2 :col-1 
+print("-------4")
+print(df2.ix[2,1]) # row-2 :col-1 
+print("-------5")
+print(df2.loc[2,"city"]) # row - 2 :col- city
+print("-------6")
+print(df2.ix[2,"city"]) # row - 2 :col- city
+print("-------7")
+print(df2.loc[:2,"city"]) # row - 0,1,2 :col- city ( see)
+print("-------8")
+print(df2.ix[:2,"city"]) # row - 0,1,2 :col- city (see)
+print("-------9")
+print(df2.iloc[:2,:1]) # row - 0,1 :col- 0   (see)
+print("-------10")
+print(df2.ix[:2,:1]) # row - 0,1,2 :col- 0  (see)
+print("-------11")

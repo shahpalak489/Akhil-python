@@ -1,7 +1,6 @@
 import pandas as pd
 #pandas.DataFrame(data, index, columns, dtype, copy)
-# only values/data then []
-# anything other than data then {}
+# first use [] and if you hve other kind of values than use {}
 print("***empty DataFrame***")
 df = pd.DataFrame()
 print(df)
@@ -16,7 +15,7 @@ List2=[['alex',10],['bob',20],['mike',30]]
 df2=pd.DataFrame(List2)
 print(df2)
 
-#To create 1 column with column name
+print("**To create 1 column with column name**")
 lst= {"city":["baroda","bangalore"],
 		"state":["GJ","KA"]}
 df=pd.DataFrame(lst)
@@ -39,15 +38,15 @@ List5={'Name':['Tom', 'Jack', 'Steve'],'Age':[28,34,29]}
 df5=pd.DataFrame(List5)
 print(df5)
 
+print("Not IMP**List of Dics***")
+List7=[{'a':1,'b':2},{'a':5,'b':10,'c':2}]
+df7=pd.DataFrame(List7)
+print(df7)
+
 print("***give row names***")
 List6={'City':['baroda','delhi','surat'],'state':['GJ','DEL','GJ']}
 df6=pd.DataFrame(List6,index=['city1','city2','city3'])
 print(df6)
-
-print("**List of Dics***")
-List7=[{'a':1,'b':2},{'a':5,'b':10,'c':2}]
-df7=pd.DataFrame(List7)
-print(df7)
 
 print("***Series of Dics***")
 List8={'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
@@ -55,14 +54,14 @@ List8={'one' : pd.Series([1, 2, 3], index=['a', 'b', 'c']),
 df8=pd.DataFrame(List8)
 print(df8)
 
-print("***create only 2 coulms datframe from 4 columns data***")
-List9 = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20, 'p': 0}]
+print("***2 coulms dataframe from 4 columns data***")
+List9 = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20, 'd': 0}]
 df9 = pd.DataFrame(List9, index=['first', 'second'], columns=['a', 'b'])
 print(df9)
 
-print("** calculation between 2 columns")
-List10 = [{'a': 15, 'b': 22},{'a': 50, 'b': 40, 'c': 20, 'p': 29}]
-df10 = pd.DataFrame(List10, index=['first', 'second'], columns=['a', 'b'])
+print("**calculation between 2 columns")
+List10 = {'a':[15,50], 'b':[22,40] }
+df10 = pd.DataFrame(List10, index=['first', 'second'])
 # df2["k"] = np.where(df2['a']==1, 'palak', 'red')
 df10["ab"] = 25
 df10["abc"] = df10["a"] + df10["ab"] 
@@ -90,7 +89,7 @@ df12=df11.rename(columns={'Name':'Fullname'},index={4:'new'})
 print(df12)
 
 print("** drop column and row")
-df13=df12.drop(columns='Age',index='new')
+df13=df12.drop(columns=['Age'],index=['new'])
 print(df13)
 
 print("***")

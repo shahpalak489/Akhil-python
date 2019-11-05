@@ -239,19 +239,69 @@ for x in range(1,11,2):
 #Arrays
 
 
-#Comprehensions
-#List Comprehensions
+
+print("**Comprehensions**")
+print("**List Comprehensions**")
 List1=[1,2,3,4,5]
 x=[i for i in List1]
+# same as for i in List1:
+#             if....
+#			print(i)
 print(x)
 
 x=[i*2 for i in List1]
 print(x)
 
-x=[i*2 for i in List1 if i<4]
+x=[i*2 for i in List1 if i==4]
 print(x)
 
 x=[i*3 for i in List1 if (i*3)<12]
 print(x)
 
-#Dict comprehension
+print("**Dict comprehension**")
+List1=[1,2,3,4,5]
+x={i for i in List1}
+print(x)
+
+x={i*2 for i in List1}
+print(x)
+
+print("**see**")
+x={i*2 for i in list1 if i==4}
+print(x)
+
+x={i*3 for i in List1 if (i*3)<12}
+print(x)
+
+print("**Dict  Comprehensions**")
+List1=[1,2,3,4,5]
+x={i:i for i in List1}
+print(x)
+
+x={i:i*2 for i in List1}
+print(x)
+
+x={i:i*2 for i in List1 if i==4}
+print(x)
+
+x={i:i*3 for i in List1 if (i*3)<12}
+print(x)
+
+print("**Lambda")
+print("** Lambda with function name given")
+akhil=lambda a: a+6
+# same as def akhil(x)
+#			  x+6
+print(akhil(10))
+
+akhil=lambda a,b: a+b
+print(akhil(2,5))
+
+
+akhil=lambda a,b,c: a+(2*b)+(3*c)
+print(akhil(2,3,5))
+
+def myfunc(n):
+  return lambda a : a * n
+mydoubler = myfunc(2)
+print(mydoubler(11))

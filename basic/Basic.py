@@ -237,3 +237,21 @@ for x in range(1,11,2):
     print(x)
 
 #Arrays
+
+
+#Comprehensions
+#List Comprehensions
+List1=[1,2,3,4,5]
+x=[i for i in List1]
+print(x)
+
+x=[i*2 for i in List1]
+print(x)
+
+x=[i*2 for i in List1 if i<4]
+print(x)
+
+x=[i*3 for i in List1 if (i*3)<12]
+print(x)
+
+#Dict comprehension

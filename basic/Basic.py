@@ -239,54 +239,6 @@ for x in range(1,11,2):
 #Arrays
 
 
-
-print("**Comprehensions**")
-print("**List Comprehensions**")
-List1=[1,2,3,4,5]
-x=[i for i in List1]
-# same as for i in List1:
-#             if....
-#			print(i)
-print(x)
-
-x=[i*2 for i in List1]
-print(x)
-
-x=[i*2 for i in List1 if i==4]
-print(x)
-
-x=[i*3 for i in List1 if (i*3)<12]
-print(x)
-
-print("**Dict comprehension**")
-List1=[1,2,3,4,5]
-x={i for i in List1}
-print(x)
-
-x={i*2 for i in List1}
-print(x)
-
-print("**see**")
-x={i*2 for i in list1 if i==4}
-print(x)
-
-x={i*3 for i in List1 if (i*3)<12}
-print(x)
-
-print("**Dict  Comprehensions**")
-List1=[1,2,3,4,5]
-x={i:i for i in List1}
-print(x)
-
-x={i:i*2 for i in List1}
-print(x)
-
-x={i:i*2 for i in List1 if i==4}
-print(x)
-
-x={i:i*3 for i in List1 if (i*3)<12}
-print(x)
-
 print("**Lambda")
 print("** Lambda with function name given")
 akhil=lambda a: a+6
@@ -324,4 +276,79 @@ print("**Lambda as anonymus with map**")
 numbers_list = [2, 6, 8, 10, 11, 4, 12, 7, 13, 17, 0, 3, 21]
 mapped_list = list(map(lambda num: num % 2, numbers_list))
 print(mapped_list)
+
+print("**Comprehensions**")
+print("**List Comprehensions**")
+List1=(1,2,3,4,5)
+x=[i for i in List1]
+# same as for i in List1:
+#             if....
+#			print(i)
+print(x)
+
+x=[i*2 for i in List1]
+print(x)
+
+x=[i*2 for i in List1 if i==4]
+print(x)
+
+x=[i*3 for i in List1 if (i*3)<12]
+print(x)
+
+print("**Set comprehension**")
+List1=[1,2,3,4,5]
+x={i for i in List1}
+print(x)
+
+x={i*2 for i in List1}
+print(x)
+
+print("**see**")
+x={i*2 for i in list1 if i==4}
+print(x)
+
+x={i*3 for i in List1 if (i*3)<12}
+print(x)
+
+print("**Dict  Comprehensions**")
+List1={1,2,3,4,5}
+x={i:i for i in List1}
+print(x)
+
+x={i:i*2 for i in List1}
+print(x)
+
+x={i:i*2 for i in List1 if i==4}
+print(x)
+
+x={i:i*3 for i in List1 if (i*3)<12}
+print(x)
+
+print("** to convert List to Tuple")
+List1=['a','b','c','d']
+Tuple1=tuple(List1)
+print(Tuple1)
+
+print("** To convert Tuple to List")
+Tuple1=('a','b','c','d')
+List1=list(Tuple1)
+print(List1)
+
+print("**to convert List to set")
+List1=['a','b','c','d']
+set1=set(List1)
+print(set1)
+
+print("** to convert set to list")
+set1={'a','b','c','d'}
+List1=list(set1)
+print(List1)
+
+print("**Tuple to set")
+Tuple1=('a','b','c','d')
+set1=set(Tuple1)
+print(set1)
+
+print("**Tuple to Dics")
+Tuple1=('a','b','c','d')
 

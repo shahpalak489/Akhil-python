@@ -301,7 +301,27 @@ print(akhil(2,5))
 akhil=lambda a,b,c: a+(2*b)+(3*c)
 print(akhil(2,3,5))
 
+print("**Lambda as anonymus(function name not given)")
+print("see-how a value is 1?")
+#example 1
 def myfunc(n):
-  return lambda a : a * n
-mydoubler = myfunc(2)
-print(mydoubler(11))
+  return lambda a : a-n
+mytripler = myfunc(15)
+print(mytripler(1))
+
+#example 2
+def testfunc(num):
+    return lambda x : x * num
+result1 = testfunc(10)
+print(result1(9))
+
+print("**Lambda as anonymus with filter**")
+numbers_list = [2, 6, 8, 11, 4, 12, 7, 13, 17, 0, 3, 21,10]
+filtered_list = list(filter(lambda num: (num > 7), numbers_list))
+print(filtered_list)
+
+print("**Lambda as anonymus with map**")
+numbers_list = [2, 6, 8, 10, 11, 4, 12, 7, 13, 17, 0, 3, 21]
+mapped_list = list(map(lambda num: num % 2, numbers_list))
+print(mapped_list)
+

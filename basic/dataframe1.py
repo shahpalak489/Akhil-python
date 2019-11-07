@@ -15,8 +15,6 @@ List2=[['alex',10],['bob',20],['mike',30]]
 df2=pd.DataFrame(List2)
 print(df2)
 
-
-
 print("***give data type,row names,columns names***")
 List3=[['shah',25],['patel',28],['kumar',11]]
 df3=pd.DataFrame(List3,dtype=float,
@@ -181,12 +179,13 @@ print(df28)
 
 
 print("iloc , loc and ix")
-print("Tips: iloc = i am loc = based on location = perfection")
 lst={"city":["baroda","surat"],
 		"zip":["06","05"]}
 df=pd.DataFrame(lst)
 print(df)
-
+#Rule 1 : when we use loc its mandotory to mention column name
+#Rule 2: iloc = i am loc = based on location = perfection
+#Rule 3 : 
 print("1-----")
 lst2= {"city":["baroda","bangalore","surat","mang"],
 		"state":["GJ","KA","GJ","KA"]}

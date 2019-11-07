@@ -42,7 +42,7 @@ def isAnagram(s, t):
         print("anagram is possible")
         #print(Counter(s))
         #print(Counter(t))
-        if Counter(s) == Counter(t):
+        if Counter(s) == Counter(t): # counter comes from count
             print("it is a anagram")
         else:
             print("length is same but not anagram")
@@ -63,11 +63,11 @@ for i in range(20):
         continue
     # number divisible by 5, print 'Buzz' 
     elif i % 5 == 0:
-    	print("Buzz")                                      
+    	print("Buzz")
         continue
     # number divisible by 3, print 'Fizz'
     elif i % 3 == 0:  
-        print("Fizz")                                          
+        print("Fizz")                                   
         continue
     # print numbers 
     print(i)
@@ -114,9 +114,20 @@ print(fibonacciSecond(3))
 
 
 # first 100 numbers
+for i in range(0,100):
+    print(i)
 
 # all even numbers till 100
-
+for i in range(100):
+    if i%2 ==0:
+        print(i)
 #even numbers without modules
 
 #fibonnaci first 10 with generator
+
+
+# Revert Dictioanry mapping
+map1={'a':1,'b':2}
+
+map2={y:x for x,y in map1.items()}
+print(map2)

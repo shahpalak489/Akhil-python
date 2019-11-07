@@ -43,7 +43,7 @@ def scope():
 scope()
 print(b)
 
-#arithmetic Operator
+print("arithmetic Operator")
 x=10
 y=20
 print(x+y)
@@ -51,7 +51,7 @@ print(x*y)
 print(y-x)
 print(y/x)
 
-#comparison operator
+print("comparison operator")
 f=30
 g=23
 print(f<g)
@@ -61,23 +61,70 @@ print(f<=g)
 print(f>=g)
 print(f!=g)
 
-#assignment operator
-a=1
-c=2
+print("**assignment operator**")
 
-c+= a
-print(c)
+x += y
+#Example-1
+x=10
+y=20
+x+=y
+print(x)
+#example-2
+x=0
+for y in [1,2,3]:
+	x += y
+print(x)
 
-c-=a
-print(c)
+#explanation
+'''
+x=0+1=1
+x=1+2=3
+x=3+3=6
+'''
 
-c*=a
-print(c)
+x-=y
+#Example
+x=0
+for y in [1,2,3]:
+	x -= y
+print(x)
 
-c/=a
-print(c)
+#explanation
+'''
+x=0-1=-1
+x=-1-2=-3
+x=-3-3=-6
+'''
 
-#Logical operator
+x*=y
+#Example
+x=2
+for y in [1,2,3]:
+	x *= y
+print(x)
+
+#explanation
+'''
+x=2*1=2
+x=2*2=4
+x=4*3=12
+'''
+
+x/=y
+#Example
+x=4
+for y in [1,2,3]:
+	x /= y
+print(x)
+
+#explanation
+'''
+x=4/1=4
+x=4/2=2
+x=2/3=0.6
+'''
+
+print("**Logical operator**")
 x=2
 y=3
 print(x>1 and y>2)
@@ -351,4 +398,7 @@ print(set1)
 
 print("**Tuple to Dics")
 Tuple1=('a','b','c','d')
+
+
+
 

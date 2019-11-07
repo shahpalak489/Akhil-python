@@ -111,3 +111,12 @@ def fibonacciSecond(n):
             print(c,a,b)
         return b 
 print(fibonacciSecond(3))
+
+
+# first 100 numbers
+
+# all even numbers till 100
+
+#even numbers without modules
+
+#fibonnaci first 10 with generator

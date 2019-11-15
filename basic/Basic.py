@@ -39,6 +39,13 @@ def akhil():
 	print("akhil")
 a3=akhil() # this will call akhil function
 
+print("***No call")
+def inner1(): 
+        print("Hello, this is before function execution") 
+        func() # this will not call func unction
+        print("This is after function execution")
+    return inner1 
+
 print("***Function with return")
 print("***The return statement terminates the execution of a function")
 def function_that_prints():

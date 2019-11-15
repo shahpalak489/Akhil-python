@@ -1,18 +1,15 @@
-# first 100 numbers
-for i in range(0,100):
-	print(i)
 
-# all even numbers till 100
-for i in range(100):
-	if i%2 ==0:
-		print(i)
-#even numbers without modules
+print("***Function with return")
+def function_that_prints():
+    print("I printed")
 
-#fibonnaci first 10 with generator
+def function_that_returns():
+    return "I returned"
+
+f1 = function_that_prints() #this will call function_that_prints
+f2 = function_that_returns() # this will call function_that_returns
+print("***Now let us see what the values of f1 and f2 are")
+print(f1)
+print(f2)
 
 
-# Revert Dictioanry mapping
-map1={'a':1,'b':2}
-
-map2={y:x for x,y in map1.items()}
-print(map2)

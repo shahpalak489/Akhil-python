@@ -131,3 +131,4 @@ map1={'a':1,'b':2}
 
 map2={y:x for x,y in map1.items()}
 print(map2)
+

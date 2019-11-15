@@ -1,10 +1,10 @@
-#print
+print("****print")
 a=123
 print (a)
 
 # comment
 
-#function
+print("***function")
 def aki():
 	print("this is not right")
 aki()
@@ -29,11 +29,40 @@ def multiple(*args):
 	print(args)
 multiple(1,2,3,4)
 
-#variables
+print("*** to call function")
+def a1():
+	print("a1")
+a1()
+
+print("***IMP")
+def akhil():
+	print("akhil")
+a3=akhil() # this will call akhil function
+
+print("***Function with return")
+print("***The return statement terminates the execution of a function")
+def function_that_prints():
+    print("I printed")
+
+def function_that_returns():
+    return "I returned"
+
+f1 = function_that_prints() #this will call function_that_prints
+f2 = function_that_returns() # this will call function_that_returns
+print("***Now let us see what the values of f1 and f2 are")
+print(f1)
+print(f2)
+
+def no_return(x,y):
+    c = x + y
+    return c
+print(no_return(4,5))
+
+print("***variables")
 a="bol bhai"
 print(a)
 
-#variable scope
+print("***variable scope")
 b=100
 print(b)
 
@@ -410,17 +439,18 @@ print(mapped_list)
 
 
 
-
-
-
-
 print("**Generators")
 
 
 
 print("**Decorator**")
+print("**if 2 names are equal their functions are equal")
+def succ(x):
+	return x + 1
 
-
+successor = succ
+successor(10)
+succ(10)
 
 
 

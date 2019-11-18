@@ -29,22 +29,48 @@ def multiple(*args):
 	print(args)
 multiple(1,2,3,4)
 
-print("*** to call function")
+print("***to call function")
+print("IMP: "()" this symbol call function")
 def a1():
 	print("a1")
-a1()
+a1() # this will call function a1
 
 print("***IMP")
 def akhil():
 	print("akhil")
 a3=akhil() # this will call akhil function
 
+<<<<<<< HEAD
+def a(x):
+	print(x+10)
+b=a
+b(2) # this will call function a
+
+print("to call 1 function inside another function")
+def g():
+    print("Hi, it's me 'g'")
+    print("Thanks for calling me")
+def f(func):
+    print("Hi, it's me 'f'")
+    print("I will call 'func' now")
+    func() #func=g  #step2: this will call function g
+f(g) #step 1: this will call function f
+
+print("function within function")
+def outside():
+	def inside():
+		print("i am inside") #step2
+	print("i am outside") #step1
+	inside() # this will call function inside
+outside() # this will call function outside
+=======
 print("***No call")
 def inner1(): 
         print("Hello, this is before function execution") 
         func() # this will not call func unction
         print("This is after function execution")
     return inner1 
+>>>>>>> 4cdcfc5f64307e8f8a2ef72954471a5a17b79c97
 
 print("***Function with return")
 print("***The return statement terminates the execution of a function")
@@ -444,11 +470,61 @@ numbers_list = [2, 6, 8, 10, 11, 4, 12, 7, 13, 17, 0, 3, 21]
 mapped_list = list(map(lambda num: num % 2, numbers_list))
 print(mapped_list)
 
+print("***Iterators")
+num=[7,8,9,5] 
+for i in num:
+	print (i)
 
+''' list is inbuilt Iteraotr because we can use For..In Loop 
+on that even though we can use iter() and __next__() on List.
+that's why List , Tuple , set , disctionary are inbuilt iterators
+'''
+
+it=iter(num)
+print(it.__next__())
+print(it.__next__())
+
+'''
+to create custom iterator ( on which we can use for..in , iter()
+and next function)
+'''
+print("***custom iterator")
+class Topten:
+	def __init__(self):
+		self.num=50
+
+	def __iter__(self):
+		return self
+
+	def __next__(self):
+
+		if self.num <= 55:
+			val=self.num
+			self.num += 1
+
+			return val
+		else:
+			raise StopIteration
+
+values=iter(Topten())
+print(values.__next__())
+print(values.__next__())
+print(values.__next__())
 
 print("**Generators")
+def akhil():
+	yield 1
+	yield 2
+	yield 3
+for i in akhil():
+	print (i)
 
-
+def palak():
+	yield 'a'
+	yield 'b'
+	yield 'c' 
+for i in palak():
+	print(i)
 
 print("**Decorator**")
 print("**if 2 names are equal their functions are equal")
@@ -458,6 +534,3 @@ def succ(x):
 successor = succ
 successor(10)
 succ(10)
-
-
-

@@ -3,7 +3,6 @@ a=123
 print (a)
 
 # comment
-
 print("***function")
 def aki():
 	print("this is not right")
@@ -40,7 +39,6 @@ def akhil():
 	print("akhil")
 a3=akhil() # this will call akhil function
 
-<<<<<<< HEAD
 def a(x):
 	print(x+10)
 b=a
@@ -63,14 +61,13 @@ def outside():
 	print("i am outside") #step1
 	inside() # this will call function inside
 outside() # this will call function outside
-=======
+
 print("***No call")
 def inner1(): 
         print("Hello, this is before function execution") 
         func() # this will not call func unction
         print("This is after function execution")
-    return inner1 
->>>>>>> 4cdcfc5f64307e8f8a2ef72954471a5a17b79c97
+    return inner1
 
 print("***Function with return")
 print("***The return statement terminates the execution of a function")

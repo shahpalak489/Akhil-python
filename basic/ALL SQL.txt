@@ -155,7 +155,7 @@ SELECT *,UPPER(FIRST_NAME) NANU FROM BWOOD
 SELECT TOP 2 * FROM BWOOD;
 
 -- JOIN
-
+http://www.sqlservertutorial.net/sql-server-basics/sql-server-joins/
 
 ---EQUI JOIN
 

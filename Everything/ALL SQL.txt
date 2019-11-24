@@ -232,15 +232,15 @@ END
 -- DELETE PROCEDURE
 DROP PROCEDURE akhil1
 
--- begin end
+-- begin end (see)
 
 -- go (see practical)
 -- The GO command is used to group SQL commands into batches which are sent to the server together
 -- For example, you can't define a variable in one batch and then use it in another since the scope of the variable is limited to the batch in which it's defined.
 
--- commit rollback
+-- commit rollback (see)
 
--- CONVERT DATA TYPE
+-- CONVERT DATA TYPE (see)
 
 
 

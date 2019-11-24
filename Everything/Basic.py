@@ -382,27 +382,29 @@ print("**Tuple to Dics")
 Tuple1=('a','b','c','d')
 
 
-# Dictionary (IMP)
-List1=(1,2,3,4,5)
+print("***to access Dictionary data (IMP)")
+Tuple1=(1,2,3,4,5)
 
-list2={i:i*2 for i in List1}
-print(list2)
+Dict2={i:i*2 for i in Tuple1}
+print(Dict2)
 
-list3={1: 2, 2: 4, 3: 6, 4: 8, 'a': 10}
-r=list3['a']
-r=list3.keys()
-r=list3.values()
-r=list3.items()
+Dict3={1: 2, 2: 4, 3: 6, 4: 8, 'a': 10}
+r=Dict3['a']
+r=Dict3.keys()
+print(r)
+r=Dict3.values()
+print(r)
+r=Dict3.items()
 print(r)
 
-for i in list3.keys():
+for i in Dict3.keys():
 	print(i)
 
-for i in list3.values():
+for i in Dict3.values():
 	print(i)
 
-for i in list3.items():
+for i in Dict3.items():
 	print(i)
 
-for key,value in list3.items():
-	print(key,'<>',value)
+for x,y in Dict3.items():
+	print(x,'<>',y)

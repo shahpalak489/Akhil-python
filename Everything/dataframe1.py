@@ -172,6 +172,7 @@ df26=pd.DataFrame(List25)
 df26=df26[df26['Name']=='Tom']
 print(df26)
 
+# try to use other df thans df27
 print("** filter with & ")
 df27=pd.DataFrame(List25)
 df27=df27[(df27['Age']<50) & (df27['Age']>20)]

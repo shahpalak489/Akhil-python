@@ -5,12 +5,12 @@ print("***empty DataFrame***")
 df = pd.DataFrame()
 print(df)
 
-print("*DataFrame from list- 1column without column name**")
+print("***DataFrame from list- 1column without column name**")
 List1=[34,63,85,14,96]
 df1=pd.DataFrame(List1)
 print(df1)
 
-print("**DataFrame from list- 2columns without column name*")
+print("***DataFrame from list- 2columns without column name*")
 List2=[['alex',10],['bob',20],['mike',30]]
 df2=pd.DataFrame(List2)
 print(df2)
@@ -38,7 +38,7 @@ List5={'Name':['Tom', 'Jack', 'Steve'],'Age':[28,34,29]}
 df5=pd.DataFrame(List5)
 print(df5)
 
-print("Not IMP**List of Dics***")
+print("***Not IMP**List of Dics***")
 List7=[{'a':1,'b':2},{'a':5,'b':10,'c':2}]
 df7=pd.DataFrame(List7)
 print(df7)
@@ -59,9 +59,12 @@ List9 = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20, 'd': 0}]
 df9 = pd.DataFrame(List9, index=['first', 'second'], columns=['a', 'b'])
 print(df9)
 
-print("**calculation between 2 columns")
+print("*****")
 List10 = {'a':[15,50], 'b':[22,40] }
 df10 = pd.DataFrame(List10, index=['first', 'second'])
+print(df10)
+
+print("*** calculation between 2 columns")
 # df2["k"] = np.where(df2['a']==1, 'palak', 'red')
 df10["ab"] = 25
 df10["abc"] = df10["a"] + df10["ab"] 
@@ -70,36 +73,38 @@ df10["Multi"] = df10["a"] * df10["abcd"]
 df10["sub"]=df10["abc"]/df10["abcd"]
 print(df10)
 
-print("** operations**")
+print("*** operations**")
 List11={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
 'Age':[25,40,35,90,14,92]}
 df11=pd.DataFrame(List11)
 print(df11)
 
-print("** get first 2 rows **")
+print("*** get first 2 rows **")
 head=df11.head(2)
 print(head)
 
-print("** get last 2 rows**")
+print("*** get last 2 rows**")
 tail=df11.tail(2)
 print(tail) 
 
-print("** rename column names and row names**")
+print("*** rename column names and row names**")
 df12=df11.rename(columns={'Name':'Fullname'},index={4:'new'})
 print(df12)
 
-print("** drop column and row")
+print("*** drop column and row")
 df13=df12.drop(columns=['Age'],index=['new'])
 print(df13)
 
 print("***")
 print(df12)
-print("*** kepp column as index column ***")
+
+print("*** keep column as index column ***")
 df14=df12.set_index('Age')
 print(df14)
 
 print("***")
 print(df12)
+
 print("*** sort by values ***")
 df15=df12.sort_values('Age')
 print(df15)
@@ -108,23 +113,27 @@ print("*** sort by alphabet -- capital letters pahela and small letters pachi **
 df16=df11.sort_values('Name')
 print(df16)
 
-print("concatenation 2 columns")
+print("*** concatenation 2 columns")
 List17={'First_Name':['Tom', 'Jack', 'Steve','akhil'],
 'Last_Name':['Walter','Shavella','Jha','Shah']}
 df17=pd.DataFrame(List17)
 df17['Full_Name']=df17['First_Name']+' ' + df17['Last_Name']
 print(df17)
 
-print("group by")
+print("***group by")
 df18 = pd.DataFrame({'Animal': ['Falcon', 'Falcon','Parrot', 'Parrot'],
 	'Max Speed': [380., 370., 24., 26.]})
 print(df18)
+
+print("*** group by - sum")
 group=df18.groupby(['Animal']).sum()
 print(group)
+
+print("*** group by - mean")
 group1=df18.groupby(['Animal']).mean() 
 print(group1)
 
-print("** merge **")
+print("*** merge **")
 '''DataFrame.merge(self, right, how='inner', on=None, left_on=None, 
 right_on=None, left_index=False, right_index=False, sort=False, 
 suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)'''
@@ -177,35 +186,44 @@ print("** filter with < ")
 df28=df27.query('Age<=40')
 print(df28)
 
-
-print("iloc , loc and ix")
+print("iloc,loc and ix")
 lst={"city":["baroda","surat"],
 		"zip":["06","05"]}
 df=pd.DataFrame(lst)
 print(df)
-#Rule 1 : when we use loc its mandotory to mention column name
-#Rule 2: iloc = i am loc = based on location = perfection
+print("Rule 1 : iloc = i am loc = based on location = perfection")
+print("Rule 2: when we use loc its mandotory to mention column name")
 #Rule 3 : 
+
 print("1-----")
-lst2= {"city":["baroda","bangalore","surat","mang"],
+lst2= {"city":["baroda","bangalore","surat","mangalore"],
 		"state":["GJ","KA","GJ","KA"]}
 df2=pd.DataFrame(lst2)
 print(df2)
+
 print("2 not possible ")
 #print(df2.loc[2,1]) # row-2 :col-1   
+
 print("3-----")
 print(df2.iloc[2,1]) # row-2 :col-1 
+
 print("4------")
 print(df2.ix[2,1]) # row-2 :col-1 
+
 print("5------")
 print(df2.loc[2,"city"]) # row - 2 :col- city
+
 print("6-----")
 print(df2.ix[2,"city"]) # row - 2 :col- city
+
 print("7--IMP")
-print(df2.loc[:2,"city"]) # row - 0,1,2 :col- city ( see)
+print(df2.loc[:2,"city"]) # row - 0,1,2 :col- city
+
 print("8--IMP")
-print(df2.ix[:2,"city"]) # row - 0,1,2 :col- city (see)
+print(df2.ix[:2,"city"]) # row - 0,1,2 :col- city
+
 print("9--IMP")
-print(df2.iloc[:2,:1]) # row - 0,1 :col- 0   (see)
-print("10--IMP")
-print(df2.ix[:2,:1]) # row - 0,1,2 :col- 0  (see)
+print(df2.iloc[:2,:1]) # row - 0,1 :col- 0 
+
+print("10--IMP  (see)")
+print(df2.ix[:2,:1]) # row - 0,1,2 :col- 0  

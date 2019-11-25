@@ -38,13 +38,13 @@ print("***IMP")
 def akhil():
 	print("akhil")
 a3=akhil() # this will call akhil function
-
+   
 def a(x):
 	print(x+10)
 b=a
 b(2) # this will call function a
 
-print("to call 1 function inside another function")
+print("***to call 1 function inside another function")
 def g():
     print("Hi, it's me 'g'")
     print("Thanks for calling me")
@@ -54,7 +54,7 @@ def f(func):
     func() #func=g  #step2: this will call function g
 f(g) #step 1: this will call function f
 
-print("function within function")
+print("***function within function")
 def outside():
 	def inside():
 		print("i am inside") #step2
@@ -69,17 +69,20 @@ def inner1():
     print("This is after function execution")
     return inner1
 
-print("***Function with return")
-print("***The return statement terminates the execution of a function")
+print("***Return (IMP)")
 def function_that_prints():
     print("I printed")
 
 def function_that_returns():
     return "I returned"
+    print("after return")
 
+print("***The return statement terminates the execution of a function")
+print("** function calling  will give only print values,not return values ")
 f1 = function_that_prints() #this will call function_that_prints
 f2 = function_that_returns() # this will call function_that_returns
-print("***Now let us see what the values of f1 and f2 are")
+print("***to access return values assign variable to function calling and print the variable")
+print("because retuen assigns value to function so we need to print calling function ")
 print(f1)
 print(f2)
 
@@ -93,16 +96,16 @@ a="bol bhai"
 print(a)
 
 print("***variable scope")
+
 b=100
 print(b)
-
 def scope():
 	b=200
 	print(b)
 scope()
 print(b)
 
-print("arithmetic Operator")
+print("***arithmetic Operator")
 x=10
 y=20
 print(x+y)
@@ -110,7 +113,7 @@ print(x*y)
 print(y-x)
 print(y/x)
 
-print("comparison operator")
+print("***comparison operator")
 f=30
 g=23
 print(f<g)
@@ -142,7 +145,7 @@ x=3+3=6
 '''
 
 x-=y
-#Example
+#Example 
 x=0
 for y in [1,2,3]:
 	x -= y
@@ -209,21 +212,27 @@ a=10
 b=3
 c=2
 print(a%b)  # a/b
-print(a%c)  # a/c 
+print(a%c)  # a/c
 
-print("String operator")
-print("slice with string")
+print("*** floor division") 
+print("after performing the division, give results in the lower integer to the value")
+a=10
+b=3
+print(a//b)
+
+print("***String operator")
+print("***slice of string")
 a="india"
 print (a[1])
 
-print("slice with list")
+print("***slice of list")
 list1=['a1','b2','c3','d4','5re']
 print(list1[2])
 print(list1[2:7])
 print(list1[10:])
 print(list1[:10])
 
-print("slice With tuple")
+print("***slice With tuple")
 list1=('a1','b2','c3','d4','5re')
 print(list1[2])
 print(list1[2:7])
@@ -239,7 +248,7 @@ a="india"
 print(a.split('d'))
 
 print("concatenate")
-b=" Is Country"
+b=" is a Country"
 print(a+b)
 
 print("Repeat")
@@ -260,22 +269,22 @@ print(a.lower())
 
 #change data type
 
-print("Conditional statement")
+print("***Conditional statement")
 x=3
 y=3
 z=5
 
-print("if")
+print("***if")
 if (x==y):
 	print("x and y are same")
 
-print("if..else")
+print("***if..else")
 if (x==z):
 	print("x and z are same")
 else:
 	print("x and z are different")
 
-print("if...elif...else")
+print("***if...elif...else")
 if (y==z):
 	print("y and z are same")
 elif (x==z):
@@ -300,7 +309,7 @@ fruit=["banana","apple","orange"]
 for aki in fruit:
  	print(aki) 
  
-print("**for ...break") #( it will stop for loop)
+print("**for ...break") #(it will stop 'for loop')
 car=[2,15,19,20]
 for x in car:
  	print(x)
@@ -315,7 +324,7 @@ for y in fruit:
  
 print("**for.....else**")
 for no in range (5,10):
- print(no)
+	print(no)
 else:
  	print("Finally finished!")
 
@@ -378,16 +387,12 @@ Tuple1=('a','b','c','d')
 set1=set(Tuple1)
 print(set1)
 
-print("**Tuple to Dics")
+print("**Tuple to Dics ")
 Tuple1=('a','b','c','d')
-
-
-print("***to access Dictionary data (IMP)")
-Tuple1=(1,2,3,4,5)
-
 Dict2={i:i*2 for i in Tuple1}
 print(Dict2)
 
+print("***to access Dictionary data (IMP)")
 Dict3={1: 2, 2: 4, 3: 6, 4: 8, 'a': 10}
 r=Dict3['a']
 r=Dict3.keys()
@@ -407,4 +412,4 @@ for i in Dict3.items():
 	print(i)
 
 for x,y in Dict3.items():
-	print(x,'<>',y)
+	print(x,'-',y)

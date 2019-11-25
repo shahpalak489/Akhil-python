@@ -1,19 +1,19 @@
 print("**Comprehensions**")
 print("**List Comprehensions**")
-List1=(1,2,3,4,5)
-x=[i for i in List1]
+tuple1=(1,2,3,4,5)
+x=[i for i in tuple1]
 # same as for i in List1:
 #             if....
 #			print(i)
 print(x)
 
-x=[i*2 for i in List1]
+x=[i*2 for i in tuple1]
 print(x)
 
-x=[i*2 for i in List1 if i==4]
+x=[i*2 for i in tuple1 if i==4]
 print(x)
 
-x=[i*3 for i in List1 if (i*3)<12]
+x=[i*3 for i in tuple1 if (i*3)<12]
 print(x)
 
 print("**Set comprehension**")
@@ -24,8 +24,7 @@ print(x)
 x={i*2 for i in List1}
 print(x)
 
-print("**see**")
-x={i*2 for i in list1 if i==4}
+x={i*2 for i in List1 if i==4}
 print(x)
 
 x={i*3 for i in List1 if (i*3)<12}
@@ -46,7 +45,7 @@ x={i:i*3 for i in List1 if (i*3)<12}
 print(x)
 
 print("***Iterators")
-print("***In built Iterators")
+print("***for on In built Iterators")
 num=[7,8,9,5] 
 for i in num:
 	print (i)
@@ -54,15 +53,13 @@ for i in num:
 , iter() and __next__() on List.that's why List , Tuple , set,
  disctionary are inbuilt iterators
 '''
+print("***next on In built Iterator")
 it=iter(num)
 print(it.__next__())
 print(it.__next__()) 
 
-'''
-to create custom iterator ( on which we can use for..in , iter()
-and next function)
-'''
-print("***custom iterator/ Not IMP")
+print("***to create custom iterator(on which we can use for..in,iter() and next function")
+print("***custom iterator from scratch/ Not IMP")
 class Topten:
 	def __init__(self):
 		self.num=50
@@ -71,11 +68,9 @@ class Topten:
 		return self
 
 	def __next__(self):
-
 		if self.num <= 55:
 			val=self.num
 			self.num += 1
-
 			return val
 		else:
 			raise StopIteration
@@ -85,16 +80,16 @@ print(values.__next__())
 print(values.__next__())
 print(values.__next__())
 
-print("**Generator/custom Iterators with yield")
-print("Generator Function")
- def akhil():
+print("***Generator/custom Iterators with yield")
+print("***For on custom Generator/iterator")
+def akhil():
 	yield 1
 	yield 2
 	yield 3
 for i in akhil():
 	print (i)
 
-print("Generator Object")
+print("***next on custom Generator/iterate")
 def palak():
 	yield 'a'
 	yield 'b'
@@ -140,6 +135,8 @@ numbers_list = [2, 6, 8, 10, 11, 4, 12, 7, 13, 17, 0, 3, 21]
 mapped_list = list(map(lambda num: num % 2, numbers_list))
 print(mapped_list)
 
+## mapper ?? see
+
 print("**Decorator**")
 print("**if 2 names are equal their functions are equal")
 def succ(x):
@@ -148,3 +145,10 @@ def succ(x):
 successor = succ
 successor(10)
 succ(10)
+
+'''
+foo = our_decorator(foo)
+same as 
+@our_decorator
+def foo()
+'''

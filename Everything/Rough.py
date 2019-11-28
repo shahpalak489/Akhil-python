@@ -1,7 +1,6 @@
-def akhil(x,y):
-	c=x+y
-	return c 
+class Myclass:
+	x=5
 
-#uu=akhil(4,9)
 
-print(akhil(4,8))
+p1=Myclass()
+print(p1.x)

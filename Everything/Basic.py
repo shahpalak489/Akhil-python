@@ -413,3 +413,29 @@ for i in Dict3.items():
 
 for x,y in Dict3.items():
 	print(x,'-',y)
+
+
+#to create class
+class School:
+
+#class variable (when properties name and values both are same)
+	song="jan gana mana"
+	fund="govt of india"
+
+#instance variables (when properties name same but properties values different)
+	def __init__(self,first_langugae,managed_by):
+		self.first_langugae=first_langugae
+		self.managed_by=managed_by
+
+# ( when properties name are different for any object)
+	def border_country(self,country):
+		print(country)
+
+#to create object
+Gujarat=School('gujarati','govt of Gujarat')
+Karnataka=School('kannada','govt of Karnataka')
+
+#to access object properties
+print(Gujarat.song)
+print(Karnataka.first_langugae)
+print(Gujarat.border_country('india'))

@@ -526,3 +526,7 @@ print(ford.get_speed())
 
 #can not access function get_speed2 value because its private
 #print(ford.get_speed2())
+
+
+# polymorphism
+# https://youtu.be/CuK0g8OFzwo

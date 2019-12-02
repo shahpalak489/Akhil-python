@@ -414,22 +414,34 @@ for i in Dict3.items():
 for x,y in Dict3.items():
 	print(x,'-',y)
 
+#CLASS
+#https://www.youtube.com/watch?v=qSDiHI1kP98
 
+#class structure
+class abc:
+	def __init__(self,value2):
+		self.value1=value2
+mine=abc('value of value1')
+print(mine.value1)
+
+#class variables
 #to create class
 class School:
-
-#class variable (when properties name and values both are same)
+#class variable (properties name and values both are 
+#same for instances)
 	song="jan gana mana"
 	fund="govt of india"
 
-#instance variables (when properties name same but properties values different)
+#instance variables (when properties name same but 
+#values different for instances)
 	def __init__(self,first_langugae,managed_by):
 		self.first_langugae=first_langugae
 		self.managed_by=managed_by
 
-# ( when properties name are different for any object)
+#see 
+#(when properties name are different for any instance)
 	def border_country(self,country):
-		print(country)
+		pass
 
 #to create object
 Gujarat=School('gujarati','govt of Gujarat')
@@ -438,4 +450,79 @@ Karnataka=School('kannada','govt of Karnataka')
 #to access object properties
 print(Gujarat.song)
 print(Karnataka.first_langugae)
-print(Gujarat.border_country('india'))
+#see 
+#print(Gujarat.border_country('india'))
+
+
+#Encapsulation ( to make variable/function private for class)
+#define by double underscore(__)
+#https://www.youtube.com/watch?v=TFLo9m0jFEg
+class Encapsulation:
+	def __init__(self):
+		self.a=123
+		self._a=456
+		self.__a=789
+Encaps=Encapsulation()
+
+print(Encaps.a)
+print(Encaps._a)
+# can not access __a value
+#print(Encaps.__a)
+
+#see
+#to access __a value 
+print(Encaps._Encapsulation__a)
+
+# example without encapsulation
+class Car1:
+	def __init__(self,speed,color):
+		self.speed=speed
+		self.color=color
+
+ford=Car1(200,'red')
+honda=Car1(250,'blue')
+audi=Car1(300,'balck')
+
+# here i can access speed value  
+print(ford.speed) 
+
+#example with encapsulation
+class Car2:
+	def __init__(self,speed,color):
+		self.__speed=speed
+		self.__color=color
+
+ford=Car2(200,'red')
+honda=Car2(250,'blue')
+audi=Car2(300,'balck')
+  
+#can not access __speed value from class
+#print(ford.__speed)
+
+#getter and setter with encapsulation
+class Car2:
+	def __init__(self,speed,color):
+		self.__speed=speed
+		self.__color=color
+
+	def set_speed(self,value):
+		self.__speed = value
+
+	def get_speed(self):
+		return self.__speed
+
+	def __get_speed2(self):
+		return self.__speed
+
+ford=Car2(200,'red')
+honda=Car2(250,'blue')
+audi=Car2(275,'balck')
+  
+ford.set_speed(300)
+ford.__speed=400
+# can not access __speed atribute but if i assign that value
+#to function by using return i can access function value
+print(ford.get_speed())
+
+#can not access function get_speed2 value because its private
+#print(ford.get_speed2())

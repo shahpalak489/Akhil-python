@@ -454,7 +454,8 @@ print(Karnataka.first_langugae)
 #print(Gujarat.border_country('india'))
 
 
-#Encapsulation ( to make variable/function private for class)
+#Encapsulation (to make variable/function private for class
+#that means can not access value / can not call)
 #define by double underscore(__)
 #https://www.youtube.com/watch?v=TFLo9m0jFEg
 class Encapsulation:
@@ -526,3 +527,5 @@ print(ford.get_speed())
 
 #can not access function get_speed2 value because its private
 #print(ford.get_speed2())
+#can not call get_speed2 because its private
+#ford.get_speed2()

@@ -1,4 +1,4 @@
-import pandas as pd
+ import pandas as pd
 #pandas.DataFrame(data, index, columns, dtype, copy)
 # first use [] and if you hve other kind of values than use {}
 print("***empty DataFrame***")
@@ -166,7 +166,7 @@ List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
 df25=pd.DataFrame(List25)
 df25=df25[['Name']]
 print(df25)
-
+ 
 print("**filter with = ")
 df26=pd.DataFrame(List25)
 df26=df26[df26['Name']=='Tom']

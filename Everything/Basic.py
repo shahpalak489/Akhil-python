@@ -551,6 +551,8 @@ y.printname()
 
 
 # Multiple Inheritance
+#example 1
+
 #parentclass1
 class Person:  
     #defining constructor  
@@ -558,14 +560,13 @@ class Person:
         self.name = personName  
         self.age = personAge  
 
-    #defining class methods  
+     #defining class methods  
     def showName(self):  
         print(self.name)  
   
     def showAge(self):  
         print(self.age)  
    
-# defining another class  
 #parentclass2
 class Student: # Person is the  
     def __init__(self, studentId):  
@@ -575,7 +576,9 @@ class Student: # Person is the
         return self.studentId  
 
 #childclass  
-class Resident(Person, Student): # extends both Person and Student class  
+class Resident(Student,Person):
+# you have to give all variables from all parent
+# we can change name but number of variables and sequence will remain same  
     def __init__(self, name, age, id):  
         Person.__init__(self, name, age)  
         Student.__init__(self, id)  
@@ -584,3 +587,78 @@ class Resident(Person, Student): # extends both Person and Student class
 resident1 = Resident('John', 30, '102')  
 resident1.showName()  
 print(resident1.getId())  
+
+
+#example 2
+class A:  
+    def __init__(self):  
+        self.name = 'John'  
+        self.age = 23  
+  
+    def getName(self):  
+        return self.name  
+  
+class B:  
+    def __init__(self):  
+        self.name = 'Richard'  
+        self.id = '32'  
+  
+    def getName(self):  
+        return self.name  
+  
+class C(A, B):  
+    def __init__(self):  
+        A.__init__(self)  
+        B.__init__(self)  
+  
+    def getName(self):  
+        return self.name  
+  
+C1 = C()  
+print(C1.getName())  
+
+'''
+In the constructor of C, the first constructor called 
+is the one of A. So, the value of name in C becomes 
+same as the value of name in A. But after that, when 
+the constructor of B is called, the value of name in 
+C is overwritten by the value of name in B. So, the 
+name attribute of C retains the value ‘Richard’ when 
+printed. 
+'''
+
+#Multilevel Inheritance
+class Base(object):       
+    # Constructor 
+    def __init__(self, name): 
+        self.name = name 
+  
+    # To get name 
+    def getName(self): 
+        return self.name 
+  
+# Inherited or Sub class (Note Person in bracket) 
+class Child(Base):       
+    # Constructor 
+    def __init__(self, name, age): 
+        Base.__init__(self, name) 
+        self.age = age 
+  
+    # To get name 
+    def getAge(self): 
+        return self.age 
+  
+# Inherited or Sub class (Note Person in bracket) 
+class GrandChild(Child):       
+    # Constructor 
+    def __init__(self, name, age, address): 
+        Child.__init__(self, name, age) 
+        self.address = address 
+  
+    # To get address 
+    def getAddress(self): 
+        return self.address         
+  
+# Driver code 
+g = GrandChild("Geek1", 23, "Noida")   
+print(g.getName(), g.getAge(), g.getAddress())

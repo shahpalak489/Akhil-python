@@ -86,20 +86,19 @@ def FibonacciNumbers(n):
         f2 = next
 print(FibonacciNumbers(7))
 
-print("***first 50 numbers")
-'''
-for i in range(0,50):
+print("***first 15 numbers")
+for i in range(0,15):
     print(i)
 
-print("***all even numbers till 50")
-for i in range(50):
+print("***all even numbers till 15")
+for i in range(15):
     if i%2 ==0:
-    print(i)
+        print(i)
 #even numbers without modules
-'''
+
 #fibonnaci first 10 with generator
 
-# Revert Dictioanry mapping
+print("Revert Dictioanry mapping")
 map1={'a':1,'b':2}
 
 map2={y:x for x,y in map1.items()}

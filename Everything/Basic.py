@@ -2,7 +2,6 @@ print("****print")
 a=123
 print (a)
 
-# comment
 print("***function")
 def aki():
 	print("this is not right")
@@ -81,11 +80,13 @@ print("***The return statement terminates the execution of a function")
 print("** function calling  will give only print values,not return values ")
 f1 = function_that_prints() #this will call function_that_prints
 f2 = function_that_returns() # this will call function_that_returns
-print("***to access return values assign variable to function calling and print the variable")
-print("because retuen assigns value to function so we need to print calling function ")
+print("***to access return values assign variable to function")
+print("calling and print the variable because retuen assigns value") 
+print("to function so we need to print calling function ")
 print(f1)
 print(f2)
 
+print("return example 2")
 def no_return(x,y):
     c = x + y
     return c
@@ -96,7 +97,6 @@ a="bol bhai"
 print(a)
 
 print("***variable scope")
-
 b=100
 print(b)
 def scope():
@@ -228,9 +228,16 @@ print (a[1])
 print("***slice of list")
 list1=['a1','b2','c3','d4','5re']
 print(list1[2])
-print(list1[2:7])
-print(list1[10:])
+print(list1[2:7]) 
+print(list1[10:]) 
 print(list1[:10])
+print(list1[1:4:2])
+
+print("***MM IMP")
+#https://www.quora.com/What-is-negative-index-in-Python
+print(list1[-1:-4:-1])
+print("***MM IMP")
+print(list1[-1:-4:1])
 
 print("***slice With tuple")
 list1=('a1','b2','c3','d4','5re')
@@ -238,36 +245,41 @@ print(list1[2])
 print(list1[2:7])
 print(list1[10:])
 print(list1[:10])
+print(list1[1:4:2])
+
+print("***MM IMP")
+print(list1[-1:-4:-1])
+print("***MM IMP")
+print(list1[-1:-4:1])
+
 
 #slice With dics -- not possible
 #slice with set -- not possible
 
-print("split")
-print("split with string")
+print("***split")
+print("***split with string")
 a="india"
 print(a.split('d'))
 
-print("concatenate")
+print("***concatenate")
 b=" is a Country"
 print(a+b)
 
-print("Repeat")
+print("***Repeat")
 print(a*2)
 
-print("Reverse string")
-print(a[::-1])
-
-print("Replace")
+print("***Replace")
 c=a.replace('a','a is country')
 print(c)
 
-print("upper case")
+print("***upper case")
 print(a.upper())
 
-print("lower case")
+print("***lower case")
 print(a.lower())
 
 #change data type
+
 
 print("***Conditional statement")
 x=3
@@ -395,6 +407,8 @@ print(Dict2)
 print("***to access Dictionary data (IMP)")
 Dict3={1: 2, 2: 4, 3: 6, 4: 8, 'a': 10}
 r=Dict3['a']
+print(r)
+
 r=Dict3.keys()
 print(r)
 r=Dict3.values()
@@ -414,17 +428,17 @@ for i in Dict3.items():
 for x,y in Dict3.items():
 	print(x,'-',y)
 
-#CLASS
+print("***CLASS")
 #https://www.youtube.com/watch?v=qSDiHI1kP98
 
-#class structure
+print("***class structure")
 class abc:
 	def __init__(self,value2):
 		self.value1=value2
 mine=abc('value of value1')
 print(mine.value1)
 
-#class variables
+print("***class variables")
 #to create class
 class School:
 #class variable (properties name and values both are 
@@ -432,8 +446,8 @@ class School:
 	song="jan gana mana"
 	fund="govt of india"
 
-#instance variables (when properties name same but 
-#values different for instances)
+	print("***instance variables") #(when properties name same but 
+	#values different for instances)
 	def __init__(self,first_langugae,managed_by):
 		self.first_langugae=first_langugae
 		self.managed_by=managed_by
@@ -454,7 +468,7 @@ print(Karnataka.first_langugae)
 #print(Gujarat.border_country('india'))
 
 
-#Encapsulation (to make variable/function private for class
+print("***Encapsulation") #(to make variable/function private for class
 #that means can not access value / can not call)
 #define by double underscore(__)
 #https://www.youtube.com/watch?v=TFLo9m0jFEg
@@ -474,29 +488,26 @@ print(Encaps._a)
 #to access __a value 
 print(Encaps._Encapsulation__a)
 
-# example without encapsulation
+print("***example without encapsulation")
 class Car1:
 	def __init__(self,speed,color):
 		self.speed=speed
 		self.color=color
-
 ford=Car1(200,'red')
 honda=Car1(250,'blue')
 audi=Car1(300,'balck')
-
 # here i can access speed value  
 print(ford.speed) 
 
-#example with encapsulation
+
+print("***example with encapsulation")
 class Car2:
 	def __init__(self,speed,color):
 		self.__speed=speed
 		self.__color=color
-
 ford=Car2(200,'red')
 honda=Car2(250,'blue')
 audi=Car2(300,'balck')
-  
 #can not access __speed value from class
 #print(ford.__speed)
 
@@ -525,13 +536,14 @@ ford.__speed=400
 #to function by using return i can access function value
 print(ford.get_speed())
 
-#can not access function get_speed2 value because its private
+print("***IMP")
+print("can not access function get_speed2 value because its private")
 #print(ford.get_speed2())
-#can not call get_speed2 because its private
+print("can not call get_speed2 because its private")
 #ford.get_speed2()
 
 
-# single inheritance
+print("***single inheritance")
 #parent class
 class Father:
 	def __init__(self,fname,lname):
@@ -549,8 +561,7 @@ class Son(Father):
 y=Son('palak','shah')
 y.printname()
 
-
-# Multiple Inheritance
+print("***Multiple Inheritance")
 #example 1
 
 #parentclass1
@@ -627,7 +638,7 @@ name attribute of C retains the value ‘Richard’ when
 printed. 
 '''
 
-#Multilevel Inheritance
+print("***Multilevel Inheritance")
 class Base(object):       
     # Constructor 
     def __init__(self, name): 
@@ -637,7 +648,7 @@ class Base(object):
     def getName(self): 
         return self.name 
   
-# Inherited or Sub class (Note Person in bracket) 
+#Inherited or Sub class (Note Person in bracket) 
 class Child(Base):       
     # Constructor 
     def __init__(self, name, age): 

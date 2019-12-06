@@ -178,7 +178,7 @@ df27=pd.DataFrame(List25)
 df27=df27[(df27['Age']<50) & (df27['Age']>20)]
 print(df27)
 
-print("** filter with or")
+print("** IMP: filter with or")
 df28=pd.DataFrame(List25)
 df28=df28[(df28['Name']=='Jack') | (df28['Name']=='akhil')]
 print(df28)

@@ -21,7 +21,7 @@ List1=[1,2,3,4,5]
 x={i for i in List1}
 print(x)
 
-x={i*2 for i in List1}
+x={i*2 for in List1}
 print(x)
 
 x={i*2 for i in List1 if i==4}
@@ -43,6 +43,46 @@ print(x)
 
 x={i:i*3 for i in List1 if (i*3)<12}
 print(x)
+
+
+print("**Lambda")
+print("** Lambda with function name")
+akhil=lambda a: a+6
+# same as def akhil(x)
+#			  x+6
+print(akhil(10))
+
+akhil=lambda a,b: a+b
+print(akhil(2,5))
+
+akhil=lambda a,b,c: a+(2*b)+(3*c)
+print(akhil(2,3,5))
+
+print("**Lambda as anonymus(function name not given)")
+print("see-how a value is 1?")
+#example 1
+def myfunc(n):
+  return lambda a : a-n
+mytripler = myfunc(15)
+print(mytripler(1))
+
+#example 2
+def testfunc(num):
+    return lambda x : x * num
+result1 = testfunc(10)
+print(result1(9))
+
+print("**see-Lambda as anonymus with filter**")
+numbers_list = [2, 6, 8, 11, 4, 12, 7, 13, 17, 0, 3, 21,10]
+filtered_list = list(filter(lambda num: (num > 7), numbers_list))
+print(filtered_list)
+
+print("**see-Lambda as anonymus with map**")
+numbers_list = [2, 6, 8, 10, 11, 4, 12, 7, 13, 17, 0, 3, 21]
+mapped_list = list(map(lambda num: num % 2, numbers_list))
+print(mapped_list)
+
+## mapper ?? see
 
 print("***Iterators")
 print("***for on In built Iterators")
@@ -97,45 +137,6 @@ def palak():
 x=palak()
 print(x.__next__())
 print(x.__next__())
-
-print("**Lambda")
-print("** Lambda with function name")
-akhil=lambda a: a+6
-# same as def akhil(x)
-#			  x+6
-print(akhil(10))
-
-akhil=lambda a,b: a+b
-print(akhil(2,5))
-
-akhil=lambda a,b,c: a+(2*b)+(3*c)
-print(akhil(2,3,5))
-
-print("**Lambda as anonymus(function name not given)")
-print("see-how a value is 1?")
-#example 1
-def myfunc(n):
-  return lambda a : a-n
-mytripler = myfunc(15)
-print(mytripler(1))
-
-#example 2
-def testfunc(num):
-    return lambda x : x * num
-result1 = testfunc(10)
-print(result1(9))
-
-print("**see-Lambda as anonymus with filter**")
-numbers_list = [2, 6, 8, 11, 4, 12, 7, 13, 17, 0, 3, 21,10]
-filtered_list = list(filter(lambda num: (num > 7), numbers_list))
-print(filtered_list)
-
-print("**see-Lambda as anonymus with map**")
-numbers_list = [2, 6, 8, 10, 11, 4, 12, 7, 13, 17, 0, 3, 21]
-mapped_list = list(map(lambda num: num % 2, numbers_list))
-print(mapped_list)
-
-## mapper ?? see
 
 print("**Decorator**")
 print("**if 2 names are equal their functions are equal")

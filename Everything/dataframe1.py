@@ -169,8 +169,8 @@ print(df25)
  
 print("**filter with = ")
 df26=pd.DataFrame(List25)
-df26=df26[df26['Name']=='Tom']
-print(df26)
+df26a=df26[df26['Name']=='Tom']
+print(df26a)
 
 # try to use other df thans df27
 print("** filter with & ")

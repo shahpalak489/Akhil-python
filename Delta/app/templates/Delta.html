@@ -28,7 +28,17 @@
 		</form>
 	</div>
 
-	<div id="two"></div>
+	<div id="two">
+		<table id="flightdata">
+			<th>Information</th>
+				<tr>
+					<td>zero</td>
+					<td>one</td>
+					<td>two</td>
+					<td>three</td>
+				</tr>
+		</table>
+	</div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
     $('#flight_search').click(function () {
@@ -38,7 +48,12 @@
 	        dataType: 'json',
 			contentType: 'application/json',
 	        success: function (data, xhr, status) {
-	        	alert("success");
+	        	console.log(data)
+	        	var trHTML = '';
+			    $.each(data, function (i, item) {
+			        trHTML += '<tr><td>' + data[i].id+ '</td><td>' + data[i].created_at + '</td><td>' + data[i].updated_at + '</td></tr> ';
+			    });
+			    $('#flightdata').append(trHTML);
 	        },
 	        error: function (xhr, status) {
 	            alert("Sorry, there was a problem!");

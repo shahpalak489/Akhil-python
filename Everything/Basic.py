@@ -287,8 +287,8 @@ y=3
 z=5
 
 print("***if")
-if (x==y):
-	print("x and y are same")
+if x==3 and y==3:
+	print("x and y are 3")
 
 print("***if..else")
 if (x==z):

@@ -1,9 +1,16 @@
- 
 
 
+def akhil(n):
+	result=""
+	if n % 3 == 0:
+		return 'AB'
+	elif n % 3 == 1:
+		return 'cd'
+	else:
+		return 'ef'
 
-
-
+ak=akhil(10)
+print(ak)
 '''
   
 class Son2(Father):

@@ -19,8 +19,9 @@
     $('#getBtn').click(function () {
     	// to understand $.ajax syntax- https://www.w3schools.com/jquery/ajax_ajax.asp
 	    $.ajax({
+	    	// url is app.route file value
+	    	// no need to mention filename(sql_connection.py)
 	        url: "firstpage",
-	        // url: "firstpage?firstname=akhil",
 	        type: "GET",
 	        dataType: 'json',
 			contentType: 'application/json',

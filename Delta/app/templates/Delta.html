@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Delta Flight search</title>
+	<style>
+		#one
+		{ border:2px solid green;
+		  height: 50px;
+		  margin:auto;
+		  width:800px;
+		}
+		#two
+		{ border:2px solid pink;
+		  height: 500px;
+		  width:800px;
+		  margin:auto;
+		}
+		#three
+		{
+			border: 2px solid blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="one">
+		<form>
+			<input type="text" name="from">
+			<input type="text" name="To">
+			<input type="date" name="start date">
+			<input type="date" name="to date">
+			<input type="button" id="flight_search" name="search" value="search">
+		</form>
+	</div>
+
+	<div id="two"></div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $('#flight_search').click(function () {
+	    $.ajax({
+	        url: "firstpage",
+	        type: "GET",
+	        dataType: 'json',
+			contentType: 'application/json',
+	        success: function (data, xhr, status) {
+	        	console.log("success");
+	        },
+	        error: function (xhr, status) {
+	            alert("Sorry, there was a problem!");
+	        }
+	    });
+	});
+</script>
+</body>
+</html>

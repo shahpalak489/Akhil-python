@@ -20,39 +20,45 @@
 <body>
 	<div id="one">
 		<form>
-			<input type="text" name="from">
-			<input type="text" name="To">
-			<input type="date" name="start date">
-			<input type="date" name="to date">
+			<input type="text" name="from" id="from" placeholder="Origin">
+			<input type="text" name="Destination" id="destination" placeholder="Destination">
+			<!--<input type="date" name="start date">
+			<input type="date" name="to date"> -->
 			<input type="button" id="flight_search" name="search" value="search">
 		</form>
+		
 	</div>
 
 	<div id="two">
-		<table id="flightdata">
-			<th>Information</th>
-				<tr>
-					<td>zero</td>
-					<td>one</td>
-					<td>two</td>
-					<td>three</td>
-				</tr>
+		<table >
+			<thead>
+				<th>Id</th>
+				<th>Flt_num</th>
+				<th>Origin</th>
+				<th>Destination</th>
+			</thead>
+			<tbody id="flightdata">
+			</tbody>	
 		</table>
 	</div>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
     $('#flight_search').click(function () {
+    	vFrom=document.getElementById('from').value
+		vDestination=document.getElementById('destination').value
 	    $.ajax({
-	        url: "firstpage",
+	        url: "firstpage?origin="+vFrom+"&dest="+vDestination,
 	        type: "GET",
 	        dataType: 'json',
 			contentType: 'application/json',
 	        success: function (data, xhr, status) {
 	        	console.log(data)
+	        	
 	        	var trHTML = '';
 			    $.each(data, function (i, item) {
-			        trHTML += '<tr><td>' + data[i].id+ '</td><td>' + data[i].created_at + '</td><td>' + data[i].updated_at + '</td></tr> ';
+			        trHTML += '<tr><td>' + data[i].id+ '</td><td>' + data[i].flt_num + '</td><td>' + data[i].origin + '</td><td>' + data[i].destination + '</td></tr> ';
 			    });
+			    $('#flightdata').empty();
 			    $('#flightdata').append(trHTML);
 	        },
 	        error: function (xhr, status) {

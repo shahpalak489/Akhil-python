@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link rel='icon' href='static/img/delta.png' type='image/x-icon'/ >
+	<!-- <link rel="shortcut icon" type="static/img/ico" href="/Delta.ico"/> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Delta Flight search</title>
 	<style>
@@ -9,13 +10,11 @@
 		{ height: 50px;
 		  margin:auto;
 		  width:800px;
-		  border-color: 2px solid green;
 		}
 		#two
 		{ height: 500px;
 		  width:800px;
 		  margin:auto;
-		  border-color: 2px solid green;
 		}
 	</style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -73,44 +72,41 @@
       </script>	
 </head>
 <body>
-	<div class="container">
-		<div class="row">
-			<div id="one" class="col-lg-8">
-				<h2 style="color:#11172b;"> Delta Airline</h2>
-			</div>
+	<div id="one">
+		<h2 style="color:#11172b;"> Delta Airline</h2>
+	</div>
+	<div id="one">
+		<form>
+			<label for = "Origin"></label>
+			<input type="text" name="Origin" id="Origin" placeholder="Origin">
+			<label for = "destination"></label>
+			<input type="text" name="Destination" id="destination" placeholder="Destination">
+			<!--<input type="date" name="start date">
+			<input type="date" name="to date"> -->
+			<button type="button" id="flight_search" name="search" value="search" class="btn btn-primary">search</button>
+			<!--
+			<input type="button" id="flight_search" name="search" value="search"> -->
 
-			<div id="one" class="col-lg-8">
-				<form>
-					<label for = "Origin"></label>
-					<input type="text" name="Origin" id="Origin" placeholder="Origin">
-					<label for = "destination"></label>
-					<input type="text" name="Destination" id="destination" placeholder="Destination">
-					<!--<input type="date" name="start date">
-					<input type="date" name="to date"> -->
-					<button type="button" id="flight_search" name="search" value="search" class="btn btn-primary">search</button>
-					<!--
-					<input type="button" id="flight_search" name="search" value="search"> -->
-				</form>
-			</div>
+		</form>
+		
+	</div>
 
-			<div id="one" class="col-lg-8">
-				<h2> Flight search result</h2>
-			</div>
+	<div id="one">
+		<h2> Flight search result</h2>
+	</div>
 
-			<div id="two" class="col-lg-10">
-				<table class="table table-striped">
-					<thead>
-						<th>Flight No</th>
-						<th>Origin Code</th>
-						<th>Origin</th>
-						<th>Destination Code</th>
-						<th>Destination</th>
-					</thead>
-					<tbody id="flightdata">
-					</tbody>	
-				</table>
-			</div>
-		</div>	
+	<div id="two">
+		<table class="table table-striped">
+			<thead>
+				<th>Flight No</th>
+				<th>Origin Code</th>
+				<th>Origin</th>
+				<th>Destination Code</th>
+				<th>Destination</th>
+			</thead>
+			<tbody id="flightdata">
+			</tbody>	
+		</table>
 	</div>
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 <script type="text/javascript">

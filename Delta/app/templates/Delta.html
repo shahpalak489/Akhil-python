@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel='icon' href='static/img/delta.png' type='image/x-icon'/ >
+	<!-- <link rel="shortcut icon" type="static/img/ico" href="/Delta.ico"/> -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Delta Flight search</title>
 	<style>
@@ -10,21 +12,43 @@
 		  width:800px;
 		}
 		#two
-		{ border:2px solid blue;
-		  height: 500px;
+		{ height: 500px;
 		  width:800px;
 		  margin:auto;
 		}
 	</style>
-<!--    -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
  	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
          rel = "stylesheet">
-      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
-      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-      <script>
+	<script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script>
+      	 $(function() {
+            var Origin_autosuggest  =  [
+               "AGP",
+			   "AUH",
+			   "ATL",
+               "PVR",
+               "PEK",
+               "DEN",
+               "DTW",
+               "HER",
+               "TPA",
+               "SFB",
+               "MDW",
+               "LOS",
+               "FLL",
+               "FCO",
+               "MLB"
+            ];
+            $( "#Origin" ).autocomplete({
+               source: Origin_autosuggest
+            });
+         });
+
+
          $(function() {
-            var availableTutorials  =  [
+            var destination_autosuggest  =  [
                "AGP",
 			   "AUH",
 			   "ATL",
@@ -42,11 +66,10 @@
                "MLB"
             ];
             $( "#destination" ).autocomplete({
-               source: availableTutorials
+               source: destination_autosuggest
             });
          });
       </script>	
-<!--   -->
 </head>
 <body>
 	<div id="one">
@@ -54,14 +77,16 @@
 	</div>
 	<div id="one">
 		<form>
+			<label for = "Origin"></label>
+			<input type="text" name="Origin" id="Origin" placeholder="Origin">
 			<label for = "destination"></label>
-			<input type="text" name="from" id="from" placeholder="Origin">
 			<input type="text" name="Destination" id="destination" placeholder="Destination">
 			<!--<input type="date" name="start date">
 			<input type="date" name="to date"> -->
 			<button type="button" id="flight_search" name="search" value="search" class="btn btn-primary">search</button>
 			<!--
 			<input type="button" id="flight_search" name="search" value="search"> -->
+
 		</form>
 		
 	</div>
@@ -86,7 +111,7 @@
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 <script type="text/javascript">
     $('#flight_search').click(function () {
-    	vFrom=document.getElementById('from').value
+    	vFrom=document.getElementById('Origin').value
 		vDestination=document.getElementById('destination').value
 	    $.ajax({
 	        url: "firstpage?origin="+vFrom+"&dest="+vDestination,
@@ -104,7 +129,7 @@
 			    $('#flightdata').append(trHTML);
 	        },
 	        error: function (xhr, status) {
-	            alert("Sorry, there was a problem!");
+	            alert("Oops, there is a problem!! Please contact to technical team!!");
 	        }
 	    });
 	});

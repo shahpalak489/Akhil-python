@@ -1,0 +1,7 @@
+I have created Delta application as requested.
+this application is in Falsk framework.
+In this application user can get flight details by giving Origin and Destiantion airport code and/or airport name.
+In flight search result i have created table which gives 5 columns data from csv but we can add more columns as per requirements.
+
+User will also get auto suggestion for both Origin and Destination search.
+

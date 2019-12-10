@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Delta Flight search</title>
 	<style>
 		#one
@@ -49,7 +50,7 @@
 </head>
 <body>
 	<div id="one">
-		<h2> Delta Airline</h2>
+		<h2 style="color:#11172b;"> Delta Airline</h2>
 	</div>
 	<div id="one">
 		<form>
@@ -65,13 +66,17 @@
 		
 	</div>
 
+	<div id="one">
+		<h2> Flight search result</h2>
+	</div>
+
 	<div id="two">
-		<h1> Flight search result</h1>
 		<table class="table table-striped">
 			<thead>
-				<th>Id</th>
-				<th>Flt_num</th>
+				<th>Flight No</th>
+				<th>Origin Code</th>
 				<th>Origin</th>
+				<th>Destination Code</th>
 				<th>Destination</th>
 			</thead>
 			<tbody id="flightdata">
@@ -93,7 +98,7 @@
 	        	
 	        	var trHTML = '';
 			    $.each(data, function (i, item) {
-			        trHTML += '<tr><td>' + data[i].id+ '</td><td>' + data[i].flt_num + '</td><td>' + data[i].origin + '</td><td>' + data[i].destination + '</td></tr> ';
+			        trHTML += '<tr><td>' + data[i].flt_num+ '</td><td>' + data[i].origin + '</td><td>' + data[i].origin_full_name + '</td><td>' + data[i].destination + '</td><td>' + data[i].destination_full_name + '</td></tr> ';
 			    });
 			    $('#flightdata').empty();
 			    $('#flightdata').append(trHTML);

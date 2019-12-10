@@ -2,7 +2,7 @@ from flask import Flask, render_template
 
 app = Flask(__name__)
 
-from app import sql_connection
+from app import csv_connection
 
 @app.route("/delta")
 def hello():

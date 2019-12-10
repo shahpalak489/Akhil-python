@@ -4,33 +4,70 @@
 	<title>Delta Flight search</title>
 	<style>
 		#one
-		{ border:2px solid green;
-		  height: 50px;
+		{ height: 50px;
 		  margin:auto;
 		  width:800px;
 		}
 		#two
-		{ border:2px solid pink;
+		{ border:2px solid blue;
 		  height: 500px;
 		  width:800px;
 		  margin:auto;
 		}
 	</style>
+<!--    -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+ 	<link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+         rel = "stylesheet">
+      <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+      <script>
+         $(function() {
+            var availableTutorials  =  [
+               "AGP",
+			   "AUH",
+			   "ATL",
+               "PVR",
+               "PEK",
+               "DEN",
+               "DTW",
+               "HER",
+               "TPA",
+               "SFB",
+               "MDW",
+               "LOS",
+               "FLL",
+               "FCO",
+               "MLB"
+            ];
+            $( "#destination" ).autocomplete({
+               source: availableTutorials
+            });
+         });
+      </script>	
+<!--   -->
 </head>
 <body>
 	<div id="one">
+		<h2> Delta Airline</h2>
+	</div>
+	<div id="one">
 		<form>
+			<label for = "destination"></label>
 			<input type="text" name="from" id="from" placeholder="Origin">
 			<input type="text" name="Destination" id="destination" placeholder="Destination">
 			<!--<input type="date" name="start date">
 			<input type="date" name="to date"> -->
-			<input type="button" id="flight_search" name="search" value="search">
+			<button type="button" id="flight_search" name="search" value="search" class="btn btn-primary">search</button>
+			<!--
+			<input type="button" id="flight_search" name="search" value="search"> -->
 		</form>
 		
 	</div>
 
 	<div id="two">
-		<table >
+		<h1> Flight search result</h1>
+		<table class="table table-striped">
 			<thead>
 				<th>Id</th>
 				<th>Flt_num</th>
@@ -41,7 +78,7 @@
 			</tbody>	
 		</table>
 	</div>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<!--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
 <script type="text/javascript">
     $('#flight_search').click(function () {
     	vFrom=document.getElementById('from').value

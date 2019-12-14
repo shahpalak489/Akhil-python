@@ -1,4 +1,4 @@
- import pandas as pd
+import pandas as pd
 #pandas.DataFrame(data, index, columns, dtype, copy)
 # first use [] and if you hve other kind of values than use {}
 print("***empty DataFrame***")
@@ -59,134 +59,6 @@ List9 = [{'a': 1, 'b': 2},{'a': 5, 'b': 10, 'c': 20, 'd': 0}]
 df9 = pd.DataFrame(List9, index=['first', 'second'], columns=['a', 'b'])
 print(df9)
 
-print("*****")
-List10 = {'a':[15,50], 'b':[22,40] }
-df10 = pd.DataFrame(List10, index=['first', 'second'])
-print(df10)
-
-print("*** calculation between 2 columns")
-# df2["k"] = np.where(df2['a']==1, 'palak', 'red')
-df10["ab"] = 25
-df10["abc"] = df10["a"] + df10["ab"] 
-df10["abcd"] = df10["a"] - df10["ab"] 
-df10["Multi"] = df10["a"] * df10["abcd"]
-df10["sub"]=df10["abc"]/df10["abcd"]
-print(df10)
-
-print("*** operations**")
-List11={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
-'Age':[25,40,35,90,14,92]}
-df11=pd.DataFrame(List11)
-print(df11)
-
-print("*** get first 2 rows **")
-head=df11.head(2)
-print(head)
-
-print("*** get last 2 rows**")
-tail=df11.tail(2)
-print(tail) 
-
-print("*** rename column names and row names**")
-df12=df11.rename(columns={'Name':'Fullname'},index={4:'new'})
-print(df12)
-
-print("*** drop column and row")
-df13=df12.drop(columns=['Age'],index=['new'])
-print(df13)
-
-print("***")
-print(df12)
-
-print("*** keep column as index column ***")
-df14=df12.set_index('Age')
-print(df14)
-
-print("***")
-print(df12)
-
-print("*** sort by values ***")
-df15=df12.sort_values('Age')
-print(df15)
-
-print("*** sort by alphabet -- capital letters pahela and small letters pachi ***")
-df16=df11.sort_values('Name')
-print(df16)
-
-print("*** concatenation 2 columns")
-List17={'First_Name':['Tom', 'Jack', 'Steve','akhil'],
-'Last_Name':['Walter','Shavella','Jha','Shah']}
-df17=pd.DataFrame(List17)
-df17['Full_Name']=df17['First_Name']+' ' + df17['Last_Name']
-print(df17)
-
-print("***group by")
-df18 = pd.DataFrame({'Animal': ['Falcon', 'Falcon','Parrot', 'Parrot'],
-	'Max Speed': [380., 370., 24., 26.]})
-print(df18)
-
-print("*** group by - sum")
-group=df18.groupby(['Animal']).sum()
-print(group)
-
-print("*** group by - mean")
-group1=df18.groupby(['Animal']).mean() 
-print(group1)
-
-print("*** merge **")
-'''DataFrame.merge(self, right, how='inner', on=None, left_on=None, 
-right_on=None, left_index=False, right_index=False, sort=False, 
-suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)'''
-df19 = pd.DataFrame({'lkey': ['foo', 'bar', 'baz', 'koo'],
-	'value': [1, 2, 3,4]})
-print(df19)
-df20 = pd.DataFrame({'rkey': ['foo', 'bar', 'baz', 'foo'],
-	 'value': [3,4,5, 6]})
-print(df20)
-
-print("*** Inner Join ***")
-df21=pd.merge(df19,df20,on='value',how='inner')
-print(df21)
-
-print("*** Outer Join ***")
-df22=pd.merge(df19,df20,on='value',how='outer')
-print(df22)
-
-print("*** Left Join")
-df23=pd.merge(df19,df20,on='value',how='left')
-print(df23)
-
-print("*** Right Join")
-df24=pd.merge(df19,df20,on='value',how='right')
-print(df24)
-
-print("*** to get particular columns")
-List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
-'Age':[25,40,35,90,14,92]}
-df25=pd.DataFrame(List25)
-df25=df25[['Name']]
-print(df25)
- 
-print("**filter with = ")
-df26=pd.DataFrame(List25)
-df26a=df26[df26['Name']=='Tom']
-print(df26a)
-
-# try to use other df thans df27
-print("** filter with & ")
-df27=pd.DataFrame(List25)
-df27=df27[(df27['Age']<50) & (df27['Age']>20)]
-print(df27)
-
-print("** IMP: filter with or")
-df28=pd.DataFrame(List25)
-df28=df28[(df28['Name']=='Jack') | (df28['Name']=='akhil')]
-print(df28)
-
-print("** filter with < ")
-df28=df27.query('Age<=40')
-print(df28)
-
 print("iloc,loc and ix")
 lst={"city":["baroda","surat"],
 		"zip":["06","05"]}
@@ -228,3 +100,92 @@ print(df2.iloc[:2,:1]) # row - 0,1 :col- 0
 
 print("10--IMP  (see)")
 print(df2.ix[:2,:1]) # row - 0,1,2 :col- 0  
+
+print("*****")
+List10 = {'a':[15,50], 'b':[22,40] }
+df10 = pd.DataFrame(List10, index=['first', 'second'])
+print(df10)
+
+print("*** calculation between 2 columns")
+# df2["k"] = np.where(df2['a']==1, 'palak', 'red')
+df10["ab"] = 25
+df10["abc"] = df10["a"] + df10["ab"] 
+df10["abcd"] = df10["a"] - df10["ab"] 
+df10["Multi"] = df10["a"] * df10["abcd"]
+df10["sub"]=df10["abc"]/df10["abcd"]
+print(df10)
+
+List11={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
+'Age':[25,40,35,90,14,92]}
+df11=pd.DataFrame(List11)
+print(df11)
+
+print("*** operations**")
+print("*** get first 2 rows **")
+head=df11.head(2)
+print(head)
+
+print("*** get last 2 rows**")
+tail=df11.tail(2)
+print(tail) 
+
+
+print("***")
+print(df12)
+
+print("*** keep column as index column ***")
+df14=df12.set_index('Age')
+print(df14)
+
+print("***")
+print(df12)
+
+
+List17={'First_Name':['Tom', 'Jack', 'Steve','akhil'],
+'Last_Name':['Walter','Shavella','Jha','Shah']}
+df17=pd.DataFrame(List17)
+
+print("*** concatenation 2 columns")
+df17['Full_Name']=df17['First_Name']+' ' + df17['Last_Name']
+print(df17)
+
+
+
+print("*** merge **")
+'''DataFrame.merge(self, right, how='inner', on=None, left_on=None, 
+right_on=None, left_index=False, right_index=False, sort=False, 
+suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)'''
+df19 = pd.DataFrame({'lkey': ['foo', 'bar', 'baz', 'koo'],
+	'value': [1, 2, 3,4]})
+print(df19)
+df20 = pd.DataFrame({'rkey': ['foo', 'bar', 'baz', 'foo'],
+	 'value': [3,4,5, 6]})
+print(df20)
+
+print("*** Inner Join ***")
+df21=pd.merge(df19,df20,on='value',how='inner')
+print(df21)
+
+print("*** Outer Join ***")
+df22=pd.merge(df19,df20,on='value',how='outer')
+print(df22)
+
+print("*** Left Join")
+df23=pd.merge(df19,df20,on='value',how='left')
+print(df23)
+
+print("*** Right Join")
+df24=pd.merge(df19,df20,on='value',how='right')
+print(df24)
+
+print("*** to get particular columns")
+List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
+'Age':[25,40,35,90,14,92]}
+df25=pd.DataFrame(List25)
+df25=df25[['Name']]
+print(df25)
+ 
+
+
+
+

@@ -33,7 +33,7 @@ lst= {"city":["baroda","bangalore"],
 df=pd.DataFrame(lst)
 print(df)
 
-print("***")
+ print("***")
 List5={'Name':['Tom', 'Jack', 'Steve'],'Age':[28,34,29]}
 df5=pd.DataFrame(List5)
 print(df5)
@@ -129,7 +129,6 @@ print("*** get last 2 rows**")
 tail=df11.tail(2)
 print(tail) 
 
-
 print("***")
 print(df12)
 
@@ -148,8 +147,6 @@ df17=pd.DataFrame(List17)
 print("*** concatenation 2 columns")
 df17['Full_Name']=df17['First_Name']+' ' + df17['Last_Name']
 print(df17)
-
-
 
 print("*** merge **")
 '''DataFrame.merge(self, right, how='inner', on=None, left_on=None, 
@@ -184,8 +181,6 @@ List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
 df25=pd.DataFrame(List25)
 df25=df25[['Name']]
 print(df25)
+
+
  
-
-
-
-

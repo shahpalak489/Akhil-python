@@ -235,9 +235,9 @@ print(list1[1:4:2])
 
 print("***MM IMP")
 #https://www.quora.com/What-is-negative-index-in-Python
-print(list1[-1:-4:-1])
+print(list1[-4:-2:-1])
 print("***MM IMP")
-print(list1[-1:-4:1])
+print(list1[-4:-2:1])
 
 print("***slice With tuple")
 list1=('a1','b2','c3','d4','5re')
@@ -248,9 +248,9 @@ print(list1[:10])
 print(list1[1:4:2])
 
 print("***MM IMP")
-print(list1[-1:-4:-1])
+print(list1[-4:-2:-1])
 print("***MM IMP")
-print(list1[-1:-4:1])
+print(list1[-4:-2:1])
 
 
 #slice With dics -- not possible
@@ -372,8 +372,6 @@ while a<5:
 	print(a)
 
 #Arrays
-
-
 print("** to convert List to Tuple")
 List1=['a','b','c','d']
 Tuple1=tuple(List1)

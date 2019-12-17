@@ -4,7 +4,8 @@ import numpy as np
 #pandas.DataFrame(data, index, columns, dtype, copy)
 # first use [] and if you hve other kind of values than use {}
 
-PRINT("*** to create DataFrame")
+print("*** to create DataFrame")
+
 print("***empty DataFrame***")
 df = pd.DataFrame()
 print(df)
@@ -37,7 +38,7 @@ lst= {"city":["baroda","bangalore"],
 df=pd.DataFrame(lst)
 print(df)
 
- print("***")
+print("***")
 List5={'Name':['Tom', 'Jack', 'Steve'],'Age':[28,34,29]}
 df5=pd.DataFrame(List5)
 print(df5)
@@ -67,13 +68,6 @@ print("*****")
 List10 = {'a':[15,50], 'b':[22,40] }
 df10 = pd.DataFrame(List10, index=['first', 'second'])
 print(df10)
-
-print("***")
-df29=pd.read_csv('flights_data.csv')
-print(df29.dtypes)
-
-df29['concat1']= df29['updated_at']+'*'+df29['destination_full_name']
-print(df29['concat1'].head(10))
 
 # to change datatype
 #https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.astype.html
@@ -125,7 +119,7 @@ df12=df11.rename(columns={'Name':'Fullname'},index={4:'new'})
 print(df12)
 
 
-print("to insert df")
+print("***to insert df")
 df1 = pd.DataFrame([[1, 2], [3, 4]], columns=list('AB'))
 print(df1)
 df2 = pd.DataFrame([[5, 6], [7, 8]], columns=list('AB'))
@@ -133,14 +127,35 @@ df1.append(df2)
 
 print(df2)
 
-print("to insert rows - see")
+print("***")
+students = [ ('jack', 34, 'Sydeny' , 'Australia') ,
+             ('Riti', 30, 'Delhi' , 'India' ) ,
+             ('Vikas', 31, 'Mumbai' , 'India' ) ,
+             ('Neelu', 32, 'Bangalore' , 'India' ) ,
+             ('John', 16, 'New York' , 'US') ,
+             ('Mike', 17, 'las vegas' , 'US')  ]
+dfObj = pd.DataFrame(students, columns = ['Name' , 'Age', 'City' , 'Country'], index=['a', 'b', 'c' , 'd' , 'e' , 'f'])
 
+print("*** to insert rows with all columns values at the end")
+listOfSeries = [pd.Series(['Raju', 21, 'Bangalore', 'India'], index=dfObj.columns ) ,
+                pd.Series(['Sam', 22, 'Tokyo', 'Japan'], index=dfObj.columns ) ,
+                pd.Series(['Rocky', 23, 'Las Vegas', 'US'], index=dfObj.columns ) ]
+modDfObj = dfObj.append(listOfSeries , ignore_index=True)
+print(modDfObj)
 
-List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
+print("*** to insert rows with few columns values at the end")
+modDfObj = dfObj.append({'Name' : 'Sahil' , 'Age' : 22} , ignore_index=True)
+print(modDfObj)
+
+print("*** to insert row at particular location")
+new_row = pd.DataFrame({'Name':'akhil','Age':32},index =[0]) 
+modDfObj = pd.concat([new_row, modDfObj]).reset_index(drop = True) 
+print(modDfObj)
+
+List25={'Name':['Tom','Jack','Steve','John','akhil','khan'],
 'Age':[25,40,35,90,14,92]}
 
 print("filter data")
-
 print("**filter with = ")
 #method 1
 df26=pd.DataFrame(List25)
@@ -152,8 +167,7 @@ print("***")
 df26=df26[df26.Name == 'Tom']
 print(df26)
 
-
-print("** filter with & ")
+print("***filter with & ")
 #method 1
 df27=pd.DataFrame(List25)
 df27=df27[(df27['Age']<50) & (df27['Age']>20)]
@@ -163,7 +177,7 @@ print(df27)
 df27=df27[(df27.Age<50) & (df27.Age>20)]
 print(df27)
 
-print("** IMP: filter with or")
+print("***IMP: filter with or")
 #method 1
 df28=pd.DataFrame(List25)
 df28=df28[(df28['Name']=='Jack') | (df28['Name']=='akhil')]
@@ -173,13 +187,12 @@ print(df28)
 df28=df28[(df28.Name =='Jack') | (df28.Name=='akhil')]
 print(df28)
 
-print("** filter with < ")
+print("***filter with < ")
 df28=df27.query('Age<=40')
 print(df28)
 
 
-
-print(" ** filter with - see <= , >=, > , Like")
+print("***see -filter with -<= , >=, > , Like")
 
 
 print("*** calculation between 2 columns")
@@ -277,7 +290,6 @@ print("*** update with if ")
 df.loc[df['a'] == 2, ['b','c']] = 'aaaa'
 print(df)
 
-
 print("*** update with if...else")
 df['c'] = np.where(df['a'] == 2, 10,20)
 print(df)
@@ -317,7 +329,6 @@ print("***see - RTRIM")
 RTRIM=df.b.str.strip()
 print(RTRIM)
 
-
 print("*** Left")
 Left=df.b.str[:3]
 print(Left)
@@ -343,15 +354,12 @@ df1 = pd.DataFrame(df1,columns=['Subject','Score'])
 print("*** see - replace")
 
 
-
 print("*** see - reverse(not imp)")
-
 
 
 print("*** sub string")
 substring=df1.Subject.str[:3]
 print(substring)
-
 
 print("*** is null")
 ISnull=df1.isna()
@@ -361,12 +369,10 @@ print("*** is not null")
 ISnotnull=df1.notna()
 print(ISnotnull)
 
-
 print("*** count")
 count=df1.count()
 print(count)
 
- 
 print("*** get first 2 rows **")
 head=df11.head(2)
 print(head)
@@ -444,8 +450,6 @@ print(df2.iloc[:2,:1]) # row - 0,1 :col- 0
 print("10--IMP  (see)")
 print(df2.ix[:2,:1]) # row - 0,1,2 :col- 0  
 
-
-
 List11={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
 'Age':[25,40,35,90,14,92]}
 df11=pd.DataFrame(List11)
@@ -476,3 +480,10 @@ List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
 df25=pd.DataFrame(List25)
 df25=df25[['Name']]
 print(df25)
+
+print("***")
+df29=pd.read_csv('flights_data.csv')
+print(df29.dtypes)
+
+df29['concat1']= df29['updated_at']+'*'+df29['destination_full_name']
+print(df29['concat1'].head(10))

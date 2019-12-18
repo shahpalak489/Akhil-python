@@ -118,7 +118,6 @@ print("*** rename column names and row names - change df **")
 df12=df11.rename(columns={'Name':'Fullname'},index={4:'new'})
 print(df12)
 
-
 print("***to insert df")
 df1 = pd.DataFrame([[1, 2], [3, 4]], columns=list('AB'))
 print(df1)
@@ -191,18 +190,89 @@ print("***filter with < ")
 df28=df27.query('Age<=40')
 print(df28)
 
-
 print("***see -filter with -<= , >=, > , Like")
 
+print("*** IN ")
+isin=df[df.a.isin([2,3])]
+print(isin)
 
-print("*** calculation between 2 columns")
-# df2["k"] = np.where(df2['a']==1, 'palak', 'red')
-df10["ab"] = 25
-df10["abc"] = df10["a"] + df10["ab"] 
-df10["abcd"] = df10["a"] - df10["ab"] 
-df10["Multi"] = df10["a"] * df10["abcd"]
-df10["sub"]=df10["abc"]/df10["abcd"]
-print(df10)
+print("*** see - not in ")
+
+
+print("*** is null")
+ISnull=df1.isna()
+print(ISnull)
+
+print("*** is not null")
+ISnotnull=df1.notna()
+print(ISnotnull)
+
+print(" *** between")
+between=df[(df.a<4) & (df.a> 2)] 
+print(between) 
+
+print("*** Left")
+Left=df.b.str[:3]
+print(Left)
+
+print("*** Right")
+Right=df.b.str[-4:-1]
+print(Right)
+
+print("***see -trim")
+trim=df.b.str.strip()
+print(trim)
+
+#Method 2 see
+#df[df.columns] = df.apply(lambda x: x.str.strip())
+print("***see - LTRIM")
+LTRIM=df.b.str.strip()
+print(LTRIM)
+
+print("***see - RTRIM")
+RTRIM=df.b.str.strip()
+print(RTRIM)
+
+print("*** upper case")
+Upper_case=df.b.str.upper()
+print(Upper_case)
+
+print("*** lower case")
+Lower_case=df.b.str.lower()
+print(Lower_case)
+
+print("*** If/case ")
+# 1 condition
+
+list1=[[1,'some_value','some_value'],[2,'some_value','some_value'],[3,'some_value','some_value'],
+[4,'some_value','some_value'],[5,'some_value','some_value']]
+
+df= pd.DataFrame(list1,columns=['a','b','c'],index=['row1','row2','row3','row4','row5'])
+
+print("*** update with if ")
+# meaning: if column a=2 , columb b and c == 'aaaa'
+df.loc[df['a'] == 2, ['b','c']] = 'aaaa'
+print(df)
+
+print("*** update with if...else")
+df['c'] = np.where(df['a'] == 2, 10,20)
+print(df)
+
+print("*** update with if...else")
+#df['new column name'] = df['column name'].apply(lambda x: 'value if condition is met' if x condition else 'value if condition is not met')
+
+# see - multiple conidition
+
+print("*** sub string")
+substring=df1.Subject.str[:3]
+print(substring)
+
+
+print("*** see - replace")
+
+
+print("*** see - reverse(not imp)")
+
 
 print("sort")
 print("*** sort by values ***")
@@ -212,6 +282,7 @@ print(df15)
 print("*** sort by alphabet -- capital letters pahela and small letters pachi ***")
 df16=df11.sort_values('Name')
 print(df16)
+
 
 print("***group by")
 df18 = pd.DataFrame({'Animal': ['Falcon', 'Falcon','Parrot', 'Parrot'],'Max Speed': [380., 370., 24., 26.]})
@@ -225,29 +296,9 @@ print("*** group by - mean")
 group1=df18.groupby(['Animal']).mean() 
 print(group1) 
 
-list1=[[1,'some_value','some_value'],[2,'some_value','some_value'],[3,'some_value','some_value'],
-[4,'some_value','some_value'],[5,'some_value','some_value']]
-
-df= pd.DataFrame(list1,columns=['a','b','c'],index=['row1','row2','row3','row4','row5'])
-print (df)
-
-print("***look for and / or ")
+print(" *** Group by - having")
 
 
-print("***delete row based on condition")
-indexNames = df[df['a'] ==3].index
-df.drop(indexNames , inplace=True)
-print(df)
-
-print("***see - delete row based on location") 
-
-
-print("*** delete all rows")
-df.drop(df.index , inplace=True)
-print(df)
-
-
-print("***see-  to delete table")
 df1 = {
     'Subject':['semester1','semester2','semester3','semester4','semester1',
                'semester2','semester3'],
@@ -277,110 +328,6 @@ print("*** intersect")
 s1 = pd.merge(df1, df2, how='inner', on=['Score'])
 print(s1)
 
-print("*** If/case ")
-# 1 condition
-
-list1=[[1,'some_value','some_value'],[2,'some_value','some_value'],[3,'some_value','some_value'],
-[4,'some_value','some_value'],[5,'some_value','some_value']]
-
-df= pd.DataFrame(list1,columns=['a','b','c'],index=['row1','row2','row3','row4','row5'])
-
-print("*** update with if ")
-# meaning: if column a=2 , columb b and c == 'aaaa'
-df.loc[df['a'] == 2, ['b','c']] = 'aaaa'
-print(df)
-
-print("*** update with if...else")
-df['c'] = np.where(df['a'] == 2, 10,20)
-print(df)
-
-print("*** update with if...else")
-#df['new column name'] = df['column name'].apply(lambda x: 'value if condition is met' if x condition else 'value if condition is not met')
-
-# see - multiple conidition
-
-
-print("*** IN ")
-isin=df[df.a.isin([2,3])]
-print(isin)
-
-print("*** see - not in ")
-
-
-print(" *** between")
-between=df[(df.a<4) & (df.a> 2)] 
-print(between) 
-
-print(" *** Group by - having")
-
-
-print("***see -trim")
-trim=df.b.str.strip()
-print(trim)
-
-#Method 2 see
-#df[df.columns] = df.apply(lambda x: x.str.strip())
-
-print("***see - LTRIM")
-LTRIM=df.b.str.strip()
-print(LTRIM)
-
-print("***see - RTRIM")
-RTRIM=df.b.str.strip()
-print(RTRIM)
-
-print("*** Left")
-Left=df.b.str[:3]
-print(Left)
-
-print("*** Right")
-Right=df.b.str[-4:-1]
-print(Right)
-
-print("*** upper case")
-Upper_case=df.b.str.upper()
-print(Upper_case)
-
-print("*** lower case")
-Lower_case=df.b.str.lower()
-print(Lower_case)
-
-df1 = {
-    'Subject':['Math','Physics','Biology','Chemistry','Language',
-               'Social science','computer'],
-   'Score':[62,47,55,74,31,77,85]}
-df1 = pd.DataFrame(df1,columns=['Subject','Score'])
-
-print("*** see - replace")
-
-
-print("*** see - reverse(not imp)")
-
-
-print("*** sub string")
-substring=df1.Subject.str[:3]
-print(substring)
-
-print("*** is null")
-ISnull=df1.isna()
-print(ISnull)
-
-print("*** is not null")
-ISnotnull=df1.notna()
-print(ISnotnull)
-
-print("*** count")
-count=df1.count()
-print(count)
-
-print("*** get first 2 rows **")
-head=df11.head(2)
-print(head)
-
-print("*** get last 2 rows**")
-tail=df11.tail(2)
-print(tail) 
-
 print("*** merge **")
 '''DataFrame.merge(self, right, how='inner', on=None, left_on=None, 
 right_on=None, left_index=False, right_index=False, sort=False, 
@@ -407,6 +354,19 @@ print(df23)
 print("*** Right Join")
 df24=pd.merge(df19,df20,left_on='value',right_on='value',how='right')
 print(df24)
+
+print("*** count")
+count=df1.count()
+print(count)
+
+print("*** get first 2 rows **")
+head=df11.head(2)
+print(head)
+
+print("*** get last 2 rows**")
+tail=df11.tail(2)
+print(tail) 
+
 
 print("iloc,loc and ix")
 lst={"city":["baroda","surat"],
@@ -450,6 +410,54 @@ print(df2.iloc[:2,:1]) # row - 0,1 :col- 0
 print("10--IMP  (see)")
 print(df2.ix[:2,:1]) # row - 0,1,2 :col- 0  
 
+print("*** concatenation 2 columns")
+df17['Full_Name']=df17['First_Name']+' ' + df17['Last_Name']
+print(df17)
+
+print("*** to get particular columns")
+List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
+'Age':[25,40,35,90,14,92]}
+df25=pd.DataFrame(List25)
+df25=df25[['Name']]
+print(df25)
+
+print("*** calculation between 2 columns")
+# df2["k"] = np.where(df2['a']==1, 'palak', 'red')
+df10["ab"] = 25
+df10["abc"] = df10["a"] + df10["ab"] 
+df10["abcd"] = df10["a"] - df10["ab"] 
+df10["Multi"] = df10["a"] * df10["abcd"]
+df10["sub"]=df10["abc"]/df10["abcd"]
+print(df10)
+
+
+list1=[[1,'some_value','some_value'],[2,'some_value','some_value'],[3,'some_value','some_value'],
+[4,'some_value','some_value'],[5,'some_value','some_value']]
+
+df= pd.DataFrame(list1,columns=['a','b','c'],index=['row1','row2','row3','row4','row5'])
+print (df)
+
+print("***look for and / or ")
+
+print("***delete row based on condition")
+indexNames = df[df['a'] ==3].index
+df.drop(indexNames , inplace=True)
+print(df)
+
+print("***see - delete row based on location") 
+
+print("*** delete all rows")
+df.drop(df.index , inplace=True)
+print(df)
+
+print("***see-  to delete table")
+
+df1 = {
+    'Subject':['Math','Physics','Biology','Chemistry','Language',
+               'Social science','computer'],
+   'Score':[62,47,55,74,31,77,85]}
+df1 = pd.DataFrame(df1,columns=['Subject','Score'])
+
 List11={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
 'Age':[25,40,35,90,14,92]}
 df11=pd.DataFrame(List11)
@@ -469,17 +477,6 @@ print(df12)
 List17={'First_Name':['Tom', 'Jack', 'Steve','akhil'],
 'Last_Name':['Walter','Shavella','Jha','Shah']}
 df17=pd.DataFrame(List17)
-
-print("*** concatenation 2 columns")
-df17['Full_Name']=df17['First_Name']+' ' + df17['Last_Name']
-print(df17)
-
-print("*** to get particular columns")
-List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
-'Age':[25,40,35,90,14,92]}
-df25=pd.DataFrame(List25)
-df25=df25[['Name']]
-print(df25)
 
 print("***")
 df29=pd.read_csv('flights_data.csv')

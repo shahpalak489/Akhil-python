@@ -100,9 +100,3 @@ print(Upper_case.iloc[:10])
 print("*** lower case")
 Lower_case=df1.origin.str.lower()
 print(Lower_case.iloc[:10])
-
-
-
-
-
-

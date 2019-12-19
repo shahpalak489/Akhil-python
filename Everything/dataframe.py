@@ -72,32 +72,31 @@ print(df10)
 # to change datatype
 #https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.astype.html
 
-print("to add new column to existing df")
-#Method 1
-data = {'Name': ['Jai', 'Princi', 'Gaurav', 'Anuj'], 
-        'Height': [5.1, 6.2, 5.1, 5.2], 
-        'Qualification': ['Msc', 'MA', 'Msc', 'Msc']}  
-df = pd.DataFrame(data) 
-address = ['Delhi', 'Bangalore', 'Chennai', 'Patna'] 
-df['Address'] = address 
-
-#Method 2
+print("**** to add new column to existing df")
 data = {'Name': ['Jai', 'Princi', 'Gaurav', 'Anuj'], 
         'Height': [5.1, 6.2, 5.1, 5.2], 
         'Qualification': ['Msc', 'MA', 'Msc', 'Msc']} 
 df = pd.DataFrame(data) 
+
+#Method 1
 df.insert(2, "Age", [21, 23, 24, 21], True) 
 print(df)
 
-print("to delete one column")
+print("*****")
+#Method 2
+address = ['Delhi', 'Bangalore', 'Chennai', 'Patna'] 
+df['Address'] = address 
+print(df)
+
+print("**** to delete one column")
 del df['Age']
 print(df)
 
-print("*** drop column and row - write again")
+print("*** see - drop column and row")
 #df13=df12.drop(columns=['Age'],index=['new'])
 #print(df13)
 
-print("select all or any columns")
+print("select any particular column or all columns")
 #Method 1
 print(df.Name)
 #Method 2
@@ -192,6 +191,11 @@ print(df28)
 
 print("***see -filter with -<= , >=, > , Like")
 
+list1=[[1,'some_value','some_value'],[2,'some_value','some_value'],[3,'some_value','some_value'],
+[4,'some_value','some_value'],[5,'some_value','some_value']]
+
+df= pd.DataFrame(list1,columns=['a','b','c'],index=['row1','row2','row3','row4','row5'])
+
 print("*** IN ")
 isin=df[df.a.isin([2,3])]
 print(isin)
@@ -244,11 +248,6 @@ print(Lower_case)
 print("*** If/case ")
 # 1 condition
 
-list1=[[1,'some_value','some_value'],[2,'some_value','some_value'],[3,'some_value','some_value'],
-[4,'some_value','some_value'],[5,'some_value','some_value']]
-
-df= pd.DataFrame(list1,columns=['a','b','c'],index=['row1','row2','row3','row4','row5'])
-
 print("*** update with if ")
 # meaning: if column a=2 , columb b and c == 'aaaa'
 df.loc[df['a'] == 2, ['b','c']] = 'aaaa'
@@ -263,9 +262,8 @@ print("*** update with if...else")
 
 # see - multiple conidition
 
-print("*** sub string")
-substring=df1.Subject.str[:3]
-print(substring)
+
+
 
 
 print("*** see - replace")
@@ -311,6 +309,10 @@ df2 = {
    'Score':[90,47,85,74]}
 df2 = pd.DataFrame(df2,columns=['Subject','Score'])
 print(df2)
+
+print("*** sub string")
+substring=df1.Subject.str[:3]
+print(substring)
 
 print("***Union all")
 df_union_all= pd.concat([df1, df2])
@@ -410,6 +412,10 @@ print(df2.iloc[:2,:1]) # row - 0,1 :col- 0
 print("10--IMP  (see)")
 print(df2.ix[:2,:1]) # row - 0,1,2 :col- 0  
 
+List17={'First_Name':['Tom', 'Jack', 'Steve','akhil'],
+'Last_Name':['Walter','Shavella','Jha','Shah']}
+df17=pd.DataFrame(List17)
+
 print("*** concatenation 2 columns")
 df17['Full_Name']=df17['First_Name']+' ' + df17['Last_Name']
 print(df17)
@@ -458,25 +464,15 @@ df1 = {
    'Score':[62,47,55,74,31,77,85]}
 df1 = pd.DataFrame(df1,columns=['Subject','Score'])
 
-List11={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
-'Age':[25,40,35,90,14,92]}
 df11=pd.DataFrame(List11)
 print(df11)
 
-print("*** operations**")
 print("***")
 print(df12)
 
 print("*** keep column as index column ***")
 df14=df12.set_index('Age')
 print(df14)
-
-print("***")
-print(df12)
-
-List17={'First_Name':['Tom', 'Jack', 'Steve','akhil'],
-'Last_Name':['Walter','Shavella','Jha','Shah']}
-df17=pd.DataFrame(List17)
 
 print("***")
 df29=pd.read_csv('flights_data.csv')

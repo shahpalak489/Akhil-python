@@ -106,7 +106,7 @@ print(df.iloc[:4,2])
 
 print("to chnage data type")
 df.astype({'Height':'float'})
-print(df.dtypes)
+print(df.dtypes)  
 
 List11={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
 'Age':[25,40,35,90,14,92]}
@@ -200,8 +200,8 @@ print("*** IN ")
 isin=df[df.a.isin([2,3])]
 print(isin)
 
-print("*** see - not in ")
-
+print("*** IMP - not in ") # use ~
+#https://stackoverflow.com/questions/19960077/how-to-filter-pandas-dataframe-using-in-and-not-in-like-in-sql
 
 print("*** is null")
 ISnull=df1.isna()
@@ -420,12 +420,18 @@ print("*** concatenation 2 columns")
 df17['Full_Name']=df17['First_Name']+' ' + df17['Last_Name']
 print(df17)
 
-print("*** to get particular columns")
+print("*** IMP: to get second column")
+#https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
 List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
 'Age':[25,40,35,90,14,92]}
 df25=pd.DataFrame(List25)
-df25=df25[['Name']]
-print(df25)
+print(df25.iloc[:,1])
+print("*** to get second row")
+print(df25.iloc[1])
+
+print("*** IMP: to get by column names")
+#use loc ... 
+
 
 print("*** calculation between 2 columns")
 # df2["k"] = np.where(df2['a']==1, 'palak', 'red')

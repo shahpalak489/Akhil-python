@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 # to display whole dataframe in console 
 pd.set_option('display.max_rows', 100)
@@ -100,3 +101,32 @@ print(Upper_case.iloc[:10])
 print("*** lower case")
 Lower_case=df1.origin.str.lower()
 print(Lower_case.iloc[:10])
+
+
+print("*** see - replace")
+
+
+print("*** If/case ")
+print("*** update with if...than ")
+df1.loc[df1.Price > 201,['Price_level']] = 'costly'
+print(df1.iloc[:5,-4:])
+
+print("*** update with if...than...else")
+df1.Price_level = np.where(df1.Price > 201,'costly','cheaper')
+print(df1.iloc[:5,-4:])
+
+#method 2
+#df['new column name'] = df['column name'].apply(lambda x: 'value if condition is met' if x condition else 'value if condition is not met')
+
+print("see - if ...multiple conidition")
+def Flight_price(df):
+	if (df1.Price > 150) & (df1.origin=='IND'):
+		return 'my airport is costly' 
+	elif (df1.Price < 150) & (df1.origin=='IND'):
+		return 'my airport is cheaper'
+
+df1.Price_level=df1.apply(Flight_price,axis=1)
+
+print(df1)
+
+

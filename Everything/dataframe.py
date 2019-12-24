@@ -275,7 +275,7 @@ def flag_df(df):
     elif (df['height'] > 8):
         return np.nan
 
-df2['Flag'] = df2.apply(flag_df, axis = 1)
+#df2['Flag'] = df2.apply(flag_df, axis = 1)
 
 
 print("sort")

@@ -124,57 +124,78 @@ print("see - if ...multiple conidition")
 
 print("sort")
 print("*** sort by values ***")
-#df15=df12.sort_values('Age')
-#print(df15)
+sort_values=df1.sort_values('Price')
+print(sort_values.loc[:,['destination_full_name','origin_full_name','Price']])
+
 
 print("*** sort by alphabet -- capital letters pahela and small letters pachi ***")
-#df16=df11.sort_values('Name')
-#print(df16)
+sort_alphabet=df1.sort_values('destination_full_name')
+print(sort_alphabet.loc[:,['destination_full_name','origin_full_name','Price']])
+
 
 print("***group by")
-#df18 = pd.DataFrame({'Animal': ['Falcon', 'Falcon','Parrot', 'Parrot'],'Max Speed': [380., 370., 24., 26.]})
-#print(df18)
-
 print("*** group by - sum")
-#group=df18.groupby(['Animal']).sum()
-#print(group)
+groupby_sum=df1.groupby(['Price']).sum()
+print(groupby_sum)
 
 print("*** group by - mean")
-#group1=df18.groupby(['Animal']).mean() 
-#print(group1) 
+groupby_mean=df1.groupby(['Price']).mean()
+print(groupby_mean)
 
-print(" *** Group by - having")
-'''
-df1 = {
-    'Subject':['semester1','semester2','semester3','semester4','semester1',
-               'semester2','semester3'],
-   'Score':[62,47,55,74,31,77,85]}
-df1 = pd.DataFrame(df1,columns=['Subject','Score'])
-print(df1)
+print("***see- Group by - having")
 
-df2 = {
-    'Subject':['semester1','semester2','semester3','semester4'],
-   'Score':[90,47,85,74]}
-df2 = pd.DataFrame(df2,columns=['Subject','Score'])
-print(df2)
-'''
 
 print("*** sub string")
-#substring=df1.Subject.str[:3]
-#print(substring)
+substring=df1.destination_full_name.str[-5:]
+print(substring)
 
-print("***Union all")
-#df_union_all= pd.concat([df1, df2])
-#print(df_union_all)
+print("*** count")
+count=df1.count()
+print(count)
 
-print("***Union")
-#df_union= pd.concat([df1, df2]).drop_duplicates()
-#print(df_union)
+print("*** get first 2 rows **")
+head=df1.head(2)
+print(head)
 
-print("***")
-print(df1)
+print("*** get last 2 rows**")
+tail=df1.tail(2)
+print(tail)
+
+print("*** df2")
+df2=pd.read_csv('flights_data_dataframe.csv')
 print(df2)
 
+print("***Union all")
+Union_all=pd.concat([df1,df2]) 
+print(Union_all)
+
+print("*** Union")
+Union=pd.concat([df1,df2]).drop_duplicates()
+print(Union)
+
 print("*** intersect")
-#s1 = pd.merge(df1, df2, how='inner', on=['Score'])
-#print(s1)
+#intersect= pd.merge(df1, df2, how='inner', on=['Score'])
+#print(intersect)
+
+print("*** see - merge **")
+'''DataFrame.merge(self, right, how='inner', on=None, left_on=None, 
+right_on=None, left_index=False, right_index=False, sort=False, 
+suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)'''
+
+print("*** Inner Join ***")
+#df21=pd.merge(df19,df20,left_on='value',right_on='value',how='inner')
+#print(df21)
+
+print("*** Outer Join ***")
+#df22=pd.merge(df19,df20,left_on='value',right_on='value',how='outer')
+#print(df22)
+
+print("*** Left Join")
+#df23=pd.merge(df19,df20,left_on='value',right_on='value',how='left')
+#print(df23)
+
+print("*** Right Join")
+#df24=pd.merge(df19,df20,left_on='value',right_on='value',how='right')
+#print(df24)
+
+ 

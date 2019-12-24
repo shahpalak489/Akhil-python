@@ -245,6 +245,10 @@ print("*** lower case")
 Lower_case=df.b.str.lower()
 print(Lower_case)
 
+print("*** see - replace")
+
+print("*** see - reverse(not imp)")
+
 print("*** If/case ")
 # 1 condition
 
@@ -260,9 +264,8 @@ print(df)
 print("*** update with if...else")
 #df['new column name'] = df['column name'].apply(lambda x: 'value if condition is met' if x condition else 'value if condition is not met')
 
-# see - multiple conidition
+print("*** see - multiple conidition")
 def flag_df(df):
-
     if (df['trigger1'] <= df['score'] < df['trigger2']) and (df['height'] < 8):
         return 'Red'
     elif (df['trigger2'] <= df['score'] < df['trigger3']) and (df['height'] < 8):
@@ -275,12 +278,6 @@ def flag_df(df):
 df2['Flag'] = df2.apply(flag_df, axis = 1)
 
 
-print("*** see - replace")
-
-
-print("*** see - reverse(not imp)")
-
-
 print("sort")
 print("*** sort by values ***")
 df15=df12.sort_values('Age')
@@ -289,7 +286,6 @@ print(df15)
 print("*** sort by alphabet -- capital letters pahela and small letters pachi ***")
 df16=df11.sort_values('Name')
 print(df16)
-
 
 print("***group by")
 df18 = pd.DataFrame({'Animal': ['Falcon', 'Falcon','Parrot', 'Parrot'],'Max Speed': [380., 370., 24., 26.]})
@@ -304,7 +300,6 @@ group1=df18.groupby(['Animal']).mean()
 print(group1) 
 
 print(" *** Group by - having")
-
 
 df1 = {
     'Subject':['semester1','semester2','semester3','semester4','semester1',

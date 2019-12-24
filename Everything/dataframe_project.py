@@ -119,14 +119,62 @@ print(df1.iloc[:5,-4:])
 #df['new column name'] = df['column name'].apply(lambda x: 'value if condition is met' if x condition else 'value if condition is not met')
 
 print("see - if ...multiple conidition")
-def Flight_price(df):
-	if (df1.Price > 150) & (df1.origin=='IND'):
-		return 'my airport is costly' 
-	elif (df1.Price < 150) & (df1.origin=='IND'):
-		return 'my airport is cheaper'
+#https://stackoverflow.com/questions/48569166/multiple-if-else-conditions-in-pandas-dataframe-and-derive-multiple-columns/48569899
 
-df1.Price_level=df1.apply(Flight_price,axis=1)
 
+print("sort")
+print("*** sort by values ***")
+#df15=df12.sort_values('Age')
+#print(df15)
+
+print("*** sort by alphabet -- capital letters pahela and small letters pachi ***")
+#df16=df11.sort_values('Name')
+#print(df16)
+
+print("***group by")
+#df18 = pd.DataFrame({'Animal': ['Falcon', 'Falcon','Parrot', 'Parrot'],'Max Speed': [380., 370., 24., 26.]})
+#print(df18)
+
+print("*** group by - sum")
+#group=df18.groupby(['Animal']).sum()
+#print(group)
+
+print("*** group by - mean")
+#group1=df18.groupby(['Animal']).mean() 
+#print(group1) 
+
+print(" *** Group by - having")
+'''
+df1 = {
+    'Subject':['semester1','semester2','semester3','semester4','semester1',
+               'semester2','semester3'],
+   'Score':[62,47,55,74,31,77,85]}
+df1 = pd.DataFrame(df1,columns=['Subject','Score'])
 print(df1)
 
+df2 = {
+    'Subject':['semester1','semester2','semester3','semester4'],
+   'Score':[90,47,85,74]}
+df2 = pd.DataFrame(df2,columns=['Subject','Score'])
+print(df2)
+'''
 
+print("*** sub string")
+#substring=df1.Subject.str[:3]
+#print(substring)
+
+print("***Union all")
+#df_union_all= pd.concat([df1, df2])
+#print(df_union_all)
+
+print("***Union")
+#df_union= pd.concat([df1, df2]).drop_duplicates()
+#print(df_union)
+
+print("***")
+print(df1)
+print(df2)
+
+print("*** intersect")
+#s1 = pd.merge(df1, df2, how='inner', on=['Score'])
+#print(s1)

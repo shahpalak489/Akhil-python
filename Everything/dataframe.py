@@ -1,11 +1,246 @@
 import pandas as pd
 import numpy as np
-#https://thispointer.com/data-analysis-in-python-using-pandas/
-#pandas.DataFrame(data, index, columns, dtype, copy)
-# first use [] and if you hve other kind of values than use {}
 
+# to display whole dataframe in console 
+pd.set_option('display.max_rows', 100)
+pd.set_option('display.max_columns', 100)
+pd.set_option('display.width', 227)
+
+# to create dataframe from CSV file
+df1=pd.read_csv('flights_data_dataframe.csv')
+print(df1)
+
+print("filter data")
+print("**filter with = ")
+#method 1
+Equalto=df1[df1.flt_num==3314]
+print(Equalto)
+
+print("***")
+#mwthod 2
+Equalto=df1[df1['flt_num']==3314]
+print(Equalto)
+
+print("***filter with & ")
+print("method 1")
+filter_and=df1[(df1.origin=='ATL') & (df1.Price==201.2)]
+print(filter_and)
+
+print("method 2")
+filter_and=df1[(df1['origin']=='ATL') & (df1['Price']==201.2)]
+print(filter_and.iloc[:,1])
+
+print("***IMP: filter with or")
+#method 1
+filter_or=df1[(df1.destination == 'ATL')|(df1.destination == 'FLL')]
+print(filter_or)
+
+#method2
+filter_or=df1[(df1['destination'] == 'ATL')|(df1['destination'] == 'FLL')]
+print(filter_or)
+
+print("*** filter with <,>,<=,>= ")
+filter_lessthan=df1[(df1.Price >= 100) & (df1.Price < 400)]
+print(filter_lessthan.iloc[:,-4:-1])
+
+print("*** see -filter with  Like")
+# https://www.tutorialspoint.com/python/string_startswith.htm
+# https://www.tutorialspoint.com/python/string_endswith.htm
+
+print("*** IN ")
+isin=df1[df1.scheduled_origin_gate.isin(['B22','B25',2,'Any'])]
+print(isin.loc[:,['id','scheduled_origin_gate','created_at','updated_at','flight_identifier','flt_num']])
+
+print("***IMP - not in ")
+#https://stackoverflow.com/questions/19960077/how-to-filter-pandas-dataframe-using-in-and-not-in-like-in-sql
+isnotin=df1[~df1.scheduled_origin_gate.isin(['B22','B25',2,'Any'])]
+print(isnotin.loc[:,['id','scheduled_origin_gate','created_at','updated_at','flight_identifier','flt_num']])
+
+print("*** is null")
+ISnull=df1.isna()
+print(ISnull)
+
+print("*** is not null")
+ISnotnull=df1.notna()
+print(ISnotnull)
+
+print(" *** between")
+#between=df[(df.a<4) & (df.a> 2)] 
+#print(between) 
+
+print("*** Left")
+Left=df1.created_at.str[:4]
+print(Left.iloc[:10])
+
+print("*** Right")
+Right=df1.origin_full_name.str[-4:-1]
+print(Right.iloc[:10])
+
+print("***see -trim")
+#trim=df1.flight_identifier.str.strip()
+#print(trim)
+
+
+#Method 2 see
+#df[df.columns] = df.apply(lambda x: x.str.strip())
+print("***see - LTRIM")
+#LTRIM=df.b.str.strip()
+#print(LTRIM)
+
+print("***see - RTRIM")
+#RTRIM=df.b.str.strip()
+#print(RTRIM)
+
+print("*** upper case")
+Upper_case=df1.scheduled_destination_gate.str.upper()
+print(Upper_case.iloc[:10])
+
+print("*** lower case")
+Lower_case=df1.origin.str.lower()
+print(Lower_case.iloc[:10])
+
+print("*** see - replace")
+
+print("*** see - reverse(not imp)")
+
+print("*** If/case ")
+print("*** update with if...than ")
+df1.loc[df1.Price > 201,['Price_level']] = 'costly'
+print(df1.iloc[:5,-4:])
+
+print("*** update with if...than...else")
+df1.Price_level = np.where(df1.Price > 201,'costly','cheaper')
+print(df1.iloc[:5,-4:])
+
+#method 2
+#df['new column name'] = df['column name'].apply(lambda x: 'value if condition is met' if x condition else 'value if condition is not met')
+
+print("see - if ...multiple conidition")
+#https://stackoverflow.com/questions/48569166/multiple-if-else-conditions-in-pandas-dataframe-and-derive-multiple-columns/48569899
+
+print("sort")
+print("*** sort by values ***")
+sort_values=df1.sort_values('Price')
+print(sort_values.loc[:,['destination_full_name','origin_full_name','Price']])
+
+print("*** sort by alphabet -- capital letters pahela and small letters pachi ***")
+sort_alphabet=df1.sort_values('destination_full_name')
+print(sort_alphabet.loc[:,['destination_full_name','origin_full_name','Price']])
+
+print("***group by")
+print("*** group by - sum")
+groupby_sum=df1.groupby(['Price']).sum()
+print(groupby_sum)
+
+print("*** group by - mean")
+groupby_mean=df1.groupby(['Price']).mean()
+print(groupby_mean)
+
+print("***see- Group by - having")
+
+print("*** sub string")
+substring=df1.destination_full_name.str[-5:]
+print(substring)
+
+print("*** count")
+count=df1.count()
+print(count)
+
+print("*** get first 2 rows **")
+head=df1.head(2)
+print(head)
+
+print("*** get last 2 rows**")
+tail=df1.tail(2)
+print(tail)
+
+print("*** keep column as index column ***")
+index_column=df1.set_index('Coreid')
+print(index_column)
+
+print("*** df2")
+df2=pd.read_csv('flights_data_dataframe2.csv')
+print(df2)
+
+print("***Union all")
+Union_all=pd.concat([df1,df2]) 
+print(Union_all)
+
+print("*** Union")
+Union=pd.concat([df1,df2]).drop_duplicates()
+print(Union)
+
+print("*** intersect")
+#intersect= pd.merge(df1, df2, how='inner', on=['Score'])
+#print(intersect)
+
+print("*** see - merge **")
+print("*** Inner Join ***")
+inner_join=pd.merge(df1,df2,left_on='Coreid',right_on='Coreid_2',how='inner')
+print(inner_join.loc[:,['Coreid','Coreid_2']])
+
+print("*** Outer Join ***")
+Outer_join=pd.merge(df1,df2,left_on='Coreid',right_on='Coreid_2',how='outer')
+print(Outer_join.loc[:,['Coreid','Coreid_2']])
+
+print("*** Left Join")
+Left_join=pd.merge(df1,df2,left_on='Coreid',right_on='Coreid_2',how='left')
+print(Left_join.loc[:,['Coreid','Coreid_2']])
+
+print("*** Right Join")
+Right_join=pd.merge(df1,df2,left_on='Coreid',right_on='Coreid_2',how='right')
+print(Right_join.loc[:,['Coreid','Coreid_2']])
+
+
+print("*** concatenation between 2 columns")
+df1['flight_fulldetail']=df1['origin_full_name'] + ' TO ' + df1['destination_full_name']
+print(df1.loc[:,['origin_full_name','destination_full_name','flight_fulldetail']])
+
+print("*** IMP: to get second column")
+#https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
+#List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
+#'Age':[25,40,35,90,14,92]}
+#df25=pd.DataFrame(List25)
+#print(df25.iloc[:,1])
+print("*** to get second row")
+#print(df25.iloc[1])
+
+print("*** IMP: to get by column names")
+#use loc ... 
+
+print("*** calculation between 2 columns")
+#df10["ab"] = 25
+df1['Plus']=df1['Price']+df1['Points']
+df1['Minus']=df1['Price']-df1['Points']
+df1['Muliply']=df1['Price']*df1['Points']
+df1['Divide']=df1['Price']/df1['Points']
+print(df1.loc[:,['Price','Points','Plus','Minus','Muliply','Divide']])
+
+print("***see - look for and / or ")
+
+print("***delete row based on condition")
+deleterow=df1[df1.Coreid==25].index
+df1.drop(deleterow, inplace=True)
+print(df1.iloc[:,-7:-1])
+
+print("***see - delete row based on location") 
+
+print("*** delete all rows")
+df1.drop(df1.index , inplace=True)
+print(df1)
+
+print("***see- to delete table")
+
+
+print("***")
+#df29=pd.read_csv('flights_data.csv')
+#print(df29.dtypes)
+
+#df29['concat1']= df29['updated_at']+'*'+df29['destination_full_name']
+#print(df29['concat1'].head(10))
+
+print("-------------------------")
 print("*** to create DataFrame")
-
 print("***empty DataFrame***")
 df = pd.DataFrame()
 print(df)
@@ -153,227 +388,6 @@ print(modDfObj)
 List25={'Name':['Tom','Jack','Steve','John','akhil','khan'],
 'Age':[25,40,35,90,14,92]}
 
-print("filter data")
-print("**filter with = ")
-#method 1
-df26=pd.DataFrame(List25)
-df26a=df26[df26['Name']=='Tom']
-print(df26a)
-
-print("***")
-#mwthod 2
-df26=df26[df26.Name == 'Tom']
-print(df26)
-
-print("***filter with & ")
-#method 1
-df27=pd.DataFrame(List25)
-df27=df27[(df27['Age']<50) & (df27['Age']>20)]
-print(df27)
-
-#method 2
-df27=df27[(df27.Age<50) & (df27.Age>20)]
-print(df27)
-
-print("***IMP: filter with or")
-#method 1
-df28=pd.DataFrame(List25)
-df28=df28[(df28['Name']=='Jack') | (df28['Name']=='akhil')]
-print(df28)
-
-#method 2
-df28=df28[(df28.Name =='Jack') | (df28.Name=='akhil')]
-print(df28)
-
-print("***filter with < ")
-df28=df27.query('Age<=40')
-print(df28)
-
-print("***see -filter with -<= , >=, > , Like")
-
-list1=[[1,'some_value','some_value'],[2,'some_value','some_value'],[3,'some_value','some_value'],
-[4,'some_value','some_value'],[5,'some_value','some_value']]
-
-df= pd.DataFrame(list1,columns=['a','b','c'],index=['row1','row2','row3','row4','row5'])
-
-print("*** IN ")
-isin=df[df.a.isin([2,3])]
-print(isin)
-
-print("*** IMP - not in ") # use ~
-#https://stackoverflow.com/questions/19960077/how-to-filter-pandas-dataframe-using-in-and-not-in-like-in-sql
-
-print("*** is null")
-ISnull=df1.isna()
-print(ISnull)
-
-print("*** is not null")
-ISnotnull=df1.notna()
-print(ISnotnull)
-
-print(" *** between")
-between=df[(df.a<4) & (df.a> 2)] 
-print(between) 
-
-print("*** Left")
-Left=df.b.str[:3]
-print(Left)
-
-print("*** Right")
-Right=df.b.str[-4:-1]
-print(Right)
-
-print("***see -trim")
-trim=df.b.str.strip()
-print(trim)
-
-#Method 2 see
-#df[df.columns] = df.apply(lambda x: x.str.strip())
-print("***see - LTRIM")
-LTRIM=df.b.str.strip()
-print(LTRIM)
-
-print("***see - RTRIM")
-RTRIM=df.b.str.strip()
-print(RTRIM)
-
-print("*** upper case")
-Upper_case=df.b.str.upper()
-print(Upper_case)
-
-print("*** lower case")
-Lower_case=df.b.str.lower()
-print(Lower_case)
-
-print("*** see - replace")
-
-print("*** see - reverse(not imp)")
-
-print("*** If/case ")
-# 1 condition
-
-print("*** update with if ")
-# meaning: if column a=2 , columb b and c == 'aaaa'
-df.loc[df['a'] == 2, ['b','c']] = 'aaaa'
-print(df)
-
-print("*** update with if...else")
-df['c'] = np.where(df['a'] == 2, 10,20)
-print(df)
-
-print("*** update with if...else")
-#df['new column name'] = df['column name'].apply(lambda x: 'value if condition is met' if x condition else 'value if condition is not met')
-
-print("*** see - multiple conidition")
-def flag_df(df):
-    if (df['trigger1'] <= df['score'] < df['trigger2']) and (df['height'] < 8):
-        return 'Red'
-    elif (df['trigger2'] <= df['score'] < df['trigger3']) and (df['height'] < 8):
-        return 'Yellow'
-    elif (df['trigger3'] <= df['score']) and (df['height'] < 8):
-        return 'Orange'
-    elif (df['height'] > 8):
-        return np.nan
-
-#df2['Flag'] = df2.apply(flag_df, axis = 1)
-
-
-print("sort")
-print("*** sort by values ***")
-df15=df12.sort_values('Age')
-print(df15)
-
-print("*** sort by alphabet -- capital letters pahela and small letters pachi ***")
-df16=df11.sort_values('Name')
-print(df16)
-
-print("***group by")
-df18 = pd.DataFrame({'Animal': ['Falcon', 'Falcon','Parrot', 'Parrot'],'Max Speed': [380., 370., 24., 26.]})
-print(df18)
-
-print("*** group by - sum")
-group=df18.groupby(['Animal']).sum()
-print(group)
-
-print("*** group by - mean")
-group1=df18.groupby(['Animal']).mean() 
-print(group1) 
-
-print(" *** Group by - having")
-
-df1 = {
-    'Subject':['semester1','semester2','semester3','semester4','semester1',
-               'semester2','semester3'],
-   'Score':[62,47,55,74,31,77,85]}
-df1 = pd.DataFrame(df1,columns=['Subject','Score'])
-print(df1)
-
-df2 = {
-    'Subject':['semester1','semester2','semester3','semester4'],
-   'Score':[90,47,85,74]}
-df2 = pd.DataFrame(df2,columns=['Subject','Score'])
-print(df2)
-
-print("*** sub string")
-substring=df1.Subject.str[:3]
-print(substring)
-
-print("***Union all")
-df_union_all= pd.concat([df1, df2])
-print(df_union_all)
-
-print("***Union")
-df_union= pd.concat([df1, df2]).drop_duplicates()
-print(df_union)
-
-print("***")
-print(df1)
-print(df2)
-
-print("*** intersect")
-s1 = pd.merge(df1, df2, how='inner', on=['Score'])
-print(s1)
-
-print("*** merge **")
-'''DataFrame.merge(self, right, how='inner', on=None, left_on=None, 
-right_on=None, left_index=False, right_index=False, sort=False, 
-suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)'''
-df19 = pd.DataFrame({'lkey': ['foo', 'bar', 'baz', 'koo'],
-  'value': [1, 2, 3,4]})
-print(df19)
-df20 = pd.DataFrame({'rkey': ['foo', 'bar', 'baz', 'foo'],
-   'value': [3,4,5, 6]})
-print(df20)
-
-print("*** Inner Join ***")
-df21=pd.merge(df19,df20,left_on='value',right_on='value',how='inner')
-print(df21)
-
-print("*** Outer Join ***")
-df22=pd.merge(df19,df20,left_on='value',right_on='value',how='outer')
-print(df22)
-
-print("*** Left Join")
-df23=pd.merge(df19,df20,left_on='value',right_on='value',how='left')
-print(df23)
-
-print("*** Right Join")
-df24=pd.merge(df19,df20,left_on='value',right_on='value',how='right')
-print(df24)
-
-print("*** count")
-count=df1.count()
-print(count)
-
-print("*** get first 2 rows **")
-head=df11.head(2)
-print(head)
-
-print("*** get last 2 rows**")
-tail=df11.tail(2)
-print(tail) 
-
-
 print("iloc,loc and ix")
 lst={"city":["baroda","surat"],
     "zip":["06","05"]}
@@ -415,82 +429,6 @@ print(df2.iloc[:2,:1]) # row - 0,1 :col- 0
 
 print("10--IMP  (see)")
 print(df2.ix[:2,:1]) # row - 0,1,2 :col- 0  
-
-List17={'First_Name':['Tom', 'Jack', 'Steve','akhil'],
-'Last_Name':['Walter','Shavella','Jha','Shah']}
-df17=pd.DataFrame(List17)
-
-print("*** concatenation 2 columns")
-df17['Full_Name']=df17['First_Name']+' ' + df17['Last_Name']
-print(df17)
-
-print("*** IMP: to get second column")
-#https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
-List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
-'Age':[25,40,35,90,14,92]}
-df25=pd.DataFrame(List25)
-print(df25.iloc[:,1])
-print("*** to get second row")
-print(df25.iloc[1])
-
-print("*** IMP: to get by column names")
-#use loc ... 
-
-
-print("*** calculation between 2 columns")
-# df2["k"] = np.where(df2['a']==1, 'palak', 'red')
-df10["ab"] = 25
-df10["abc"] = df10["a"] + df10["ab"] 
-df10["abcd"] = df10["a"] - df10["ab"] 
-df10["Multi"] = df10["a"] * df10["abcd"]
-df10["sub"]=df10["abc"]/df10["abcd"]
-print(df10)
-
-
-list1=[[1,'some_value','some_value'],[2,'some_value','some_value'],[3,'some_value','some_value'],
-[4,'some_value','some_value'],[5,'some_value','some_value']]
-
-df= pd.DataFrame(list1,columns=['a','b','c'],index=['row1','row2','row3','row4','row5'])
-print (df)
-
-print("***look for and / or ")
-
-print("***delete row based on condition")
-indexNames = df[df['a'] ==3].index
-df.drop(indexNames , inplace=True)
-print(df)
-
-print("***see - delete row based on location") 
-
-print("*** delete all rows")
-df.drop(df.index , inplace=True)
-print(df)
-
-print("***see-  to delete table")
-
-df1 = {
-    'Subject':['Math','Physics','Biology','Chemistry','Language',
-               'Social science','computer'],
-   'Score':[62,47,55,74,31,77,85]}
-df1 = pd.DataFrame(df1,columns=['Subject','Score'])
-
-df11=pd.DataFrame(List11)
-print(df11)
-
-print("***")
-print(df12)
-
-print("*** keep column as index column ***")
-df14=df12.set_index('Age')
-print(df14)
-
-print("***")
-df29=pd.read_csv('flights_data.csv')
-print(df29.dtypes)
-
-df29['concat1']= df29['updated_at']+'*'+df29['destination_full_name']
-print(df29['concat1'].head(10))
-
 
 
 '''

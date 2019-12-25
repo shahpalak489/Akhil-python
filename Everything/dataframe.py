@@ -230,7 +230,8 @@ df1.drop(df1.index , inplace=True)
 print(df1)
 
 print("***see- to delete table")
-
+del df2
+print(df2)
 
 print("***")
 #df29=pd.read_csv('flights_data.csv')

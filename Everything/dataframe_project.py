@@ -121,17 +121,14 @@ print(df1.iloc[:5,-4:])
 print("see - if ...multiple conidition")
 #https://stackoverflow.com/questions/48569166/multiple-if-else-conditions-in-pandas-dataframe-and-derive-multiple-columns/48569899
 
-
 print("sort")
 print("*** sort by values ***")
 sort_values=df1.sort_values('Price')
 print(sort_values.loc[:,['destination_full_name','origin_full_name','Price']])
 
-
 print("*** sort by alphabet -- capital letters pahela and small letters pachi ***")
 sort_alphabet=df1.sort_values('destination_full_name')
 print(sort_alphabet.loc[:,['destination_full_name','origin_full_name','Price']])
-
 
 print("***group by")
 print("*** group by - sum")
@@ -143,7 +140,6 @@ groupby_mean=df1.groupby(['Price']).mean()
 print(groupby_mean)
 
 print("***see- Group by - having")
-
 
 print("*** sub string")
 substring=df1.destination_full_name.str[-5:]
@@ -162,7 +158,7 @@ tail=df1.tail(2)
 print(tail)
 
 print("*** df2")
-df2=pd.read_csv('flights_data_dataframe.csv')
+df2=pd.read_csv('flights_data_dataframe2.csv')
 print(df2)
 
 print("***Union all")
@@ -178,24 +174,78 @@ print("*** intersect")
 #print(intersect)
 
 print("*** see - merge **")
-'''DataFrame.merge(self, right, how='inner', on=None, left_on=None, 
-right_on=None, left_index=False, right_index=False, sort=False, 
-suffixes=('_x', '_y'), copy=True, indicator=False, validate=None)'''
-
 print("*** Inner Join ***")
-#df21=pd.merge(df19,df20,left_on='value',right_on='value',how='inner')
-#print(df21)
+inner_join=pd.merge(df1,df2,left_on='Coreid',right_on='Coreid_2',how='inner')
+print(inner_join.loc[:,['Coreid','Coreid_2']])
 
 print("*** Outer Join ***")
-#df22=pd.merge(df19,df20,left_on='value',right_on='value',how='outer')
-#print(df22)
+Outer_join=pd.merge(df1,df2,left_on='Coreid',right_on='Coreid_2',how='outer')
+print(Outer_join.loc[:,['Coreid','Coreid_2']])
 
 print("*** Left Join")
-#df23=pd.merge(df19,df20,left_on='value',right_on='value',how='left')
-#print(df23)
+Left_join=pd.merge(df1,df2,left_on='Coreid',right_on='Coreid_2',how='left')
+print(Left_join.loc[:,['Coreid','Coreid_2']])
 
 print("*** Right Join")
-#df24=pd.merge(df19,df20,left_on='value',right_on='value',how='right')
-#print(df24)
+Right_join=pd.merge(df1,df2,left_on='Coreid',right_on='Coreid_2',how='right')
+print(Right_join.loc[:,['Coreid','Coreid_2']])
 
- 
+
+print("*** concatenation between 2 columns")
+df1['flight_fulldetail']=df1['origin_full_name'] + ' TO ' + df1['destination_full_name']
+print(df1.loc[:,['origin_full_name','destination_full_name','flight_fulldetail']])
+
+print("*** IMP: to get second column")
+#https://www.shanelynn.ie/select-pandas-dataframe-rows-and-columns-using-iloc-loc-and-ix/
+#List25={'Name':['Tom', 'Jack', 'Steve','John','akhil','khan'],
+#'Age':[25,40,35,90,14,92]}
+#df25=pd.DataFrame(List25)
+#print(df25.iloc[:,1])
+print("*** to get second row")
+#print(df25.iloc[1])
+
+print("*** IMP: to get by column names")
+#use loc ... 
+
+print("*** calculation between 2 columns")
+#df10["ab"] = 25
+df1['Plus']=df1['Price']+df1['Points']
+df1['Minus']=df1['Price']-df1['Points']
+df1['Muliply']=df1['Price']*df1['Points']
+df1['Divide']=df1['Price']/df1['Points']
+print(df1.loc[:,['Price','Points','Plus','Minus','Muliply','Divide']])
+
+print("***see - look for and / or ")
+
+print("***delete row based on condition")
+deleterow=df1[df1.Coreid==25].index
+df1.drop(deleterow, inplace=True)
+print(df1.iloc[:,-7:-1])
+
+print("***see - delete row based on location") 
+
+print("*** delete all rows")
+#df.drop(df.index , inplace=True)
+#print(df)
+
+
+print("***see-  to delete table")
+#df1 = {'Subject':['Math','Physics','Biology','Chemistry','Language','Social science','computer'],'Score':[62,47,55,74,31,77,85]}
+#df1 = pd.DataFrame(df1,columns=['Subject','Score'])
+
+#df11=pd.DataFrame(List11)
+#print(df11)
+
+print("***")
+#print(df12)
+
+print("*** keep column as index column ***")
+#df14=df12.set_index('Age')
+#print(df14)
+
+print("***")
+#df29=pd.read_csv('flights_data.csv')
+#print(df29.dtypes)
+
+#df29['concat1']= df29['updated_at']+'*'+df29['destination_full_name']
+#print(df29['concat1'].head(10))

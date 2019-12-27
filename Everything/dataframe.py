@@ -7,7 +7,7 @@ pd.set_option('display.max_columns', 100)
 pd.set_option('display.width', 227)
 
 # to create dataframe from CSV file
-df1=pd.read_csv('flights_data_dataframe.csv')
+df1=pd.read_csv('Testdata1.csv')
 print(df1)
 
 print("filter data")
@@ -159,7 +159,7 @@ index_column=df1.set_index('Coreid')
 print(index_column)
 
 print("*** df2")
-df2=pd.read_csv('flights_data_dataframe2.csv')
+df2=pd.read_csv('Testdata2.csv')
 print(df2)
 
 print("***Union all")

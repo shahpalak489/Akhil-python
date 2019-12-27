@@ -436,7 +436,7 @@ class abc:
 mine=abc('value of value1')
 print(mine.value1)
 
-print("***class variables")
+print("***variables")
 #to create class
 class School:
 #class variable (properties name and values both are 
@@ -464,7 +464,6 @@ print(Gujarat.song)
 print(Karnataka.first_langugae)
 #see 
 #print(Gujarat.border_country('india'))
-
 
 print("***Encapsulation") #(to make variable/function private for class
 #that means can not access value / can not call)

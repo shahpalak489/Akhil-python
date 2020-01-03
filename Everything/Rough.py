@@ -5,3 +5,4 @@ print(List)
 List=['a','b','d','c']
 List.sort()
 print(List)
+

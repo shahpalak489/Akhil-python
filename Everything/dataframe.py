@@ -1,55 +1,41 @@
 ''' 
 trick to remember 
-for column
---------------
-df[df.column_name == ]
-df[df.column_name.isin( ) ]
-df[df.column_name.isna( ) ]
-df[df.column_name.notna( ) ]
 
-for dataframe
+------------------
+filter column with == , & , | --->  for column --->  df[df.column_name == ]
+filter column with multiple values --->  for column --->  df[df.column_name.isin( ) ]
+is null for column  ---> for column --->  df[df.column_name.isna( ) ]
+not null for column ---> for column --->  df[df.column_name.notna( ) ]
 -------------
-df.isna( )
-df.notna( )
-df.sort_values( )
-df.groupby( column_name ).sum( )/ mean( )
-df.count( )
-df.head( number of rows )
-df.tail ( number of rows)
-df.set_index( column name)
-
-for string
+is null for all columns ---> for dataframe ---> df.isna( )
+not null for all colums ---> for dataframe ---> df.notna( )
+sorting for all colums ---> for dataframe ---> df.sort_values( )
+group by ---> for dataframe ---> df.groupby( column_name ).sum( )/ mean( )
+count ---> for dataframe ---> df.count( )
+first 2 df rows ---> for dataframe ---> df.head( number of rows )
+last 2 df rows ---> for dataframe ---> df.tail ( number of rows)
+set index for df ---> for dataframe --->  df.set_index( column name)
 ----------
-df.column_name.str[ ]
-df.column_name.upper( )
-df.column_name.lower( )
-df.column_name.str[ ]
-
-If
+left ---> df.column_name.str[ ]
+right ---> df.column_name.upper( )
+lower ---> df.column_name.lower( )
+upper ---> df.column_name.str[ ]
 ------------------
 update with if...than
 df.loc[df.column_name > 201,[' column_name]] = value
 
 update with if...than...else
 df.column_name=np.where( df.column_name > 201, value1 , value2 )
-
-two dataframes
 ---------------------
-pd.concat( df , df )
-pd.concat( df , df ).drop_duplicates( )
-pd.merge( df , df , left_on=column , right_on = column, how = )
-
-for rows
+Union all 2 df ---> pd.concat( df , df )
+Union 2 df ---> pd.concat( df , df ).drop_duplicates( )
+Joins ---> pd.merge( df , df , left_on=column , right_on = column, how = )
 ----------
-df.drop( df [ df.column == ].index , inplace=True )
-df.drop( df.index , inplace=True )
-
-between 2 columns
+delete row ---> df.drop( df [ df.column == ].index , inplace=True )
+delete all rows ---> df.drop( df.index , inplace=True )
 ------------
-concat
-df[ column ] = df[ column ] + 'to' + df[ column ]
-calculation
-df [ column ] = df [ column ] + df [ column ]
+concat between 2 colums ---> df[ column ] = df[ column ] + 'to' + df[ column ]
+calculation between 2 colums ---> df [ column ] = df [ column ] + df [ column ]
 '''
 import pandas as pd
 import numpy as np

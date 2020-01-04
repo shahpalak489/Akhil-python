@@ -1,6 +1,6 @@
 #https://github.com/gurupratap-matharu/Bike-Rental-System
  
- print("***CLASS")
+print("***CLASS")
 #https://www.youtube.com/watch?v=qSDiHI1kP98
 
 print("***class structure")
@@ -112,7 +112,6 @@ print("can not access function get_speed2 value because its private")
 #print(ford.get_speed2())
 print("can not call get_speed2 because its private")
 #ford.get_speed2()
-
 
 print("***single inheritance")
 #parent class

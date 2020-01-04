@@ -1,29 +1,55 @@
-#first 100 numbers
+print("first 10 numbers")
+for x in range(10):
+    print(x)
 
+print(" 10 numbers with 3 increment")
+for x in range(2,10,3):
+    print(x)
 
+print("first 10 odd numbers")
+for x in range(10):
+    if x%2 == 0:
+        print(x)
 
-# first 100 odd numbers
+''' IMP
+just to arrange by asc or desc ---> sort
+to arrange with any other logic ---> sorted
+'''
+print("arrange in asc order")
+a=[1,4,5,3,2]
+a.sort()
+print(a)
 
+b=['a','e','b','d','c']
+b.sort()
+print(b)
 
-# first 100 numbers arrange in desc order
+print("arrange in desc order")
+e=[1,4,5,3,2]
+e.sort(reverse=True)
+print(e)
 
+f=['a','e','b','d','c']
+f.sort(reverse=True)
+print(f)
 
-# arrange given list with no in desc and asc order
+print("arrange given list by length")
+i=['bcde','cd','def','a']
+j=sorted(i,key=len)
+print(j)
 
-
-# arrange given list with alphabets in desc and asc order
-
-
-# arrange given list by size of content
-
-
+print("arraneg by function")
+def func(x): 
+    return x % 7
+L = [15, 3, 11, 7] 
+m = sorted(L, key = func)
+print(m)
 
 #Revert Dictioanry mapping
 map1={'a':1,'b':2}
 
 map2={y:x for x,y in map1.items()}
 print(map2)
-
 
 print("***Palindrome(start to end and end to start is same")
 # Input : malayalam
@@ -124,7 +150,3 @@ for i in range(15):
 #even numbers without modules
 
 #fibonnaci first 10 with generator
-
-
-
-

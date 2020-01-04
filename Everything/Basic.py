@@ -280,7 +280,6 @@ print(a.lower())
 
 #change data type
 
-
 print("***Conditional statement")
 x=3
 y=3

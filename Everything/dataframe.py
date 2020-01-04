@@ -60,8 +60,16 @@ print("*** is null")
 ISnull=df1.isna()
 print(ISnull)
 
+print("*** new - is null column")
+ISnull=df1[df1.destination_full_name.isna()]
+print(ISnull)
+
 print("*** is not null")
 ISnotnull=df1.notna()
+print(ISnotnull)
+
+print("*** new - is not null column")
+ISnotnull=df1[df1.destination_full_name.notna()]
 print(ISnotnull)
 
 print(" *** between")
@@ -239,6 +247,59 @@ print("***")
 
 #df29['concat1']= df29['updated_at']+'*'+df29['destination_full_name']
 #print(df29['concat1'].head(10))
+
+''' 
+for column
+--------------
+df[df.column_name == ]
+df[df.column_name.isin( ) ]
+df[df.column_name.isna( ) ]
+df[df.column_name.notna( ) ]
+
+between 2 columns
+------------
+concat
+df[ column ] = df[ column ] + 'to' + df[ column ]
+calculation
+df [ column ] = df [ column ] + df [ column ]
+
+for dataframe
+-------------
+df.isna( )
+df.notna( )
+df.sort_values( )
+df.groupby( column_name ).sum( )/ mean( )
+df.count( )
+df.head( number of rows )
+df.tail ( number of rows)
+df.set_index( column name)
+
+for string
+----------
+df.column_name.str[ ]
+df.column_name.upper( )
+df.column_name.lower( )
+df.column_name.str[ ]
+
+If
+------------------
+update with if...than
+df.loc[df.column_name > 201,[' column_name]] = value
+
+update with if...than...else
+df.column_name=np.where( df.column_name > 201, value1 , value2 )
+
+two dataframes
+---------------------
+pd.concat( df , df )
+pd.concat( df , df ).drop_duplicates( )
+pd.merge( df , df , left_on=column , right_on = column, how = )
+
+for rows
+----------
+df.drop( df [ df.column == ].index , inplace=True )
+df.drop( df.index , inplace=True )
+'''
 
 print("-------------------------")
 print("*** to create DataFrame")

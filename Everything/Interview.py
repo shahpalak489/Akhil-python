@@ -1,3 +1,30 @@
+#first 100 numbers
+
+
+
+# first 100 odd numbers
+
+
+# first 100 numbers arrange in desc order
+
+
+# arrange given list with no in desc and asc order
+
+
+# arrange given list with alphabets in desc and asc order
+
+
+# arrange given list by size of content
+
+
+
+#Revert Dictioanry mapping
+map1={'a':1,'b':2}
+
+map2={y:x for x,y in map1.items()}
+print(map2)
+
+
 print("***Palindrome(start to end and end to start is same")
 # Input : malayalam
 # Output : Yes
@@ -98,10 +125,6 @@ for i in range(15):
 
 #fibonnaci first 10 with generator
 
-print("Revert Dictioanry mapping")
-map1={'a':1,'b':2}
 
-map2={y:x for x,y in map1.items()}
-print(map2)
 
 

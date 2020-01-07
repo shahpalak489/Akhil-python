@@ -1,3 +1,5 @@
+print(" python in built methods")
+
 print("first 10 numbers")
 for x in range(10):
     print(x)
@@ -10,6 +12,17 @@ print("first 10 odd numbers")
 for x in range(10):
     if x%2 == 0:
         print(x)
+
+print("average of list, sum of list, * of list, / of list")
+
+'''
+write a function that takes 2 strings as arguments and returns string containing
+one copy of each character that occurs in both input arguments
+
+common("book","kangaroo") --> "ok" or "ko"
+common("apple","banana") --> "a"
+
+'''
 
 ''' IMP
 just to arrange by asc or desc ---> sort

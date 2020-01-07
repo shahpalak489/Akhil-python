@@ -375,7 +375,6 @@ print("*** to convert int to string")
 x=str(y)
 
 
-
 print("** to convert List to Tuple")
 List1=['a','b','c','d']
 Tuple1=tuple(List1)

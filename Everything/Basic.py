@@ -431,7 +431,7 @@ for x,y in Dict3.items():
 	print(x,'-',y)
 
 
+print("exponent ")
 x=10
 n=2
-
-print(x^n)
+print(x**2)

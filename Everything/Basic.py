@@ -1,4 +1,5 @@
 print("****print")
+print("****print")
 a=123
 print (a)
 
@@ -428,4 +429,9 @@ for i in Dict3.items():
 
 for x,y in Dict3.items():
 	print(x,'-',y)
-	
+
+
+x=10
+n=2
+
+print(x^n)

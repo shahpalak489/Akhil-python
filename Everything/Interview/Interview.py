@@ -79,26 +79,9 @@ else:
 	print("sorry")
 
 print("***swap") 
-#(assign x value to y and y value to x)
-	#Method 1 (Using Arithmetic Operators) (without temp var )
-x = 5
-y = 10
-# x now becomes 15 
-x = x + y   # x= 15
-# y becomes 10 
-y = x - y  # y = 5
-# x becomes 5 
-x = x - y   # x = 10
-print("After Swapping: x =", x, " y =", y)
-
-	#Method 2 - temp var
-x = 10
-y = 5
-'''z temp var'''
-z = x # Z = 10
-x = y # x = 5
-y = z # y = 10
-print("After Swapping: x =", x, " y =", y)
+x,y=10,20
+x,y=y,x
+print(x)
 
 print("***Anagram( letters count same for 2 words")
 from collections import Counter 

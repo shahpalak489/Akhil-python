@@ -430,8 +430,79 @@ for i in Dict3.items():
 for x,y in Dict3.items():
 	print(x,'-',y)
 
-
 print("exponent ")
 x=10
 n=2
 print(x**2)
+
+''' ratan '''
+print('***PRINT')
+eid,ename,esal=111,'ratan',100.45
+print(eid)
+print(ename)
+print(esal)
+
+print('Emp id=',eid)
+print('Emp name=',ename)
+print('Emp sal=',esal)
+
+print('Emp id=',eid,'Emp name=',ename,'Emp sal=',esal)
+
+print(eid,end='')  # this will print next line in same line
+print(' ',ename)
+
+print("***List of keyword")
+import keyword
+print(keyword.kwlist)
+
+''' for 2.x we dont need parenthesis to print while 3.x requires parenthesis
+    because we can see in 2.x print is keyword while in 3.x print is not keyword'''
+
+print("***General Datatypes")
+'''
+Number : int float : 10,20   5.25, 10.29
+string : str : 'ratan' "ratan"
+Boolean : bool : True  False 
+				   1    0
+'''
+evalue = 12
+ename = 'ratan'
+esalary = 100.92
+ebool=True
+
+print(type(evalue))
+print(type(ename))
+print(type(esalary))
+print(type(ebool))
+
+print('***variable')
+evalue,esalary,expect=10,20,30
+evalue=esalary=expect=10
+
+print('***concatenation')
+'''
+we can concatenate int and float because they both are numbers
+we can concatenate int and float to boolean because boolean has assigned values 0 and 1
+'''
+print(10+10.5)
+print(10+True)
+print(10+False)
+print(20.5+True)
+
+print('***not able to concatenate string and number/float/bool')
+'''
+print(10+'ratan')
+print(10.5+'tata')
+'''
+
+print('***re assigning')
+a=10
+print(a)
+
+a=100
+print(a)
+
+print('***delete')
+v=10
+print(v)
+del v

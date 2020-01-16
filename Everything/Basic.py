@@ -291,10 +291,26 @@ if x==3 and y==3:
 	print("x and y are 3")
 
 print("***if..else")
+#case 1
 if (x==z):
 	print("x and z are same")
 else:
 	print("x and z are different")
+
+#case 2
+if True:
+	print('true Condition')
+else:
+	print('false condition')
+
+#case 3
+if 0:
+	print('true condition')
+else:
+	print('false condition')
+
+#case 4
+print('ratan'),print('ratan') if 10>20 else print('durga'),print('durga')
 
 print("***if...elif...else")
 if (y==z):
@@ -303,9 +319,6 @@ elif (x==z):
 	print("x and z are different")
 else:
 	print("i dont know")	
-
-#switch statement
-
 
 print("**for Loop")
 print("for loop with range")
@@ -335,8 +348,8 @@ for y in fruit:
 	print(y)
  
 print("**for.....else**")
-for no in range (5,10):
-	print(no)
+for z in range (5,10):
+	print(z)
 else:
  	print("Finally finished!")
 
@@ -512,27 +525,29 @@ print('***INPUT')
 '''
 Input takes all value as string
 thats why below example will give string as result (eg:1020)
-'''
+
 print('Example-1')
 num1= input('Enter first num: ')
 num2= input('Enter second num: ')
 total=num1+num2
 print('total:',total)
 
-'''below example will give int as result'''
+
+below example will give int as result
 
 print('example-2')
 num1= int(input('Enter first num: '))
 num2= int(input('Enter second num: '))
 total=num1+num2
 print('total:',total)
-
+'''
 eid= int(input('eid: '))
 ename=input('ename: ')
 esal=float(input('esal: '))
 print('emp id: ',eid)
 print('emp name: ',ename)
 print('emp salary: ',esal)
+
 
 print('formatting data')
 
@@ -550,4 +565,29 @@ print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
 
 print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
 print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
+
+
+print('Range')
+'''
+Rule: start from first value upto second value and if third value is 
+	  positive move left to right and if third value is negative then
+	  move right to left 
+'''
+for x in range(5):
+	print(x)
+
+for x in range(6,10):
+	print(x)
+
+for x in range(14,20,3):
+	print(x)
+
+for x in range(22,14,-3):
+	print(x)
+
+for x in range(-10,-1,4):
+	print(x)
+
+for x in range(-15,-27,-5):
+	print(x)
 

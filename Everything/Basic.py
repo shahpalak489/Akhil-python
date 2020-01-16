@@ -434,7 +434,7 @@ print("exponent ")
 x=10
 n=2
 print(x**2)
-
+ 
 ''' ratan '''
 print('***PRINT')
 eid,ename,esal=111,'ratan',100.45
@@ -506,3 +506,48 @@ print('***delete')
 v=10
 print(v)
 del v
+
+print('***INPUT')
+
+'''
+Input takes all value as string
+thats why below example will give string as result (eg:1020)
+'''
+print('Example-1')
+num1= input('Enter first num: ')
+num2= input('Enter second num: ')
+total=num1+num2
+print('total:',total)
+
+'''below example will give int as result'''
+
+print('example-2')
+num1= int(input('Enter first num: '))
+num2= int(input('Enter second num: '))
+total=num1+num2
+print('total:',total)
+
+eid= int(input('eid: '))
+ename=input('ename: ')
+esal=float(input('esal: '))
+print('emp id: ',eid)
+print('emp name: ',ename)
+print('emp salary: ',esal)
+
+print('formatting data')
+
+'''
+int 	float		string
+%d 		%g   %f 	  %s
+
+{}
+
+'''
+
+# for % , if %d is first its value must be first...so its sequence is important
+print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
+
+
+print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
+print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
+

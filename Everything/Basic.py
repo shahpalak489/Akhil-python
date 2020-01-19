@@ -8,25 +8,78 @@ def aki():
 	print("this is not right")
 aki()
 
+print('function - required argument')
 def square(x):
 	print(x*x)
 square(2)	
-
+ 
 def addition (x,y):
 	print(x+y)
 addition(3,5)
 
-def default(x,y=5):
-	print(x+y)
-default(10)
+print('function - keyword argument')
+def default(x,y=25,z=5):  #IMP:first give non-default value then default value
+	print(x+y+z)
 
-default(10,y=10)
+default(10)   #here y=25,z=5 default value and x=10 because we gave w value while calling  
+default(10,20) #here z=5 because while calling we gave x=10,y=20
+default(y=10,x=2) #if we change sequence of variable then we need to specify x=2 
+#default(20,y=40,30) # Invalid : once we give y=40 then rest of all argument must be z=something .we can not put just 30 
+default(50,60,z=10)  # valid
 
-default(y=10,x=2)
-
+print('function - args')
+#case 1
 def multiple(*args):
 	print(args)
 multiple(1,2,3,4)
+
+def star(*a):
+	for x in a:
+		print(x)
+
+star(10,20,30)
+
+#case 2
+def star(car,*a):
+	print(car)
+	for x in a:
+		print(x)
+star("honda",10,20,30)
+
+def star(*b,car):
+	print(car)
+	for x in b:
+		print(x)
+star(49,81,car='accord') #in this case, use keyword arguments 
+
+#case 3
+def star(name='ratan',*b):
+	print(name)
+	for x in b:
+		print(x)
+star(35,94,100)  # here name=35,and *a=94,100
+
+#case 4
+def star(name1,name='ratan',*b):
+	print(name1)
+	for x in b:
+		print(x)
+star(35,94,100,90)  #here name1=35,name=94 and *a=100,90
+
+#case 5
+def star(name1,*b,name='ratan'):
+	print(name1)
+	for x in b:
+		print(x)
+star(35,94,100,90)  #here name1=35 and *b=94,100,90
+
+#case 3
+def star(name1,*b,name='ratan'):
+	print(name1)
+	for x in b:
+		print(x)
+	print(name)
+star(35,94,100,90,name='tata')  #here name1=35 and *b=94,100,90 and name='tata'
 
 print("***to call function")
 print("IMP: '()' this symbol call function")
@@ -84,14 +137,31 @@ f2 = function_that_returns() # this will call function_that_returns
 print("***to access return values assign variable to function")
 print("calling and print the variable because retuen assigns value") 
 print("to function so we need to print calling function ")
-print(f1)
-print(f2)
+print(f1) 
+# or
+print(function_that_prints()) 
 
+print(f2)
+# or
+print(function_that_returns())
+ 
 print("return example 2")
 def no_return(x,y):
     c = x + y
     return c
 print(no_return(4,5))
+
+# Multiple return statement
+def disp():
+	print('good morning')
+	return 10
+	return 20			    #ignored
+	print('good evening')	#ignored
+
+disp()
+
+# default return value is none
+
 
 print("***variables")
 a="bol bhai"
@@ -155,6 +225,7 @@ def tution():
 tution()
 '''
 
+print('Nonlocal keyword')
 #case 7 - VV IMP
 # to chnage parent function's variable value from child function use nonlocal keyword
 # in below example we are chaning name1 variable value inside child function using nonlocal keyword
@@ -163,9 +234,8 @@ name='ratan'
 def outer():
 	name1='durga'
 	def inner():
-		nonlocal name1
+		nonlocal name1  # this will update parent name1 variable
 		name1='sunny'
-
 		global name
 		name='ratan IT'
 	print(name1) 
@@ -174,6 +244,19 @@ def outer():
 outer()
 print(name)
 
+# without Nonlocal
+name='ratan'
+def outer():
+	name1='durga'
+	def inner():
+		name1='sunny'
+		global name
+		name='ratan IT'
+	print(name1) 
+	inner()
+	print(name1)
+outer()
+print(name)
 
 print("***arithmetic Operator")
 x=10
@@ -740,4 +823,7 @@ self=100 # not alloed
 Rule 6 : Possible to take pre defined class names as identifiers but not recommended
 
 '''
+
+
+print('see video10:30..00 - difference between global and nonlocal')
 

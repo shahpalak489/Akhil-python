@@ -266,7 +266,8 @@ print(x*y)
 print(y-x)
 print(y/x)
 
-print("***comparison operator")
+print("***relation operator")
+print('for number')
 f=30
 g=23
 print(f<g)
@@ -275,6 +276,14 @@ print(f==g)
 print(f<=g)
 print(f>=g)
 print(f!=g)
+
+print('for string') 			# compare based on ASCI value
+print('ratan' > 'anu')
+print('ratan' < 'anu')
+print('ratan' >= 'anu')
+print('ratan' <= 'anu')
+print('ratan' == 'anu')
+print('ratan' != 'anu')
 
 print("**assignment operator**")
 
@@ -695,36 +704,7 @@ num2= int(input('Enter second num: '))
 total=num1+num2
 print('total:',total)
 '''
-eid= int(input('eid: '))
-ename=input('ename: ')
-esal=float(input('esal: '))
-print('emp id: ',eid)
-print('emp name: ',ename)
-print('emp salary: ',esal)
 
-
-print('formatting data')
-'''
-int 	float		string    
-%d 		%g   %f 	  %s
-
-{}
-
-'''
-# for % , if %d is first its value must be first...so its sequence is important
-print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
-
-# difference between %g and %f
-# %f prints upto 12 digits while %g prints data upto 6 digits only
-a=123.456879
-print('value of a=%g'%(a)) 
-
-a=123456.87958418641684888
-print('value of a=%f'%(a)) 
-
-#while {} is very flexible 
-print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
-print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
 
 print('Range')
 '''
@@ -826,4 +806,124 @@ Rule 6 : Possible to take pre defined class names as identifiers but not recomme
 
 
 print('see video10:30..00 - difference between global and nonlocal')
+
+
+print('***string***')
+
+print('Indexing')
+
+# -7 -6 -5 -4 -3 -2 -1  		#negative indexing
+s= 'ratanIT'
+# 0 1 2 3 4 5 6 				#positive indexing
+
+print(s[2])
+print(s[2:4])
+print(s[1:4:2])
+print(s[2:])
+print(s[:4])
+print(s[:])
+# print(s[9])  			#Indexerror: string out of range
+
+print(s[-2])
+print(s[-5:-1])
+print(s[:-1])
+print(s[-5:])
+print(s[:])
+# print(s[-8])  			#Indexerror: string out of range
+
+print('legth , remove space or characters')
+s='    ratan IT   '
+print(len(s))
+print(s.strip()) 		#to remove space at begining and at the end
+print(len(s.strip()))
+
+s1='@@@ratan IT####'
+print(len(s1))
+print(s1.lstrip('@'))		# to remove @ at begining
+print(s1.rstrip('#'))		# to remove # at the end
+print(s1.rstrip('#').lstrip('@'))
+
+
+print('id,=,!= ,is in')
+'''
+id() : print memory location
+is, is not : memory comparison : return boolean    		#it compares data as well as memory location
+== , !=  : data comparison : return boolean
+in, not in : check data available or not : return boolean
+'''
+name1='ratan'
+name2='anu'
+name3='ratan'
+
+print(id(name1))
+print(id(name2))
+print(id(name3))
+
+print('**')
+print(name1 is name2)				
+print(name1 is name3)				#same string value-->save at same memory location thats why here its true
+print(name1 is not name2)
+print(name1 is not name3)
+
+print('**')
+print(name1==name2)
+print(name1==name3)
+print(name1!= name2)
+print(name1!= name3)
+
+print('**')
+print('ra' in name1)
+print('durga' in name1)
+print('ra' not in name1)
+print('durga' not in name1)
+
+
+eid= int(input('eid: '))
+ename=input('ename: ')
+esal=float(input('esal: '))
+print('emp id: ',eid)
+print('emp name: ',ename)
+print('emp salary: ',esal)
+
+
+print('formatting data')
+'''
+int 	float		string    
+%d 		%g   %f 	  %s
+
+{}
+
+'''
+# for % , if %d is first its value must be first...so its sequence is important
+print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
+
+# difference between %g and %f
+# %f prints upto 12 digits while %g prints data upto 6 digits only
+a=123.456879
+print('value of a=%g'%(a)) 
+
+a=123456.87958418641684888
+print('value of a=%f'%(a)) 
+
+#while {} is very flexible 
+print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
+print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

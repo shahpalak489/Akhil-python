@@ -97,7 +97,44 @@ print("***variables")
 a="bol bhai"
 print(a)
 
-print("***variable scope")
+print("***local & global variable")
+#case 1       # all function can use global variable value
+
+name='ratan'  # global variable
+def disp1():
+	print('good morning',name)
+
+def disp2(value1,value2):
+	print(value1+value2)        # local variable
+	print('good afternoon',name)
+disp1()
+disp2(3,10)
+
+#case 2 
+# when local and global variable has same name then priority goes to local varibale
+g,h=10,20
+def sarvado(g,h):
+	print(g+h)
+sarvado(2,3)
+
+#case 3 
+# to use local variable as global variable
+g,h=10,20
+def sarvado(g,h):
+	print(globals()['g']+h)  # here we use g variable as global variable
+sarvado(2,3)
+
+#case 4
+# to declare global variable from inside function
+def disp3():
+	global s 
+	s='ratan'
+	print(s)
+disp3()
+print(s)
+
+
+#case 5
 b=100
 print(b)
 def scope():
@@ -105,6 +142,38 @@ def scope():
 	print(b)
 scope()
 print(b)
+
+#case 6 ( VV IMP)
+# once we use global variable inside function we can not declare same variable as local variable
+# below code will give error
+'''
+name='ratan'
+def tution():
+	print(name)  # used name as global variable
+	name='durga'  # after using name as global variable we can not declare same vaiable as local
+	print(name)
+tution()
+'''
+
+#case 7 - VV IMP
+# to chnage parent function's variable value from child function use nonlocal keyword
+# in below example we are chaning name1 variable value inside child function using nonlocal keyword
+# because of this name1 value changes foreever
+name='ratan'
+def outer():
+	name1='durga'
+	def inner():
+		nonlocal name1
+		name1='sunny'
+
+		global name
+		name='ratan IT'
+	print(name1) 
+	inner()
+	print(name1)
+outer()
+print(name)
+
 
 print("***arithmetic Operator")
 x=10
@@ -464,6 +533,8 @@ print('Emp id=',eid,'Emp name=',ename,'Emp sal=',esal)
 print(eid,end='')  # this will print next line in same line
 print(' ',ename)
 
+print(10,20,30,sep='*')
+
 print("***List of keyword")
 import keyword
 print(keyword.kwlist)
@@ -550,22 +621,27 @@ print('emp salary: ',esal)
 
 
 print('formatting data')
-
 '''
-int 	float		string
+int 	float		string    
 %d 		%g   %f 	  %s
 
 {}
 
 '''
-
 # for % , if %d is first its value must be first...so its sequence is important
 print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
 
+# difference between %g and %f
+# %f prints upto 12 digits while %g prints data upto 6 digits only
+a=123.456879
+print('value of a=%g'%(a)) 
 
+a=123456.87958418641684888
+print('value of a=%f'%(a)) 
+
+#while {} is very flexible 
 print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
 print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
-
 
 print('Range')
 '''
@@ -590,4 +666,78 @@ for x in range(-10,-1,4):
 
 for x in range(-15,-27,-5):
 	print(x)
+
+
+print("***for vs while")
+# for when we have starting value , ending value by incremental / decremental
+# while is to check if condition is true or not
+
+print('*** types of error')
+
+'''
+Type Error: concat not possible
+valueerror : conversion 
+Name error: name is not defined
+unbounded local error: related to local and global variable
+
+'''
+print('***Number systems')
+'''
+binary : base 2
+octal  : base 8
+decimal : base 10
+Hexa decimal : base 16
+
+binary system: allows 0 and 1
+
+octal form: allows 0 to 7
+
+decimal : allows 0 to 9
+
+hexa decimal: allows 0 to 9 and a to f
+
+'''
+
+print('ASCI value')
+c=5
+print(ord(c))
+
+c=f
+print(ord(c))
+
+print('binary values')
+c=112
+print(bin(c))
+
+print('octal values')
+c=20
+print(oct(c))
+
+print('hexa deciaml values')
+c=20
+print(hex(c))
+
+
+print('***Python identifiers - nomenclature of class,function rules')
+
+'''
+Rule 1 :a-z , A-Z , _    -should not start with numberic , should not alloe special characters
+
+Class Myclass123 - valid
+Class 123Myclass - Invalid
+Class Myclass_123 - valid
+Class Myclass*123 - invalid
+
+Rule 2 : case sensitive
+
+Rule 3 : No lenght limit
+
+Rule 4 : Duplicates not allowed
+
+Rule 5 : kewords not allowed
+self=100 # not alloed
+
+Rule 6 : Possible to take pre defined class names as identifiers but not recommended
+
+'''
 

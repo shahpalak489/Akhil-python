@@ -363,6 +363,67 @@ print('z' not in x)
 x=['india','ab','ssss']
 print ("ab" in x)
 
+'''
+difference between in and Find --> in returns true / false , find returns indexing of given word
+''' 
+
+print('***Find')		# if avaiable returns index else returns -1
+print('for string')
+Str='welcome to RatanIT'
+print(Str.find('Ratan'))
+print(Str.find('anu')) 
+
+
+print('***Index')			#returns index of given word
+print(Str.index('come'))	
+print(Str.index('t',10,15))	# return index of 't' between 10 to 15 index
+#print(Str.index('anu'))	#this will return error bcoz 'anu' is not in Str
+
+print('***swapcase - make uppercase to lower case and lower case to upper case')
+print('For String')
+print(Str.swapcase())
+
+print('***see- alpha numberic') 	#check if data is alpha , numeric or alpha-numeric 
+string1='HelloPython'
+print(string1.isalpha())
+
+string2='HelloPython3.7'
+print(string2.isalpha())
+
+string3='2454546'
+print(string3.isdigit())
+
+string4='home123'
+print(string4.isdigit())
+
+
+
+
+string5='Ratan1980'
+print(string5.isalnum())
+
+string6='RatanIT'				#see - why its true?
+print(string6.isalnum())
+
+print('***Upper case, lower case , space') 	#check if string is upper case, lower case or it has space 
+string1='hellopython'
+print(string1.islower())
+
+string2='HelloPython3.7'
+print(string2.islower())
+
+string3='HELLO FRIENDS'
+print(string3.isupper())
+
+string4='home123'
+print(string4.isupper())
+
+string5=' '					#see- why it works only for ' '
+print(string5.isspace())
+
+string6='RatanIT'				
+print(string6.isspace())
+
 print("identity operator")
 a=10
 b=10
@@ -382,8 +443,8 @@ a=10
 b=3
 print(a//b)
 
-print("***String operator")
-print("***slice of string")
+print("***slice")
+print('for string')
 a="india"
 print (a[1])
 
@@ -419,9 +480,10 @@ print(list1[-4:-2:1])
 #slice with set -- not possible
 
 print("***split")
-print("***split with string")
+print('for string')
 a="india"
 print(a.split('d'))
+print('+'.join(a.split('d')))			# this will split and place '+' in between
 
 print("***concatenate")
 b=" is a Country"
@@ -431,16 +493,40 @@ print("***Repeat")
 print(a*2)
 
 print("***Replace")
+print('for string')
 c=a.replace('a','a is country')
 print(c)
 
 print("***upper case")
+print('for string')
 print(a.upper())
 
 print("***lower case")
+print('for string')
 print(a.lower())
 
-#change data type
+print('Capitalize')
+print('for string')
+print(a.Capitalize())
+
+print('Enumarate')				# give corresponfing number to string
+print(list(enumerate(a)))
+print(tuple(enumerate(a)))
+
+print('count')			# return count of character in given string
+a='ratanratan'
+print(a.count('r'))				#count 'r' in a
+print(a.count('ratan'))			#count 'ratan' in a
+print(a.count('a',1,7))			#count 'a' between 1 and 7 position
+print(a.count('ratan',2,7))		#count 'ratan' between 2 and 7 position
+
+print('start with and end with')
+string1='Welcome to RatanIT'
+print(string1.startswith('Welcome'))
+print(string1.startswith('come',3,10))
+print(string1.endswith('IT'))
+print(string1.endswith('IT',10,18))
+print(string1.endswith('IT',10,17))
 
 print("***Conditional statement")
 x=3
@@ -807,10 +893,8 @@ Rule 6 : Possible to take pre defined class names as identifiers but not recomme
 
 print('see video10:30..00 - difference between global and nonlocal')
 
-
-print('***string***')
-
-print('Indexing')
+print('***Indexing')
+print('for string')
 
 # -7 -6 -5 -4 -3 -2 -1  		#negative indexing
 s= 'ratanIT'

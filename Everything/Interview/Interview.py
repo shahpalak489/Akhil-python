@@ -1,3 +1,12 @@
+#count 'ratan' in given string
+a='ratanit ratan'
+b=a.split()
+count=0
+for x in b:
+    if 'ratan' in x:
+        count+=1
+print(count)
+
 print(" python in built methods")
 
 print("first 10 numbers")

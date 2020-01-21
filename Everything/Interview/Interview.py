@@ -1,4 +1,16 @@
-#count 'ratan' in given string
+print('one list more than 30 , one list less than 30')
+l1=[10,20,30,10.8,90,100,150]
+l2=[]
+l3=[]
+for x in l1:
+    if x <= 30:
+        l2.append(x)
+    elif x>30:
+        l3.append(x)
+print(l2)
+print(l3)
+
+print('count ratan in given string')
 a='ratanit ratan'
 b=a.split()
 count=0
@@ -22,6 +34,16 @@ for x in range(10):
     if x%2 == 0:
         print(x)
 
+print('create 2 lists(one list from 1st index and second list from second index) from one list ')
+l1=[[1,2],['ratan','anu'],[10.5,50.9]]
+l3=[]
+l4=[]
+for x,y in l1:
+    l3.append(x)
+    l4.append(y)
+print(l3)
+print(l4)
+
 print("average of list, sum of list, * of list, / of list")
 
 '''
@@ -33,39 +55,6 @@ common("apple","banana") --> "a"
 
 '''
 
-''' IMP
-just to arrange by asc or desc ---> sort
-to arrange with any other logic ---> sorted
-'''
-print("arrange in asc order")
-a=[1,4,5,3,2]
-a.sort()
-print(a)
-
-b=['a','e','b','d','c']
-b.sort()
-print(b)
-
-print("arrange in desc order")
-e=[1,4,5,3,2]
-e.sort(reverse=True)
-print(e)
-
-f=['a','e','b','d','c']
-f.sort(reverse=True)
-print(f)
-
-print("arrange given list by length")
-i=['bcde','cd','def','a']
-j=sorted(i,key=len)
-print(j)
-
-print("arraneg by function")
-def func(x): 
-    return x % 7
-L = [15, 3, 11, 7] 
-m = sorted(L, key = func)
-print(m)
 
 #Revert Dictioanry mapping
 map1={'a':1,'b':2}

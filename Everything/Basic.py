@@ -381,9 +381,17 @@ print(Str.find('anu'))
 
 
 print('***Index')			#returns index of given word
+print('For string')
 print(Str.index('come'))	
 print(Str.index('t',10,15))	# return index of 't' between 10 to 15 index
 #print(Str.index('anu'))	#this will return error bcoz 'anu' is not in Str
+
+print('for List')
+l1=['ratan','anu','durga','ratan']
+print(l1.index('ratan'))		#by default search first 'ratan'
+print(l1.index('ratan',2))		# search 'ratan' from index 2
+print(l1.index('ratan',2,4))	# search 'ratan' from index 2 to 4
+
 
 print('***swapcase - make uppercase to lower case and lower case to upper case')
 print('For String')
@@ -481,7 +489,6 @@ print(list1[-4:-2:-1])
 print("***MM IMP")
 print(list1[-4:-2:1])
 
-
 #slice With dics -- not possible
 #slice with set -- not possible
 
@@ -492,11 +499,40 @@ print(a.split('d'))
 print('+'.join(a.split('d')))			# this will split and place '+' in between
 
 print("***concatenate")
+print('for string')
 b=" is a Country"
 print(a+b)
 
-print("***Repeat")
+print('for Numbers(Int and Float)')
+'''
+we can concatenate int and float because they both are numbers
+we can concatenate int and float to boolean because boolean has assigned values 0 and 1
+'''
+print(10+10.5)
+print(10+True)
+print(10+False)
+print(20.5+True)
+
+print('not able to concatenate string and number/float/bool')
+'''
+print(10+'ratan')
+print(10.5+'tata')
+'''
+
+print('for list')
+l1=[10,20,30]
+l2=[40,50,60]
+l3= l1+l2
+print(l3)
+
+print("***Replication")
+print('for numbers')
 print(a*2)
+
+print('for list')
+l1=[10,20,30]
+l2=l1*2
+print(l2)
 
 print("***Replace")
 print('for string')
@@ -511,20 +547,25 @@ print("***lower case")
 print('for string')
 print(a.lower())
 
-print('Capitalize')
+print('***Capitalize')
 print('for string')
 print(a.Capitalize())
 
-print('Enumarate')				# give corresponfing number to string
+print('***Enumarate')				# give corresponfing number to string
 print(list(enumerate(a)))
 print(tuple(enumerate(a)))
 
-print('count')			# return count of character in given string
+print('***count')			# return count of character in given string
+print('for string')
 a='ratanratan'
 print(a.count('r'))				#count 'r' in a
 print(a.count('ratan'))			#count 'ratan' in a
 print(a.count('a',1,7))			#count 'a' between 1 and 7 position
 print(a.count('ratan',2,7))		#count 'ratan' between 2 and 7 position
+
+print('for list')
+l1=[10,20,30,10,10]
+print(l1.count(10))
 
 print('start with and end with')
 string1='Welcome to RatanIT'
@@ -765,21 +806,7 @@ print('***variable')
 evalue,esalary,expect=10,20,30
 evalue=esalary=expect=10
 
-print('***concatenation')
-'''
-we can concatenate int and float because they both are numbers
-we can concatenate int and float to boolean because boolean has assigned values 0 and 1
-'''
-print(10+10.5)
-print(10+True)
-print(10+False)
-print(20.5+True)
 
-print('***not able to concatenate string and number/float/bool')
-'''
-print(10+'ratan')
-print(10.5+'tata')
-'''
 
 print('***re assigning')
 a=10
@@ -957,9 +984,14 @@ print(L1[:-2])
 print(L1[-3:])
 print(L1[:])
 
-print('***legth')
+print('***length')
+print('for string')
 s='    ratan IT   '
 print(len(s))
+
+print('for list')
+l1=[10,'ratan',10.5]
+print(len(l1))
 
 print('***remove space or characters')
 print(s.strip()) 		#to remove space at begining and at the end
@@ -1046,6 +1078,53 @@ print(type(a),type(b),type(c))
 L2=[10,20,30]
 #a,b=L2		#this will give an error, need exact number of variables for unpacking 
 
+print('*** sort/sorted')
+''' IMP
+just to arrange by asc or desc ---> sort
+to arrange with any other logic ---> sorted
+'''
+print('For List')
+#arrange number in asc order
+a=[1,4,5,3,2]
+a.sort()		
+print(a)
+
+#arrange alphabet in asc order
+b=['a','e','b','d','c']
+b.sort() 	
+print(b)
+
+#arrange number in desc order
+e=[1,4,5,3,2]
+e.sort(reverse=True) 		
+print(e)
+
+#arrange alphabet in desc order
+f=['a','e','b','d','c']
+f.sort(reverse=True)		
+print(f)
+
+#arrange given list by length
+i=['bcde','cd','def','a']
+j=sorted(i,key=len)
+print(j)
+
+#arraneg by function
+def func(x): 
+    return x % 7
+L = [15, 3, 11, 7] 
+m = sorted(L, key = func)
+print(m)
+
+l3=[10,20.85,'ratan']
+#l3.sort() 					#heterogenous sorting not supported
+
+print('***reverse')
+print('for list')
+l1=[10,20,30]
+l1.reverse()
+print(l1)
+
 print('***formatting data')
 '''
 int 	float		string    
@@ -1108,4 +1187,71 @@ print(type(a))
 print(b)
 print(b[1])
 
+print('copy')
+l1=[10,20,30]
+l2=l1.copy()
+print(l2)
 
+print('extend') 	#its like List union
+l1=[10,20,30]
+l2=[40,50,60]
+l1.extend(l2)
+print(l1)
+
+print('append') 	#to add at end
+l1=[10,20,30]
+l1.append(40)
+print(l1)
+
+print('Insert')		#to add by specific location
+l1=['ratan','anu']
+l1.insert(1,'aaa')		#this will add at index 1
+print(l1)
+l1.insert(6,'bbb')		#this will add at index6 but we dont have index5 so it will add at the end
+print(l1)
+
+print('remove') 	#to delete by object value
+l1=[10,20,30]
+l1.remove(20)
+print(l1)
+
+print('pop')		#to delete by object index
+l1=['ratan','durga',10,10.5]
+l1.pop()			# by default it will remove last one
+print(l1)
+l1.pop(1)			# this will remobe index 1 object
+print(l1)
+#l1.pop(10)			# pop index out of range
+
+print('del')		# to delete more than one objects same time
+l1=[10,20,30,40,50,60,70,80,90,100,110,120,130,140,150]
+del l1[2]
+print(l1)
+del l1[1:4]
+print(l1)
+del l1[1:4:2]
+print(l1)
+del l1[:2]
+print(l1)
+del l1[:]
+print(l1)
+
+print('clear')			#to delete all objects 
+l1=[10,20,30]
+l1.clear()
+print(l1)
+
+print('***Max Min')		#give maximum and minimum values
+print('for string')
+
+l1=[10,20,30]
+print(max(l1))
+print(min(l1))
+
+l2=['ratan','anu','durga']		#decide by ASCI value
+print(max(l2))		
+print(min(l2))
+
+l3=[10,'ratan']				#TypeError: '>' not supported between instances of 'str' and 'int'
+#print(max(l3))				# can not compare heterogenous objects	
+#print(min(l3))				# can not compare heterogenous objects

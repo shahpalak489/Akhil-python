@@ -1,5 +1,12 @@
 print("**Comprehensions**")
 print("**List Comprehensions**")
+
+l1=[x for x in range(5)]
+print(l1)
+
+l2=[x+5 for x in range(5,15,3)]
+print(l2)
+
 tuple1=(1,2,3,4,5)
 x=[i for i in tuple1]
 # same as for i in List1:

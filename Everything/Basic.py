@@ -1,7 +1,13 @@
 print("****print")
-print("****print")
 a=123
 print (a)
+
+print('for List')
+L2=[]
+print(L2)
+
+L3=list('ratan')
+print(L3)
 
 print("***function")
 def aki():
@@ -27,7 +33,7 @@ default(y=10,x=2) #if we change sequence of variable then we need to specify x=2
 #default(20,y=40,30) # Invalid : once we give y=40 then rest of all argument must be z=something .we can not put just 30 
 default(50,60,z=10)  # valid
 
-print('function - args')
+print('function-args')
 #case 1
 def multiple(*args):
 	print(args)
@@ -568,7 +574,7 @@ else:
 	print("i dont know")	
 
 print("**for Loop")
-print("for loop with range")
+print("for range")
 for k in range(8):
 	print(k) 
 for u in range(13,19):
@@ -576,29 +582,42 @@ for u in range(13,19):
 for no in range (102,130,5):
  	print(no)
 
-print("**for loop with List") 
+print("for List") 
 fruit=["banana","apple","orange"]
 for aki in fruit:
  	print(aki) 
- 
-print("**for ...break") #(it will stop 'for loop')
+
+L1=[10,20,30,40]
+for x in L1[1:3]:
+	print(x)
+
+L2=[[1,2,3],['ratan','anu','tata']]
+for x,y,z in L2:
+	print(x,y,z)
+
+print("- for ...break") #(it will stop 'for loop')
 car=[2,15,19,20]
 for x in car:
  	print(x)
  	if (x==15):
    		break
  
-print("**for...in...continue")# ( this will not run remaining steps but will continue for loop)
+print("- for...in...continue")# ( this will not run remaining steps but will continue for loop)
 for y in fruit:
 	if (y=="apple"):
    	   continue
 	print(y)
  
-print("**for.....else**")
+print("- for.....else**")
 for z in range (5,10):
 	print(z)
 else:
  	print("Finally finished!")
+
+
+
+
+
 
 print("**while loop**")
 n = 25
@@ -736,6 +755,11 @@ print(type(evalue))
 print(type(ename))
 print(type(esalary))
 print(type(ebool))
+
+print('for List')
+L1=[10,20,30,40]
+print(L1)
+print(type(L1))
 
 print('***variable')
 evalue,esalary,expect=10,20,30
@@ -891,7 +915,7 @@ Rule 6 : Possible to take pre defined class names as identifiers but not recomme
 '''
 
 
-print('see video10:30..00 - difference between global and nonlocal')
+print('see video10:30.00 - difference between global and nonlocal')
 
 print('***Indexing')
 print('for string')
@@ -915,9 +939,29 @@ print(s[-5:])
 print(s[:])
 # print(s[-8])  			#Indexerror: string out of range
 
-print('legth , remove space or characters')
+print('For List')
+  # -5 -4 -3 -2 -1
+L1=[10,20,30,40,50]
+  # 0  1  2  3  4
+print(L1[3])
+print(L1[1:3])
+print(L1[:3:2])
+print(L1[1:])
+print(L1[:2])
+print(L1[:])
+#print(L1[8])	Indexerror: list index out of range
+
+print(L1[-2])
+print(L1[-4:-2])
+print(L1[:-2])
+print(L1[-3:])
+print(L1[:])
+
+print('***legth')
 s='    ratan IT   '
 print(len(s))
+
+print('***remove space or characters')
 print(s.strip()) 		#to remove space at begining and at the end
 print(len(s.strip()))
 
@@ -927,14 +971,14 @@ print(s1.lstrip('@'))		# to remove @ at begining
 print(s1.rstrip('#'))		# to remove # at the end
 print(s1.rstrip('#').lstrip('@'))
 
-
-print('id,=,!= ,is in')
+print('***id,=,!=,is in')
 '''
 id() : print memory location
 is, is not : memory comparison : return boolean    		#it compares data as well as memory location
 == , !=  : data comparison : return boolean
 in, not in : check data available or not : return boolean
 '''
+print('For string')
 name1='ratan'
 name2='anu'
 name3='ratan'
@@ -961,16 +1005,48 @@ print('durga' in name1)
 print('ra' not in name1)
 print('durga' not in name1)
 
+print('For List')
+L1=[10,20,30]
+L2=[40,50,60]
+L3=L1
+L4=[40,50,60]
 
-eid= int(input('eid: '))
-ename=input('ename: ')
-esal=float(input('esal: '))
-print('emp id: ',eid)
-print('emp name: ',ename)
-print('emp salary: ',esal)
+print(id(L1))
+print(id(L2))
+print(id(L3))
+print(id(L4))
 
+print('**')
+print(L1 is L2)
+print(L1 is L3)
+print(L1 is not L2)
+print(L1 is not L3)
 
-print('formatting data')
+print('**')
+print(L1==L2)
+print(L1==L3)
+print(L2==L4)
+print(L1!=L2)
+print(L1!=L3)
+print(L2!=L4)
+
+print('**')
+print(10 in L1)
+print(100 in L1)
+print(10 not in L1)
+print(100 not in L1)
+
+print('***Unpacking') #List --> variables #it will break list and assigns values to variables
+L1=[10,10.4,'ratan']
+a,b,c=L1
+print(a,b,c)
+print(type(a),type(b),type(c))
+
+#IMP
+L2=[10,20,30]
+#a,b=L2		#this will give an error, need exact number of variables for unpacking 
+
+print('***formatting data')
 '''
 int 	float		string    
 %d 		%g   %f 	  %s
@@ -978,6 +1054,13 @@ int 	float		string
 {}
 
 '''
+eid= int(input('eid: '))
+ename=input('ename: ')
+esal=float(input('esal: '))
+print('emp id: ',eid)
+print('emp name: ',ename)
+print('emp salary: ',esal)
+
 # for % , if %d is first its value must be first...so its sequence is important
 print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
 
@@ -993,21 +1076,36 @@ print('value of a=%f'%(a))
 print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
 print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
 
+print('***List info')
+'''
+1. represent group of objects :homogenus(same data type of objects) & heterogrnous( different data types of object)
+example: homogenous L1=[10,20,30]  heterogenous L2=[10,'ratan',10.05]
+2. indexing : forward and backward
+3. duplicate objects allowed
+4. mutabale: modifications are allowed
+5. insertation order : e1,e2,e3 --> e1 e2 e3
+'''
+print('***For Nested List/sub list/Multi dimension List')
+'''
+to access data In dataframe use loc, iloc
+to access data in multi dimension list, tuple,set use like below
+'''
+#      0	   1
+L1=[[10,20],['ratan','tata']]
+#    0  1    0  1 
+print(type(L1[0]))
+print(L1[0])
+print(L1[1])
 
+print(type(L1[1][1]))
+print(L1[0][1])
+print(L1[1][1])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print('unpacking')
+L2=[[1,2,'ratan'],[3,'tata']]
+a,b=L2
+print(type(a))
+print(b)
+print(b[1])
 
 

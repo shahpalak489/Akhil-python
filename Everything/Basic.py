@@ -1,6 +1,23 @@
 print("****print")
+print('for string')
 a=123
-print (a)
+print(a)
+
+eid,ename,esal=111,'ratan',100.45
+print(eid)
+print(ename)
+print(esal)
+
+print('Emp id=',eid)
+print('Emp name=',ename)
+print('Emp sal=',esal)
+
+print('Emp id=',eid,'Emp name=',ename,'Emp sal=',esal)
+
+print(eid,end='')  # this will print next line, in same line
+print(' ',ename)
+
+print(10,20,30,sep='*')
 
 print('for List')
 L2=[]
@@ -8,6 +25,13 @@ print(L2)
 
 L3=list('ratan')
 print(L3)
+
+print('For Dics')
+d1={111:'ratan',222:'anu',333:'durga'}
+print(d1)
+
+d2={111:'ratan',222:'anu'}	  #duplicate keys will be removed  	#duplicate values will be ok
+print(d2)
 
 print("***function")
 def aki():
@@ -168,10 +192,40 @@ disp()
 
 # default return value is none
 
-
 print("***variables")
 a="bol bhai"
 print(a)
+
+print('***to access objects')
+print('-For Dictionary')
+d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
+r=d1[444]
+print(r)
+
+print(d1.keys())
+print(d1.values())
+print(d1.items())
+
+for x in d1:
+	print(x)
+
+for x in d1:
+	print(x,d1[x])
+
+for i in d1.keys():
+	print(i)
+
+for i in d1.values():
+	print(i)
+
+for i in d1.items():
+	print(i)
+
+for x,y in d1.items():
+	print(x,'-',y)
+
+print(d1.get(111))
+
 
 print("***local & global variable")
 #case 1       # all function can use global variable value
@@ -547,9 +601,9 @@ print("***lower case")
 print('for string')
 print(a.lower())
 
-print('***Capitalize')
+print('***see - Capitalize')
 print('for string')
-print(a.Capitalize())
+#print(a.Capitalize())
 
 print('***Enumarate')				# give corresponfing number to string
 print(list(enumerate(a)))
@@ -692,86 +746,48 @@ while a<5:
 	print(a)
 
 #Arrays
-print("*** to convert int to string")
+print('***convert Datatypes')
+print("to convert int to string")
 x=str(y)
 
 
-print("** to convert List to Tuple")
+print("to convert List to Tuple")
 List1=['a','b','c','d']
 Tuple1=tuple(List1)
 print(Tuple1)
 
-print("** To convert Tuple to List")
+print("To convert Tuple to List")
 Tuple1=('a','b','c','d')
 List1=list(Tuple1)
 print(List1)
 
-print("**to convert List to set")
+print("to convert List to set")
 List1=['a','b','c','d']
 set1=set(List1)
 print(set1)
 
-print("** to convert set to list")
+print("to convert set to list")
 set1={'a','b','c','d'}
 List1=list(set1)
 print(List1)
 
-print("**Tuple to set")
+print("Tuple to set")
 Tuple1=('a','b','c','d')
 set1=set(Tuple1)
 print(set1)
 
-print("**Tuple to Dics ")
+print("Tuple to Dics ")
 Tuple1=('a','b','c','d')
 Dict2={i:i*2 for i in Tuple1}
 print(Dict2)
 
-print("***to access Dictionary data (IMP)")
-Dict3={1: 2, 2: 4, 3: 6, 4: 8, 'a': 10}
-r=Dict3['a']
-print(r)
-
-r=Dict3.keys()
-print(r)
-r=Dict3.values()
-print(r)
-r=Dict3.items()
-print(r)
-
-for i in Dict3.keys():
-	print(i)
-
-for i in Dict3.values():
-	print(i)
-
-for i in Dict3.items():
-	print(i)
-
-for x,y in Dict3.items():
-	print(x,'-',y)
-
-print("exponent ")
+print("***exponent ")
 x=10
 n=2
 print(x**2)
  
 ''' ratan '''
-print('***PRINT')
-eid,ename,esal=111,'ratan',100.45
-print(eid)
-print(ename)
-print(esal)
 
-print('Emp id=',eid)
-print('Emp name=',ename)
-print('Emp sal=',esal)
-
-print('Emp id=',eid,'Emp name=',ename,'Emp sal=',esal)
-
-print(eid,end='')  # this will print next line in same line
-print(' ',ename)
-
-print(10,20,30,sep='*')
 
 print("***List of keyword")
 import keyword
@@ -780,7 +796,7 @@ print(keyword.kwlist)
 ''' for 2.x we dont need parenthesis to print while 3.x requires parenthesis
     because we can see in 2.x print is keyword while in 3.x print is not keyword'''
 
-print("***General Datatypes")
+print("***Datatypes")
 '''
 Number : int float : 10,20   5.25, 10.29
 string : str : 'ratan' "ratan"
@@ -802,11 +818,13 @@ L1=[10,20,30,40]
 print(L1)
 print(type(L1))
 
+print('for Dics')
+d1={111:'ratan',222:'durga'}
+print(type(d1))
+
 print('***variable')
 evalue,esalary,expect=10,20,30
 evalue=esalary=expect=10
-
-
 
 print('***re assigning')
 a=10
@@ -898,12 +916,12 @@ hexa decimal: allows 0 to 9 and a to f
 
 '''
 
-print('ASCI value')
+print('see-ASCI value')
 c=5
-print(ord(c))
+#print(ord(c))
 
 c=f
-print(ord(c))
+#print(ord(c))
 
 print('binary values')
 c=112
@@ -1068,6 +1086,32 @@ print(100 in L1)
 print(10 not in L1)
 print(100 not in L1)
 
+print('for Dics')
+d1={111:'ratan',222:'anu'}
+d2={333:'ratan',444:'anu'}
+d3=d1
+d4={111:'ratan',222:'anu'}
+
+print(id(d1))
+print(id(d2))
+print(id(d3))
+print(id(d4))
+
+print(d1 is d2)
+print(d1 is d3)
+print(d1 is not d2)
+print(d1 is not d3)
+
+print(d1==d2)		#data caomparison: compares both key,value
+print(d1==d4)
+print(d1!=d2)
+print(d1!=d4)
+
+print(111 in d1)	#check only keys avaiable or not
+print(11 in d1)
+print(111 not in d1)
+print(11 not in d1)
+
 print('***Unpacking') #List --> variables #it will break list and assigns values to variables
 L1=[10,10.4,'ratan']
 a,b,c=L1
@@ -1180,7 +1224,7 @@ print(type(L1[1][1]))
 print(L1[0][1])
 print(L1[1][1])
 
-print('unpacking')
+print('***unpacking')
 L2=[[1,2,'ratan'],[3,'tata']]
 a,b=L2
 print(type(a))
@@ -1192,6 +1236,8 @@ l1=[10,20,30]
 l2=l1.copy()
 print(l2)
 
+print('***modification')
+print('- For list')
 print('extend') 	#its like List union
 l1=[10,20,30]
 l2=[40,50,60]
@@ -1241,6 +1287,14 @@ l1=[10,20,30]
 l1.clear()
 print(l1)
 
+print('-for Dict')
+print('append')
+d3={}
+d3[111]='ratan'
+d3[222]='anu'
+d3[333]='ratan'
+print(d3)
+
 print('***Max Min')		#give maximum and minimum values
 print('for string')
 
@@ -1255,3 +1309,22 @@ print(min(l2))
 l3=[10,'ratan']				#TypeError: '>' not supported between instances of 'str' and 'int'
 #print(max(l3))				# can not compare heterogenous objects	
 #print(min(l3))				# can not compare heterogenous objects
+
+print('***Dics***')
+
+'''
+key:value    key=obj  	value=obj   :both together called item
+{key:value,key:value}
+keys:unique		values:duplicated
+mutable: it allows modification
+'''
+
+print('Dict keys must be immutable(tuple,number,string) data type')
+print('Dict values can be any data type')
+
+#d1={[1,2]:'ratan',222:'anu',333:'durga'}		#list not allowed as dict key
+print(d1)
+#TypeError: unhashable type: 'list'
+
+d1={111:['ratan','tata'],222:'anu',333:'durga'}		#list allowed as dict values
+print(d1)

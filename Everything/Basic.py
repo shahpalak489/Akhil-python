@@ -425,7 +425,6 @@ print(x>1 and y>2)
 print(x==1 or y==3)
 print(x==1 and y==3)
 
-
 # to check given value present or not and gets True/false
 print("Membership operator")
 x="california"
@@ -443,56 +442,28 @@ Str='welcome to RatanIT'
 print(Str.find('Ratan'))
 print(Str.find('anu')) 
 
-print('***to access objects')
-print('-For Dictionary')
-d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
-r=d1[444]
-print(r)
-
-print(d1.keys())
-print(d1.values())
-print(d1.items())
-
-for x in d1:
-	print(x)
-
-for x in d1:
-	print(x,d1[x])
-
-for i in d1.keys():
-	print(i)
-
-for i in d1.values():
-	print(i)
-
-for i in d1.items():
-	print(i)
-
-for x,y in d1.items():
-	print(x,'-',y)
-
-print(d1.get(111))
-
-
-
+#to get index of alphabet/string
 print('***Index')			#returns index of given word
 print('For string')
-print(Str.index('come'))	
+print(Str.index('come'))
+
+#to get index of alphabet/string in given range
 print(Str.index('t',10,15))	# return index of 't' between 10 to 15 index
 #print(Str.index('anu'))	#this will return error bcoz 'anu' is not in Str
 
-print('for List')
+print('- for List')
 l1=['ratan','anu','durga','ratan']
 print(l1.index('ratan'))		#by default search first 'ratan'
 print(l1.index('ratan',2))		# search 'ratan' from index 2
 print(l1.index('ratan',2,4))	# search 'ratan' from index 2 to 4
 
-
-print('***swapcase - make uppercase to lower case and lower case to upper case')
-print('For String')
+#to make uppercase lower case and lower case to upper case
+print('***swapcase')
+print('- For String')
 print(Str.swapcase())
 
-print('***see- alpha numberic') 	#check if data is alpha , numeric or alpha-numeric 
+#to check if data is alpha , numeric or alpha-numeric 
+print('***see- alpha numberic') 	
 string1='HelloPython'
 print(string1.isalpha())
 
@@ -511,7 +482,8 @@ print(string5.isalnum())
 string6='RatanIT'				#see - why its true?
 print(string6.isalnum())
 
-print('***Upper case, lower case , space') 	#check if string is upper case, lower case or it has space 
+#check if string is upper case, lower case or it has space
+print('***Upper case, lower case , space') 	
 string1='hellopython'
 print(string1.islower())
 
@@ -543,18 +515,19 @@ c=2
 print(a%b)  # a/b
 print(a%c)  # a/c
 
+# after performing the division, get results in the lower integer to the value
 print("*** floor division") 
-print("after performing the division, give results in the lower integer to the value")
 a=10
 b=3
 print(a//b)
 
+#to get few alphabets of string/ to get few objects from list/set/tuple
 print("***slice")
-print('for string')
+print('- for string')
 a="india"
 print (a[1])
 
-print("***slice of list")
+print("- for list")
 list1=['a1','b2','c3','d4','5re']
 print(list1[2])
 print(list1[2:7]) 
@@ -562,13 +535,13 @@ print(list1[10:])
 print(list1[:10])
 print(list1[1:4:2])
 
-print("***MM IMP")
+print("***VV IMP")
 #https://www.quora.com/What-is-negative-index-in-Python
 print(list1[-4:-2:-1])
 print("***MM IMP")
 print(list1[-4:-2:1])
 
-print("***slice With tuple")
+print("- for tuple")
 list1=('a1','b2','c3','d4','5re')
 print(list1[2])
 print(list1[2:7])
@@ -584,18 +557,23 @@ print(list1[-4:-2:1])
 #slice With dics -- not possible
 #slice with set -- not possible
 
+# to break string
 print("***split")
-print('for string')
+print('- for string')
 a="india"
 print(a.split('d'))
+
+#to break string with separator
 print('+'.join(a.split('d')))			# this will split and place '+' in between
 
+# to concatenate string
 print("***concatenate")
 print('for string')
 b=" is a Country"
 print(a+b)
 
-print('for Numbers(Int and Float)')
+#to concatenate Int and float
+print('- for Numbers(Int and Float)')
 '''
 we can concatenate int and float because they both are numbers
 we can concatenate int and float to boolean because boolean has assigned values 0 and 1
@@ -611,12 +589,13 @@ print(10+'ratan')
 print(10.5+'tata')
 '''
 
-print('for list')
+print('- for list')
 l1=[10,20,30]
 l2=[40,50,60]
 l3= l1+l2
 print(l3)
 
+# what is this?
 print("***Replication")
 print('for numbers')
 print(a*2)
@@ -626,15 +605,18 @@ l1=[10,20,30]
 l2=l1*2
 print(l2)
 
+# to replace few alphabets with other alphabets in string
 print("***Replace")
-print('for string')
+print('- for string')
 c=a.replace('a','a is country')
 print(c)
 
+# to make upper case
 print("***upper case")
 print('for string')
 print(a.upper())
 
+# to make lower case
 print("***lower case")
 print('for string')
 print(a.lower())
@@ -643,10 +625,12 @@ print('***see - Capitalize')
 print('for string')
 #print(a.Capitalize())
 
-print('***Enumarate')				# give corresponfing number to string
+# to give corresponfing number to string
+print('***Enumarate')				
 print(list(enumerate(a)))
 print(tuple(enumerate(a)))
 
+# how many times given alphabetpresent in string
 print('***count')			# return count of character in given string
 print('for string')
 a='ratanratan'
@@ -655,10 +639,12 @@ print(a.count('ratan'))			#count 'ratan' in a
 print(a.count('a',1,7))			#count 'a' between 1 and 7 position
 print(a.count('ratan',2,7))		#count 'ratan' between 2 and 7 position
 
+# how many times given object present in list/set/tuple
 print('for list')
 l1=[10,20,30,10,10]
 print(l1.count(10))
 
+# to check if string start/end with given alphabets
 print('start with and end with')
 string1='Welcome to RatanIT'
 print(string1.startswith('Welcome'))
@@ -672,11 +658,11 @@ x=3
 y=3
 z=5
 
-print("***if")
+print("- if")
 if x==3 and y==3:
 	print("x and y are 3")
 
-print("***if..else")
+print("- if..else")
 #case 1
 if (x==z):
 	print("x and z are same")
@@ -698,7 +684,7 @@ else:
 #case 4
 print('ratan'),print('ratan') if 10>20 else print('durga'),print('durga')
 
-print("***if...elif...else")
+print("- if...elif...else")
 if (y==z):
 	print("y and z are same")
 elif (x==z):
@@ -818,6 +804,36 @@ x=10
 n=2
 print(x**2)
  
+print('***to access objects')
+print('-For Dictionary')
+d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
+r=d1[444]
+print(r)
+
+print(d1.keys())
+print(d1.values())
+print(d1.items())
+
+for x in d1:
+	print(x)
+
+for x in d1:
+	print(x,d1[x])
+
+for i in d1.keys():
+	print(i)
+
+for i in d1.values():
+	print(i)
+
+for i in d1.items():
+	print(i)
+
+for x,y in d1.items():
+	print(x,'-',y)
+
+print(d1.get(111))
+
 ''' ratan '''
 print("***List of keyword")
 import keyword

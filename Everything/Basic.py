@@ -30,17 +30,19 @@ print('For Dics')
 d1={111:'ratan',222:'anu',333:'durga'}
 print(d1)
 
-d2={111:'ratan',222:'anu'}	  #duplicate keys will be removed  	#duplicate values will be ok
+d2={111:'ratan',111:'surya',222:'surya'}	  #duplicate keys will be override  	#duplicate values will be ok
 print(d2)
 
 print('***formatting data')		#mainly use as variable in print statement
 '''
+Method 1
 int 	float		string    
-%d 		%g   %f 	  %s
+%d 	%g   %f 	  %s
 
+Method 2
 {}
-
 '''
+
 eid= int(input('eid: '))
 ename=input('ename: ')
 esal=float(input('esal: '))
@@ -91,60 +93,6 @@ default(y=10,x=2) #if we change sequence of variable then we need to specify x=2
 #default(20,y=40,30) # Invalid : once we give y=40 then rest of all argument must be z=something .we can not put just 30 
 default(50,60,z=10)  # valid
 
-print('function-args')
-#case 1
-def multiple(*args):
-	print(args)
-multiple(1,2,3,4)
-
-def star(*a):
-	for x in a:
-		print(x)
-
-star(10,20,30)
-
-#case 2
-def star(car,*a):
-	print(car)
-	for x in a:
-		print(x)
-star("honda",10,20,30)
-
-def star(*b,car):
-	print(car)
-	for x in b:
-		print(x)
-star(49,81,car='accord') #in this case, use keyword arguments 
-
-#case 3
-def star(name='ratan',*b):
-	print(name)
-	for x in b:
-		print(x)
-star(35,94,100)  # here name=35,and *a=94,100
-
-#case 4
-def star(name1,name='ratan',*b):
-	print(name1)
-	for x in b:
-		print(x)
-star(35,94,100,90)  #here name1=35,name=94 and *a=100,90
-
-#case 5
-def star(name1,*b,name='ratan'):
-	print(name1)
-	for x in b:
-		print(x)
-star(35,94,100,90)  #here name1=35 and *b=94,100,90
-
-#case 3
-def star(name1,*b,name='ratan'):
-	print(name1)
-	for x in b:
-		print(x)
-	print(name)
-star(35,94,100,90,name='tata')  #here name1=35 and *b=94,100,90 and name='tata'
-
 print("***to call function")
 print("IMP: '()' this symbol call function")
 def a1():
@@ -186,6 +134,59 @@ def inner1():
     print("This is after function execution")
     return inner1
 
+print('function-args')
+#case 1
+def multiple(*args):
+	print(args)
+multiple(1,2,3,4)
+
+def star(*a):
+	for x in a:
+		print(x)
+star(10,20,30)
+
+#case 2
+def star(car,*a):
+	print(car)
+	for x in a:
+		print(x)
+star("honda",10,20,30)
+
+def star(*b,car):
+	print(car)
+	for x in b:
+		print(x)
+star(49,81,car='accord') #in this case, use keyword arguments 
+
+#case 3
+def star(name='ratan',*b):
+	print(name)
+	for x in b:
+		print(x)
+star(35,94,100)  # here name=35,and *b=94,100
+
+#case 4
+def star(name1,name='ratan',*b):
+	print(name1)
+	for x in b:
+		print(x)
+star(35,94,100,90)  #here name1=35,name=94 and *b=100,90
+
+#case 5
+def star(name1,*b,name='ratan'):
+	print(name1)
+	for x in b:
+		print(x)
+star(35,94,100,90)  #here name1=35 and *b=94,100,90
+
+#case 3
+def star(name1,*b,name='ratan'):
+	print(name1)
+	for x in b:
+		print(x)
+	print(name)
+star(35,94,100,90,name='tata')  #here name1=35 and *b=94,100,90 and name='tata'
+
 print("***Return (IMP)")
 def function_that_prints():
     print("I printed")
@@ -194,11 +195,12 @@ def function_that_returns():
     return "I returned"
     print("after return")
 
-print("***The return statement terminates the execution of a function")
-print("** function calling  will give only print values,not return values ")
+print("IMP - The return statement terminates the execution of a function")
+print("IMP - function calling  will give only print values,not return values ")
 f1 = function_that_prints() #this will call function_that_prints
 f2 = function_that_returns() # this will call function_that_returns
-print("***to access return values assign variable to function")
+
+print("IMP - to access return values assign variable to function")
 print("calling and print the variable because retuen assigns value") 
 print("to function so we need to print calling function ")
 print(f1) 

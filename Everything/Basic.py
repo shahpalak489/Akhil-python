@@ -33,6 +33,40 @@ print(d1)
 d2={111:'ratan',222:'anu'}	  #duplicate keys will be removed  	#duplicate values will be ok
 print(d2)
 
+print('***formatting data')		#mainly use as variable in print statement
+'''
+int 	float		string    
+%d 		%g   %f 	  %s
+
+{}
+
+'''
+eid= int(input('eid: '))
+ename=input('ename: ')
+esal=float(input('esal: '))
+print('emp id: ',eid)
+print('emp name: ',ename)
+print('emp salary: ',esal)
+
+# for % , if %d is first its value must be first...so its sequence is important
+print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
+
+# difference between %g and %f
+# %f prints upto 12 digits while %g prints data upto 6 digits only
+a=123.456879
+print('value of a=%g'%(a)) 
+
+a=123456.87958418641684888
+print('value of a=%f'%(a)) 
+
+#while {} is very flexible 
+print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
+print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
+
+d1={1:'ratan',3:'anu',4:'surya',2:'durga'}
+for key in sorted(d1.keys()):
+	print("key=%d values=%s"%(key,d1[key]))
+	
 print("***function")
 def aki():
 	print("this is not right")
@@ -464,9 +498,6 @@ print(string3.isdigit())
 string4='home123'
 print(string4.isdigit())
 
-
-
-
 string5='Ratan1980'
 print(string5.isalnum())
 
@@ -709,11 +740,6 @@ for z in range (5,10):
 else:
  	print("Finally finished!")
 
-
-
-
-
-
 print("**while loop**")
 n = 25
 while n > 20:
@@ -749,7 +775,6 @@ while a<5:
 print('***convert Datatypes')
 print("to convert int to string")
 x=str(y)
-
 
 print("to convert List to Tuple")
 List1=['a','b','c','d']
@@ -787,8 +812,6 @@ n=2
 print(x**2)
  
 ''' ratan '''
-
-
 print("***List of keyword")
 import keyword
 print(keyword.kwlist)
@@ -850,7 +873,6 @@ num2= input('Enter second num: ')
 total=num1+num2
 print('total:',total)
 
-
 below example will give int as result
 
 print('example-2')
@@ -858,9 +880,8 @@ num1= int(input('Enter first num: '))
 num2= int(input('Enter second num: '))
 total=num1+num2
 print('total:',total)
+
 '''
-
-
 print('Range')
 '''
 Rule: start from first value upto second value and if third value is 
@@ -897,9 +918,10 @@ Type Error: concat not possible
 valueerror : conversion 
 Name error: name is not defined
 unbounded local error: related to local and global variable
-
 '''
+
 print('***Number systems')
+
 '''
 binary : base 2
 octal  : base 8
@@ -907,13 +929,9 @@ decimal : base 10
 Hexa decimal : base 16
 
 binary system: allows 0 and 1
-
 octal form: allows 0 to 7
-
 decimal : allows 0 to 9
-
 hexa decimal: allows 0 to 9 and a to f
-
 '''
 
 print('see-ASCI value')
@@ -956,9 +974,7 @@ Rule 5 : kewords not allowed
 self=100 # not alloed
 
 Rule 6 : Possible to take pre defined class names as identifiers but not recommended
-
 '''
-
 
 print('see video10:30.00 - difference between global and nonlocal')
 
@@ -1022,12 +1038,14 @@ print(s1.rstrip('#'))		# to remove # at the end
 print(s1.rstrip('#').lstrip('@'))
 
 print('***id,=,!=,is in')
+
 '''
 id() : print memory location
 is, is not : memory comparison : return boolean    		#it compares data as well as memory location
 == , !=  : data comparison : return boolean
 in, not in : check data available or not : return boolean
 '''
+
 print('For string')
 name1='ratan'
 name2='anu'
@@ -1153,10 +1171,12 @@ d=dict(x)
 print(d)
 
 print('*** sort/sorted')
+
 ''' IMP
 just to arrange by asc or desc ---> sort
 to arrange with any other logic ---> sorted
 '''
+
 print('For List')
 #arrange number in asc order
 a=[1,4,5,3,2]
@@ -1204,41 +1224,6 @@ print('for list')
 l1=[10,20,30]
 l1.reverse()
 print(l1)
-
-print('***formatting data')		#mainly use as variable in print statement
-'''
-int 	float		string    
-%d 		%g   %f 	  %s
-
-{}
-
-'''
-eid= int(input('eid: '))
-ename=input('ename: ')
-esal=float(input('esal: '))
-print('emp id: ',eid)
-print('emp name: ',ename)
-print('emp salary: ',esal)
-
-# for % , if %d is first its value must be first...so its sequence is important
-print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
-
-# difference between %g and %f
-# %f prints upto 12 digits while %g prints data upto 6 digits only
-a=123.456879
-print('value of a=%g'%(a)) 
-
-a=123456.87958418641684888
-print('value of a=%f'%(a)) 
-
-#while {} is very flexible 
-print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
-print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
-
-d1={1:'ratan',3:'anu',4:'surya',2:'durga'}
-for key in sorted(d1.keys()):
-	print("key=%d values=%s"%(key,d1[key]))
-
 
 print('***List info')
 '''
@@ -1418,4 +1403,3 @@ print(d3)
 print('None')			# None allowed in keys and values both
 d2={None:None}
 print(d2)
-

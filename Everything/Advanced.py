@@ -51,7 +51,6 @@ print(x)
 x={i:i*3 for i in List1 if (i*3)<12}
 print(x)
 
-
 print("**Lambda")
 print("** Lambda with function name")
 akhil=lambda a: a+6

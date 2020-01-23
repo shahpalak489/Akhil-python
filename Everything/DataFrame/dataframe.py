@@ -237,7 +237,6 @@ print("*** Right Join")
 Right_join=pd.merge(df1,df2,left_on='Coreid',right_on='Coreid_2',how='right')
 print(Right_join.loc[:,['Coreid','Coreid_2']])
 
-
 print("*** concatenation between 2 columns")
 df1['flight_fulldetail']=df1['origin_full_name'] + ' TO ' + df1['destination_full_name']
 print(df1.loc[:,['origin_full_name','destination_full_name','flight_fulldetail']])

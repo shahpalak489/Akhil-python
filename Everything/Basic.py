@@ -1112,7 +1112,8 @@ print(11 in d1)
 print(111 not in d1)
 print(11 not in d1)
 
-print('***Unpacking') #List --> variables #it will break list and assigns values to variables
+print('***Unpacking') 
+print('-for list')		#List --> variables #it will break list and assigns values to variables
 L1=[10,10.4,'ratan']
 a,b,c=L1
 print(a,b,c)
@@ -1121,6 +1122,35 @@ print(type(a),type(b),type(c))
 #IMP
 L2=[10,20,30]
 #a,b=L2		#this will give an error, need exact number of variables for unpacking 
+
+print('-for dics')
+d1={1:'aaa',2:'bbb'}
+a,b=d1
+print(a,b)				# dics will unpack only keys
+
+d2={1:'aaa'}
+c=d2
+print(c)
+
+print('***packing')
+print('convert list/set/tuple into dics')
+l1=[1,2,3,4]							 
+l2=['ratan','durga','anu','ratanIT']
+x=zip(l1,l2)			
+d=dict(x)
+print(d)
+
+l1=(1,2,3,4)							 
+l2=('ratan','durga','anu','ratanIT')
+x=zip(l1,l2)			
+d=dict(x)
+print(d)
+
+l1={1,2,3,4}							 
+l2={'ratan','durga','anu','ratanIT'}
+x=zip(l1,l2)			
+d=dict(x)
+print(d)
 
 print('*** sort/sorted')
 ''' IMP
@@ -1163,13 +1193,19 @@ print(m)
 l3=[10,20.85,'ratan']
 #l3.sort() 					#heterogenous sorting not supported
 
+print('-for dics')
+d1={1:'ratan',2:'durga',3:'anu',4:'surya'}
+print(sorted(d1.keys()))
+print(sorted(d1.values()))
+print(sorted(d1.items()))
+
 print('***reverse')
 print('for list')
 l1=[10,20,30]
 l1.reverse()
 print(l1)
 
-print('***formatting data')
+print('***formatting data')		#mainly use as variable in print statement
 '''
 int 	float		string    
 %d 		%g   %f 	  %s
@@ -1198,6 +1234,11 @@ print('value of a=%f'%(a))
 #while {} is very flexible 
 print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
 print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
+
+d1={1:'ratan',3:'anu',4:'surya',2:'durga'}
+for key in sorted(d1.keys()):
+	print("key=%d values=%s"%(key,d1[key]))
+
 
 print('***List info')
 '''
@@ -1238,7 +1279,7 @@ print(l2)
 
 print('***modification')
 print('- For list')
-print('extend') 	#its like List union
+print('extend') 	#this will add whole list into another list
 l1=[10,20,30]
 l2=[40,50,60]
 l1.extend(l2)
@@ -1288,12 +1329,37 @@ l1.clear()
 print(l1)
 
 print('-for Dict')
-print('append')
+print('to add object at the end in dics')
 d3={}
 d3[111]='ratan'
 d3[222]='anu'
 d3[333]='ratan'
 print(d3)
+
+print('to add one dict into another dict')
+#method 1
+d1={1:'aaa',2:'bbb'}
+d2={3:'ccc',4:'ddd'}
+d1.update(d2)
+print(d1)
+
+#method 2
+d1={1:'aaa',2:'bbb'}
+d2={3:'ccc',4:'ddd'}
+x={**d1,**d2}
+print(x)
+
+print('to remove last object/particular object from dics')
+d1={1:'aaa',2:'bbb',3:'ccc'}
+d1.popitem()		# this will remove last item fron dics
+print(d1)
+d1.pop(2)		#this will remove key 2 from dics
+print(d1)
+
+print('to remove all objects from dics')
+d1={1:'aaa',2:'bbb',3:'ccc'}
+d1.clear()
+print(d1)
 
 print('***Max Min')		#give maximum and minimum values
 print('for string')
@@ -1310,15 +1376,27 @@ l3=[10,'ratan']				#TypeError: '>' not supported between instances of 'str' and 
 #print(max(l3))				# can not compare heterogenous objects	
 #print(min(l3))				# can not compare heterogenous objects
 
-print('***Dics***')
+print('-for dics')
+d1={1:'ratan',2:'durga',3:'anu',4:'surya'}
+print(max(d1))
+print(min(d1))
 
+d2={'ratan':1,'durga':2,'anu':3,'surya':4}
+print(max(d2))
+print(min(d2))
+
+#doest work with heterogenous dics
+d3={1:'ratan',2:'durga','anu':3,'surya':4}	#TypeError: '>' not supported between instances of 'str' and 'int'
+#print(max(d3))
+#print(min(d3))
+
+print('***Dics***') 
 '''
 key:value    key=obj  	value=obj   :both together called item
 {key:value,key:value}
 keys:unique		values:duplicated
 mutable: it allows modification
 '''
-
 print('Dict keys must be immutable(tuple,number,string) data type')
 print('Dict values can be any data type')
 
@@ -1328,3 +1406,16 @@ print(d1)
 
 d1={111:['ratan','tata'],222:'anu',333:'durga'}		#list allowed as dict values
 print(d1)
+
+print('override')
+d3={}
+d3[111]='ratan'
+d3[222]='anu'
+d3[333]='ratan'
+d3[111]="repeat"		# if we try to enter same key again it will override that key and value
+print(d3)
+
+print('None')			# None allowed in keys and values both
+d2={None:None}
+print(d2)
+

@@ -211,7 +211,7 @@ print(f2)
 # or
 print(function_that_returns())
  
-print("return example 2")
+print("example 2")
 def no_return(x,y):
     c = x + y
     return c
@@ -222,50 +222,20 @@ def disp():
 	print('good morning')
 	return 10
 	return 20			    #ignored
-	print('good evening')	#ignored
+	print('good evening')		    #ignored
 
 disp()
 
 # default return value is none
 
+
 print("***variables")
 a="bol bhai"
 print(a)
 
-print('***to access objects')
-print('-For Dictionary')
-d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
-r=d1[444]
-print(r)
-
-print(d1.keys())
-print(d1.values())
-print(d1.items())
-
-for x in d1:
-	print(x)
-
-for x in d1:
-	print(x,d1[x])
-
-for i in d1.keys():
-	print(i)
-
-for i in d1.values():
-	print(i)
-
-for i in d1.items():
-	print(i)
-
-for x,y in d1.items():
-	print(x,'-',y)
-
-print(d1.get(111))
-
-
 print("***local & global variable")
-#case 1       # all function can use global variable value
-
+#case 1
+#all function can use global variable value
 name='ratan'  # global variable
 def disp1():
 	print('good morning',name)
@@ -278,6 +248,16 @@ disp2(3,10)
 
 #case 2 
 # when local and global variable has same name then priority goes to local varibale
+#Example 1
+b=100
+print(b)
+def scope():
+	b=200
+	print(b)
+scope()
+print(b)
+
+#Example 2
 g,h=10,20
 def sarvado(g,h):
 	print(g+h)
@@ -299,32 +279,22 @@ def disp3():
 disp3()
 print(s)
 
-
-#case 5
-b=100
-print(b)
-def scope():
-	b=200
-	print(b)
-scope()
-print(b)
-
-#case 6 ( VV IMP)
+#case 5 (VV IMP)
 # once we use global variable inside function we can not declare same variable as local variable
 # below code will give error
 '''
 name='ratan'
 def tution():
-	print(name)  # used name as global variable
-	name='durga'  # after using name as global variable we can not declare same vaiable as local
+	print(name)  	# used name as global variable
+	name='durga'  	# after using name as global variable we can not declare same vaiable as local
 	print(name)
 tution()
 '''
 
-print('Nonlocal keyword')
-#case 7 - VV IMP
-# to chnage parent function's variable value from child function use nonlocal keyword
-# in below example we are chaning name1 variable value inside child function using nonlocal keyword
+#case 6 - VV IMP
+# to chnage parent function's variable value from child function
+#Method 1
+# in below example we are chaning name1 variable value, inside child function using nonlocal keyword
 # because of this name1 value changes foreever
 name='ratan'
 def outer():
@@ -340,7 +310,8 @@ def outer():
 outer()
 print(name)
 
-# without Nonlocal
+#Case 7 
+#to update Global variable value
 name='ratan'
 def outer():
 	name1='durga'
@@ -355,6 +326,7 @@ outer()
 print(name)
 
 print("***arithmetic Operator")
+# +,-,*,/
 x=10
 y=20
 print(x+y)
@@ -363,6 +335,7 @@ print(y-x)
 print(y/x)
 
 print("***relation operator")
+# <, >, <= ,>= !=
 print('for number')
 f=30
 g=23
@@ -373,7 +346,7 @@ print(f<=g)
 print(f>=g)
 print(f!=g)
 
-print('for string') 			# compare based on ASCI value
+print('for string') 		# compare based on ASCI value
 print('ratan' > 'anu')
 print('ratan' < 'anu')
 print('ratan' >= 'anu')
@@ -381,8 +354,8 @@ print('ratan' <= 'anu')
 print('ratan' == 'anu')
 print('ratan' != 'anu')
 
-print("**assignment operator**")
-
+print("***assignment operator**")
+# +=, -=, *= ,/=
 x += y
 #Example-1
 x=10
@@ -444,13 +417,16 @@ x=4/2=2
 x=2/3=0.6
 '''
 
-print("**Logical operator**")
+print("***Logical operator")
+# and , or
 x=2
 y=3
 print(x>1 and y>2)
 print(x==1 or y==3)
 print(x==1 and y==3)
 
+
+# to check given value present or not and gets True/false
 print("Membership operator")
 x="california"
 print('z' in x)
@@ -459,15 +435,44 @@ print('z' not in x)
 x=['india','ab','ssss']
 print ("ab" in x)
 
-'''
-difference between in and Find --> in returns true / false , find returns indexing of given word
-''' 
-
+# to check given value present or not and gets its index
+# difference between in and Find --> in returns true / false , find returns indexing of given word
 print('***Find')		# if avaiable returns index else returns -1
 print('for string')
 Str='welcome to RatanIT'
 print(Str.find('Ratan'))
 print(Str.find('anu')) 
+
+print('***to access objects')
+print('-For Dictionary')
+d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
+r=d1[444]
+print(r)
+
+print(d1.keys())
+print(d1.values())
+print(d1.items())
+
+for x in d1:
+	print(x)
+
+for x in d1:
+	print(x,d1[x])
+
+for i in d1.keys():
+	print(i)
+
+for i in d1.values():
+	print(i)
+
+for i in d1.items():
+	print(i)
+
+for x,y in d1.items():
+	print(x,'-',y)
+
+print(d1.get(111))
+
 
 
 print('***Index')			#returns index of given word

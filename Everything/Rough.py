@@ -1,3 +1,8 @@
-d3={1:'ratan',2:'durga','anu':3,'surya':4}
-print(max(d3))
-print(min(d3))
+# ex 5				
+#map			#perform operation on all elements
+l1=[2,3,4]
+
+def m1(x):
+	return x*5
+print(list(map(m1,l1)))
+print(list(map(lambda x:x*5,l1)))

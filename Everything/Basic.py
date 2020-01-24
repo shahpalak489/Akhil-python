@@ -97,17 +97,17 @@ print("***to call function")
 print("IMP: '()' this symbol call function")
 def a1():
 	print("a1")
-a1() # this will call function a1
+a1() 					# this will call function a1
 
 print("***IMP")
 def akhil():
 	print("akhil")
-a3=akhil() # this will call akhil function
+a3=akhil() 				# this will call akhil function
    
 def a(x):
 	print(x+10)
 b=a
-b(2) # this will call function a
+b(2) 					 # this will call function a
 
 print("***to call 1 function inside another function")
 def g():
@@ -498,7 +498,8 @@ print(string4.isupper())
 
 string5=' '					#see- why it works only for ' '
 print(string5.isspace())
-
+ 
+ 
 string6='RatanIT'				
 print(string6.isspace())
 
@@ -681,7 +682,7 @@ if 0:
 else:
 	print('false condition')
 
-#case 4
+#case 4				#this same kinf of if structure we can use in lambda
 print('ratan'),print('ratan') if 10>20 else print('durga'),print('durga')
 
 print("- if...elif...else")

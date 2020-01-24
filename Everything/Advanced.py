@@ -159,3 +159,53 @@ same as
 @our_decorator
 def foo()
 '''
+
+# Ratan
+
+print("***Lambda")
+
+#ex 1				#one variable
+def m1(x):
+	print(2*x)
+m1(10)
+
+a=lambda x: x*2
+print(a(10))
+
+#ex 2						#2 variables
+def m1(x,y):
+	print(x*y)
+m1(10,20)
+
+a=lambda x,y: x*y
+print(a(10,20))
+
+b=lambda x,y:'x is bigger' if x>y else 'y is bigger'
+print(b(5,7))
+
+# ex 3
+#filter syntax: filter(logic,input) 	use:it will return objects from input who satisfy given condition  
+l1=[10,3,5,2,20]
+def m1(x):
+	if x%2==0:
+		return True
+	else:
+		return False
+#method 1
+print(list(filter(m1,l1)))
+#method 2
+print(list(filter(lambda x:x%2==0,l1)))
+
+# ex 4
+l1=['ratan','anu','durga','ratan']
+def m1(x):
+	if x=='ratan':
+		return True
+	else:
+		return False
+
+a=list(filter(m1,l1))
+print(a)
+
+b=list(filter(lambda x:x=='ratan',l1))
+print(b)

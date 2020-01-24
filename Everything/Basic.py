@@ -334,6 +334,11 @@ print(x*y)
 print(y-x)
 print(y/x)
 
+print("***exponent")
+x=10
+n=2
+print(x**2)
+
 print("***relation operator")
 # <, >, <= ,>= !=
 print('for number')
@@ -765,46 +770,6 @@ while a<5:
 		continue
 	print(a)
 
-#Arrays
-print('***convert Datatypes')
-print("to convert int to string")
-x=str(y)
-
-print("to convert List to Tuple")
-List1=['a','b','c','d']
-Tuple1=tuple(List1)
-print(Tuple1)
-
-print("To convert Tuple to List")
-Tuple1=('a','b','c','d')
-List1=list(Tuple1)
-print(List1)
-
-print("to convert List to set")
-List1=['a','b','c','d']
-set1=set(List1)
-print(set1)
-
-print("to convert set to list")
-set1={'a','b','c','d'}
-List1=list(set1)
-print(List1)
-
-print("Tuple to set")
-Tuple1=('a','b','c','d')
-set1=set(Tuple1)
-print(set1)
-
-print("Tuple to Dics ")
-Tuple1=('a','b','c','d')
-Dict2={i:i*2 for i in Tuple1}
-print(Dict2)
-
-print("***exponent ")
-x=10
-n=2
-print(x**2)
- 
 print('***to access objects')
 print('-For Dictionary')
 d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
@@ -868,6 +833,40 @@ print(type(L1))
 print('for Dics')
 d1={111:'ratan',222:'durga'}
 print(type(d1))
+
+print('***convert Datatypes')
+print("to convert int to string")
+x=str(y)
+
+print("to convert List to Tuple")
+List1=['a','b','c','d']
+Tuple1=tuple(List1)
+print(Tuple1)
+
+print("To convert Tuple to List")
+Tuple1=('a','b','c','d')
+List1=list(Tuple1)
+print(List1)
+
+print("to convert List to set")
+List1=['a','b','c','d']
+set1=set(List1)
+print(set1)
+
+print("to convert set to list")
+set1={'a','b','c','d'}
+List1=list(set1)
+print(List1)
+
+print("to convert Tuple to set")
+Tuple1=('a','b','c','d')
+set1=set(Tuple1)
+print(set1)
+
+print("to convert Tuple to Dics ")
+Tuple1=('a','b','c','d')
+Dict2={i:i*2 for i in Tuple1}
+print(Dict2)
 
 print('***variable')
 evalue,esalary,expect=10,20,30

@@ -1,8 +1,3 @@
+a=65654
 
-
-def m1():
-	global a
-	a='aaa'
-
-#m1()
-print(a)
+print(a.isdigit())

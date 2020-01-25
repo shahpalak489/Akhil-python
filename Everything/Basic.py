@@ -260,36 +260,62 @@ def sarvado(g,h):
 sarvado(2,3)
 
 #case 3 
-print('to use local variable as global variable')
+print('*to use local variable as global variable')
+print('*inside function get global variable value for local variable')
 g,h=10,20
 def sarvado(g,h):
-	print(globals()['g']+h)  # here we use g variable as global variable
+	print(globals()['g']+h)  #here we get g=10 value as global variable
 sarvado(2,3)
 
 #case 4
-# to declare global variable from inside function
+print('*to declare global variable inside function')
 def disp3():
 	global s 
 	s='ratan'
 	print(s)
-disp3()
+disp3()				#function must be executed to declare global variable
 print(s)
 
-#case 5 (VV IMP)
-# once we use global variable inside function we can not declare same variable as local variable
+#Case 5 
+print('to update Global variable value')
+name='ratan'
+def outer():
+	name1='durga'
+	def inner():
+		name1='sunny'
+		global name
+		name='ratan IT'
+	print(name1) 
+	inner()
+	print(name1)
+outer()
+print(name)
+
+#case 6 (VV IMP)
+print('*once we use global variable inside function we can not declare same variable as local variable')
 # below code will give error
 '''
 name='ratan'
 def tution():
 	print(name)  	# used name as global variable
 	name='durga'  	# after using name as global variable we can not declare same vaiable as local
-	print(name)
+	print(name)		# UnboundLocalError: local variable 'a' referenced before assignment
 tution()
 '''
 
-#case 6 - VV IMP
-# to chnage parent function's variable value from child function
-#Method 1
+#case 7 - VV IMP
+print('*to chnage parent function variable value from child function' )
+#example 1
+def m1():
+	a=20
+	def m2():
+		nonlocal a
+		a=30
+	m2()				#this function calling is must to update value of a
+	print(a)
+m1()
+
+#example 2
 # in below example we are chaning name1 variable value, inside child function using nonlocal keyword
 # because of this name1 value changes foreever
 name='ratan'
@@ -301,22 +327,7 @@ def outer():
 		global name
 		name='ratan IT'
 	print(name1) 
-	inner()
-	print(name1)
-outer()
-print(name)
-
-#Case 7 
-#to update Global variable value
-name='ratan'
-def outer():
-	name1='durga'
-	def inner():
-		name1='sunny'
-		global name
-		name='ratan IT'
-	print(name1) 
-	inner()
+	inner()					#this function calling is must to update value of name1
 	print(name1)
 outer()
 print(name)
@@ -419,14 +430,14 @@ x=2/3=0.6
 '''
 
 print("***Logical operator")
-# and , or
+#and,or
 x=2
 y=3
 print(x>1 and y>2)
 print(x==1 or y==3)
 print(x==1 and y==3)
 
-# to check given value present or not and gets True/false
+print('*to check given value present or not and gets True/false')
 print("Membership operator")
 x="california"
 print('z' in x)
@@ -435,37 +446,37 @@ print('z' not in x)
 x=['india','ab','ssss']
 print ("ab" in x)
 
-# to check given value present or not and gets its index
+print('*to check given value present or not and gets its index')
 # difference between in and Find --> in returns true / false , find returns indexing of given word
 print('***Find')		# if avaiable returns index else returns -1
 print('for string')
-Str='welcome to RatanIT'
-print(Str.find('Ratan'))
-print(Str.find('anu')) 
+a='welcome to RatanIT'
+print(a.find('Ratan'))
+print(a.find('anu')) 
 
-#to get index of alphabet/string
+print('*to get index of alphabet/string')
 print('***Index')			#returns index of given word
 print('For string')
-print(Str.index('come'))
+print(a.index('come'))
 
 #to get index of alphabet/string in given range
-print(Str.index('t',10,15))	# return index of 't' between 10 to 15 index
-#print(Str.index('anu'))	#this will return error bcoz 'anu' is not in Str
+print(a.index('t',10,15))	# return index of 't' between 10 to 15 index
+#print(a.index('anu'))	#this will return error bcoz 'anu' is not in a
 
-print('- for List')
+print('-for List')
 l1=['ratan','anu','durga','ratan']
 print(l1.index('ratan'))		#by default search first 'ratan'
 print(l1.index('ratan',2))		# search 'ratan' from index 2
 print(l1.index('ratan',2,4))	# search 'ratan' from index 2 to 4
 
-#to make uppercase lower case and lower case to upper case
+print('*to make uppercase lower case and lower case to upper case')
 print('***swapcase')
 print('- For String')
-print(Str.swapcase())
+print(a.swapcase())
 
-#to check if data is alpha , numeric or alpha-numeric 
-print('***see- alpha numberic') 	
-string1='HelloPython'
+print('*see- to check if data is alpha ,numeric or alpha-numeric') 
+print('*see- why alpha numberic doesnt woek with space') 	
+string1='HelloPython'		
 print(string1.isalpha())
 
 string2='HelloPython3.7'
@@ -500,30 +511,31 @@ print(string4.isupper())
 string5=' '					#see- why it works only for ' '
 print(string5.isspace())
  
- 
 string6='RatanIT'				
 print(string6.isspace())
 
-print("identity operator")
+print("*identity operator")
+print('*to check if 2 variables are same or not without using =')
 a=10
 b=10
 print(a is b)
 print(a is not b)
 
-print("Modulus")
+print('*get remaing value after division')
+print("*Modulus")
 a=10
 b=3
 c=2
 print(a%b)  # a/b
 print(a%c)  # a/c
 
-# after performing the division, get results in the lower integer to the value
-print("*** floor division") 
+print('* after performing the division, get results in the lower integer close to result')
+print("* floor division") 
 a=10
 b=3
 print(a//b)
 
-#to get few alphabets of string/ to get few objects from list/set/tuple
+print('*to get few alphabets of string / to get few objects from list/set/tuple without for loop')
 print("***slice")
 print('- for string')
 a="india"
@@ -537,7 +549,7 @@ print(list1[10:])
 print(list1[:10])
 print(list1[1:4:2])
 
-print("***VV IMP")
+print('* VV IMP - negative indexing')
 #https://www.quora.com/What-is-negative-index-in-Python
 print(list1[-4:-2:-1])
 print("***MM IMP")
@@ -559,22 +571,22 @@ print(list1[-4:-2:1])
 #slice With dics -- not possible
 #slice with set -- not possible
 
-# to break string
+print('*to break string')
 print("***split")
 print('- for string')
 a="india"
 print(a.split('d'))
 
-#to break string with separator
+print('*to break string with separator')
 print('+'.join(a.split('d')))			# this will split and place '+' in between
 
-# to concatenate string
+print('*to concatenate string')
 print("***concatenate")
 print('for string')
 b=" is a Country"
 print(a+b)
 
-#to concatenate Int and float
+print('*to concatenate Int and float')
 print('- for Numbers(Int and Float)')
 '''
 we can concatenate int and float because they both are numbers
@@ -585,19 +597,17 @@ print(10+True)
 print(10+False)
 print(20.5+True)
 
-print('not able to concatenate string and number/float/bool')
+print('*concatenate string and number/float/bool')
 '''
-print(10+'ratan')
+print(10+'ratan')				not able to concatenate string and number/float/bool
 print(10.5+'tata')
 '''
 
-print('- for list')
+print('*for list')
 l1=[10,20,30]
 l2=[40,50,60]
 l3= l1+l2
 print(l3)
-
-
 
 # what is this?
 print("***Replication")

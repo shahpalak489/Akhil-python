@@ -191,21 +191,79 @@ def m1(x):
 		return True
 	else:
 		return False
+
 #method 1
 print(list(filter(m1,l1)))
 #method 2
-print(list(filter(lambda x:x%2==0,l1)))
+print(list(filter(lambda x:x%2==0,l1))) #means each l1's object is x and if x%2==0 satisy return x
 
 # ex 4
 l1=['ratan','anu','durga','ratan']
+#method 1
 def m1(x):
 	if x=='ratan':
 		return True
 	else:
 		return False
-
-a=list(filter(m1,l1))
+a=list(filter(m1,l1))			#use filter when we wants to aply logic on input
 print(a)
 
-b=list(filter(lambda x:x=='ratan',l1))
+#method 2
+b=list(filter(lambda x:x=='ratan',l1))		#this means each l1's object is x and if x=ratan returns x
 print(b)
+
+# ex 5				
+#map						#use map when we wants to apply logic on all objects input
+l1=[2,3,4]
+# method 1
+def m1(x):
+	return x*5
+print(list(map(m1,l1)))
+#method 2
+print(list(map(lambda x:x*5,l1))) 	#this means each l1's object is x, apply x*5 and return x*5  
+
+#ex 6
+l1=['ratan','durga']
+
+#method 1
+def m1(x):
+	return x+'it'
+print(list(map(m1,l1)))
+#method 2
+print(list(map(lambda x:x+'it',l1)))	#this means each l1's object is x,apply x+'it' and returns x+'it'
+
+#ex 7					#map with more than 1 inputs
+l1=[1,2,3,4]
+l2=[10,20,30,40]
+l3=[100,200,300,400]
+
+print(list(map(lambda x,y:x+y,l1,l2)))	#this means l1 and l2 objects consider as x and y respectively and apply 
+										# x+y and returns x+y
+print(list(map(lambda x,y,z:x+y+z,l1,l2,l3)))  #this means each 
+
+
+#ex 8
+s='hi ratan sor how are you ?'
+#method 1
+def m1(x):
+	y=x.split(' ')
+	print(y)
+	for z in y:
+		print(len(z))
+m1(s)
+
+#method 2
+words=s.split()
+print(list(map(lambda x:len(x),words)))		#means words object consider as x and returns len(x)
+
+
+##see -  how to apply 2 logic in lambda function??
+
+
+# video 19 - 32.00
+# example 9
+# see - reduce 
+
+
+# example 10
+

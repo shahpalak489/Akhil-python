@@ -1,8 +1,13 @@
-# ex 5				
-#map			#perform operation on all elements
-l1=[2,3,4]
-
+#ex 8
+s='hi ratan sor how are you ?'
+#method 1
 def m1(x):
-	return x*5
-print(list(map(m1,l1)))
-print(list(map(lambda x:x*5,l1)))
+	y=x.split(' ')
+	print(y)
+	for z in y:
+		print(len(z))
+m1(s)
+
+#method 2
+words=s.split()
+print(list(map(lambda x:len(x),words)))

@@ -1,39 +1,40 @@
 print("****print")
-print('for string')
-a=123
-print(a)
-
+print('*print string,int and float')
 eid,ename,esal=111,'ratan',100.45
 print(eid)
 print(ename)
 print(esal)
 
+print('*print hard code value and variable together')
 print('Emp id=',eid)
 print('Emp name=',ename)
 print('Emp sal=',esal)
 
 print('Emp id=',eid,'Emp name=',ename,'Emp sal=',esal)
 
-print(eid,end='')  # this will print next line, in same line
+print('*print 2 lines together')
+print(eid,end='') 				 # this will print next line, in same line
 print(' ',ename)
 
+print('*print with separator')
 print(10,20,30,sep='*')
 
-print('for List')
+print('*print List')
 L2=[]
 print(L2)
 
 L3=list('ratan')
 print(L3)
 
-print('For Dics')
+print('*print Dics')
 d1={111:'ratan',222:'anu',333:'durga'}
 print(d1)
 
+print('*print duplicat keys,duplicate values')
 d2={111:'ratan',111:'surya',222:'surya'}	  #duplicate keys will be override  	#duplicate values will be ok
 print(d2)
 
-print('***formatting data')		#mainly use as variable in print statement
+print('***formate specifier')		#mainly use as variable in print statement
 '''
 Method 1
 int 	float		string    
@@ -43,13 +44,12 @@ Method 2
 {}
 '''
 
-eid= int(input('eid: '))
-ename=input('ename: ')
-esal=float(input('esal: '))
+eid,ename,esal=111,'ratan',100.45
 print('emp id: ',eid)
 print('emp name: ',ename)
 print('emp salary: ',esal)
 
+print('*print int,string,float with formate specifier')
 # for % , if %d is first its value must be first...so its sequence is important
 print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
 
@@ -61,6 +61,7 @@ print('value of a=%g'%(a))
 a=123456.87958418641684888
 print('value of a=%f'%(a)) 
 
+print('*print {} python specifier example')
 #while {} is very flexible 
 print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
 print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
@@ -228,14 +229,9 @@ disp()
 
 # default return value is none
 
-
-print("***variables")
-a="bol bhai"
-print(a)
-
 print("***local & global variable")
 #case 1
-#all function can use global variable value
+print('*all function can use global variable value')
 name='ratan'  # global variable
 def disp1():
 	print('good morning',name)
@@ -247,7 +243,7 @@ disp1()
 disp2(3,10)
 
 #case 2 
-# when local and global variable has same name then priority goes to local varibale
+print('*when local and global variable has same name then priority goes to local varibale')
 #Example 1
 b=100
 print(b)
@@ -264,7 +260,7 @@ def sarvado(g,h):
 sarvado(2,3)
 
 #case 3 
-# to use local variable as global variable
+print('to use local variable as global variable')
 g,h=10,20
 def sarvado(g,h):
 	print(globals()['g']+h)  # here we use g variable as global variable
@@ -891,6 +887,10 @@ print('***INPUT')
 '''
 Input takes all value as string
 thats why below example will give string as result (eg:1020)
+
+eid= int(input('eid: '))
+ename=input('ename: ')
+esal=float(input('esal: '))
 
 print('Example-1')
 num1= input('Enter first num: ')

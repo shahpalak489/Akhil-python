@@ -1,3 +1,6 @@
-a=65654
+l1=[10,20]
 
-print(a.isdigit())
+a='hihiccii'
+
+print(a.count('h'))
+

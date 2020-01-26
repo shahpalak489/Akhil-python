@@ -232,7 +232,7 @@ disp()
 print("***local & global variable")
 #case 1
 print('*all function can use global variable value')
-name='ratan'  # global variable
+name='ratan'  					# global variable
 def disp1():
 	print('good morning',name)
 
@@ -262,13 +262,20 @@ sarvado(2,3)
 #case 3 
 print('*to use local variable as global variable')
 print('*inside function get global variable value for local variable')
+#example 1
 g,h=10,20
 def sarvado(g,h):
 	print(globals()['g']+h)  #here we get g=10 value as global variable
 sarvado(2,3)
+#example 2
+a=15
+def m1():
+	a=20
+	print(globals()['a'])
+m1()
 
 #case 4
-print('*to declare global variable inside function')
+print('*to create global variable inside function')
 def disp3():
 	global s 
 	s='ratan'
@@ -529,8 +536,8 @@ c=2
 print(a%b)  # a/b
 print(a%c)  # a/c
 
-print('* after performing the division, get results in the lower integer close to result')
-print("* floor division") 
+print('*after performing the division, get results in the lower integer close to result')
+print("*floor division") 
 a=10
 b=3
 print(a//b)
@@ -547,13 +554,13 @@ print(list1[2])
 print(list1[2:7]) 
 print(list1[10:]) 
 print(list1[:10])
-print(list1[1:4:2])
+print(list1[1:4:2])				#	starting point:end point:move right if its positive and move left if its negative
 
 print('* VV IMP - negative indexing')
 #https://www.quora.com/What-is-negative-index-in-Python
-print(list1[-4:-2:-1])
+print(list1[-4:-2:-1])		#	starting point:end point:move right if its positive and move left if its negative
 print("***MM IMP")
-print(list1[-4:-2:1])
+print(list1[-4:-2:1])		#	starting point:end point:move right if its positive and move left if its negative
 
 print("- for tuple")
 list1=('a1','b2','c3','d4','5re')
@@ -603,7 +610,7 @@ print(10+'ratan')				not able to concatenate string and number/float/bool
 print(10.5+'tata')
 '''
 
-print('*for list')
+print('*concatenate list')
 l1=[10,20,30]
 l2=[40,50,60]
 l3= l1+l2
@@ -611,26 +618,27 @@ print(l3)
 
 # what is this?
 print("***Replication")
-print('for numbers')
+print('*replication for string')
+a='Hi'
 print(a*2)
 
-print('for list')
+print('*replication for list')
 l1=[10,20,30]
 l2=l1*2
 print(l2)
 
-# to replace few alphabets with other alphabets in string
+print('*to replace few alphabets with other alphabets in string')
 print("***Replace")
 print('- for string')
 c=a.replace('a','a is country')
 print(c)
 
-# to make upper case
+print('*to make upper case')
 print("***upper case")
 print('for string')
 print(a.upper())
 
-# to make lower case
+print('*to make lower case')
 print("***lower case")
 print('for string')
 print(a.lower())
@@ -639,12 +647,12 @@ print('***see - Capitalize')
 print('for string')
 #print(a.Capitalize())
 
-# to give corresponfing number to string
+print('*to give corresponding number to string')
 print('***Enumarate')				
 print(list(enumerate(a)))
 print(tuple(enumerate(a)))
 
-# how many times given alphabetpresent in string
+# how many times given alphabet present in string
 print('***count')			# return count of character in given string
 print('for string')
 a='ratanratan'
@@ -987,7 +995,6 @@ print(oct(c))
 print('hexa deciaml values')
 c=20
 print(hex(c))
-
 
 print('***Python identifiers - nomenclature of class,function rules')
 

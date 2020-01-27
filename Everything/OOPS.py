@@ -244,3 +244,38 @@ class GrandChild(Child):
 g = GrandChild("Geek1", 23, "Noida")   
 print(g.getName(), g.getAge(), g.getAddress())
 
+
+'''Ratan            # need to verify
+
+class:  logical entity
+        Blue Print of object
+        we can create multiple objects based on single blue print
+        syntax: class {class name}
+        
+object: physical entity represent memory
+'''      
+
+#ex 1
+
+python 2.7  : class is not child class of object
+class Myclass1:
+    pass
+class Myclass2():
+    pass
+class   Myclass3(object):
+    pass
+
+print(issubclass(Myclass1,object))      #false
+print(issubclass(Myclass2,object))      #false
+print(issubclass(Myclass3,object))      #true
+
+python 3.7 : by default class is child class of object 
+class Myclass1:
+    pass
+class Myclass2():
+    pass
+class   Myclass3(object):
+    pass
+print(issubclass(Myclass1,object))          #true
+print(issubclass(Myclass2,object))          #true
+print(issubclass(Myclass3,object))          #true

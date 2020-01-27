@@ -1,6 +1,3 @@
-l1=[10,20]
+a='ratan'
 
-a='hihiccii'
-
-print(a.count('h'))
-
+print(a.strip('t'))

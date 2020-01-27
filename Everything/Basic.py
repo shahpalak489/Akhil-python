@@ -70,6 +70,31 @@ d1={1:'ratan',3:'anu',4:'surya',2:'durga'}
 for key in sorted(d1.keys()):
 	print("key=%d values=%s"%(key,d1[key]))
 	
+print("***Datatypes")
+'''
+Number : int float : 10,20   5.25, 10.29
+string : str : 'ratan' "ratan"
+Boolean : bool : True  False 
+				   1    0
+'''
+evalue = 12
+ename = 'ratan'
+esalary = 100.92
+ebool=True
+
+print('* how to know who is number, string ,boolean, List, tuple or Dics')
+print(type(evalue))
+print(type(ename))
+print(type(esalary))
+print(type(ebool))
+
+L1=[10,20,30,40]
+print(L1)
+print(type(L1))
+
+d1={111:'ratan',222:'durga'}
+print(type(d1))
+
 print("***function")
 def aki():
 	print("this is not right")
@@ -578,6 +603,46 @@ print(list1[-4:-2:1])
 #slice With dics -- not possible
 #slice with set -- not possible
 
+print('***Indexing')				#by ratan - check if is it same as above?
+print('for string')
+
+# -7 -6 -5 -4 -3 -2 -1  		#negative indexing
+s= 'ratanIT'
+# 0 1 2 3 4 5 6 				#positive indexing
+
+print(s[2])
+print(s[2:4])
+print(s[1:4:2])
+print(s[2:])
+print(s[:4])
+print(s[:])
+# print(s[9])  			#Indexerror: string out of range
+
+print(s[-2])
+print(s[-5:-1])
+print(s[:-1])
+print(s[-5:])
+print(s[:])
+# print(s[-8])  			#Indexerror: string out of range
+
+print('For List')
+  # -5 -4 -3 -2 -1
+L1=[10,20,30,40,50]
+  # 0  1  2  3  4
+print(L1[3])
+print(L1[1:3])
+print(L1[:3:2])
+print(L1[1:])
+print(L1[:2])
+print(L1[:])
+#print(L1[8])	Indexerror: list index out of range
+
+print(L1[-2])
+print(L1[-4:-2])
+print(L1[:-2])
+print(L1[-3:])
+print(L1[:])
+
 print('*to break string')
 print("***split")
 print('- for string')
@@ -703,7 +768,7 @@ if 0:
 else:
 	print('false condition')
 
-#case 4				#this same kinf of if structure we can use in lambda
+#case 4							#this kind of if structure we can use in lambda
 print('ratan'),print('ratan') if 10>20 else print('durga'),print('durga')
 
 print("- if...elif...else")
@@ -787,10 +852,8 @@ while a<5:
 	print(a)
 
 print('***to access objects')
-print('-For Dictionary')
+print('*to access objects from Dictionary')
 d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
-r=d1[444]
-print(r)
 
 print(d1.keys())
 print(d1.values())
@@ -816,6 +879,15 @@ for x,y in d1.items():
 
 print(d1.get(111))
 
+print('*to access objects from Dictionary without for loop and without keys,items,values')
+#method 1
+r=d1[444]
+print(r)
+
+#method 2
+a,b,c=d1
+print(a.b.c)
+
 ''' ratan '''
 print("***List of keyword")
 import keyword
@@ -823,66 +895,6 @@ print(keyword.kwlist)
 
 ''' for 2.x we dont need parenthesis to print while 3.x requires parenthesis
     because we can see in 2.x print is keyword while in 3.x print is not keyword'''
-
-print("***Datatypes")
-'''
-Number : int float : 10,20   5.25, 10.29
-string : str : 'ratan' "ratan"
-Boolean : bool : True  False 
-				   1    0
-'''
-evalue = 12
-ename = 'ratan'
-esalary = 100.92
-ebool=True
-
-print(type(evalue))
-print(type(ename))
-print(type(esalary))
-print(type(ebool))
-
-print('for List')
-L1=[10,20,30,40]
-print(L1)
-print(type(L1))
-
-print('for Dics')
-d1={111:'ratan',222:'durga'}
-print(type(d1))
-
-print('***convert Datatypes')
-print("to convert int to string")
-x=str(y)
-
-print("to convert List to Tuple")
-List1=['a','b','c','d']
-Tuple1=tuple(List1)
-print(Tuple1)
-
-print("To convert Tuple to List")
-Tuple1=('a','b','c','d')
-List1=list(Tuple1)
-print(List1)
-
-print("to convert List to set")
-List1=['a','b','c','d']
-set1=set(List1)
-print(set1)
-
-print("to convert set to list")
-set1={'a','b','c','d'}
-List1=list(set1)
-print(List1)
-
-print("to convert Tuple to set")
-Tuple1=('a','b','c','d')
-set1=set(Tuple1)
-print(set1)
-
-print("to convert Tuple to Dics ")
-Tuple1=('a','b','c','d')
-Dict2={i:i*2 for i in Tuple1}
-print(Dict2)
 
 print('***variable')
 evalue,esalary,expect=10,20,30
@@ -903,29 +915,32 @@ del v
 print('***INPUT')
 
 '''
-Input takes all value as string
-thats why below example will give string as result (eg:1020)
+print('* take input as string and then do concatenate')
+a=input('A=')				#Input takes all value as string
+b=input('B=')				#thats why this example will give string as result (eg:1020)
+print(a+b)
 
-eid= int(input('eid: '))
-ename=input('ename: ')
-esal=float(input('esal: '))
+eid= int(input('eid:'))			# convert input value as int
+ename=input('ename:')
+esal=float(input('esal:'))		# convert input value as float
 
 print('Example-1')
-num1= input('Enter first num: ')
-num2= input('Enter second num: ')
+num1= input('Enter first num:')		
+num2= input('Enter second num:')
 total=num1+num2
 print('total:',total)
 
-below example will give int as result
+# below example will give int as result
 
+print('* take input as int and then do concatenate')
 print('example-2')
-num1= int(input('Enter first num: '))
-num2= int(input('Enter second num: '))
+num1= int(input('Enter first num:'))
+num2= int(input('Enter second num:'))
 total=num1+num2
 print('total:',total)
-
 '''
-print('Range')
+
+print('Range')						# logic same as index
 '''
 Rule: start from first value upto second value and if third value is 
 	  positive move left to right and if third value is negative then
@@ -949,13 +964,11 @@ for x in range(-10,-1,4):
 for x in range(-15,-27,-5):
 	print(x)
 
-
 print("***for vs while")
 # for when we have starting value , ending value by incremental / decremental
 # while is to check if condition is true or not
 
 print('*** types of error')
-
 '''
 Type Error: concat not possible
 valueerror : conversion 
@@ -964,7 +977,6 @@ unbounded local error: related to local and global variable
 '''
 
 print('***Number systems')
-
 '''
 binary : base 2
 octal  : base 8
@@ -977,6 +989,7 @@ decimal : allows 0 to 9
 hexa decimal: allows 0 to 9 and a to f
 '''
 
+print('* to get ASCI values')
 print('see-ASCI value')
 c=5
 #print(ord(c))
@@ -984,23 +997,24 @@ c=5
 c=f
 #print(ord(c))
 
+print('*to get binary value')
 print('binary values')
 c=112
 print(bin(c))
 
+print('*to get octal value')
 print('octal values')
 c=20
 print(oct(c))
 
+print('*to get hexa decimal value')
 print('hexa deciaml values')
 c=20
 print(hex(c))
 
 print('***Python identifiers - nomenclature of class,function rules')
-
 '''
-Rule 1 :a-z , A-Z , _    -should not start with numberic , should not alloe special characters
-
+Rule 1 :a-z , A-Z , _    -should not start with numberic , should not allow special characters
 Class Myclass123 - valid
 Class 123Myclass - Invalid
 Class Myclass_123 - valid
@@ -1010,57 +1024,17 @@ Rule 2 : case sensitive
 
 Rule 3 : No lenght limit
 
-Rule 4 : Duplicates not allowed
+Rule 4 : Duplicates not allowed				# duplicates allowed only in variable
 
 Rule 5 : kewords not allowed
-self=100 # not alloed
+self=100 									#not allowed
 
 Rule 6 : Possible to take pre defined class names as identifiers but not recommended
 '''
 
 print('see video10:30.00 - difference between global and nonlocal')
 
-print('***Indexing')
-print('for string')
-
-# -7 -6 -5 -4 -3 -2 -1  		#negative indexing
-s= 'ratanIT'
-# 0 1 2 3 4 5 6 				#positive indexing
-
-print(s[2])
-print(s[2:4])
-print(s[1:4:2])
-print(s[2:])
-print(s[:4])
-print(s[:])
-# print(s[9])  			#Indexerror: string out of range
-
-print(s[-2])
-print(s[-5:-1])
-print(s[:-1])
-print(s[-5:])
-print(s[:])
-# print(s[-8])  			#Indexerror: string out of range
-
-print('For List')
-  # -5 -4 -3 -2 -1
-L1=[10,20,30,40,50]
-  # 0  1  2  3  4
-print(L1[3])
-print(L1[1:3])
-print(L1[:3:2])
-print(L1[1:])
-print(L1[:2])
-print(L1[:])
-#print(L1[8])	Indexerror: list index out of range
-
-print(L1[-2])
-print(L1[-4:-2])
-print(L1[:-2])
-print(L1[-3:])
-print(L1[:])
-
-print('***length')
+print('*how to know length ')
 print('for string')
 s='    ratan IT   '
 print(len(s))
@@ -1069,18 +1043,18 @@ print('for list')
 l1=[10,'ratan',10.5]
 print(len(l1))
 
-print('***remove space or characters')
+print('*how to remove space or characters')
 print(s.strip()) 		#to remove space at begining and at the end
 print(len(s.strip()))
 
-s1='@@@ratan IT####'
+s1='@@@ratan IT####'					#characters can be remove at begining or end.. not from middle
 print(len(s1))
 print(s1.lstrip('@'))		# to remove @ at begining
 print(s1.rstrip('#'))		# to remove # at the end
 print(s1.rstrip('#').lstrip('@'))
+print(s1.lstrip('IT'))		# i can not remove IT here because its in middle of string
 
 print('***id,=,!=,is in')
-
 '''
 id() : print memory location
 is, is not : memory comparison : return boolean    		#it compares data as well as memory location

@@ -1,3 +1,37 @@
+print('***convert Datatypes')
+print("*to convert int/float to string")
+x=str(y)
+
+print("*to convert List to Tuple")
+List1=['a','b','c','d']
+Tuple1=tuple(List1)
+print(Tuple1)
+
+print("*To convert Tuple to List")
+Tuple1=('a','b','c','d')
+List1=list(Tuple1)
+print(List1)
+
+print("*to convert List to set")
+List1=['a','b','c','d']
+set1=set(List1)
+print(set1)
+
+print("*to convert set to list")
+set1={'a','b','c','d'}
+List1=list(set1)
+print(List1)
+
+print("*to convert Tuple to set")
+Tuple1=('a','b','c','d')
+set1=set(Tuple1)
+print(set1)
+
+print("*to convert Tuple to Dics ")
+Tuple1=('a','b','c','d')
+Dict2={i:i*2 for i in Tuple1}
+print(Dict2)
+
 print("**Comprehensions**")
 print("**List Comprehensions**")
 

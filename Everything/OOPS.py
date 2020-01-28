@@ -255,9 +255,9 @@ class:  logical entity
 object: physical entity represent memory
 '''      
 
-#ex 1
-
-python 2.7  : class is not child class of object
+#example 1
+'''
+#python 2.7  : class is not child class of object
 class Myclass1:
     pass
 class Myclass2():
@@ -268,8 +268,9 @@ class   Myclass3(object):
 print(issubclass(Myclass1,object))      #false
 print(issubclass(Myclass2,object))      #false
 print(issubclass(Myclass3,object))      #true
+'''
 
-python 3.7 : by default class is child class of object 
+#python 3.7 : by default class is child class of object 
 class Myclass1:
     pass
 class Myclass2():
@@ -279,3 +280,70 @@ class   Myclass3(object):
 print(issubclass(Myclass1,object))          #true
 print(issubclass(Myclass2,object))          #true
 print(issubclass(Myclass3,object))          #true
+
+
+#Example 2                  #declaring function inside the class
+class Myclass:
+    def disp1(self):
+        print('good morning')
+
+    def disp2(self,name):
+        print('good evening: ',name)
+
+c=Myclass()
+c.disp1()
+c.disp2('Ratan')
+
+#see-instance method vs. Static method vs. Class method
+
+#example 3         #instance and static method
+
+class Myclass:
+    def m1(self):
+        print('instance method')
+    xgerf=20
+    @staticmethod    
+    def m2():
+        print('static method')
+
+c=Myclass()
+c.m1()                      #to call instance method
+
+Myclass.m2()                #to call static method
+
+
+#example 4              #variable
+
+c=13
+class Myclass2():
+    a,b=10,20
+    def add(self):
+        print(c)                    # to access global variable
+        print(self.a+self.b)        # to access class variable
+ 
+x=Myclass2()
+x.add()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

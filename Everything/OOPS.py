@@ -246,14 +246,17 @@ print(g.getName(), g.getAge(), g.getAddress())
 
 
 '''Ratan            # need to verify
-
 class:  logical entity
         Blue Print of object
         we can create multiple objects based on single blue print
         syntax: class {class name}
         
 object: physical entity represent memory
-'''      
+                                                MM IMP:
+                                                Function inside Class called Method
+                                                constructor --> execute by itself
+                                                method --> we have to call to execute this  
+'''
 
 #example 1
 '''
@@ -281,28 +284,27 @@ print(issubclass(Myclass1,object))          #true
 print(issubclass(Myclass2,object))          #true
 print(issubclass(Myclass3,object))          #true
 
-
-#Example 2                  #declaring function inside the class
+#Example 2             #declaring function inside the class
 class Myclass:
-    def disp1(self):
+    def disp1(self):    
         print('good morning')
 
-    def disp2(self,name):
+    def disp2(self,name):       #see - to declare disp2 function belongs to class use "self"
         print('good evening: ',name)
 
 c=Myclass()
 c.disp1()
 c.disp2('Ratan')
 
-#see-instance method vs. Static method vs. Class method
+#???  see-instance method vs. Static method vs. Class method
 
 #example 3         #instance and static method
-
 class Myclass:
     def m1(self):
         print('instance method')
     xgerf=20
-    @staticmethod    
+    
+    @staticmethod                   # must nedd this decorator to declare staticmethod
     def m2():
         print('static method')
 
@@ -311,38 +313,82 @@ c.m1()                      #to call instance method
 
 Myclass.m2()                #to call static method
 
+#example 4 - skip
 
-#example 4              #variable
+#example 5 : local variables, class variables, global variables
+i,j=100,200                         #to declare global variable
+class Myclass():
+    a,b=10,20                       #to declare class variables
+    def add(self,x,y):              #to declare local variables
 
-c=13
-class Myclass2():
-    a,b=10,20
-    def add(self):
-        print(c)                    # to access global variable
+        print(i+j)                  # to access global variable
+        print(x+y)                  # to access local variable
         print(self.a+self.b)        # to access class variable
+c=Myclass()
+c.add(50,60)
+
+#example 6 : same name of local , global and class variable
+i,j=100,200                                     #to declare global variable
+class Myclass():
+    i,j=10,20                                   #to declare class variables
+    def add(self,i,j):                          #to declare local variables
+
+        print(globals()['i']+globals()['j'])    # to access global variable
+        print(i+j)                              # to access local variable
+        print(self.i+self.j)                    # to access class variable
+c=Myclass()
+c.add(50,60)
+
+#example 7 - skip
+
+#example 8 - named and nameless object
+class Myclass():
+    def disp(self):
+        print('how are you?')
+
+c1=Myclass()                    #named object
+c1.disp()
+
+Myclass().disp()                #name less object
+
+#example 9 
+'''
+id() : print memory location
+is, is not : memory comparison : return boolean         #it compares data as well as memory location
+== , !=  : data comparison : return boolean
+in, not in : check data available or not : return boolean
+'''
+
+class Myclass():
+    pass
+
+c1=Myclass()
+c2=Myclass()
+c3=c1
+
+print(id(c1))
+print(id(c2))
+print(id(c3))
+
+print(c1 is c2)
+print(c1 is c3)
+
+#example 10             # class variable value is related to each object  
+class Myclass():
+    name='ratan'
+
+c1=Myclass()
+c2=Myclass()
+
+print(c1.name)          #ratan
+
+c1.name='durga'
+print(c1.name)          #durga      
+
+print(c2.name)          #ratan   #c1.name is different than c2.name so when we chnage c1.name its doesnt affect c2.name
+
  
-x=Myclass2()
-x.add()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#example 11                 #constructor
 
 
 

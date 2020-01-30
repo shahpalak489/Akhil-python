@@ -244,7 +244,6 @@ class GrandChild(Child):
 g = GrandChild("Geek1", 23, "Noida")   
 print(g.getName(), g.getAge(), g.getAddress())
 
-
 '''Ratan            # need to verify
 class:  logical entity
         Blue Print of object
@@ -252,10 +251,10 @@ class:  logical entity
         syntax: class {class name}
         
 object: physical entity represent memory
-                                                MM IMP:
-                                                Function inside Class called Method
-                                                constructor --> execute by itself
-                                                method --> we have to call to execute this  
+                                            MM IMP:
+                                            Function inside Class called Method
+                                            constructor --> __init__  --> execute by itself
+                                            method --> we have to call to execute this  
 '''
 
 #example 1
@@ -387,8 +386,150 @@ print(c1.name)          #durga
 
 print(c2.name)          #ratan   #c1.name is different than c2.name so when we chnage c1.name its doesnt affect c2.name
 
+# see - what is the importance of self ?? 
  
-#example 11                 #constructor
+#example 11           #constructor -->  __init__  --> execute by itself when we create instance
+class myclass:
+    def m1(self):
+        print('good morning')
+    def __init__(self):
+        print('0 arg constructor')
+
+c1=myclass()                # when we create instance this will execute __init__ by it self
+c1.m1()     
+
+#IMP example 12                 # to convert local var into class var
+class Myclass():
+    def values(self,value1,value2):         #local variables(value1,value2) limited to this function only 
+        print(value1)
+        print(value2)
+
+        self.value1=value1          # convert local variable into class variable so that other functions can also use them
+        self.value2=value2
+    def add(self):
+        print(self.value1+self.value2)
+
+c1=Myclass()
+c1.values(8,9)
+c1.add()
+
+#example 13
+class Myclass():
+    def m1(self):          
+        print('class m1')
+        self.m2(10)                         #to call one method inside another method
+
+    def m2(self,a):
+        print('clas m2 value is ',a)
+
+c1=Myclass()
+c1.m1()
+
+#example 14                             #constructor with local variable
+class Myclass:
+    name='durga'
+    def __init__(self,name):
+        print('good morning',name)
+        print('good evening',self.name)
+
+c=Myclass('ratan')                          #give variable while creating instance bcoz __init__ has 1 variable
+
+#example 15                     #conversion of local var to class var
+class operation:
+    def __init__ (self,val1,val2):          #local variables(val1,val2) limited to this function only 
+        print(val1)
+        print(val2)
+
+        self.val1=val1                      #conversion of local var to class var
+        self.val2=val2
+
+    def add(self):
+        print(self.val1+self.val2)
+
+c=operation(10,20)
+c.add()
+
+#example 16      
+class Emp:
+    def __init__(self,eid,ename,esal):
+        self.eid=eid
+        self.ename=ename
+        self.esal=esal
+
+    def disp(self):
+        print(self.eid,self.ename,self.esal)
+
+c=Emp('ss','gg','aa')
+c.disp()
+
+#example 17                    #__str__  -->  this will be executed when we print instance, works only with return and string
+
+#case 1
+class Myclass:
+    pass
+c=Myclass
+print(c)                        # this will print object memory location
+
+#case 2
+class Myclass:
+    def __str__(self):          # this method will be called when we print object
+        return 'ratan'
+c=Myclass()
+print(c)
+
+#case 3                         # __str__ returns only string value
+class Myclass:
+    def __str__(self):
+        return 10
+
+c=Myclass()
+#print(c)                       #__str__ returned non-string (type int)
+
+#case 4
+class Myclass:
+    def __str__(self):
+        print('ratan')          #__str__ works with return only so here with print it will give none
+
+c=Myclass()
+#print(c)                        __str__ returned non-string (type NoneType)
+
+#example 18             #to exeute method with __str__
+class Emp:
+    def __init__(self,eid,ename,esal):
+        self.eid=eid
+        self.ename=ename
+        self.esal=esal
+
+    def __str__(self):
+        return "emp id ={}, ename= {}, esal={}" .format(self.eid,self.ename,self.esal)          #must be return and string
+
+c=Emp('ss','gg','aa')
+print(c)
+
+#example 19                 __del__  --> executed when we del object
+class Myclass():
+    def __del__(self):
+        print(" object destroyed")
+
+xx1=Myclass()
+xx2=Myclass()
+
+del xx1                         # this will execute __del__
+
+#example 20             #to execute __del__all same objects should be del
+
+class Mycalss():
+    def __del__(self):
+        print('object destroyed')
+
+c1=Myclass()
+c2=c1
+c3=c1
+
+del c1
+del C2                      # to execute __del__ all c1,c2,c3 must be del
+del c3                      # otherwise it will not execute __del__
+
 
 
 

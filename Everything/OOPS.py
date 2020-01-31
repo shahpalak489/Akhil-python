@@ -295,7 +295,7 @@ c=Myclass()
 c.disp1()
 c.disp2('Ratan')
 
-#???  see-instance method vs. Static method vs. Class method
+#???  IMP see-instance method vs. Static method vs. Class method
 
 #example 3         #instance and static method
 class Myclass:
@@ -462,8 +462,8 @@ class Emp:
 c=Emp('ss','gg','aa')
 c.disp()
 
-#example 17                    #__str__  -->  this will be executed when we print instance, works only with return and string
-
+#example 17                    #__str__  -->  this will be executed when we print instance( here c instance)
+                               # works only with return and string
 #case 1
 class Myclass:
     pass
@@ -511,24 +511,141 @@ class Myclass():
     def __del__(self):
         print(" object destroyed")
 
-xx1=Myclass()
-xx2=Myclass()
+#xx1=Myclass()
+#xx2=Myclass()
 
-del xx1                         # this will execute __del__
+#del xx1                         # this will execute __del__
 
-#example 20             #to execute __del__all same objects should be del
-
+#example 20             #to execute __del__ --> all same objects must be call to delete
 class Mycalss():
     def __del__(self):
         print('object destroyed')
 
-c1=Myclass()
-c2=c1
-c3=c1
+#c1=Myclass()
+#c2=c1
+#c3=c1
 
-del c1
-del C2                      # to execute __del__ all c1,c2,c3 must be del
-del c3                      # otherwise it will not execute __del__
+#del c1
+#del c2                      # to execute __del__ all c1,c2,c3 must be del
+#del c3                      # otherwise it will not execute __del__
+
+
+
+print('Inheritance')               # getting properties from parent class
+
+#exampe 1            #skip
+
+#example 2                  #better to create child class objects so that we can access child and parents both methods
+class Parent():
+    def m1(self):
+        print('parent m1() method')
+
+class child(Parent):
+    def m2(self):
+        print('child m2 method')
+
+p=Parent()
+p.m1()
+
+c=child()
+c.m1()
+c.m2()
+
+#example 3
+print('#to call parent class method from child class method ')
+class Parent():
+    def m1(self):
+        print('parent m1() method')
+
+class child(Parent):
+    def m2(self):
+        super().m1()                #super() will call parent class method
+        print('child m2 method')
+
+c=child()
+c.m2()
+
+#example 4
+print('#to access parent class variable from child class')
+class Parent():
+    a,b=10,20
+
+class child(Parent):
+    x,y=100,200
+    def add(self,i,j):
+        print(i+j)
+        print(self.x+self.y)
+        print(self.a+self.b)                # with self we can access parent class variables
+c=child()
+c.add(1000,2000)
+
+#example 5 
+print('#same name global,class and local variable')
+a,b=500,5000
+class Parent():
+    a,b=10,20
+
+class child(Parent):
+    a,b=100,200
+    def add(self,a,b):
+        print(a+b)                              #to access local variable
+        print(self.a+self.b)                    #to access class variable
+        print(super().a+super().b)              #to access parent class variable
+        print(globals()['a']+globals()['b'])    #to access global variable
+c=child()
+c.add(1000,2000)
+
+#example 6
+print('#parent class constructor') 
+
+#case 1                 
+print('#only parent class has constructor')   
+class Parent:
+    def __init__(self):
+        print("parent class constructor")
+class Child(Parent):
+    pass
+c=Child()                      #if child class doenst have constructor it will execute parent class constructor
+
+#case 2                 
+print('#parent class and child class both have constructor')   
+class Parent:
+    def __init__(self):
+        print("parent class constructor")
+class Child(Parent):
+    def __init__(self):
+        print("child class constructor")
+c=Child()                     #if child class has constructor it will execute child class constructor only by default
+
+
+#case 3
+print('#parent class and child class both have constructor - execute parent constructor')   
+class Parent:
+    def __init__(self,name):
+        print("parent class constructor",name)
+class Child(Parent):
+    def __init__(self):
+        super().__init__('durga')      #super() can execute parent constructor
+        print("child class constructor")
+        super().__init__('ratan')      #super() can execute parent constructor
+c=Child()                     
+
+#case 4
+print('#parent class and child class both have constructor - execute any class constructor')   
+class Parent:
+    def __init__(self,name):
+        print("parent class constructor",name)
+class Child(Parent):
+    def __init__(self):
+        Parent.__init__(self,'anu')         #method2:we can execute other class constructor this way as well
+        print("child class constructor")
+c=Child()   
+
+
+
+
+
+
 
 
 

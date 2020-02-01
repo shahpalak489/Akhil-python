@@ -244,6 +244,11 @@ class GrandChild(Child):
 g = GrandChild("Geek1", 23, "Noida")   
 print(g.getName(), g.getAge(), g.getAddress())
 
+
+
+
+
+
 '''Ratan            # need to verify
 class:  logical entity
         Blue Print of object
@@ -635,19 +640,160 @@ print('#parent class and child class both have constructor - execute any class c
 class Parent:
     def __init__(self,name):
         print("parent class constructor",name)
+class grandchild(Parent):
+    def grand_child():
+        print('grandchild')
 class Child(Parent):
     def __init__(self):
-        Parent.__init__(self,'anu')         #method2:we can execute other class constructor this way as well
+        Parent.__init__(self,'anu')      ##method2:we can execute other class constructor this way as well
+        grandchild.grand_child()         #method2:we can execute other class constructor this way as well
         print("child class constructor")
 c=Child()   
 
 
+#inheritance types
+#1.single Inheritance           #mother has 1 child
+class Parent:
+    pass
+class child(Parent):
+    pass
 
+#2.Multilevel Inheritance       # grandfather, father, child
+class A:
+    pass
+class B(A):
+    pass
+class C(B):
+    pass
 
+#3.Multiple Inheritance     #father and mother has 1 child
+class A:
+    pass
+class B:
+    pass
+class C(A,B):
+    pass
 
+#4.Hierachial Inheritance   #father has 2 child
+class A:
+    pass
+class B(A):
+    pass
+class C(A):
+    pass
 
+#5.Hybrid inheritance    #combination of multiple and Hirerchial 
 
+#example 7          Multilevel inheritance example
 
+class A:
+    def m1(self):
+        print('m1 method')
 
+class B (A):
+    def m2(self):
+        print('m2 method')
 
+class C (B):
+    def m3(self):
+        print('m3 method')
+
+c=C()
+c.m1()
+c.m2()
+c.m3()
+
+#example 8          hirarchial inheritance example
+class Vehicle():
+    def disp1(self):
+        print('vehicle info')
+
+class Car(Vehicle):
+    def disp2(self):
+        print('car info')
+
+class Plane(Vehicle):
+    def disp3(self):
+        print('Plane info')
+c=Car()
+c.disp1()
+c.disp2()
+
+p=Plane()
+p.disp1()
+p.disp3()
+
+#example 9              #multiple inheritance
+
+class Parent1:
+    def m1(self):
+        print('parent m1 method')
+
+class Parent2:
+    def m2(self):
+        print('parent m2 method')
+
+class Child(Parent1,Parent2):
+    def m3(self):
+        print('child m3 method')
+
+c=Child()
+c.m1()
+c.m2()
+c.m3()
+
+#example 10         #
+
+class Person():
+    def __init__(self,first,last):      #first,last = local var
+        self.first=first                #making local variable to class variable so that other methods in this class can use it
+        self.last=last
+
+class Emp(Person):
+    def __init__(self,first,last,id):
+        super().__init__(first,last)        #to call parent class __init__
+        Person.__init__(self,first,last)    #to call parent class __init__
+        self.id=id                          #making local variable to class variable so that other methods in this class can use it
+
+    def disp(self):
+        print('Emp id={} Emp firstname={} Emp lastname={}' .format(self.id,self.first,self.last))
+
+e1=Emp('ratan','durga',121212)
+e1.disp()
+
+#example 11         #to call by objects here e1         #already covered in past
+class Person():
+    def __init__(self,first,last):      #first,last = local var
+        self.first=first                #making local variable to class variable so that other methods in this class can use it
+        self.last=last
+
+class Emp(Person):
+    def __init__(self,first,last,id):
+        super().__init__(first,last)        #to call parent class __init__
+        Person.__init__(self,first,last)    #to call parent class __init__
+        self.id=id                          #making local variable to class variable so that other methods in this class can use it
+
+    def __str__(self):
+        return 'Emp id={} Emp firstname={} Emp lastname={}' .format(self.id,self.first,self.last)
+
+e1=Emp('ratan','durga',121212)
+print(e1)
+
+#example 12             #to check instance #to check relation
+class parent:
+    pass
+
+class child(parent):
+    pass
+
+p=parent()
+c=child()
+
+print(isinstance(p,parent))         #p has relation with parent class?        #yes.p is itself parent
+print(isinstance(c,child))          #c has relation with child class?         #yes, c is itslef child
+print(isinstance(c,parent))         #c has relation with parent class?        #yes, c is child of parent class
+print(isinstance(c,object))         #c has relation with object ?             #yes, all parent class is child of object 
+                                                                                #and c has relation with parent class
+print(isinstance(p,object))         #p has relation with object?              #yes, all parent class is child of object
+print(isinstance(p,child))          #p has relation with child?                 #no. it can go upward only no downward
 

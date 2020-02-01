@@ -797,3 +797,6 @@ print(isinstance(c,object))         #c has relation with object ?             #y
 print(isinstance(p,object))         #p has relation with object?              #yes, all parent class is child of object
 print(isinstance(p,child))          #p has relation with child?                 #no. it can go upward only no downward
 
+
+#polymorphism
+

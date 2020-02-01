@@ -800,3 +800,97 @@ print(isinstance(p,child))          #p has relation with child?                 
 
 #polymorphism
 
+#example 1          
+print('#over riding variables')
+#case 1
+class Parent:
+    name='ratan'
+
+class Child(Parent):
+    name='anu'
+c=Child()                       #here priority goes to child class name variable.
+print(c.name)
+
+#case 2
+class Parent:
+    name='ratan'
+
+class Child(Parent):
+    pass
+c=Child()                       #here priority goes to Parent class name variable.
+print(c.name)
+
+
+print('#over riding methods')
+#case 1
+class Parent:
+    def girl(self):
+        print('red girl')
+
+class Child(Parent):
+    def girl(self):
+        print('yellow girl')
+c=Child()                       #here priority goes to child class method.
+c.girl()
+
+#case 2
+class Parent:
+    def girl(self):
+        print('red girl')
+
+class Child(Parent):
+    pass
+
+c=Child()                       #here priority goes to parent class method.
+c.girl()
+
+#example 3
+print('*MM IMP real time scenario')
+print('* calling object from another function')
+
+class Parrot:
+    def fly():
+        print('parrot can fly')
+    def swim():
+        print('parrot can not swim')
+
+class Fish:
+    def fly():
+        print('Fish can not fly')
+    def swim():
+        print('Fish can swim')
+
+#create object
+p=Parrot()
+f=Fish()
+
+#common intereface
+def fly_test(animal):
+    animal.fly()
+
+#passing the objects
+fly_test(Parrot)
+
+
+#example 4    #another example
+
+class Unicorn:
+    def speed(self):
+        print('Unicorn speed')
+
+class Splendor:
+    def speed(self):
+        print('splendor speed')
+
+u=Unicorn()
+s=Splendor()
+
+#common intereace
+def bike_speed(name):
+    name.speed()
+
+bike_speed(u)
+
+
+# Encapsulation
+

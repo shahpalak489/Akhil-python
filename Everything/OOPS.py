@@ -650,8 +650,20 @@ class Child(Parent):
         print("child class constructor")
 c=Child()   
 
+#example 7                  #within class - to access one method inside another method 
+class Myclass():
+    def disp1(self):
+        print('private method')
 
-#inheritance types
+    def disp2(self):
+        print('this is disp2')
+        self.disp1()
+
+a=Myclass()
+a.disp2()                   
+
+
+print('inheritance types')
 #1.single Inheritance           #mother has 1 child
 class Parent:
     pass
@@ -892,5 +904,104 @@ def bike_speed(name):
 bike_speed(u)
 
 
-# Encapsulation
+# encapsulation                     #process of binding properties and methods as single unit
+
+#example 1
+print('* private class variable can access within class only')
+
+class A():
+    __a=10
+    def disp(self):
+        print(self.__a)
+
+obj=A()
+#print(obj.__a)              #__a is private so can not access outside class         
+                             #'A' object has no attribute '__a'
+
+obj.disp()                   #__a can be accessed with the help of another mehtod   #getter method
+
+#example 2
+print('* private method can access within class only')
+class Myclass():
+    def __disp1(self):
+        print('private method')
+
+    def disp2(self):
+        print(' this is disp2')
+        self.__disp1()
+
+a=Myclass()
+#a.__disp1()         #we can not call __disp1 outside the class        #'Myclass' object has no attribute '__disp1'
+
+a.disp2()            #we can call __disp1 by calling disp2 bcoz __disp1 already called within class  #getter method
+
+
+#example 3              #getter and setter method
+class Emp():
+    __eid=111
+
+    def setEid(self,eid):       #setter method - which can update private var with setter method
+        self.__eid=eid
+
+    def getEid(self):           #getter method - to access private var with getter method
+        print(self.__eid)
+
+e=Emp()
+
+#print(e.__eid)             'Emp' object has no attribute '__eid'
+
+e.getEid()                  #to access private var
+e.setEid(222)               #to update private variable
+e.getEid()                  #to access private var
+
+#example 4              #to access one class variable into another class
+class A:
+    num1,num2=100,200
+
+class B():
+    def add(self):
+        a=A()                           #for every method create objet again
+        print(a.num1+a.num2)
+    def mul(self):
+        a=A()                           #for every method create objet again
+        print(a.num1*a.num2)
+
+b=B()
+b.add()
+b.mul()
+
+#better solution for above example
+#example 5         #create object at class level so then we dont need to create object at method level again and again
+class A:
+    num1,num2=100,200
+
+class B():
+    a=A()                           #create object at class level so then we dont need to create object at method level again and again
+    def add(self):
+        print(self.a.num1+self.a.num2)
+    def mul(self):
+        print(self.a.num1*self.a.num2)
+
+b=B()
+b.add()
+b.mul()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

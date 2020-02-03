@@ -987,6 +987,27 @@ b.add()
 b.mul()
 
 
+#abstract
+from abc import ABC,abstractmethod
+class Person(ABC):
+    @abstractmethod
+    def eat(self):
+        pass
+
+class Ratan(Person):
+    def eat(self):
+        print('5 idly')
+
+class Durga(Person):
+    def eat(self):
+        print('4 idly')
+
+r=Ratan()
+r.eat()
+
+d=Durga()
+d.eat()
+
 
 
 

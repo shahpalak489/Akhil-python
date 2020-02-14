@@ -156,7 +156,7 @@ class Student: # Person is the
     def getId(self):  
         return self.studentId  
 
-#childclass  
+#childclass
 class Resident(Student,Person):
 # you have to give all variables from all parent
 # we can change name but number of variables and sequence will remain same  
@@ -168,7 +168,6 @@ class Resident(Student,Person):
 resident1 = Resident('John', 30, '102')  
 resident1.showName()  
 print(resident1.getId())  
-
 
 #example 2
 class A:  
@@ -246,9 +245,6 @@ print(g.getName(), g.getAge(), g.getAddress())
 
 
 
-
-
-
 '''Ratan            # need to verify
 class:  logical entity
         Blue Print of object
@@ -288,7 +284,8 @@ print(issubclass(Myclass1,object))          #true
 print(issubclass(Myclass2,object))          #true
 print(issubclass(Myclass3,object))          #true
 
-#Example 2             #declaring function inside the class
+#Example 2             
+print('declaring function inside the class')
 class Myclass:
     def disp1(self):    
         print('good morning')
@@ -302,7 +299,7 @@ c.disp2('Ratan')
 
 #???  IMP see-instance method vs. Static method vs. Class method
 
-#example 3         #instance and static method
+print('example 3')         #instance and static method
 class Myclass:
     def m1(self):
         print('instance method')
@@ -319,7 +316,7 @@ Myclass.m2()                #to call static method
 
 #example 4 - skip
 
-#example 5 : local variables, class variables, global variables
+print('example 5 : local variables, class variables, global variables')
 i,j=100,200                         #to declare global variable
 class Myclass():
     a,b=10,20                       #to declare class variables
@@ -331,7 +328,7 @@ class Myclass():
 c=Myclass()
 c.add(50,60)
 
-#example 6 : same name of local , global and class variable
+print('example 6 : same name of local , global and class variable')
 i,j=100,200                                     #to declare global variable
 class Myclass():
     i,j=10,20                                   #to declare class variables
@@ -345,7 +342,7 @@ c.add(50,60)
 
 #example 7 - skip
 
-#example 8 - named and nameless object
+print('example 8 - named and nameless object')
 class Myclass():
     def disp(self):
         print('how are you?')
@@ -355,7 +352,7 @@ c1.disp()
 
 Myclass().disp()                #name less object
 
-#example 9 
+print('example 9') 
 '''
 id() : print memory location
 is, is not : memory comparison : return boolean         #it compares data as well as memory location
@@ -377,7 +374,7 @@ print(id(c3))
 print(c1 is c2)
 print(c1 is c3)
 
-#example 10             # class variable value is related to each object  
+print('example 10')             # class variable value is related to each object  
 class Myclass():
     name='ratan'
 
@@ -393,7 +390,8 @@ print(c2.name)          #ratan   #c1.name is different than c2.name so when we c
 
 # see - what is the importance of self ?? 
  
-#example 11           #constructor -->  __init__  --> execute by itself when we create instance
+print('example 11')           
+#constructor -->  __init__  --> execute by itself when we create instance
 class myclass:
     def m1(self):
         print('good morning')

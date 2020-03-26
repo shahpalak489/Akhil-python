@@ -30,7 +30,7 @@ print('*print Dics')
 d1={111:'ratan',222:'anu',333:'durga'}
 print(d1)
 
-print('*print duplicat keys,duplicate values')
+print('*print duplicate keys,duplicate values')
 d2={111:'ratan',111:'surya',222:'surya'}	  #duplicate keys will be override  	#duplicate values will be ok
 print(d2)
 

@@ -23,7 +23,7 @@ print('*print List')
 L2=[]
 print(L2)
 
-L3=list('ratan')
+L3=list('ratan') 			#this will create list of 'ratan' string
 print(L3)
 
 print('*print Dics')
@@ -45,12 +45,11 @@ Method 2
 '''
 
 eid,ename,esal=111,'ratan',100.45
-print('emp id: ',eid)
-print('emp name: ',ename)
-print('emp salary: ',esal)
 
 print('*print int,string,float with formate specifier')
 # for % , if %d is first its value must be first...so its sequence is important
+
+print('%d %s %g' %(eid,ename,esal))					#format
 print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
 
 # difference between %g and %f
@@ -62,7 +61,7 @@ a=123456.87958418641684888
 print('value of a=%f'%(a)) 
 
 print('*print {} python specifier example')
-#while {} is very flexible 
+#{} is very flexible 
 print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
 print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
 
@@ -160,21 +159,21 @@ def inner1():
     print("This is after function execution")
     return inner1
 
-print('function-args')
+print('function with n number of arguments')
 #case 1
-def multiple(*args):
-	print(args)
+def multiple(*a):					# for n number of arguments use *
+	print(a)
 multiple(1,2,3,4)
 
-def star(*a):
-	for x in a:
+def star(*ar):
+	for x in ar:
 		print(x)
 star(10,20,30)
 
 #case 2
-def star(car,*a):
+def star(car,*arg):
 	print(car)
-	for x in a:
+	for x in arg:
 		print(x)
 star("honda",10,20,30)
 
@@ -184,7 +183,7 @@ def star(*b,car):
 		print(x)
 star(49,81,car='accord') #in this case, use keyword arguments 
 
-#case 3
+#case 3.
 def star(name='ratan',*b):
 	print(name)
 	for x in b:
@@ -226,11 +225,12 @@ print("IMP - function calling  will give only print values,not return values ")
 f1 = function_that_prints() #this will call function_that_prints
 f2 = function_that_returns() # this will call function_that_returns
 
-print("IMP - to access return values assign variable to function")
-print("calling and print the variable because retuen assigns value") 
-print("to function so we need to print calling function ")
+print("IMP - to access return values assign variable to function calling")
+print("and print the variable because retuen assigns value to function") 
+print("so we need to print calling function ")
 print(f1) 
 # or
+
 print(function_that_prints()) 
 
 print(f2)
@@ -285,8 +285,7 @@ def sarvado(g,h):
 sarvado(2,3)
 
 #case 3 
-print('*to use local variable as global variable')
-print('*inside function get global variable value for local variable')
+print('*inside function for local variables get global variable value when both variables are same name')
 #example 1
 g,h=10,20
 def sarvado(g,h):
@@ -329,7 +328,7 @@ print('*once we use global variable inside function we can not declare same vari
 '''
 name='ratan'
 def tution():
-	print(name)  	# used name as global variable
+	print(name)  	# used 'name' as global variable
 	name='durga'  	# after using name as global variable we can not declare same vaiable as local
 	print(name)		# UnboundLocalError: local variable 'a' referenced before assignment
 tution()
@@ -447,7 +446,7 @@ x=2*2=4
 x=4*3=12
 '''
 
-x/=y
+x/=y0
 #Example
 x=4
 for y in [1,2,3]:
@@ -495,7 +494,7 @@ print(a.index('come'))
 print(a.index('t',10,15))	# return index of 't' between 10 to 15 index
 #print(a.index('anu'))	#this will return error bcoz 'anu' is not in a
 
-print('-for List')
+print('- for List')
 l1=['ratan','anu','durga','ratan']
 print(l1.index('ratan'))		#by default search first 'ratan'
 print(l1.index('ratan',2))		# search 'ratan' from index 2

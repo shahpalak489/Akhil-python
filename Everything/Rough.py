@@ -1,11 +1,10 @@
-#Example 2             #declaring function inside the class
-class Myclass:
-    def disp1(self):    
-        print('good morning',self)
+print('function-args')
+#case 1
+def multiple(*ar):
+	print(ar)
+multiple(1,2,3,4)
 
-    def disp2(hi,name):       #see - to declare disp2 function belongs to class use "self"
-        print('good evening: ',hi)
-
-c=Myclass()
-c.disp1()
-c.disp2('Ratan')
+def star(*a):
+	for x in a:
+		print(x)
+star(10,20,30)

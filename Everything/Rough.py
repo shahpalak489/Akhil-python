@@ -1,10 +1,8 @@
-print('function-args')
-#case 1
-def multiple(*ar):
-	print(ar)
-multiple(1,2,3,4)
+print("- for list")
+list1=['a1','b2','c3','d4','5re']
 
-def star(*a):
-	for x in a:
-		print(x)
-star(10,20,30)
+print('* VV IMP - negative indexing')
+#https://www.quora.com/What-is-negative-index-in-Python
+print(list1[-4:-2:-1])		#	starting point:end point:move right if its positive and move left if its negative
+print("***MM IMP")
+print(list1[-4:-2:1])

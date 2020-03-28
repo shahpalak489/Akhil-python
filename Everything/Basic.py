@@ -491,22 +491,17 @@ print('For string')
 print(a.index('come'))
 
 #to get index of alphabet/string in given range
-print(a.index('t',10,15))	# return index of 't' between 10 to 15 index
-#print(a.index('anu'))	#this will return error bcoz 'anu' is not in a
+print(a.index('t',10,15))		# return index of 't' between 10 to 15 index
+#print(a.index('anu'))			#this will return error bcoz 'anu' is not in a
 
 print('- for List')
 l1=['ratan','anu','durga','ratan']
-print(l1.index('ratan'))		#by default search first 'ratan'
+print(l1.index('ratan'))		# by default search first 'ratan'
 print(l1.index('ratan',2))		# search 'ratan' from index 2
 print(l1.index('ratan',2,4))	# search 'ratan' from index 2 to 4
 
-print('*to make uppercase lower case and lower case to upper case')
-print('***swapcase')
-print('- For String')
-print(a.swapcase())
-
 print('*see- to check if data is alpha ,numeric or alpha-numeric') 
-print('*see- why alpha numberic doesnt woek with space') 	
+print('*see- why alpha numberic doesnt work with space') 	
 string1='HelloPython'		
 print(string1.isalpha())
 
@@ -557,8 +552,8 @@ print("*Modulus")
 a=10
 b=3
 c=2
-print(a%b)  # a/b
-print(a%c)  # a/c
+print(a%b)  			# a/b
+print(a%c)  			# a/c
 
 print('*after performing the division, get results in the lower integer close to result')
 print("*floor division") 
@@ -566,11 +561,28 @@ a=10
 b=3
 print(a//b)
 
-print('*to get few alphabets of string / to get few objects from list/set/tuple without for loop')
+print('*to get few alphabets of string // to get few objects from list/set/tuple without for loop')
 print("***slice")
 print('- for string')
-a="india"
-print (a[1])
+
+# -7 -6 -5 -4 -3 -2 -1  		#negative indexing
+s= 'ratanIT'
+# 0 1 2 3 4 5 6 				#positive indexing
+
+print(s[2])
+print(s[2:4])
+print(s[1:4:2])
+print(s[2:])
+print(s[:4])
+print(s[:])
+# print(s[9])  			#Indexerror: string out of range
+
+print(s[-2])
+print(s[-5:-1])
+print(s[:-1])
+print(s[-5:])
+print(s[:])
+# print(s[-8])  			#Indexerror: string out of range
 
 print("- for list")
 list1=['a1','b2','c3','d4','5re']
@@ -602,28 +614,6 @@ print(list1[-4:-2:1])
 #slice With dics -- not possible
 #slice with set -- not possible
 
-print('***Indexing')				#by ratan - check if is it same as above?
-print('for string')
-
-# -7 -6 -5 -4 -3 -2 -1  		#negative indexing
-s= 'ratanIT'
-# 0 1 2 3 4 5 6 				#positive indexing
-
-print(s[2])
-print(s[2:4])
-print(s[1:4:2])
-print(s[2:])
-print(s[:4])
-print(s[:])
-# print(s[9])  			#Indexerror: string out of range
-
-print(s[-2])
-print(s[-5:-1])
-print(s[:-1])
-print(s[-5:])
-print(s[:])
-# print(s[-8])  			#Indexerror: string out of range
-
 print('For List')
   # -5 -4 -3 -2 -1
 L1=[10,20,30,40,50]
@@ -644,6 +634,7 @@ print(L1[:])
 
 print('*to break string')
 print("***split")
+
 print('- for string')
 a="india"
 print(a.split('d'))
@@ -651,7 +642,6 @@ print(a.split('d'))
 print('*to break string with separator')
 print('+'.join(a.split('d')))			# this will split and place '+' in between
 
-print('*to concatenate string')
 print("***concatenate")
 print('for string')
 b=" is a Country"
@@ -706,6 +696,11 @@ print('*to make lower case')
 print("***lower case")
 print('for string')
 print(a.lower())
+
+print('*to make uppercase lower case and lower case to upper case')
+print('***swapcase')
+print('- For String')
+print(a.swapcase())
 
 print('***see - Capitalize')
 print('for string')
@@ -850,7 +845,6 @@ while a<5:
 		continue
 	print(a)
 
-print('***to access objects')
 print('*to access objects from Dictionary')
 d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
 
@@ -864,12 +858,15 @@ for x in d1:
 for x in d1:
 	print(x,d1[x])
 
+# to access all keys from dict
 for i in d1.keys():
 	print(i)
 
+# to access all values from dict
 for i in d1.values():
 	print(i)
 
+#to access all items from dict
 for i in d1.items():
 	print(i)
 
@@ -907,6 +904,7 @@ a=100
 print(a)
 
 print('***delete')
+
 v=10
 print(v)
 del v
@@ -939,7 +937,7 @@ total=num1+num2
 print('total:',total)
 '''
 
-print('Range')						# logic same as index
+print('***Range')						# logic same as index
 '''
 Rule: start from first value upto second value and if third value is 
 	  positive move left to right and if third value is negative then

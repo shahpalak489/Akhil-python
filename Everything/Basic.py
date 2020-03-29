@@ -885,7 +885,7 @@ a,b,c=d1
 print(a.b.c)
 
 ''' ratan '''
-print("***List of keyword")
+print("***how to get all keywords")
 import keyword
 print(keyword.kwlist)
 
@@ -893,7 +893,7 @@ print(keyword.kwlist)
     because we can see in 2.x print is keyword while in 3.x print is not keyword'''
 
 print('***variable')
-evalue,esalary,expect=10,20,30
+evalue,esalary,expect=10,20,30  
 evalue=esalary=expect=10
 
 print('***re assigning')

@@ -1020,16 +1020,16 @@ Rule 6 : Possible to take pre defined class names as identifiers but not recomme
 
 print('see video10:30.00 - difference between global and nonlocal')
 
-print('*how to know length ')
-print('for string')
+print('***how to know length ')
+print('- for string')
 s='    ratan IT   '
 print(len(s))
 
-print('for list')
+print('- for list')
 l1=[10,'ratan',10.5]
 print(len(l1))
 
-print('*how to remove space or characters')
+print('***how to remove space or characters')
 print(s.strip()) 		#to remove space at begining and at the end
 print(len(s.strip()))
 
@@ -1048,7 +1048,7 @@ is, is not : memory comparison : return boolean    		#it compares data as well a
 in, not in : check data available or not : return boolean
 '''
 
-print('For string')
+print('- For string')
 name1='ratan'
 name2='anu'
 name3='ratan'
@@ -1075,7 +1075,7 @@ print('durga' in name1)
 print('ra' not in name1)
 print('durga' not in name1)
 
-print('For List')
+print('- For List')
 L1=[10,20,30]
 L2=[40,50,60]
 L3=L1
@@ -1106,7 +1106,7 @@ print(100 in L1)
 print(10 not in L1)
 print(100 not in L1)
 
-print('for Dics')
+print('- for Dics')
 d1={111:'ratan',222:'anu'}
 d2={333:'ratan',444:'anu'}
 d3=d1
@@ -1152,8 +1152,15 @@ d2={1:'aaa'}
 c=d2
 print(c)
 
+print('*see - advanced')
+L2=[[1,2,'ratan'],[3,'tata']]
+a,b=L2
+print(type(a))
+print(b)
+print(b[1])
+
 print('***packing')
-print('convert list/set/tuple into dics')
+print('*convert list/set/tuple into dics')
 l1=[1,2,3,4]							 
 l2=['ratan','durga','anu','ratanIT']
 x=zip(l1,l2)			
@@ -1172,14 +1179,15 @@ x=zip(l1,l2)
 d=dict(x)
 print(d)
 
-print('*** sort/sorted')
+print('***to arrange by ACS/Desc')
+print('*** to arrnage by any logic')
 
 ''' IMP
 just to arrange by asc or desc ---> sort
 to arrange with any other logic ---> sorted
 '''
 
-print('For List')
+print('- For List')
 #arrange number in asc order
 a=[1,4,5,3,2]
 a.sort()		
@@ -1222,12 +1230,12 @@ print(sorted(d1.values()))
 print(sorted(d1.items()))
 
 print('***reverse')
-print('for list')
+print('- for list')
 l1=[10,20,30]
 l1.reverse()
 print(l1)
 
-print('***List info')
+print('***List datatype properties')
 '''
 1. represent group of objects :homogenus(same data type of objects) & heterogrnous( different data types of object)
 example: homogenous L1=[10,20,30]  heterogenous L2=[10,'ratan',10.05]
@@ -1238,6 +1246,7 @@ example: homogenous L1=[10,20,30]  heterogenous L2=[10,'ratan',10.05]
 '''
 print('***For Nested List/sub list/Multi dimension List')
 '''
+IMP
 to access data In dataframe use loc, iloc
 to access data in multi dimension list, tuple,set use like below
 '''
@@ -1252,44 +1261,37 @@ print(type(L1[1][1]))
 print(L1[0][1])
 print(L1[1][1])
 
-print('***unpacking')
-L2=[[1,2,'ratan'],[3,'tata']]
-a,b=L2
-print(type(a))
-print(b)
-print(b[1])
-
 print('copy')
 l1=[10,20,30]
 l2=l1.copy()
 print(l2)
 
 print('***modification')
-print('- For list')
-print('extend') 	#this will add whole list into another list
+print('-For list')
+print('*extend') 	#this will add whole list into another list
 l1=[10,20,30]
 l2=[40,50,60]
 l1.extend(l2)
 print(l1)
 
-print('append') 	#to add at end
+print('*append') 	#to add at end
 l1=[10,20,30]
 l1.append(40)
 print(l1)
 
-print('Insert')		#to add by specific location
+print('*Insert')		#to add by specific location
 l1=['ratan','anu']
 l1.insert(1,'aaa')		#this will add at index 1
 print(l1)
 l1.insert(6,'bbb')		#this will add at index6 but we dont have index5 so it will add at the end
 print(l1)
 
-print('remove') 	#to delete by object value
+print('*remove') 	#to delete by object value
 l1=[10,20,30]
 l1.remove(20)
 print(l1)
 
-print('pop')		#to delete by object index
+print('*pop')		#to delete by object index
 l1=['ratan','durga',10,10.5]
 l1.pop()			# by default it will remove last one
 print(l1)
@@ -1297,7 +1299,7 @@ l1.pop(1)			# this will remobe index 1 object
 print(l1)
 #l1.pop(10)			# pop index out of range
 
-print('del')		# to delete more than one objects same time
+print('*del')		# to delete more than one objects same time
 l1=[10,20,30,40,50,60,70,80,90,100,110,120,130,140,150]
 del l1[2]
 print(l1)
@@ -1310,20 +1312,20 @@ print(l1)
 del l1[:]
 print(l1)
 
-print('clear')			#to delete all objects 
+print('*clear')			#to delete all objects 
 l1=[10,20,30]
 l1.clear()
 print(l1)
 
 print('-for Dict')
-print('to add object at the end in dics')
+print('*to add object at the end in dics')
 d3={}
 d3[111]='ratan'
 d3[222]='anu'
 d3[333]='ratan'
 print(d3)
 
-print('to add one dict into another dict')
+print('*to add one dict into another dict')
 #method 1
 d1={1:'aaa',2:'bbb'}
 d2={3:'ccc',4:'ddd'}
@@ -1336,20 +1338,20 @@ d2={3:'ccc',4:'ddd'}
 x={**d1,**d2}
 print(x)
 
-print('to remove last object/particular object from dics')
+print('*to remove last object/particular object from dics')
 d1={1:'aaa',2:'bbb',3:'ccc'}
 d1.popitem()		# this will remove last item fron dics
 print(d1)
 d1.pop(2)		#this will remove key 2 from dics
 print(d1)
 
-print('to remove all objects from dics')
+print('*to remove all objects from dics')
 d1={1:'aaa',2:'bbb',3:'ccc'}
 d1.clear()
 print(d1)
 
 print('***Max Min')		#give maximum and minimum values
-print('for string')
+print('- for string')
 
 l1=[10,20,30]
 print(max(l1))

@@ -1,4 +1,4 @@
-print("****print")
+print("***print")
 print('*print string,int and float')
 eid,ename,esal=111,'ratan',100.45
 print(eid)
@@ -81,7 +81,7 @@ ename = 'ratan'
 esalary = 100.92
 ebool=True
 
-print('* how to know who is number, string ,boolean, List, tuple or Dics')
+print('*how to know which Datatypes (number, string ,boolean, List, tuple or Dics)')
 print(type(evalue))
 print(type(ename))
 print(type(esalary))
@@ -99,7 +99,7 @@ def aki():
 	print("this is not right")
 aki()
 
-print('function - required argument')
+print('*function with argument')
 def square(x):
 	print(x*x)
 square(2)	
@@ -108,7 +108,7 @@ def addition (x,y):
 	print(x+y)
 addition(3,5)
 
-print('function - keyword argument')
+print('*function with default argument')
 def default(x,y=25,z=5):  #IMP:first give non-default value then default value
 	print(x+y+z)
 
@@ -134,7 +134,7 @@ def a(x):
 b=a
 b(2) 					 # this will call function a
 
-print("***to call 1 function inside another function")
+print("*to call 1 function inside another function")
 def g():
     print("Hi, it's me 'g'")
     print("Thanks for calling me")
@@ -144,7 +144,7 @@ def f(func):
     func() #func=g  #step2: this will call function g
 f(g) #step 1: this will call function f
 
-print("***function within function")
+print("*function within function")
 def outside():
 	def inside():
 		print("i am inside") #step2
@@ -152,14 +152,14 @@ def outside():
 	inside() # this will call function inside
 outside() # this will call function outside
 
-print("***No call")
+print("*No call")
 def inner1(): 
     print("Hello, this is before function execution") 
     func() # this will not call func unction
     print("This is after function execution")
     return inner1
 
-print('function with n number of arguments')
+print('*function with n number of arguments')
 #case 1
 def multiple(*a):					# for n number of arguments use *
 	print(a)
@@ -183,7 +183,7 @@ def star(*b,car):
 		print(x)
 star(49,81,car='accord') #in this case, use keyword arguments 
 
-#case 3.
+#case 3
 def star(name='ratan',*b):
 	print(name)
 	for x in b:
@@ -308,7 +308,7 @@ disp3()				#function must be executed to declare global variable
 print(s)
 
 #Case 5 
-print('to update Global variable value')
+print('*to update Global variable value')
 name='ratan'
 def outer():
 	name1='durga'
@@ -369,17 +369,17 @@ x=10
 y=20
 print(x+y)
 print(x*y)
-print(y-x)
+print(y-	x)
 print(y/x)
 
-print("***exponent")
+print("*exponent")
 x=10
 n=2
 print(x**2)
 
 print("***relation operator")
 # <, >, <= ,>= !=
-print('for number')
+print('- for number')
 f=30
 g=23
 print(f<g)
@@ -389,7 +389,7 @@ print(f<=g)
 print(f>=g)
 print(f!=g)
 
-print('for string') 		# compare based on ASCI value
+print('- for string') 		# compare based on ASCI value
 print('ratan' > 'anu')
 print('ratan' < 'anu')
 print('ratan' >= 'anu')
@@ -397,7 +397,7 @@ print('ratan' <= 'anu')
 print('ratan' == 'anu')
 print('ratan' != 'anu')
 
-print("***assignment operator**")
+print("***assignment operator")
 # +=, -=, *= ,/=
 x += y
 #Example-1
@@ -468,26 +468,25 @@ print(x>1 and y>2)
 print(x==1 or y==3)
 print(x==1 and y==3)
 
-print('*to check given value present or not and gets True/false')
-print("Membership operator")
-x="california"
+print('***to check given value present or not and gets True/false')
+x="california"											# Membership operator
 print('z' in x)
 print('z' not in x)
 
 x=['india','ab','ssss']
 print ("ab" in x)
 
-print('*to check given value present or not and gets its index')
+print('***to check given value present or not and gets its index')
 # difference between in and Find --> in returns true / false , find returns indexing of given word
-print('***Find')		# if avaiable returns index else returns -1
-print('for string')
+# if avaiable returns index else returns -1
+print('- for string')
 a='welcome to RatanIT'
 print(a.find('Ratan'))
 print(a.find('anu')) 
 
-print('*to get index of alphabet/string')
-print('***Index')			#returns index of given word
-print('For string')
+print('***to get index of alphabet/string')
+#returns index of given word
+print('- For string')
 print(a.index('come'))
 
 #to get index of alphabet/string in given range
@@ -500,7 +499,7 @@ print(l1.index('ratan'))		# by default search first 'ratan'
 print(l1.index('ratan',2))		# search 'ratan' from index 2
 print(l1.index('ratan',2,4))	# search 'ratan' from index 2 to 4
 
-print('*see- to check if data is alpha ,numeric or alpha-numeric') 
+print('***see- to check if data is alpha ,numeric or alpha-numeric') 
 print('*see- why alpha numberic doesnt work with space') 	
 string1='HelloPython'		
 print(string1.isalpha())
@@ -520,8 +519,7 @@ print(string5.isalnum())
 string6='RatanIT'				#see - why its true?
 print(string6.isalnum())
 
-#check if string is upper case, lower case or it has space
-print('***Upper case, lower case , space') 	
+print('***check if string is upper case, lower case or it has space')
 string1='hellopython'
 print(string1.islower())
 
@@ -540,31 +538,29 @@ print(string5.isspace())
 string6='RatanIT'				
 print(string6.isspace())
 
-print("*identity operator")
-print('*to check if 2 variables are same or not without using =')
+print('***to check if 2 variables are same or not without using =')
 a=10
 b=10
 print(a is b)
 print(a is not b)
 
-print('*get remaing value after division')
-print("*Modulus")
+print('***get remaing value after division')
+											#Modulus
 a=10
 b=3
 c=2
 print(a%b)  			# a/b
 print(a%c)  			# a/c
 
-print('*after performing the division, get results in the lower integer close to result')
-print("*floor division") 
+print('***after performing the division, get results in the lower integer close to result')
+											#floor division 
 a=10
 b=3
 print(a//b)
 
-print('*to get few alphabets of string // to get few objects from list/set/tuple without for loop')
-print("***slice")
+print('***to get few alphabets of string // to get few objects from list/set/tuple without for loop')
+													#slice
 print('- for string')
-
 # -7 -6 -5 -4 -3 -2 -1  		#negative indexing
 s= 'ratanIT'
 # 0 1 2 3 4 5 6 				#positive indexing
@@ -592,10 +588,10 @@ print(list1[10:])
 print(list1[:10])
 print(list1[1:4:2])				#	starting point:end point:move right if its positive and move left if its negative
 
-print('* VV IMP - negative indexing')
+print('*** VV IMP - negative indexing')
 #https://www.quora.com/What-is-negative-index-in-Python
 print(list1[-4:-2:-1])		#	starting point:end point:move right if its positive and move left if its negative
-print("***MM IMP")
+print("*** MM IMP")
 print(list1[-4:-2:1])		#	starting point:end point:move right if its positive and move left if its negative
 
 print("- for tuple")
@@ -614,7 +610,7 @@ print(list1[-4:-2:1])
 #slice With dics -- not possible
 #slice with set -- not possible
 
-print('For List')
+print('- For List')
   # -5 -4 -3 -2 -1
 L1=[10,20,30,40,50]
   # 0  1  2  3  4
@@ -632,23 +628,21 @@ print(L1[:-2])
 print(L1[-3:])
 print(L1[:])
 
-print('*to break string')
-print("***split")
-
+print('***to break string')
+											#split
 print('- for string')
 a="india"
 print(a.split('d'))
 
-print('*to break string with separator')
+print('***to break string with separator')
 print('+'.join(a.split('d')))			# this will split and place '+' in between
 
 print("***concatenate")
-print('for string')
+print('-2 string')
 b=" is a Country"
 print(a+b)
 
-print('*to concatenate Int and float')
-print('- for Numbers(Int and Float)')
+print('-Numbers(Int and Float)')
 '''
 we can concatenate int and float because they both are numbers
 we can concatenate int and float to boolean because boolean has assigned values 0 and 1
@@ -658,13 +652,13 @@ print(10+True)
 print(10+False)
 print(20.5+True)
 
-print('*concatenate string and number/float/bool')
+print('- string and number/float/bool')
 '''
 print(10+'ratan')				not able to concatenate string and number/float/bool
 print(10.5+'tata')
 '''
 
-print('*concatenate list')
+print('- list')
 l1=[10,20,30]
 l2=[40,50,60]
 l3= l1+l2
@@ -672,61 +666,55 @@ print(l3)
 
 # what is this?
 print("***Replication")
-print('*replication for string')
+print('- for string')
 a='Hi'
 print(a*2)
 
-print('*replication for list')
+print('- for list')
 l1=[10,20,30]
 l2=l1*2
 print(l2)
 
-print('*to replace few alphabets with other alphabets in string')
-print("***Replace")
+print('***to replace few alphabets with other alphabets in string')
 print('- for string')
 c=a.replace('a','a is country')
 print(c)
 
-print('*to make upper case')
-print("***upper case")
-print('for string')
+print('***to make upper case')
+print('- for string')
 print(a.upper())
 
-print('*to make lower case')
-print("***lower case")
-print('for string')
+print('***to make lower case')
+print('- for string')
 print(a.lower())
 
-print('*to make uppercase lower case and lower case to upper case')
-print('***swapcase')
+print('***to make uppercase lower case and lower case to upper case')
 print('- For String')
 print(a.swapcase())
 
-print('***see - Capitalize')
-print('for string')
+print('***see - to make all capital letters')
+print('- for string')
 #print(a.Capitalize())
 
-print('*to give corresponding number to string')
-print('***Enumarate')				
+print('***to give corresponding number to string')
 print(list(enumerate(a)))
 print(tuple(enumerate(a)))
 
-# how many times given alphabet present in string
-print('***count')			# return count of character in given string
-print('for string')
+print('***how many times given alphabet present in string')
+print('***return count of character')
+print('- for string')
 a='ratanratan'
 print(a.count('r'))				#count 'r' in a
 print(a.count('ratan'))			#count 'ratan' in a
 print(a.count('a',1,7))			#count 'a' between 1 and 7 position
 print(a.count('ratan',2,7))		#count 'ratan' between 2 and 7 position
 
-# how many times given object present in list/set/tuple
-print('for list')
+print('***how many times given object present in list/set/tuple')
+print('- for list')
 l1=[10,20,30,10,10]
 print(l1.count(10))
 
-# to check if string start/end with given alphabets
-print('start with and end with')
+print('***to check if string start/end with given alphabets')
 string1='Welcome to RatanIT'
 print(string1.startswith('Welcome'))
 print(string1.startswith('come',3,10))
@@ -739,11 +727,11 @@ x=3
 y=3
 z=5
 
-print("- if")
+print("*if")
 if x==3 and y==3:
 	print("x and y are 3")
 
-print("- if..else")
+print("*if..else")
 #case 1
 if (x==z):
 	print("x and z are same")
@@ -765,7 +753,7 @@ else:
 #case 4							#this kind of if structure we can use in lambda
 print('ratan'),print('ratan') if 10>20 else print('durga'),print('durga')
 
-print("- if...elif...else")
+print("* if...elif...else")
 if (y==z):
 	print("y and z are same")
 elif (x==z):
@@ -773,8 +761,8 @@ elif (x==z):
 else:
 	print("i dont know")	
 
-print("**for Loop")
-print("for range")
+print("***for Loop")
+print("*for range")
 for k in range(8):
 	print(k) 
 for u in range(13,19):
@@ -782,7 +770,7 @@ for u in range(13,19):
 for no in range (102,130,5):
  	print(no)
 
-print("for List") 
+print("*for List") 
 fruit=["banana","apple","orange"]
 for aki in fruit:
  	print(aki) 
@@ -795,32 +783,32 @@ L2=[[1,2,3],['ratan','anu','tata']]
 for x,y,z in L2:
 	print(x,y,z)
 
-print("- for ...break") #(it will stop 'for loop')
+print("*for ...break") #(it will stop 'for loop')
 car=[2,15,19,20]
 for x in car:
  	print(x)
  	if (x==15):
    		break
  
-print("- for...in...continue")# ( this will not run remaining steps but will continue for loop)
+print("*for...in...continue")# ( this will not run remaining steps but will continue for loop)
 for y in fruit:
 	if (y=="apple"):
    	   continue
 	print(y)
  
-print("- for.....else**")
+print("*for.....else")
 for z in range (5,10):
 	print(z)
 else:
  	print("Finally finished!")
 
-print("**while loop**")
+print("***while loop")
 n = 25
 while n > 20:
     print (n)
     n = n-1
 
-print("**While...break**") #it will stop the while execution
+print("*While...break**") #it will stop the while execution
 i = 200
 while i < 215:
  print(i)
@@ -836,7 +824,7 @@ while a<10:
 		break
 	a+= 1 
 
-print("**while...continue**") 
+print("*while...continue**") 
 #it will start exceution from begining like here when i=3 its not printing i value
 a=1
 while a<5:
@@ -845,7 +833,11 @@ while a<5:
 		continue
 	print(a)
 
-print('*to access objects from Dictionary')
+print("***for vs while")
+# for when we have starting value , ending value by incremental / decremental
+# while is to check if condition is true or not
+
+print('***to access objects from Dictionary')
 d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
 
 print(d1.keys())
@@ -896,14 +888,14 @@ print('***variable')
 evalue,esalary,expect=10,20,30  
 evalue=esalary=expect=10
 
-print('***re assigning')
+print('*re assigning variable value')
 a=10
 print(a)
 
 a=100
 print(a)
 
-print('***delete')
+print('*delete variable')
 
 v=10
 print(v)
@@ -961,9 +953,6 @@ for x in range(-10,-1,4):
 for x in range(-15,-27,-5):
 	print(x)
 
-print("***for vs while")
-# for when we have starting value , ending value by incremental / decremental
-# while is to check if condition is true or not
 
 print('*** types of error')
 '''
@@ -1031,16 +1020,16 @@ Rule 6 : Possible to take pre defined class names as identifiers but not recomme
 
 print('see video10:30.00 - difference between global and nonlocal')
 
-print('*how to know length ')
-print('for string')
+print('***how to know length ')
+print('- for string')
 s='    ratan IT   '
 print(len(s))
 
-print('for list')
+print('- for list')
 l1=[10,'ratan',10.5]
 print(len(l1))
 
-print('*how to remove space or characters')
+print('***how to remove space or characters')
 print(s.strip()) 		#to remove space at begining and at the end
 print(len(s.strip()))
 
@@ -1059,7 +1048,7 @@ is, is not : memory comparison : return boolean    		#it compares data as well a
 in, not in : check data available or not : return boolean
 '''
 
-print('For string')
+print('- For string')
 name1='ratan'
 name2='anu'
 name3='ratan'
@@ -1086,7 +1075,7 @@ print('durga' in name1)
 print('ra' not in name1)
 print('durga' not in name1)
 
-print('For List')
+print('- For List')
 L1=[10,20,30]
 L2=[40,50,60]
 L3=L1
@@ -1117,7 +1106,7 @@ print(100 in L1)
 print(10 not in L1)
 print(100 not in L1)
 
-print('for Dics')
+print('- for Dics')
 d1={111:'ratan',222:'anu'}
 d2={333:'ratan',444:'anu'}
 d3=d1
@@ -1163,8 +1152,15 @@ d2={1:'aaa'}
 c=d2
 print(c)
 
+print('*see - advanced')
+L2=[[1,2,'ratan'],[3,'tata']]
+a,b=L2
+print(type(a))
+print(b)
+print(b[1])
+
 print('***packing')
-print('convert list/set/tuple into dics')
+print('*convert list/set/tuple into dics')
 l1=[1,2,3,4]							 
 l2=['ratan','durga','anu','ratanIT']
 x=zip(l1,l2)			
@@ -1183,14 +1179,15 @@ x=zip(l1,l2)
 d=dict(x)
 print(d)
 
-print('*** sort/sorted')
+print('***to arrange by ACS/Desc')
+print('*** to arrnage by any logic')
 
 ''' IMP
 just to arrange by asc or desc ---> sort
 to arrange with any other logic ---> sorted
 '''
 
-print('For List')
+print('- For List')
 #arrange number in asc order
 a=[1,4,5,3,2]
 a.sort()		
@@ -1233,12 +1230,12 @@ print(sorted(d1.values()))
 print(sorted(d1.items()))
 
 print('***reverse')
-print('for list')
+print('- for list')
 l1=[10,20,30]
 l1.reverse()
 print(l1)
 
-print('***List info')
+print('***List datatype properties')
 '''
 1. represent group of objects :homogenus(same data type of objects) & heterogrnous( different data types of object)
 example: homogenous L1=[10,20,30]  heterogenous L2=[10,'ratan',10.05]
@@ -1249,6 +1246,7 @@ example: homogenous L1=[10,20,30]  heterogenous L2=[10,'ratan',10.05]
 '''
 print('***For Nested List/sub list/Multi dimension List')
 '''
+IMP
 to access data In dataframe use loc, iloc
 to access data in multi dimension list, tuple,set use like below
 '''
@@ -1263,44 +1261,37 @@ print(type(L1[1][1]))
 print(L1[0][1])
 print(L1[1][1])
 
-print('***unpacking')
-L2=[[1,2,'ratan'],[3,'tata']]
-a,b=L2
-print(type(a))
-print(b)
-print(b[1])
-
 print('copy')
 l1=[10,20,30]
 l2=l1.copy()
 print(l2)
 
 print('***modification')
-print('- For list')
-print('extend') 	#this will add whole list into another list
+print('-For list')
+print('*extend') 	#this will add whole list into another list
 l1=[10,20,30]
 l2=[40,50,60]
 l1.extend(l2)
 print(l1)
 
-print('append') 	#to add at end
+print('*append') 	#to add at end
 l1=[10,20,30]
 l1.append(40)
 print(l1)
 
-print('Insert')		#to add by specific location
+print('*Insert')		#to add by specific location
 l1=['ratan','anu']
 l1.insert(1,'aaa')		#this will add at index 1
 print(l1)
 l1.insert(6,'bbb')		#this will add at index6 but we dont have index5 so it will add at the end
 print(l1)
 
-print('remove') 	#to delete by object value
+print('*remove') 	#to delete by object value
 l1=[10,20,30]
 l1.remove(20)
 print(l1)
 
-print('pop')		#to delete by object index
+print('*pop')		#to delete by object index
 l1=['ratan','durga',10,10.5]
 l1.pop()			# by default it will remove last one
 print(l1)
@@ -1308,7 +1299,7 @@ l1.pop(1)			# this will remobe index 1 object
 print(l1)
 #l1.pop(10)			# pop index out of range
 
-print('del')		# to delete more than one objects same time
+print('*del')		# to delete more than one objects same time
 l1=[10,20,30,40,50,60,70,80,90,100,110,120,130,140,150]
 del l1[2]
 print(l1)
@@ -1321,20 +1312,20 @@ print(l1)
 del l1[:]
 print(l1)
 
-print('clear')			#to delete all objects 
+print('*clear')			#to delete all objects 
 l1=[10,20,30]
 l1.clear()
 print(l1)
 
 print('-for Dict')
-print('to add object at the end in dics')
+print('*to add object at the end')
 d3={}
 d3[111]='ratan'
 d3[222]='anu'
 d3[333]='ratan'
 print(d3)
 
-print('to add one dict into another dict')
+print('*to add one dict into another dict')
 #method 1
 d1={1:'aaa',2:'bbb'}
 d2={3:'ccc',4:'ddd'}
@@ -1347,20 +1338,20 @@ d2={3:'ccc',4:'ddd'}
 x={**d1,**d2}
 print(x)
 
-print('to remove last object/particular object from dics')
+print('*to remove last object/particular object from dics')
 d1={1:'aaa',2:'bbb',3:'ccc'}
 d1.popitem()		# this will remove last item fron dics
 print(d1)
 d1.pop(2)		#this will remove key 2 from dics
 print(d1)
 
-print('to remove all objects from dics')
+print('*to remove all objects from dics')
 d1={1:'aaa',2:'bbb',3:'ccc'}
 d1.clear()
 print(d1)
 
 print('***Max Min')		#give maximum and minimum values
-print('for string')
+print('- for string')
 
 l1=[10,20,30]
 print(max(l1))
@@ -1388,7 +1379,7 @@ d3={1:'ratan',2:'durga','anu':3,'surya':4}	#TypeError: '>' not supported between
 #print(max(d3))
 #print(min(d3))
 
-print('***Dics***') 
+print('***Dics properties') 
 '''
 key:value    key=obj  	value=obj   :both together called item
 {key:value,key:value}
@@ -1405,7 +1396,8 @@ print(d1)
 d1={111:['ratan','tata'],222:'anu',333:'durga'}		#list allowed as dict values
 print(d1)
 
-print('override')
+print('***override')
+print('-Dics')
 d3={}
 d3[111]='ratan'
 d3[222]='anu'
@@ -1413,6 +1405,6 @@ d3[333]='ratan'
 d3[111]="repeat"		# if we try to enter same key again it will override that key and value
 print(d3)
 
-print('None')			# None allowed in keys and values both
+print('***None')			# None allowed in keys and values both
 d2={None:None}
 print(d2)

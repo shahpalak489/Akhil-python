@@ -30,7 +30,7 @@ print('*print Dics')
 d1={111:'ratan',222:'anu',333:'durga'}
 print(d1)
 
-print('*print duplicate keys,duplicate values')
+print('*what is output if we print duplicate keys,duplicate values')
 d2={111:'ratan',111:'surya',222:'surya'}	  #duplicate keys will be override  	#duplicate values will be ok
 print(d2)
 
@@ -76,6 +76,7 @@ string : str : 'ratan' "ratan"
 Boolean : bool : True  False 
 				   1    0
 '''
+
 evalue = 12
 ename = 'ratan'
 esalary = 100.92
@@ -95,6 +96,7 @@ d1={111:'ratan',222:'durga'}
 print(type(d1))
 
 print("***function")
+print('*give function syntax')
 def aki():
 	print("this is not right")
 aki()
@@ -109,17 +111,23 @@ def addition (x,y):
 addition(3,5)
 
 print('*function with default argument')
-def default(x,y=25,z=5):  #IMP:first give non-default value then default value
+#IMP:first give non-default value then default value
+
+def default(x,y=25,z=5):  
 	print(x+y+z)
 
 default(10)   #here y=25,z=5 default value and x=10 because we gave w value while calling  
 default(10,20) #here z=5 because while calling we gave x=10,y=20
 default(y=10,x=2) #if we change sequence of variable then we need to specify x=2 
+
+#VVIMP
 #default(20,y=40,30) # Invalid : once we give y=40 then rest of all argument must be z=something .we can not put just 30 
+
 default(50,60,z=10)  # valid
 
 print("***to call function")
-print("IMP: '()' this symbol call function")
+#IMP: '()' this symbol call function
+
 def a1():
 	print("a1")
 a1() 					# this will call function a1
@@ -160,6 +168,7 @@ def inner1():
     return inner1
 
 print('*function with n number of arguments')
+print('*function with n arguments alone,at begining,at end')
 #case 1
 def multiple(*a):					# for n number of arguments use *
 	print(a)
@@ -210,7 +219,7 @@ def star(name1,*b,name='ratan'):
 	for x in b:
 		print(x)
 	print(name)
-star(35,94,100,90,name='tata')  #here name1=35 and *b=94,100,90 and name='tata'
+star(35,94,100,90,name='tata')  			#here name1=35 and *b=94,100,90 and name='tata'
 
 print("***Return (IMP)")
 def function_that_prints():
@@ -222,8 +231,8 @@ def function_that_returns():
 
 print("IMP - The return statement terminates the execution of a function")
 print("IMP - function calling  will give only print values,not return values ")
-f1 = function_that_prints() #this will call function_that_prints
-f2 = function_that_returns() # this will call function_that_returns
+f1 = function_that_prints() 				#this will call function_that_prints
+f2 = function_that_returns() 				# this will call function_that_returns
 
 print("IMP - to access return values assign variable to function calling")
 print("and print the variable because retuen assigns value to function") 
@@ -243,7 +252,7 @@ def no_return(x,y):
     return c
 print(no_return(4,5))
 
-# Multiple return statement
+print('*Multiple return statement')
 def disp():
 	print('good morning')
 	return 10

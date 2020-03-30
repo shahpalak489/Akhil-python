@@ -294,7 +294,7 @@ def sarvado(g,h):
 sarvado(2,3)
 
 #case 3 
-print('*inside function for local variables get global variable value when both variables are same name')
+print('*for local variables get global variable value when both variables are same name')
 #example 1
 g,h=10,20
 def sarvado(g,h):
@@ -313,7 +313,7 @@ def disp3():
 	global s 
 	s='ratan'
 	print(s)
-disp3()				#function must be executed to declare global variable
+disp3()						#IMP: function must be executed to declare global variable
 print(s)
 
 #Case 5 

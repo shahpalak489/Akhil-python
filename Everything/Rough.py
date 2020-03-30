@@ -20,9 +20,12 @@ aki('gggg')
 print(a)
 
 
-a=123
+# inside function - same variable can not use as local and global var
 def aki2(x):
-	a=456
-	print(a)
+	#av=123
+	global av
+	av=456
+	
 
 aki2('dd')
+print(av)

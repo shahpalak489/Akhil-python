@@ -127,6 +127,7 @@ default(50,60,z=10)  # valid
 
 print("***to call function")
 #IMP: '()' this symbol call function
+#VVV IMP: always call funcation after its defined
 
 def a1():
 	print("a1")
@@ -135,12 +136,12 @@ a1() 					# this will call function a1
 print("***IMP")
 def akhil():
 	print("akhil")
-a3=akhil() 				# this will call akhil function
+a3=akhil() 						# this will call akhil function
    
 def a(x):
 	print(x+10)
 b=a
-b(2) 					 # this will call function a
+b(2) 					 		# this will call function a
 
 print("*to call 1 function inside another function")
 def g():
@@ -149,8 +150,8 @@ def g():
 def f(func):
     print("Hi, it's me 'f'")
     print("I will call 'func' now")
-    func() #func=g  #step2: this will call function g
-f(g) #step 1: this will call function f
+    func() 						#func=g  #step2: this will call function g
+f(g) 							#step 1: this will call function f
 
 print("*function within function")
 def outside():
@@ -264,6 +265,7 @@ disp()
 # default return value is none
 
 print("***local & global variable")
+
 #case 1
 print('*all function can use global variable value')
 name='ratan'  					# global variable
@@ -298,8 +300,9 @@ print('*for local variables get global variable value when both variables are sa
 #example 1
 g,h=10,20
 def sarvado(g,h):
-	print(globals()['g']+h)  #here we get g=10 value as global variable
+	print(globals()['g']+h)  			#here we get g=10 value as global variable
 sarvado(2,3)
+
 #example 2
 a=15
 def m1():
@@ -333,6 +336,7 @@ print(name)
 
 #case 6 (VV IMP)
 print('*once we use global variable inside function we can not declare same variable as local variable')
+
 # below code will give error
 '''
 name='ratan'
@@ -343,7 +347,22 @@ def tution():
 tution()
 '''
 
-#case 7 - VV IMP
+#case 7
+print('*once we declare variable as local variable we canot declare/update same variable as global variable')
+
+# below code will give error
+'''
+AKI=123
+def aki9():
+	AKI=789				#used AKI as local variable
+	global AKI          # can not declare/ update same variable as global variable within function
+	AKI=456
+
+aki9()
+print(AKI)
+'''
+
+#case 8 - VV IMP
 print('*to chnage parent function variable value from child function' )
 #example 1
 def m1():
@@ -356,7 +375,7 @@ def m1():
 m1()
 
 #example 2
-# in below example we are chaning name1 variable value, inside child function using nonlocal keyword
+# in below example we are changing name1 variable value, inside child function using nonlocal keyword
 # because of this name1 value changes foreever
 name='ratan'
 def outer():
@@ -378,7 +397,7 @@ x=10
 y=20
 print(x+y)
 print(x*y)
-print(y-	x)
+print(y-x)
 print(y/x)
 
 print("*exponent")
@@ -488,6 +507,7 @@ print ("ab" in x)
 print('***to check given value present or not and gets its index')
 # difference between in and Find --> in returns true / false , find returns indexing of given word
 # if avaiable returns index else returns -1
+
 print('- for string')
 a='welcome to RatanIT'
 print(a.find('Ratan'))
@@ -498,7 +518,7 @@ print('***to get index of alphabet/string')
 print('- For string')
 print(a.index('come'))
 
-#to get index of alphabet/string in given range
+print('*to get index of alphabet/string in given range')
 print(a.index('t',10,15))		# return index of 't' between 10 to 15 index
 #print(a.index('anu'))			#this will return error bcoz 'anu' is not in a
 
@@ -541,7 +561,7 @@ print(string3.isupper())
 string4='home123'
 print(string4.isupper())
 
-string5=' '					#see- why it works only for ' '
+string5=' '									#see- why it works only for ' '
 print(string5.isspace())
  
 string6='RatanIT'				
@@ -589,13 +609,23 @@ print(s[-5:])
 print(s[:])
 # print(s[-8])  			#Indexerror: string out of range
 
-print("- for list")
-list1=['a1','b2','c3','d4','5re']
-print(list1[2])
-print(list1[2:7]) 
-print(list1[10:]) 
-print(list1[:10])
-print(list1[1:4:2])				#	starting point:end point:move right if its positive and move left if its negative
+print('- For List')
+  # -5 -4 -3 -2 -1
+L1=[10,20,30,40,50]
+  # 0  1  2  3  4
+print(L1[3])
+print(L1[1:3])
+print(L1[:3:2])
+print(L1[1:])
+print(L1[:2])
+print(L1[:])
+#print(L1[8])	Indexerror: list index out of range
+
+print(L1[-2])
+print(L1[-4:-2])
+print(L1[:-2])
+print(L1[-3:])
+print(L1[:])
 
 print('*** VV IMP - negative indexing')
 #https://www.quora.com/What-is-negative-index-in-Python
@@ -619,24 +649,6 @@ print(list1[-4:-2:1])
 #slice With dics -- not possible
 #slice with set -- not possible
 
-print('- For List')
-  # -5 -4 -3 -2 -1
-L1=[10,20,30,40,50]
-  # 0  1  2  3  4
-print(L1[3])
-print(L1[1:3])
-print(L1[:3:2])
-print(L1[1:])
-print(L1[:2])
-print(L1[:])
-#print(L1[8])	Indexerror: list index out of range
-
-print(L1[-2])
-print(L1[-4:-2])
-print(L1[:-2])
-print(L1[-3:])
-print(L1[:])
-
 print('***to break string')
 											#split
 print('- for string')
@@ -647,7 +659,7 @@ print('***to break string with separator')
 print('+'.join(a.split('d')))			# this will split and place '+' in between
 
 print("***concatenate")
-print('-2 string')
+print('-two string')
 b=" is a Country"
 print(a+b)
 
@@ -667,7 +679,7 @@ print(10+'ratan')				not able to concatenate string and number/float/bool
 print(10.5+'tata')
 '''
 
-print('- list')
+print('- two list')
 l1=[10,20,30]
 l2=[40,50,60]
 l3= l1+l2
@@ -724,6 +736,7 @@ l1=[10,20,30,10,10]
 print(l1.count(10))
 
 print('***to check if string start/end with given alphabets')
+print('***to check if string start/end with given alphabets in given range')
 string1='Welcome to RatanIT'
 print(string1.startswith('Welcome'))
 print(string1.startswith('come',3,10))
@@ -966,9 +979,15 @@ for x in range(-15,-27,-5):
 print('*** types of error')
 '''
 Type Error: concat not possible
+
 valueerror : conversion 
+
 Name error: name is not defined
+
 unbounded local error: related to local and global variable
+
+UnboundLocalError: local variable 'jj2' referenced before assignment  ( means you must call function after its defined)
+
 '''
 
 print('***Number systems')

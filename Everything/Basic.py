@@ -391,6 +391,8 @@ def outer():
 outer()
 print(name)
 
+print('*see video10:30.00 - difference between global and nonlocal')
+
 print("***arithmetic Operator")
 # +,-,*,/
 x=10
@@ -891,6 +893,7 @@ print(d1.get(111))
 
 print('*to access objects from Dictionary without for loop and without keys,items,values')
 #method 1
+d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
 r=d1[444]
 print(r)
 
@@ -927,7 +930,7 @@ print('***INPUT')
 
 '''
 print('* take input as string and then do concatenate')
-a=input('A=')				#Input takes all value as string
+a=input('A=')				#IMP:  Input takes all value as string
 b=input('B=')				#thats why this example will give string as result (eg:1020)
 print(a+b)
 
@@ -990,42 +993,6 @@ UnboundLocalError: local variable 'jj2' referenced before assignment  ( means yo
 
 '''
 
-print('***Number systems')
-'''
-binary : base 2
-octal  : base 8
-decimal : base 10
-Hexa decimal : base 16
-
-binary system: allows 0 and 1
-octal form: allows 0 to 7
-decimal : allows 0 to 9
-hexa decimal: allows 0 to 9 and a to f
-'''
-
-print('* to get ASCI values')
-print('see-ASCI value')
-c=5
-#print(ord(c))
-
-c=f
-#print(ord(c))
-
-print('*to get binary value')
-print('binary values')
-c=112
-print(bin(c))
-
-print('*to get octal value')
-print('octal values')
-c=20
-print(oct(c))
-
-print('*to get hexa decimal value')
-print('hexa deciaml values')
-c=20
-print(hex(c))
-
 print('***Python identifiers - nomenclature of class,function rules')
 '''
 Rule 1 :a-z , A-Z , _    -should not start with numberic , should not allow special characters
@@ -1046,8 +1013,6 @@ self=100 									#not allowed
 Rule 6 : Possible to take pre defined class names as identifiers but not recommended
 '''
 
-print('see video10:30.00 - difference between global and nonlocal')
-
 print('***how to know length ')
 print('- for string')
 s='    ratan IT   '
@@ -1057,10 +1022,11 @@ print('- for list')
 l1=[10,'ratan',10.5]
 print(len(l1))
 
-print('***how to remove space or characters')
+print('***how to remove space')
 print(s.strip()) 		#to remove space at begining and at the end
 print(len(s.strip()))
 
+print('***how to remove characters')
 s1='@@@ratan IT####'					#characters can be remove at begining or end.. not from middle
 print(len(s1))
 print(s1.lstrip('@'))		# to remove @ at begining
@@ -1436,3 +1402,39 @@ print(d3)
 print('***None')			# None allowed in keys and values both
 d2={None:None}
 print(d2)
+
+print('***Number systems')
+'''
+binary : base 2
+octal  : base 8
+decimal : base 10
+Hexa decimal : base 16
+
+binary system: allows 0 and 1
+octal form: allows 0 to 7
+decimal : allows 0 to 9
+hexa decimal: allows 0 to 9 and a to f
+'''
+
+print('* to get ASCI values')
+print('see-ASCI value')
+c=5
+#print(ord(c))
+
+c=f
+#print(ord(c))
+
+print('*to get binary value')
+print('binary values')
+c=112
+print(bin(c))
+
+print('*to get octal value')
+print('octal values')
+c=20
+print(oct(c))
+
+print('*to get hexa decimal value')
+print('hexa deciaml values')
+c=20
+print(hex(c))

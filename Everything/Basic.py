@@ -1240,12 +1240,12 @@ example: homogenous L1=[10,20,30]  heterogenous L2=[10,'ratan',10.05]
 4. mutabale: modifications are allowed
 5. insertation order : e1,e2,e3 --> e1 e2 e3
 '''
-print('***For Nested List/sub list/Multi dimension List')
+print('***to access data in (Nested/sub list/Multi dimension) List,tuple,set')
 '''
 IMP
 to access data In dataframe use loc, iloc
-to access data in multi dimension list, tuple,set use like below
 '''
+
 #      0	   1
 L1=[[10,20],['ratan','tata']]
 #    0  1    0  1 
@@ -1257,37 +1257,36 @@ print(type(L1[1][1]))
 print(L1[0][1])
 print(L1[1][1])
 
-print('copy')
+print('***to copy one list into another list')
 l1=[10,20,30]
 l2=l1.copy()
 print(l2)
 
-print('***modification')
 print('-For list')
-print('*extend') 	#this will add whole list into another list
+print('*add one entire list into another list')
 l1=[10,20,30]
 l2=[40,50,60]
 l1.extend(l2)
 print(l1)
 
-print('*append') 	#to add at end
+print('*to add object in list at the end')
 l1=[10,20,30]
 l1.append(40)
 print(l1)
 
-print('*Insert')		#to add by specific location
+print('*to add object in list by specific location')
 l1=['ratan','anu']
 l1.insert(1,'aaa')		#this will add at index 1
 print(l1)
 l1.insert(6,'bbb')		#this will add at index6 but we dont have index5 so it will add at the end
 print(l1)
 
-print('*remove') 	#to delete by object value
+print('*in list to delete by object value')
 l1=[10,20,30]
 l1.remove(20)
 print(l1)
 
-print('*pop')		#to delete by object index
+print('*in list to delete by object index')
 l1=['ratan','durga',10,10.5]
 l1.pop()			# by default it will remove last one
 print(l1)
@@ -1295,7 +1294,7 @@ l1.pop(1)			# this will remobe index 1 object
 print(l1)
 #l1.pop(10)			# pop index out of range
 
-print('*del')		# to delete more than one objects same time
+print('*in list to delete more than one objects same time')
 l1=[10,20,30,40,50,60,70,80,90,100,110,120,130,140,150]
 del l1[2]
 print(l1)
@@ -1308,13 +1307,13 @@ print(l1)
 del l1[:]
 print(l1)
 
-print('*clear')			#to delete all objects 
+print('*in list to delete all objects') 
 l1=[10,20,30]
 l1.clear()
 print(l1)
 
 print('-for Dict')
-print('*to add object at the end')
+print('*in dict to add object at the end')
 d3={}
 d3[111]='ratan'
 d3[222]='anu'
@@ -1346,9 +1345,7 @@ d1={1:'aaa',2:'bbb',3:'ccc'}
 d1.clear()
 print(d1)
 
-print('***Max Min')		#give maximum and minimum values
-print('- for string')
-
+print('***get maximum and minimum values in list')
 l1=[10,20,30]
 print(max(l1))
 print(min(l1))
@@ -1361,7 +1358,7 @@ l3=[10,'ratan']				#TypeError: '>' not supported between instances of 'str' and 
 #print(max(l3))				# can not compare heterogenous objects	
 #print(min(l3))				# can not compare heterogenous objects
 
-print('-for dics')
+print('* get maximum and minimum values in dics')
 d1={1:'ratan',2:'durga',3:'anu',4:'surya'}
 print(max(d1))
 print(min(d1))

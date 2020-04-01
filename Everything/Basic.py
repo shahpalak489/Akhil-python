@@ -1034,7 +1034,7 @@ print(s1.rstrip('#'))		# to remove # at the end
 print(s1.rstrip('#').lstrip('@'))
 print(s1.lstrip('IT'))		# i can not remove IT here because its in middle of string
 
-print('***id,=,!=,is in')
+print('***to check memory location and data comparison')
 '''
 id() : print memory location
 is, is not : memory comparison : return boolean    		#it compares data as well as memory location
@@ -1049,7 +1049,7 @@ name3='ratan'
 
 print(id(name1))
 print(id(name2))
-print(id(name3))
+ print(id(name3))
 
 print('**')
 print(name1 is name2)				
@@ -1154,19 +1154,21 @@ print(b)
 print(b[1])
 
 print('***packing')
-print('*convert list/set/tuple into dics')
+print('*convert 2 list into dics')
 l1=[1,2,3,4]							 
 l2=['ratan','durga','anu','ratanIT']
 x=zip(l1,l2)			
 d=dict(x)
 print(d)
 
+print('*convert 2 tuple into dics')
 l1=(1,2,3,4)							 
 l2=('ratan','durga','anu','ratanIT')
 x=zip(l1,l2)			
 d=dict(x)
 print(d)
 
+print('*convert 2 set into dics')
 l1={1,2,3,4}							 
 l2={'ratan','durga','anu','ratanIT'}
 x=zip(l1,l2)			
@@ -1177,54 +1179,54 @@ print('***to arrange by ACS/Desc')
 print('*** to arrnage by any logic')
 
 ''' IMP
-just to arrange by asc or desc ---> sort
-to arrange with any other logic ---> sorted
+just to arrange by asc or desc ---> sort 			#it chnages object itself
+to arrange with any other logic ---> sorted 		#it crates new object with changes
 '''
 
-print('- For List')
-#arrange number in asc order
+print('-For List')
+print('*arrange number in asc order')
 a=[1,4,5,3,2]
 a.sort()		
 print(a)
 
-#arrange alphabet in asc order
+print('*arrange alphabet in asc order')
 b=['a','e','b','d','c']
 b.sort() 	
 print(b)
 
-#arrange number in desc order
+print('*arrange number in desc order')
 e=[1,4,5,3,2]
 e.sort(reverse=True) 		
 print(e)
 
-#arrange alphabet in desc order
+print('*arrange alphabet in desc order')
 f=['a','e','b','d','c']
 f.sort(reverse=True)		
 print(f)
 
-#arrange given list by length
+print('*arrange given list by length')
 i=['bcde','cd','def','a']
 j=sorted(i,key=len)
 print(j)
 
-#arraneg by function
+print('*arraneg by function')
 def func(x): 
     return x % 7
 L = [15, 3, 11, 7] 
 m = sorted(L, key = func)
 print(m)
 
+print('*do sorting of heterogenous data')
 l3=[10,20.85,'ratan']
 #l3.sort() 					#heterogenous sorting not supported
 
-print('-for dics')
+print('*arrange Dictionary ascending by key,value and items')
 d1={1:'ratan',2:'durga',3:'anu',4:'surya'}
 print(sorted(d1.keys()))
 print(sorted(d1.values()))
 print(sorted(d1.items()))
 
-print('***reverse')
-print('- for list')
+print('***arrange list in reverse order')
 l1=[10,20,30]
 l1.reverse()
 print(l1)

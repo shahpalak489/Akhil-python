@@ -1226,7 +1226,7 @@ print(sorted(d1.keys()))
 print(sorted(d1.values()))
 print(sorted(d1.items()))
 
-print('***arrange list in reverse order')
+print('***arrange list in reverse order without using sort')
 l1=[10,20,30]
 l1.reverse()
 print(l1)
@@ -1257,7 +1257,7 @@ print(type(L1[1][1]))
 print(L1[0][1])
 print(L1[1][1])
 
-print('***to copy one list into another list')
+print('***create another copy of list')
 l1=[10,20,30]
 l2=l1.copy()
 print(l2)

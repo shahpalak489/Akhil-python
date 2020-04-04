@@ -244,7 +244,6 @@ g = GrandChild("Geek1", 23, "Noida")
 print(g.getName(), g.getAge(), g.getAddress())
 
 
-
 '''Ratan            # need to verify
 class:  logical entity
         Blue Print of object
@@ -557,21 +556,7 @@ c.m1()
 c.m2()
 
 #example 3
-print('*to call parent class method from child class method ')
-class Parent():
-    def m1(self):
-        print('parent m1() method')
-
-class child(Parent):
-    def m2(self):
-        super().m1()                #super() will call parent class method
-        print('child m2 method')
-
-c=child()
-c.m2()
-
-#example 4
-print('*to access parent class variable from child class')
+print('*to access parent class variable from child class when variabes name unique')
 class Parent():
     a,b=10,20
 
@@ -580,12 +565,13 @@ class child(Parent):
     def add(self,i,j):
         print(i+j)
         print(self.x+self.y)
-        print(self.a+self.b)      # with self we can access parent class variables
+        print(self.a+self.b)      
+        #with self we can access parent class variables when variable names are different
 c=child()
 c.add(1000,2000)
 
-#example 5 
-print('#same name global,class and local variable')
+#example 4
+print('*IMP: to access parent class variable from child class when variabes name same')
 a,b=500,5000
 class Parent():
     a,b=10,20
@@ -599,6 +585,20 @@ class child(Parent):
         print(globals()['a']+globals()['b'])    #to access global variable
 c=child()
 c.add(1000,2000)
+
+#example 5 
+print('*to access/call parent class method from child class method ')
+class Parent():
+    def m1(self):
+        print('parent m1() method')
+
+class child(Parent):
+    def m2(self):
+        super().m1()                #super() will call parent class method
+        print('child m2 method')
+
+c=child()
+c.m2()
 
 #example 6
 print('*parent class constructor') 
@@ -624,7 +624,7 @@ c=Child()     #if child class has constructor it will execute child class constr
 
 
 #case 3
-print('#parent class and child class both have constructor - execute parent constructor')   
+print('#parent class and child class both have constructor-execute constructor of parent class')   
 class Parent:
     def __init__(self,name):
         print("parent class constructor",name)
@@ -636,7 +636,7 @@ class Child(Parent):
 c=Child()                     
 
 #case 4
-print('#parent class and child class both have constructor - execute any class constructor')   
+print('#parent class and child class both have constructor-execute constructor of any class')   
 class Parent:
     def __init__(self,name):
         print("parent class constructor",name)
@@ -645,12 +645,14 @@ class grandchild(Parent):
         print('grandchild')
 class Child(Parent):
     def __init__(self):
-        Parent.__init__(self,'anu')      ##method2:we can execute other class constructor this way as well
-        grandchild.grand_child()         #method2:we can execute other class constructor this way as well
+        Parent.__init__(self,'anu')      
+    #method2:we can execute other class constructor this way as well
+        grandchild.grand_child()         
+    #method2:we can execute other class constructor this way as well
         print("child class constructor")
 c=Child()   
 
-#example 7             #within class - to access one method inside another method 
+#example 7           #within class - to access one method inside another method 
 class Myclass():
     def disp1(self):
         print('private method')
@@ -661,7 +663,6 @@ class Myclass():
 
 a=Myclass()
 a.disp2()                   
-
 
 print('inheritance types')
 #1.single Inheritance           #mother has 1 child
@@ -883,7 +884,6 @@ def fly_test(animal):
 #passing the objects
 fly_test(Parrot)
 
-
 #example 4    #another example
 
 class Unicorn:
@@ -903,9 +903,7 @@ def bike_speed(name):
 
 bike_speed(u)
 
-
-# encapsulation                     #process of binding properties and methods as single unit
-
+# encapsulation              #process of binding properties and methods as single unit
 #example 1
 print('* private class variable can access within class only')
 
@@ -1007,22 +1005,3 @@ r.eat()
 
 d=Durga()
 d.eat()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

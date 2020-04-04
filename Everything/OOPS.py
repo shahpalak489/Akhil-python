@@ -278,7 +278,7 @@ class Myclass1:
     pass
 class Myclass2():
     pass
-class   Myclass3(object):
+class Myclass3(object):
     pass
 print(issubclass(Myclass1,object))          #true
 print(issubclass(Myclass2,object))          #true
@@ -374,7 +374,7 @@ print(id(c3))
 print(c1 is c2)
 print(c1 is c3)
 
-print('example 10')             # class variable value is related to each object  
+print('example 10')      #class variable value is related to each object  
 class Myclass():
     name='ratan'
 
@@ -386,7 +386,8 @@ print(c1.name)          #ratan
 c1.name='durga'
 print(c1.name)          #durga      
 
-print(c2.name)          #ratan   #c1.name is different than c2.name so when we chnage c1.name its doesnt affect c2.name
+print(c2.name)          #ratan   
+#c1.name is different than c2.name so when we chnage c1.name its doesnt affect c2.name
 
 # see - what is the importance of self ?? 
  
@@ -403,11 +404,12 @@ c1.m1()
 
 #IMP example 12                 # to convert local var into class var
 class Myclass():
-    def values(self,value1,value2):         #local variables(value1,value2) limited to this function only 
+    def values(self,value1,value2):  #local variables(value1,value2) limited to this function only 
         print(value1)
         print(value2)
 
-        self.value1=value1          # convert local variable into class variable so that other functions can also use them
+  #class variable    local variable
+        self.value1=value1 
         self.value2=value2
     def add(self):
         print(self.value1+self.value2)
@@ -420,7 +422,7 @@ c1.add()
 class Myclass():
     def m1(self):          
         print('class m1')
-        self.m2(10)                         #to call one method inside another method
+        self.m2(10)              #to call one method inside another method
 
     def m2(self,a):
         print('clas m2 value is ',a)
@@ -432,22 +434,23 @@ c1.m1()
 class Myclass:
     name='durga'
     def __init__(self,name):
-        print('good morning',name)
+         print('good morning',name)
         print('good evening',self.name)
 
-c=Myclass('ratan')                          #give variable while creating instance bcoz __init__ has 1 variable
+c=Myclass('ratan')              #give variable while creating instance bcoz __init__ has 1 variable
 
-#example 15                     #conversion of local var to class var
+#example 15                     
+#conversion of local var to class var
 class operation:
-    def __init__ (self,val1,val2):          #local variables(val1,val2) limited to this function only 
+    def __init__ (self,val1,val2):   #local variables(val1,val2) limited to this function only 
         print(val1)
         print(val2)
 
-        self.val1=val1                      #conversion of local var to class var
-        self.val2=val2
+        self.val3=val1           #conversion of local var to class var
+        self.val4=val2
 
     def add(self):
-        print(self.val1+self.val2)
+        print(self.val3+self.val4)
 
 c=operation(10,20)
 c.add()
@@ -455,7 +458,7 @@ c.add()
 #example 16      
 class Emp:
     def __init__(self,eid,ename,esal):
-        self.eid=eid
+         self.eid=eid
         self.ename=ename
         self.esal=esal
 
@@ -465,17 +468,17 @@ class Emp:
 c=Emp('ss','gg','aa')
 c.disp()
 
-#example 17                    #__str__  -->  this will be executed when we print instance( here c instance)
-                               # works only with return and string
+#example 17         #__str__  -->  this will be executed when we print instance( here c instance)
+                    # works only with return and string
 #case 1
 class Myclass:
     pass
 c=Myclass
-print(c)                        # this will print object memory location
+print(c)                     # this will print object memory location
 
 #case 2
 class Myclass:
-    def __str__(self):          # this method will be called when we print object
+    def __str__(self):       # this method will be called when we print object
         return 'ratan'
 c=Myclass()
 print(c)
@@ -504,7 +507,7 @@ class Emp:
         self.esal=esal
 
     def __str__(self):
-        return "emp id ={}, ename= {}, esal={}" .format(self.eid,self.ename,self.esal)          #must be return and string
+        return "emp id ={}, ename= {}, esal={}" .format(self.eid,self.ename,self.esal) #must be return and string
 
 c=Emp('ss','gg','aa')
 print(c)
@@ -533,12 +536,11 @@ class Mycalss():
 #del c3                      # otherwise it will not execute __del__
 
 
-
 print('Inheritance')               # getting properties from parent class
-
 #exampe 1            #skip
 
-#example 2                  #better to create child class objects so that we can access child and parents both methods
+#example 2       
+#better to create child class objects so that we can access child and parents both methods
 class Parent():
     def m1(self):
         print('parent m1() method')
@@ -555,7 +557,7 @@ c.m1()
 c.m2()
 
 #example 3
-print('#to call parent class method from child class method ')
+print('*to call parent class method from child class method ')
 class Parent():
     def m1(self):
         print('parent m1() method')
@@ -569,7 +571,7 @@ c=child()
 c.m2()
 
 #example 4
-print('#to access parent class variable from child class')
+print('*to access parent class variable from child class')
 class Parent():
     a,b=10,20
 
@@ -578,7 +580,7 @@ class child(Parent):
     def add(self,i,j):
         print(i+j)
         print(self.x+self.y)
-        print(self.a+self.b)                # with self we can access parent class variables
+        print(self.a+self.b)      # with self we can access parent class variables
 c=child()
 c.add(1000,2000)
 
@@ -599,26 +601,26 @@ c=child()
 c.add(1000,2000)
 
 #example 6
-print('#parent class constructor') 
+print('*parent class constructor') 
 
 #case 1                 
-print('#only parent class has constructor')   
+print('- only parent class has constructor')   
 class Parent:
     def __init__(self):
         print("parent class constructor")
 class Child(Parent):
     pass
-c=Child()                      #if child class doenst have constructor it will execute parent class constructor
+c=Child()         #if child class doenst have constructor it will execute parent class constructor
 
 #case 2                 
-print('#parent class and child class both have constructor')   
+print('- parent class and child class both have constructor')   
 class Parent:
     def __init__(self):
         print("parent class constructor")
 class Child(Parent):
     def __init__(self):
         print("child class constructor")
-c=Child()                     #if child class has constructor it will execute child class constructor only by default
+c=Child()     #if child class has constructor it will execute child class constructor only by default
 
 
 #case 3
@@ -648,7 +650,7 @@ class Child(Parent):
         print("child class constructor")
 c=Child()   
 
-#example 7                  #within class - to access one method inside another method 
+#example 7             #within class - to access one method inside another method 
 class Myclass():
     def disp1(self):
         print('private method')
@@ -789,7 +791,8 @@ class Emp(Person):
 e1=Emp('ratan','durga',121212)
 print(e1)
 
-#example 12             #to check instance #to check relation
+#example 12         #to check relation    
+#to check instance 
 class parent:
     pass
 
@@ -803,10 +806,9 @@ print(isinstance(p,parent))         #p has relation with parent class?        #y
 print(isinstance(c,child))          #c has relation with child class?         #yes, c is itslef child
 print(isinstance(c,parent))         #c has relation with parent class?        #yes, c is child of parent class
 print(isinstance(c,object))         #c has relation with object ?             #yes, all parent class is child of object 
-                                                                                #and c has relation with parent class
+                                                                              #and c has relation with parent class
 print(isinstance(p,object))         #p has relation with object?              #yes, all parent class is child of object
 print(isinstance(p,child))          #p has relation with child?                 #no. it can go upward only no downward
-
 
 #polymorphism
 

@@ -17,4 +17,3 @@ def interest(x,y,z):
 	a=(x*y*z)/100
 	print(a)
 interest(100,5,5)
-

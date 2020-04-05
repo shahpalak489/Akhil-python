@@ -3,13 +3,6 @@
 print("***CLASS")
 #https://www.youtube.com/watch?v=qSDiHI1kP98
 
-print("***class structure")
-class abc:
-	def __init__(self,value2):
-		self.value1=value2
-mine=abc('value of value1')
-print(mine.value1)
-
 print("***variables")
 #to create class
 class School:
@@ -315,6 +308,11 @@ Myclass.m2()                #to call static method
 
 #example 4 - skip
 
+'''MMIMP : importnace of self
+self mentions that this function belongs to this class
+that means that function can access class variables and that class all properties
+'''
+
 print('example 5 : local variables, class variables, global variables')
 i,j=100,200                         #to declare global variable
 class Myclass():
@@ -457,7 +455,7 @@ c.add()
 #example 16      
 class Emp:
     def __init__(self,eid,ename,esal):
-         self.eid=eid
+        self.eid=eid
         self.ename=ename
         self.esal=esal
 
@@ -533,7 +531,6 @@ class Mycalss():
 #del c1
 #del c2                      # to execute __del__ all c1,c2,c3 must be del
 #del c3                      # otherwise it will not execute __del__
-
 
 print('Inheritance')               # getting properties from parent class
 #exampe 1            #skip
@@ -904,7 +901,7 @@ def bike_speed(name):
 bike_speed(u)
 
 # encapsulation              #process of binding properties and methods as single unit
-#example 1
+#case 1
 print('* private class variable can access within class only')
 
 class A():
@@ -918,7 +915,7 @@ obj=A()
 
 obj.disp()                   #__a can be accessed with the help of another mehtod   #getter method
 
-#example 2
+#case 2
 print('* private method can access within class only')
 class Myclass():
     def __disp1(self):
@@ -934,7 +931,7 @@ a=Myclass()
 a.disp2()            #we can call __disp1 by calling disp2 bcoz __disp1 already called within class  #getter method
 
 
-#example 3              #getter and setter method
+#case 3              #getter and setter method
 class Emp():
     __eid=111
 
@@ -952,7 +949,7 @@ e.getEid()                  #to access private var
 e.setEid(222)               #to update private variable
 e.getEid()                  #to access private var
 
-#example 4              #to access one class variable into another class
+#case 4              #to access one class variable into another class
 class A:
     num1,num2=100,200
 
@@ -969,7 +966,8 @@ b.add()
 b.mul()
 
 #better solution for above example
-#example 5         #create object at class level so then we dont need to create object at method level again and again
+#case 5         
+#create object at class level so then we dont need to create object at method level again and again
 class A:
     num1,num2=100,200
 
@@ -983,7 +981,6 @@ class B():
 b=B()
 b.add()
 b.mul()
-
 
 #abstract
 from abc import ABC,abstractmethod

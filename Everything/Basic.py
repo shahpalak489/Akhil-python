@@ -403,9 +403,15 @@ print(y-x)
 print(y/x)
 
 print("*exponent")
+#method 1
 x=10
 n=2
 print(x**2)
+
+#method 2
+x=10
+n=2
+print(pow(10,2))		# equal to 10 rest to 2
 
 print("***relation operator")
 # <, >, <= ,>= !=
@@ -977,21 +983,6 @@ for x in range(-10,-1,4):
 
 for x in range(-15,-27,-5):
 	print(x)
-
-
-print('*** types of error')
-'''
-Type Error: concat not possible
-
-valueerror : conversion 
-
-Name error: name is not defined
-
-unbounded local error: related to local and global variable
-
-UnboundLocalError: local variable 'jj2' referenced before assignment  ( means you must call function after its defined)
-
-'''
 
 print('***Python identifiers - nomenclature of class,function rules')
 '''

@@ -1,20 +1,15 @@
-# sum of values
-def sum(x,y):
-	z=x+y
-	print(z) 
+#prime numbers
+n=10
+m=list(range(1,n+1))
 
-#sum(10,15)
+def prime(n):
+	if n>0:
+		if n//2 < 1:
+			print(str(n) +' is not prime')	
+		elif n//3 < 1:
+			print(str(n) + ' is not prime')
+		elif n//5 < 1:
+			print(str(n)+ ' is not prime')
 
-#factorial of n
-n=4
-fact=1
-for x in range(1,n+1):
-	fact=fact*x
-print(fact)
-
-#interest rate
-def interest(x,y,z):
-	a=(x*y*z)/100
-	print(a)
-interest(100,5,5)
-
+for x in m:
+	prime(x)

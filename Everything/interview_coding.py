@@ -193,3 +193,43 @@ for x in m:
 		break	
 else:
 	print(str(n)+' is prime number')
+
+#split list and add first section to end
+list1=[10,20,30,40]
+length=len(list1)
+length_avg=length//2
+list2=list1[:length_avg]
+list3=list1[length_avg:]
+
+list3.extend(list2)
+print(list3)
+
+
+#Monotonic
+a=[-10,-20,-30]
+l=len(a)
+m=list(range(l-1))
+
+if a[0]-a[1] < 0:
+	for x in m:
+		if a[x]-a[x+1] > 0:
+			print('no Monotonic')
+			break
+	else:
+		print('Monotonic')
+
+if a[0]-a[1] > 0:
+	for x in m:
+		if a[x]-a[x+1] < 0:
+			print('no Monotonic')
+			break
+	else:
+		print('Monotonic')
+
+#multiply all numbers
+
+lis1=[1,3,4,5]
+y=1
+for x in lis1:
+	y=x*y
+print(y)

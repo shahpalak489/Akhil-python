@@ -402,6 +402,20 @@ print(x*y)
 print(y-x)
 print(y/x)
 
+print('sum,averge,mean')
+a=[12,52,52]
+
+#sum
+print(sum(a))
+
+#average
+print(sum(a)/len(a))
+
+#mean
+import statistics
+b=statistics.mean(a)
+print(b)
+
 print("*exponent")
 #method 1
 x=10
@@ -663,8 +677,15 @@ print('- for string')
 a="india"
 print(a.split('d'))
 
-print('***to break string with separator')
+print('*to break string with separator')
 print('+'.join(a.split('d')))			# this will split and place '+' in between
+
+print('- for list')
+list1=[10,20,30,40]
+length=len(list1)
+length_avg=length//2
+list2=list1[:length_avg]
+print(list2)
 
 print("***concatenate")
 print('-two string')

@@ -204,7 +204,6 @@ list3=list1[length_avg:]
 list3.extend(list2)
 print(list3)
 
-
 #Monotonic
 a=[-10,-20,-30]
 l=len(a)
@@ -227,9 +226,60 @@ if a[0]-a[1] > 0:
 		print('Monotonic')
 
 #multiply all numbers
-
 lis1=[1,3,4,5]
 y=1
 for x in lis1:
 	y=x*y
 print(y)
+
+#second biggest interger
+list1=[1,3,4,5,2,5]
+list2=set(list1)
+list3=list(list2)
+#print(list2)
+l=len(list3)
+print(list3[l-2])
+
+#Python program to find sum of elements in list
+list1=[10,20,30,40]
+a=0
+for x in list1:
+	a=a+x
+print(a)
+
+#find odd and even number
+list1=[2,15,20,78]
+list2=[]
+list3=[]
+for x in list1:
+	if x%2 == 0:
+		list2.append(x)
+	if x%2 != 0:
+		list3.append(x)
+print(list2)
+print(list3)
+
+#find positive and negative number
+list1=[2,15,-20,-78]
+list2=[]
+list3=[]
+for x in list1:
+	if x > 0:
+		list2.append(x)
+	if x < 0:
+		list3.append(x)
+print(list2)
+print(list3)
+
+
+#count odd and even number
+list1=[2,15,20,78]
+odd_count=0
+even_count=0
+for x in list1:
+	if x%2 == 0:
+		odd_count=1+odd_count
+	if x%2 != 0:
+		even_count=1+even_count
+print(odd_count)
+print(even_count)

@@ -310,3 +310,37 @@ for x in s1:
 	str1+= x
 	str1+= ' '
 print(str1)
+
+# to remove Nth character from string 
+s='palindrome'
+n=1
+l=list(range(len(s)))
+res=''
+for x in l:
+	if x==n:
+		continue
+	else:
+		a=s[x]
+		res= res+a
+print(res)
+
+#print even length words in a string
+s='hey hi how are you?'
+s1=s.split(' ')
+#print(s1)
+s2=''
+for x in s1:
+	if len(x)%2 == 0:
+		s2=s2+x
+print(s2)
+
+# swap characters in a String
+i=5
+j=9
+s='palin/dro.me'
+sl=list(s)
+sl[i],sl[j]=sl[j],sl[i]
+s2=''
+for x in sl:
+	s2=s2+x
+print(s2)

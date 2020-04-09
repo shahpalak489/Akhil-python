@@ -1189,12 +1189,10 @@ print(d)
 
 print('***to arrange by ACS/Desc')
 print('*** to arrnage by any logic')
-
 ''' IMP
 just to arrange by asc or desc ---> sort 			#it chnages object itself
 to arrange with any other logic ---> sorted 		#it crates new object with changes
 '''
-
 print('-For List')
 print('*arrange number in asc order')
 a=[1,4,5,3,2]
@@ -1293,11 +1291,6 @@ print(l1)
 l1.insert(6,'bbb')		#this will add at index6 but we dont have index5 so it will add at the end
 print(l1)
 
-print('*in list to delete by object value')
-l1=[10,20,30]
-l1.remove(20)
-print(l1)
-
 print('*in list to delete by object index')
 l1=['ratan','durga',10,10.5]
 l1.pop()			# by default it will remove last one
@@ -1305,6 +1298,11 @@ print(l1)
 l1.pop(1)			# this will remobe index 1 object
 print(l1)
 #l1.pop(10)			# pop index out of range
+
+print('*in list to delete by object value')
+l1=[10,20,30]
+l1.remove(20)
+print(l1)
 
 print('*in list to delete more than one objects same time')
 l1=[10,20,30,40,50,60,70,80,90,100,110,120,130,140,150]

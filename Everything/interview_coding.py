@@ -10,7 +10,7 @@ for x in l1:
 print(l2)
 print(l3)
 
-print('count ratan in given string')
+print('count words in given string')
 a='ratanit ratan'
 b=a.split()
 count=0
@@ -19,13 +19,11 @@ for x in b:
         count+=1
 print(count)
 
-print(" python in built methods")
-
 print("first 10 numbers")
 for x in range(10):
     print(x)
 
-print(" 10 numbers with 3 increment")
+print("10 numbers with 3 increment")
 for x in range(2,10,3):
     print(x)
 
@@ -283,3 +281,32 @@ for x in list1:
 		even_count=1+even_count
 print(odd_count)
 print(even_count)
+
+# Python program to find Cumulative sum of a list
+List1=[10,20,30,40]
+list2=[]
+a=0
+for x in List1:
+	a=a+x
+	list2.append(a)
+print(list2)
+
+# list: to deltete by values
+tuples = [(), ('ram','15','8'), (), ('laxman', 'sita'), 
+                  ('krishna', 'akbar', '45'), ('',''),()]
+
+for x in tuples:
+	if x==():
+		tuples.remove(())
+print(tuples)
+
+# Reverse words in a given String in Python
+s='hi how are you'
+s1=s.split(' ')
+s1=s1[::-1]
+print(s1)
+str1=''
+for x in s1:
+	str1+= x
+	str1+= ' '
+print(str1)

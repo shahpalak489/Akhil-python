@@ -5,7 +5,6 @@
 # Python program to swap two elements in a list
 # Python program to remove Nth occurrence of the given word
 # Python | Ways to check if element exists in list
-# Different ways to clear a list in Python
 # Python | Program to print duplicates from a list of integers
 
 # Break a list into chunks of size N in Python
@@ -15,21 +14,45 @@
 
 # Python program to 
 # Program to accept the strings which contains all vowels
-# Count the Number of matching characters in a pair of string
-# to count number of vowels using sets in given string
-# Remove all duplicates from a given string in Python
+
+
 # Generating random strings until a given string is generated
 # Python program to split and join a string
 # Check if a given string is binary string or not
 # Find all close matches of input string from a list
-# Python program to find uncommon words from two Strings
 
-# Permutation of a given string using inbuilt function
-# Check for URL in a String
-# Execute a String of Code in Python
-# String slicing in Python to rotate a string
-# String slicing in Python to check if a string can become empty by recursive deletion
-# Find all duplicate characters in string
+
+
+
+# Remove all duplicates from a given string in Python
+ 
+# Check for URL in a String 
+# import re
+# text = '<p>Contents :</p><a href="https://w3resource.com">Python Examples</a><a href="http://github.com">Even More Examples</a>'
+# urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
+# print("Original string: ",text)
+# print("Urls: ",urls)
+
+ 
+str1='palindromeme1212'
+str2=''
+
+# to check if a string can become empty by recursive deletion
+str1 = "GEEGEEKSKS"
+str2 = "GEEKS"
+
+ 
+# Find duplicate characters withn string
+s1='hi how are'
+
+for x in s1:
+	
+
+
+
+
+
+
 
 
 

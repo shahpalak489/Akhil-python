@@ -344,3 +344,63 @@ s2=''
 for x in sl:
 	s2=s2+x
 print(s2)
+
+# Count the Number of matching characters in a pair of string
+s1='akhil%$'
+s2='palak@$'
+
+count=0
+for x in s1:
+	if x in s2:
+		count=count+1
+print(count)
+
+#Permutation
+#string: all possible combination
+a='abc'
+for x in a:
+	for y in a:
+		for z in a:
+			b=x+y+z
+			print(b)
+
+#string : all possible combination without repeation
+a='abc'
+for x in a:
+	for y in a:
+		for z in a:
+			if x==y:
+				continue
+			elif y==z:
+				continue
+			elif x==z:
+				continue
+			else:
+				b=x+y+z
+			print(b)
+
+# Python program to find uncommon words from two Strings
+s1='hi how are you?'
+s2='hi i am fine how abt you?'
+s1=list(s1.split(' '))
+s2=list(s2.split(' '))
+
+for x in s2:
+	if x not in s1:
+		print(x)
+
+# Execute a String of Code in Python
+code =  '''
+a = 6+5
+print(a)
+'''
+exec(code)
+
+# rotate a string
+# move characters left / right
+s = "GeeksforGeeks"
+d = 2
+left_rotate=s[d:]+s[:d]
+print(left_rotate)
+right_rotate=s[-2:]+s[:-2]
+print(right_rotate)

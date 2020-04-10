@@ -496,7 +496,7 @@ x=2*2=4
 x=4*3=12
 '''
 
-x/=y0
+x/=y
 #Example
 x=4
 for y in [1,2,3]:
@@ -595,6 +595,9 @@ b=10
 print(a is b)
 print(a is not b)
 
+print('***string-regular expression')
+
+
 print('***get remaing value after division')
 											#Modulus
 a=10
@@ -610,7 +613,7 @@ b=3
 print(a//b)
 
 print('***to get few alphabets of string // to get few objects from list/set/tuple without for loop')
-													#slice
+print('slice')
 print('- for string')
 # -7 -6 -5 -4 -3 -2 -1  		#negative indexing
 s= 'ratanIT'
@@ -619,8 +622,8 @@ s= 'ratanIT'
 print(s[2])
 print(s[2:4])
 print(s[1:4:2])
-print(s[2:])
-print(s[:4])
+print(s[:4])			#MMIMP: start point not given so it will start from all the way left
+print(s[2:])			#MMIMP: end point not given so it will end all the way right
 print(s[:])
 # print(s[9])  			#Indexerror: string out of range
 
@@ -650,6 +653,7 @@ print(L1[-3:])
 print(L1[:])
 
 print('*** VV IMP - negative indexing')
+list1=['a1','b2','c3','d4','5re']
 #https://www.quora.com/What-is-negative-index-in-Python
 print(list1[-4:-2:-1])		#	starting point:end point:move right if its positive and move left if its negative
 print("*** MM IMP")
@@ -925,8 +929,8 @@ r=d1[444]
 print(r)
 
 #method 2
-a,b,c=d1
-print(a.b.c)
+a,b,c,d=d1
+print(a,b,c,d)
 
 ''' ratan '''
 print("***how to get all keywords")
@@ -1061,7 +1065,7 @@ name3='ratan'
 
 print(id(name1))
 print(id(name2))
- print(id(name3))
+print(id(name3))
 
 print('**')
 print(name1 is name2)				
@@ -1291,7 +1295,7 @@ print(l1)
 l1.insert(6,'bbb')		#this will add at index6 but we dont have index5 so it will add at the end
 print(l1)
 
-print('*in list to delete by object index')
+print('*in list to delete by object location')
 l1=['ratan','durga',10,10.5]
 l1.pop()			# by default it will remove last one
 print(l1)
@@ -1345,7 +1349,7 @@ print(x)
 
 print('*to remove last object/particular object from dics')
 d1={1:'aaa',2:'bbb',3:'ccc'}
-d1.popitem()		# this will remove last item fron dics
+d1.popitem()	# this will remove last item fron dics
 print(d1)
 d1.pop(2)		#this will remove key 2 from dics
 print(d1)

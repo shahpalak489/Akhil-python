@@ -892,7 +892,7 @@ print("***for vs while")
 # for when we have starting value , ending value by incremental / decremental
 # while is to check if condition is true or not
 
-print('***to access objects from Dictionary')
+print('***to access all keys,values,items from Dictionary')
 d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
 
 print(d1.keys())
@@ -922,15 +922,22 @@ for x,y in d1.items():
 
 print(d1.get(111))
 
-print('*to access objects from Dictionary without for loop and without keys,items,values')
-#method 1
+print('*to access value by keys in Dictionary ')
+
 d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
-r=d1[444]
-print(r)
+#method 1  		#MM IMP
+d1.get(111,'hi')		#get the value of 111 and if 111 not available in dict, return 'hi'
+
+print(d1.setdefault(333,'jj')) 
+#IMP: get the value of 333 key and if 333 key not present in dict create new key 333 with value 'jj'
 
 #method 2
 a,b,c,d=d1
 print(a,b,c,d)
+
+#method 3 (least preferable) (because if 444 is not present in dict it will throw error)
+r=d1[444]
+print(r)
 
 ''' ratan '''
 print("***how to get all keywords")
@@ -1142,6 +1149,28 @@ print(11 in d1)
 print(111 not in d1)
 print(11 not in d1)
 
+print('***packing')
+print('*convert 2 list into dics')
+l1=[1,2,3,4]							 
+l2=['ratan','durga','anu','ratanIT']
+x=zip(l1,l2)			
+d=dict(x)
+print(d)
+
+print('*convert 2 tuple into dics')
+l1=(1,2,3,4)							 
+l2=('ratan','durga','anu','ratanIT')
+x=zip(l1,l2)			
+d=dict(x)
+print(d)
+
+print('*convert 2 set into dics')
+l1={1,2,3,4}							 
+l2={'ratan','durga','anu','ratanIT'}
+x=zip(l1,l2)			
+d=dict(x)
+print(d)
+
 print('***Unpacking') 
 print('-for list')		#List --> variables #it will break list and assigns values to variables
 L1=[10,10.4,'ratan']
@@ -1168,28 +1197,6 @@ a,b=L2
 print(type(a))
 print(b)
 print(b[1])
-
-print('***packing')
-print('*convert 2 list into dics')
-l1=[1,2,3,4]							 
-l2=['ratan','durga','anu','ratanIT']
-x=zip(l1,l2)			
-d=dict(x)
-print(d)
-
-print('*convert 2 tuple into dics')
-l1=(1,2,3,4)							 
-l2=('ratan','durga','anu','ratanIT')
-x=zip(l1,l2)			
-d=dict(x)
-print(d)
-
-print('*convert 2 set into dics')
-l1={1,2,3,4}							 
-l2={'ratan','durga','anu','ratanIT'}
-x=zip(l1,l2)			
-d=dict(x)
-print(d)
 
 print('***to arrange by ACS/Desc')
 print('*** to arrnage by any logic')
@@ -1334,6 +1341,18 @@ d3[222]='anu'
 d3[333]='ratan'
 print(d3)
 
+print('*to remove last object/particular object from dics')
+d1={1:'aaa',2:'bbb',3:'ccc'}
+d1.popitem()	# this will remove last item fron dics
+print(d1)
+d1.pop(2)		#this will remove key 2 from dics
+print(d1)
+
+print('*to remove all objects from dics')
+d1={1:'aaa',2:'bbb',3:'ccc'}
+d1.clear()
+print(d1)
+
 print('*to add one dict into another dict')
 #method 1
 d1={1:'aaa',2:'bbb'}
@@ -1346,18 +1365,6 @@ d1={1:'aaa',2:'bbb'}
 d2={3:'ccc',4:'ddd'}
 x={**d1,**d2}
 print(x)
-
-print('*to remove last object/particular object from dics')
-d1={1:'aaa',2:'bbb',3:'ccc'}
-d1.popitem()	# this will remove last item fron dics
-print(d1)
-d1.pop(2)		#this will remove key 2 from dics
-print(d1)
-
-print('*to remove all objects from dics')
-d1={1:'aaa',2:'bbb',3:'ccc'}
-d1.clear()
-print(d1)
 
 print('***get maximum and minimum values in list')
 l1=[10,20,30]

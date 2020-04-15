@@ -404,3 +404,113 @@ left_rotate=s[d:]+s[:d]
 print(left_rotate)
 right_rotate=s[-2:]+s[:-2]
 print(right_rotate)
+
+#sort the values of first list using second list
+list1 = ["a", "b", "c", "d", "e", "f", "g", "h", "i"]
+list2 = [ 0,   1,   1,    0,   1,   2,   2,   0,   1]
+	
+list3=zip(list2,list1)
+a=list(list3)
+a.sort()
+list3=[]
+
+for x in list(range(len(a))):
+	x=a[x]
+	c,d=x
+	list3.append(d)
+print(list3)
+
+# swap /interchange first and last elements in a list
+In= [12, 35, 9, 56, 24]
+Out= [24, 35, 9, 56, 12]	
+
+a=len(In)
+b=len(Out)
+
+In[a-1],In[0]=In[0],In[a-1] 
+Out[b-1],Out[0]=Out[b-1],Out[4]
+
+print(In)
+print(Out)
+
+#---------- internet issue
+#pop,append,insert,clear,delete comapriosn for list,set,tuple,dictionary
+  
+# Sort Python Dictionaries by Key or Value
+dict1={1:'a',3:'c',4:'d',2:'b'}
+print(sorted(dict1.keys()))
+print(sorted(dict1.values()))
+print(sorted(dict1.items()))
+
+# Merging two Dictionaries
+dict1={1:'a',3:'c',4:'d',2:'b'}
+dict2={45:'fd',34:'sf',44:'fff'}
+dict1.update(dict2)
+print(dict1)
+
+# Convert a list of Tuples into Dictionary
+list1=[(1,'aa'),(2,'bb'),(3,'cc'),(4,'dd')]
+print(dict(list1))
+
+# Convert set-list into Dictionary
+list1={[1,'aa'],[2,'bb'],[3,'cc'],[4,'dd']}
+print(dict(list1))
+											#TypeError: unhashable type: 'list'
+
+# Python Dictionary to find mirror characters in a string
+#to create corresponding data and to access corresponding data
+A=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+B=A.copy()
+B.sort(reverse=True)
+c=dict(zip(A,B))
+print(c)
+
+w='india'
+n=2
+
+l=list(range(len(w)))
+for x in l:
+	v=w[x]
+	if x>=n:
+		print(c[v])
+	else:
+		print(v)
+
+
+#to count letters in words
+#method 1
+# Counting the frequencies in a list using dictionary in Python
+List1=[1,1,1,2,2,3,3,3,3,4,4,5,5]
+set1=set(List1)
+for x in set1:
+	print(x,' : ',List1.count(x))
+
+#method 2
+# Find all duplicate characters in string
+b='hello'
+a=set(b)
+for x in a:
+	if b.count(x) > 1:
+		print(x,' : ',b.count(x))
+
+
+#to access value by keys in Dictionary
+d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
+d1.get(111,'hi')		#get the value of 111 and if 111 not available in dict, return 'hi'
+print(d1.setdefault(333,'jj')) 
+#IMP: get the value of 333 key and if 333 key not present in dict create new key 333 with value 'jj'
+
+# Python program to find the sum of all items in a dictionary
+d1={'a':100,'b':200,'c':300}
+print(sum(d1.values()))
+
+#to remove key from dict
+d1={'a':100,'b':200,'c':300}
+
+d1.pop('c')
+print(d1)
+
+
+
+
+

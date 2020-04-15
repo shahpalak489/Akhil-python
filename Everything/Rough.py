@@ -1,64 +1,56 @@
 #fibonacci
 #array rotation
-
-# Python program to interchange first and last elements in a list
-# Python program to swap two elements in a list
-# Python program to remove Nth occurrence of the given word
-# Python | Ways to check if element exists in list
-# Python | Program to print duplicates from a list of integers
-
+# to remove Nth occurrence of the given word
+# Program to print duplicates from a list of integers
 # Break a list into chunks of size N in Python
-# Python | Sort the values of first list using second list
-
-
-
-# Python program to 
 # Program to accept the strings which contains all vowels
-
-
 # Generating random strings until a given string is generated
 # Python program to split and join a string
 # Check if a given string is binary string or not
 # Find all close matches of input string from a list
+# Remove all duplicates from a given string in Python 
+# Check for URL in a String
+# regualr expression
+#pop,append,insert,clear,delete comapriosn for list,set,tuple,dictionary
 
-
-
-
-# Remove all duplicates from a given string in Python
- 
-# Check for URL in a String 
-# import re
-# text = '<p>Contents :</p><a href="https://w3resource.com">Python Examples</a><a href="http://github.com">Even More Examples</a>'
-# urls = re.findall('http[s]?://(?:[a-zA-Z]|[0-9]|[$-_@.&+]|[!*\(\),]|(?:%[0-9a-fA-F][0-9a-fA-F]))+', text)
-# print("Original string: ",text)
-# print("Urls: ",urls)
-
- 
-str1='palindromeme1212'
-str2=''
+# Find duplicate characters within string
+s1='hi how are'
 
 # to check if a string can become empty by recursive deletion
 str1 = "GEEGEEKSKS"
 str2 = "GEEKS"
 
- 
-# Find duplicate characters withn string
-s1='hi how are'
+str1 = "01010101010"
+print(type(str1))
 
-for x in s1:
-	
+#------------------------------------------------------------------
+# Remove all duplicates words from a given sentence
+# Python dictionary with keys having multiple inputs
+# Ways to sort list of dictionaries by values in Python – Using itemgetter
+# Ways to sort list of dictionaries by values in Python – Using lambda function
+# Program to create grade calculator in Python
+# Check order of character in string using OrderedDict( )
+# Find common elements in three sorted arrays by dictionary intersection
+
+# Print anagrams together in Python using List and Dictionary
+# K’th Non-repeating Character in Python using List Comprehension and OrderedDict
+# Check if binary representations of two numbers are anagram
+# Python Counter to find the size of largest subset of anagram words
+# Python counter and dictionary intersection example (Make a string using deletion and rearrangement)
+# Python dictionary, set and counter to check if frequencies can become sa# Possible Words using given characters in Python
 
 
+# Dictionary and counter in Python to find winner of election
 
+votes=['john','john','mike','mike','mike',
+'shah']
 
-
-
-
-
-
-
-
-
+u=set(votes)
+res=[]
+for x in u:
+	c=x+' : '+votes.count(x)
+	res.append(c)
+print(res)
 
 
 

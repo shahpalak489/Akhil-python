@@ -11,7 +11,6 @@
 # Remove all duplicates from a given string in Python 
 # Check for URL in a String
 # regualr expression
-#pop,append,insert,clear,delete comapriosn for list,set,tuple,dictionary
 
 # Find duplicate characters within string
 s1='hi how are'
@@ -24,33 +23,24 @@ str1 = "01010101010"
 print(type(str1))
 
 #------------------------------------------------------------------
-# Remove all duplicates words from a given sentence
+
 # Python dictionary with keys having multiple inputs
 # Ways to sort list of dictionaries by values in Python – Using itemgetter
 # Ways to sort list of dictionaries by values in Python – Using lambda function
 # Program to create grade calculator in Python
 # Check order of character in string using OrderedDict( )
 # Find common elements in three sorted arrays by dictionary intersection
-
 # Print anagrams together in Python using List and Dictionary
 # K’th Non-repeating Character in Python using List Comprehension and OrderedDict
 # Check if binary representations of two numbers are anagram
-# Python Counter to find the size of largest subset of anagram words
 # Python counter and dictionary intersection example (Make a string using deletion and rearrangement)
 # Python dictionary, set and counter to check if frequencies can become sa# Possible Words using given characters in Python
 
 
-# Dictionary and counter in Python to find winner of election
+# Python Counter to find the size of largest subset of anagram words
 
-votes=['john','john','mike','mike','mike',
-'shah']
 
-u=set(votes)
-res=[]
-for x in u:
-	c=x+' : '+votes.count(x)
-	res.append(c)
-print(res)
+
 
 
 

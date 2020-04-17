@@ -433,9 +433,6 @@ Out[b-1],Out[0]=Out[b-1],Out[4]
 print(In)
 print(Out)
 
-#---------- internet issue
-#pop,append,insert,clear,delete comapriosn for list,set,tuple,dictionary
-  
 # Sort Python Dictionaries by Key or Value
 dict1={1:'a',3:'c',4:'d',2:'b'}
 print(sorted(dict1.keys()))
@@ -447,15 +444,6 @@ dict1={1:'a',3:'c',4:'d',2:'b'}
 dict2={45:'fd',34:'sf',44:'fff'}
 dict1.update(dict2)
 print(dict1)
-
-# Convert a list of Tuples into Dictionary
-list1=[(1,'aa'),(2,'bb'),(3,'cc'),(4,'dd')]
-print(dict(list1))
-
-# Convert set-list into Dictionary
-list1={[1,'aa'],[2,'bb'],[3,'cc'],[4,'dd']}
-print(dict(list1))
-											#TypeError: unhashable type: 'list'
 
 # Python Dictionary to find mirror characters in a string
 #to create corresponding data and to access corresponding data
@@ -476,9 +464,8 @@ for x in l:
 	else:
 		print(v)
 
-
-#to count letters in words
-#method 1
+# to count letters in words
+# method 1
 # Counting the frequencies in a list using dictionary in Python
 List1=[1,1,1,2,2,3,3,3,3,4,4,5,5]
 set1=set(List1)
@@ -492,7 +479,6 @@ a=set(b)
 for x in a:
 	if b.count(x) > 1:
 		print(x,' : ',b.count(x))
-
 
 #to access value by keys in Dictionary
 d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
@@ -510,7 +496,22 @@ d1={'a':100,'b':200,'c':300}
 d1.pop('c')
 print(d1)
 
+# Convert a list of Tuples into Dictionary
+list1=[(1,'aa'),(2,'bb'),(3,'cc'),(4,'dd')]
+print(dict(list1))
+
+# Convert set-list into Dictionary
+list1={[1,'aa'],[2,'bb'],[3,'cc'],[4,'dd']}
+print(dict(list1))
+											#TypeError: unhashable type: 'list'
 
 
+# Dictionary and counter in Python to find winner of election
+votes=['john','john','mike','mike','mike','shah']
 
-
+u=set(votes)
+res={}
+for x in u:
+	res[votes.count(x)]=x
+y=max(res.keys())
+print(res[y])

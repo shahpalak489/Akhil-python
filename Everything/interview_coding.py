@@ -515,3 +515,44 @@ for x in u:
 	res[votes.count(x)]=x
 y=max(res.keys())
 print(res[y])
+
+# Find common elements in three sorted arrays by dictionary intersection
+ar1 = [1, 5, 10, 20, 40, 80]
+ar2 = [6, 7, 20, 80, 100]
+ar3 = [3, 4, 15, 20, 30, 70, 80, 120]
+res=[]
+
+for x in ar1:
+	if x in ar2:
+		if x in ar3:
+			res.append(x)
+print(res)
+
+
+# Insert triplet in dictionary , whose value is result of some calculation
+dict = {} 
+  
+# Insert first triplet in dictionary 
+x, y, z = 10, 20, 30
+dict[x, y, z] = x + y - z; 
+  
+# Insert second triplet in dictionary 
+x, y, z = 5, 2, 4
+dict[x, y, z] = x + y - z; 
+  
+print(dict)
+
+#sort list of dictionaries by values Using lambda function
+from operator import itemgetter
+list1=[ {'name':'akhil','year':1987, 'age':32},
+        {'name':'palak','year':1993, 'age':27},
+		{'name':'shiv','year':1985, 'age':39}
+	  ]
+
+# sort by age
+list2=sorted(list1,key=lambda i: i['age'])
+print(list2)
+
+#sort by age and name
+list2=sorted(list1,key=lambda i: (i['age'],i['name']))
+print(list2)

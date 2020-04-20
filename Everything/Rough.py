@@ -1,6 +1,6 @@
 #fibonacci
 #array rotation
-# to remove Nth occurrence of the given word
+
 # Program to print duplicates from a list of integers
 # Break a list into chunks of size N in Python
 # Program to accept the strings which contains all vowels
@@ -20,27 +20,40 @@ str1 = "GEEGEEKSKS"
 str2 = "GEEKS"
 
 str1 = "01010101010"
-print(type(str1))
+#print(type(str1))
 
 #------------------------------------------------------------------
-
-# Python dictionary with keys having multiple inputs
-# Ways to sort list of dictionaries by values in Python – Using itemgetter
-# Ways to sort list of dictionaries by values in Python – Using lambda function
 # Program to create grade calculator in Python
 # Check order of character in string using OrderedDict( )
-# Find common elements in three sorted arrays by dictionary intersection
-# Print anagrams together in Python using List and Dictionary
 # K’th Non-repeating Character in Python using List Comprehension and OrderedDict
-# Check if binary representations of two numbers are anagram
 # Python counter and dictionary intersection example (Make a string using deletion and rearrangement)
 # Python dictionary, set and counter to check if frequencies can become sa# Possible Words using given characters in Python
-
-
 # Python Counter to find the size of largest subset of anagram words
 
+# Print anagrams together in Python using List and Dictionary
+# Check if binary representations of two numbers are anagram
+# from collections import Counter
+# arr = ['cat', 'dog', 'tac', 'god', 'act']
 
+# to remove Nth occurrence of the given word
+# list1= ["geeks", "for", "geeks","why"]
+# word = 'geeks'
+# N = 1
+# count=0
+# Q=list(range(len(list1)))
+# print(Q)
+# print(list1[0])
+# print(list1[1])
+# print(list1[2])
+# print(list1[3])
 
+# for x in Q:
+# 	if (list1[x]=='geeks'):
+# 		count=count+1
+# 		if count==N:
+# 			list1.pop(x)
+
+# print(list1)
 
 
 

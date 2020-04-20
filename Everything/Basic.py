@@ -939,6 +939,16 @@ print(a,b,c,d)
 r=d1[444]
 print(r)
 
+print('*to access value in list of Dictionary')
+from operator import itemgetter
+list1=[ {'name':'akhil','year':1987, 'age':32},
+        {'name':'palak','year':1993, 'age':27},
+		{'name':'shiv','year':1985, 'age':39}
+	  ]
+
+print(list1[0]['age'])
+
+
 ''' ratan '''
 print("***how to get all keywords")
 import keyword
@@ -1241,6 +1251,7 @@ print('*do sorting of heterogenous data')
 l3=[10,20.85,'ratan']
 #l3.sort() 					#heterogenous sorting not supported
 
+print('-for Dics')
 print('*arrange Dictionary ascending by key,value and items')
 d1={1:'ratan',2:'durga',3:'anu',4:'surya'}
 print(sorted(d1.keys()))
@@ -1251,6 +1262,17 @@ print('***arrange list in reverse order without using sort')
 l1=[10,20,30]
 l1.reverse()
 print(l1)
+
+print('-for list of Dictionary')  # almost same as list
+from operator import itemgetter
+list1=[ {'name':'akhil','year':1987, 'age':32},
+        {'name':'palak','year':1993, 'age':27},
+		{'name':'shiv','year':1985, 'age':39}
+	  ]
+
+list2=sorted(list1,key=itemgetter('year'))
+print(list2)
+
 
 print('***List datatype properties')
 '''

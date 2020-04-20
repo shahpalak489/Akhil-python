@@ -540,7 +540,7 @@ dict[x, y, z] = x + y - z;
 x, y, z = 5, 2, 4
 dict[x, y, z] = x + y - z; 
   
-print(dict)
+print(dict) 
 
 #sort list of dictionaries by values Using lambda function
 from operator import itemgetter
@@ -556,3 +556,29 @@ print(list2)
 #sort by age and name
 list2=sorted(list1,key=lambda i: (i['age'],i['name']))
 print(list2)
+
+#Find largest prime factor of a number
+n1=21
+
+list1=list(range(1,n1+1))
+list2=[]
+list3=[]
+for x in list1:
+	if n1 % x == 0:
+		list2.append(x)
+print('list2: ',list2)
+
+for n2 in list2:
+	m=list(range(2,n2))
+	#print('m: ',m)
+	for y in m:
+		#print('n2 :',n2)
+		#print('y :',y)
+		if (n2%y) == 0:
+			print(str(n2)+' is not prime number with '+ str(n2))
+			break
+	else:
+		list3.append(n2)
+
+print('list3: ',list3)
+print(max(list3))

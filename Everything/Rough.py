@@ -54,7 +54,3 @@ str1 = "01010101010"
 # 			list1.pop(x)
 
 # print(list1)
-
-
-
-

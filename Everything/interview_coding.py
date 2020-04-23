@@ -582,3 +582,12 @@ for n2 in list2:
 
 print('list3: ',list3)
 print(max(list3))
+
+#Print all subsequences of a string in Python
+STR='abc'
+import itertools
+combs = [] 
+for l in range(1, len(STR)+1): 
+    combs.append(list(itertools.combinations(STR, l))) 
+
+print(combs)

@@ -54,3 +54,11 @@ str1 = "01010101010"
 # 			list1.pop(x)
 
 # print(list1)
+
+a='abc'
+for x in a:
+	for y in a:
+		for z in a:
+			b=x+y+z
+			print(b)
+

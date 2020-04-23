@@ -55,10 +55,26 @@ str1 = "01010101010"
 
 # print(list1)
 
-a='abc'
-for x in a:
-	for y in a:
-		for z in a:
-			b=x+y+z
-			print(b)
+
+class Solution:
+    def decompressRLElist(self, nums: List[int]) -> List[int]:
+        out=[]
+        y=None
+        z=None
+        list_len=list(range(len(nums)))
+        #print(list_len)
+        for x in list_len:
+            if x%2 != 0:
+                #global y
+                y=list_len[x]
+                print('y :',y)
+            elif x%2 ==0:
+                #global z
+                z=list_len[x]
+                print('z :',z)  
+            for m in list(range(y)):
+                out.append(z) 
+
+        print(out)   
+
 

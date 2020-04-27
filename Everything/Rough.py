@@ -55,26 +55,49 @@ str1 = "01010101010"
 
 # print(list1)
 
+groupSizes=[3,3,3,3,3,1,3]
+out1=[]
+out2=[]
+x=list(set(groupSizes))
+#print(x)
+for x1 in x:
+    print(x1)
+    for x2 in list(range(len(groupSizes))):
+        print(x2)
+        if groupSizes[x2]==x1:
+            out2.append(x2)
+            #print(out1)
+    out1.append(out2)
+    out2.pop()
+    print(out1)
 
-class Solution:
-    def decompressRLElist(self, nums: List[int]) -> List[int]:
-        out=[]
-        y=None
-        z=None
-        list_len=list(range(len(nums)))
-        #print(list_len)
-        for x in list_len:
-            if x%2 != 0:
-                #global y
-                y=list_len[x]
-                print('y :',y)
-            elif x%2 ==0:
-                #global z
-                z=list_len[x]
-                print('z :',z)  
-            for m in list(range(y)):
-                out.append(z) 
+# out1=[]
+# out2=[]
+# a=5
+# out2.append(a)
+# out1.append(out2)
+# print(out1)
 
-        print(out)   
+# out2.pop()
+
+# out2.append(0)
+# print(out2)
+# out1.append(out2)
+# print(out1)
 
 
+
+# l = []
+# l.append([1,2,3])
+# l.append([4,5,6])
+# print(l)
+
+
+
+#1221
+# if s[x]=='R' ---> count1=1
+# if s[x]=='L' ---> count2=1
+# 			Add logic for last index
+#		if s[x+1]=='R' :
+#			if count1=count2:
+#				count=count+1

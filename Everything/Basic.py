@@ -5,6 +5,9 @@ print(eid)
 print(ename)
 print(esal)
 
+print('* to print next line')
+print("Hello\nWorld!")
+
 print('*print hard code value and variable together')
 print('Emp id=',eid)
 print('Emp name=',ename)

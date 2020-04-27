@@ -1,6 +1,6 @@
 print('***convert Datatypes')
 print("*to convert int/float to string")
-x=str(y)
+#x=str(y)
 
 print("*to convert List to Tuple")
 List1=['a','b','c','d']
@@ -62,7 +62,7 @@ List1=[1,2,3,4,5]
 x={i for i in List1}
 print(x)
 
-x={i*2 for in List1}
+x={i*2 for i in List1}
 print(x)
 
 x={i*2 for i in List1 if i==4}
@@ -301,3 +301,66 @@ print(list(map(lambda x:len(x),words)))		#means words object consider as x and r
 
 # example 10
 
+
+print('***Binary tree')
+# https://www.geeksforgeeks.org/binarytree-module-in-python/
+
+# first run on GITbash: pip install binarytree
+from binarytree import Node 
+root = Node(3) 
+root.left = Node(6) 
+root.right = Node(8) 
+
+# Getting binary tree 
+print('Binary tree :', root) 
+
+# Getting list of nodes 
+print('List of nodes :', list(root)) 
+
+# Getting inorder of nodes 
+print('Inorder of nodes :', root.inorder) 
+
+# Checking tree properties 
+print('Size of tree :', root.size) 
+print('Height of tree :', root.height) 
+
+# Get all properties at once 
+print('Properties of tree : \n', root.properties) 
+
+from binarytree import Node 
+root = Node(1) 
+root.left = Node(2) 
+root.right = Node(3) 
+
+# Getting binary tree 
+print('Binary tree :', root) 
+
+# Getting list of nodes 
+print('List of nodes :', list(root)) 
+
+# Getting inorder of nodes 
+print('Inorder of nodes :', root.inorder) 
+
+# Checking tree properties 
+print('Size of tree :', root.size) 
+print('Height of tree :', root.height) 
+
+# Get all properties at once 
+print('Properties of tree : \n', root.properties) 
+  
+
+#to create tree from list
+from binarytree import build
+nodes =[3, 6, 8, 2, 11, None, 13] 
+  
+# Builidng the binary tree 
+binary_tree = build(nodes) 
+print('Binary tree from list :\n', 
+      binary_tree) 
+  
+# Getting list of nodes from
+print('\nList from binary tree :',  
+      binary_tree.values) 
+
+print('Binary tree from list :\n', 
+      binary_tree.properties)

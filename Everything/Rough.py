@@ -55,21 +55,21 @@ str1 = "01010101010"
 
 # print(list1)
 
-groupSizes=[3,3,3,3,3,1,3]
-out1=[]
-out2=[]
-x=list(set(groupSizes))
-#print(x)
-for x1 in x:
-    print(x1)
-    for x2 in list(range(len(groupSizes))):
-        print(x2)
-        if groupSizes[x2]==x1:
-            out2.append(x2)
-            #print(out1)
-    out1.append(out2)
-    out2.pop()
-    print(out1)
+# groupSizes=[3,3,3,3,3,1,3]
+# out1=[]
+# out2=[]
+# x=list(set(groupSizes))
+# #print(x)
+# for x1 in x:
+#     print(x1)
+#     for x2 in list(range(len(groupSizes))):
+#         print(x2)
+#         if groupSizes[x2]==x1:
+#             out2.append(x2)
+#             #print(out1)
+#     out1.append(out2)
+#     out2.pop()
+#     print(out1)
 
 # out1=[]
 # out2=[]
@@ -92,12 +92,53 @@ for x1 in x:
 # l.append([4,5,6])
 # print(l)
 
-
-
 #1221
-# if s[x]=='R' ---> count1=1
-# if s[x]=='L' ---> count2=1
-# 			Add logic for last index
-#		if s[x+1]=='R' :
+# x=list(range(len(s)))
+#         print(x)
+#         z=len(s)
+#         count=0
+#         for y in x:
+#             if y==z-1 and s[y]=='R':
+#                 count=count+1
+#             elif s[y]=="R":
+#                 if s[y+1]=='R':
+#                     pass
+#                 else:
+#                     count=count+1
+#         return count
+        
+#      #"RLRRRLLRLL" 
+
+# if s[x]=='R' ---> count until s[x]=L  --> count1
+# if s[x]=='L' ---> count until s[x]=r  --> count2
 #			if count1=count2:
 #				count=count+1
+
+
+
+# s="RLLLLRRRLR"
+# s_len=list(range(len(s)))
+# t=len(s)
+# count1=0
+# count2=0
+# count=0
+# for x in s_len:
+#     if s[x]=='R':
+#         count1=count1+1
+#         print('x =',x,'count1=',count1)
+#     elif s[x]=='L':
+#         count2=count2+1
+#         print('x =',x,'count2 =',count2)
+#         if x==t-1:
+#             if count1==count2:
+#                 count=count+1
+#         elif s[x+1]=='R':
+#             if count1==count2:
+#                 count=count+1
+#     print('count =',count0)
+# print(count)
+
+
+
+a=[[1,2],[3,4],[5,6]]
+print(a[0][1])

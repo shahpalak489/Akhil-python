@@ -1,3 +1,7 @@
+print('***absolute')
+print(abs(-72.50))
+
+
 print("***print")
 print('*print string,int and float')
 eid,ename,esal=111,'ratan',100.45
@@ -951,6 +955,10 @@ list1=[ {'name':'akhil','year':1987, 'age':32},
 
 print(list1[0]['age'])
 
+print('* to access values in list of list')
+a=[[1,2],[3,4],[5,6]]
+print(a[0][1])
+
 
 ''' ratan '''
 print("***how to get all keywords")
@@ -1315,19 +1323,19 @@ l2=[40,50,60]
 l1.extend(l2)
 print(l1)
 
-print('*to add object in list at the end')
+print('*to add object at the end')
 l1=[10,20,30]
 l1.append(40)
 print(l1)
 
-print('*to add object in list by specific location')
+print('*to add object by specific location')
 l1=['ratan','anu']
 l1.insert(1,'aaa')		#this will add at index 1
 print(l1)
 l1.insert(6,'bbb')		#this will add at index6 but we dont have index5 so it will add at the end
 print(l1)
 
-print('*in list to delete by object location')
+print('*to delete by object location')
 l1=['ratan','durga',10,10.5]
 l1.pop()			# by default it will remove last one
 print(l1)
@@ -1335,7 +1343,7 @@ l1.pop(1)			# this will remobe index 1 object
 print(l1)
 #l1.pop(10)			# pop index out of range
 
-print('*in list to delete by object value')
+print('*to delete by object value')
 l1=[10,20,30]
 l1.remove(20)
 print(l1)
@@ -1366,7 +1374,7 @@ d3[222]='anu'
 d3[333]='ratan'
 print(d3)
 
-print('*to remove last object/particular object from dics')
+print('*to remove last key/particular key from dics')
 d1={1:'aaa',2:'bbb',3:'ccc'}
 d1.popitem()	# this will remove last item fron dics
 print(d1)
@@ -1417,6 +1425,9 @@ print(min(d2))
 d3={1:'ratan',2:'durga','anu':3,'surya':4}	#TypeError: '>' not supported between instances of 'str' and 'int'
 #print(max(d3))
 #print(min(d3))
+
+print('* get maximum and minimum values between 2 numbers')
+print(max(2,10))
 
 print('***Dics properties') 
 '''
@@ -1487,3 +1498,33 @@ print(hex(c))
 
 #regular expression
 
+
+# Treenode
+
+
+
+# Listnode 
+# length?
+
+
+#SQL pivot
+
+
+print('***matrix')
+print('*to create multi dimension matrix')
+val = [0] * n  					#n is row
+for x in range (n):
+    val[x] = [0] * m  	#m is column
+print(val)
+
+
+print('*to access value in matrix')
+val[1][2] 				# row 1, column 2
+
+print('*to add 1 to all rows')
+  
+for m1 in list(range(m)):
+    val[a][m1]=val[a][m1]+1
+
+for n1 in list(range(n)):
+    val[n1][b]=val[n1][b]+1

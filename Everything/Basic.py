@@ -659,6 +659,26 @@ print(L1[:-2])
 print(L1[-3:])
 print(L1[:])
 
+print('* index with variable -list')
+x=2
+arr=[17,18,5,4,6,1]
+a=list(range(len(arr)-1))
+out=[]
+for x in a:
+    out.append(max(arr[x+1:]))
+out.append('-1')
+return out
+
+print('* index with variable - string')
+arr='ratanIT'
+x=2
+a=list(range(len(arr)-1))
+out=[]
+for x in a:
+    out.append(max(arr[x+1:]))
+out.append('-1')
+print(out)
+
 print('*** VV IMP - negative indexing')
 list1=['a1','b2','c3','d4','5re']
 #https://www.quora.com/What-is-negative-index-in-Python
@@ -740,6 +760,11 @@ print('***to replace few alphabets with other alphabets in string')
 print('- for string')
 c=a.replace('a','a is country')
 print(c)
+
+print('*replace by location')
+a='abcdabcd'
+b=a[4:].replace('a','x',1)
+print(b)
 
 print('***to make upper case')
 print('- for string')
@@ -1495,6 +1520,59 @@ print('hexa deciaml values')
 c=20
 print(hex(c))
 
+print('***convert Datatypes')
+print("*to convert int/float to string")
+#x=str(y)
+
+print("*to convert List to Tuple")
+List1=['a','b','c','d']
+Tuple1=tuple(List1)
+print(Tuple1)
+
+print("*To convert Tuple to List")
+Tuple1=('a','b','c','d')
+List1=list(Tuple1)
+print(List1)
+
+print("*to convert List to set")
+List1=['a','b','c','d']
+set1=set(List1)
+print(set1)
+
+print("*to convert set to list")
+set1={'a','b','c','d'}
+List1=list(set1)
+print(List1)
+
+print("*to convert Tuple to set")
+Tuple1=('a','b','c','d')
+set1=set(Tuple1)
+print(set1)
+
+print("*to convert Tuple to Dics ")
+Tuple1=('a','b','c','d')
+Dict2={i:i*2 for i in Tuple1}
+print(Dict2)
+
+print('* to convert int to string')
+a=234
+b=str(a)
+print(type(b))
+
+print('*to convert int to list')
+
+
+
+print('*to convert string to list')
+a='abc'
+b=list(a)
+print(type(b))
+
+print('*to convert list to string')
+a=['a','b','c']
+b=str(a)
+print(type(b))
+print(b)
 
 #regular expression
 
@@ -1512,9 +1590,9 @@ print(hex(c))
 
 print('***matrix')
 print('*to create multi dimension matrix')
-val = [0] * n  					#n is row
+val = [0] * n  								#n is row
 for x in range (n):
-    val[x] = [0] * m  	#m is column
+    val[x] = [0] * m  						#m is column
 print(val)
 
 

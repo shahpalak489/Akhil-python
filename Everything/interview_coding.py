@@ -591,3 +591,19 @@ for l in range(1, len(STR)+1):
     combs.append(list(itertools.combinations(STR, l))) 
 
 print(combs)
+
+# to append in string
+s1='abcd'
+s2=''
+s2=s2+s1[0]
+s2=s2+s1[1]
+print(s2)
+
+#to clear(empty)string variable
+string=''
+for x in words:
+    for y in x:
+        string=string+z1[y]
+    if string not in out:
+        out.append(string)
+    string=''

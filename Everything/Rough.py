@@ -139,4 +139,41 @@ str1 = "01010101010"
 # print(count)
 
 
+print('###728')
+left=47
+right=85
+x=list(range(left,right+1))
+print('x:',x)
+out=[]
+noout=[]
+for y in x:
+	#print(type(y))
+	if '0' in str(y):				#in requires str on left, on right int no good
+		noout.append(y)
+	else:					
+		for z in str(y):
+			print('z:',z,'y:',y)
+			if y % int(z) !=0:
+				noout.append(y)
+final=set(noout)
+print(final)
+for a in list(final):
+	x.remove(a)
+print(x)
+
+
+print('###657')
+a='UD'
+U=1
+D=-1
+L=-1
+R=1
+count=0
+for x in a:
+	count=count+value(x)	
+print(count)
+
+
+
+
 

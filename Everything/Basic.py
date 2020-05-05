@@ -889,6 +889,14 @@ for z in range (5,10):
 else:
  	print("Finally finished!")
 
+print('*IMP: For ...loop - increment 2 variables at same time')
+a=3
+b=5
+c=7
+for x in range(a):
+    for y,z in zip(range(b), range(c)):				#MMIMP: to loop 2 variables at same time
+        print('x:',x,' y:',y,' z:',z)
+
 print("***while loop")
 n = 25
 while n > 20:
@@ -1595,14 +1603,20 @@ for x in range (n):
     val[x] = [0] * m  						#m is column
 print(val)
 
-
 print('*to access value in matrix')
 val[1][2] 				# row 1, column 2
 
 print('*to add 1 to all rows')
-  
 for m1 in list(range(m)):
     val[a][m1]=val[a][m1]+1
 
 for n1 in list(range(n)):
     val[n1][b]=val[n1][b]+1
+
+print('*to find no of rows and columns')
+a=[[1,1,0,1],[1,0,1,0],[0,0,0,1]]
+print(len(a))						# to find no of rows
+print(len(a[0]))					# to find no of columns
+
+
+

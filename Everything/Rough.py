@@ -138,40 +138,50 @@ str1 = "01010101010"
 #     print('count =',count0)
 # print(count)
 
-
-print('###728')
-left=47
-right=85
-x=list(range(left,right+1))
-print('x:',x)
-out=[]
-noout=[]
-for y in x:
-	#print(type(y))
-	if '0' in str(y):				#in requires str on left, on right int no good
-		noout.append(y)
-	else:					
-		for z in str(y):
-			print('z:',z,'y:',y)
-			if y % int(z) !=0:
-				noout.append(y)
-final=set(noout)
-print(final)
-for a in list(final):
-	x.remove(a)
-print(x)
-
-
 print('###657')
-a='UD'
-U=1
-D=-1
-L=-1
-R=1
-count=0
-for x in a:
-	count=count+value(x)	
-print(count)
+# a='UD'
+# U=1
+# D=-1
+# L=-1
+# R=1
+# count=0
+# for x in a:
+# 	count=count+value(x)	
+# print(count)
+
+
+# #461
+# x=680142203
+# y=1111953568
+# a=bin(x)
+# print(a)
+# if 'b' in a:
+# 	a=int(a[2:])
+# m="%04d" % a
+# print(m)
+
+# b=bin(y)
+# print(b)
+# if 'b' in b:
+# 	b=int(b[2:])
+# n="%04d" % b
+# print(n)
+# count=0
+# for x in range(len(m)):
+# 	if m[x] != n[x]:
+# 		count += 1
+# print(count)
+
+
+# print('##811')
+# print(bin(7)[2:])					#note
+
+
+
+print(bin(5))
+
+
+
 
 
 

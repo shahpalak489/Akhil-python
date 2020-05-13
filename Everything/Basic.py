@@ -1279,6 +1279,18 @@ f=['a','e','b','d','c']
 f.sort(reverse=True)		
 print(f)
 
+print('***IMP: if we declare 2 lists same then if we sort any one it will sort both in this case use sorted')
+
+print('***sorted')
+print('* arrange in ascending by sorted')
+f=['a','e','b','d','c']
+f1=sorted(f)
+
+print('* arrange in descending by sorted')
+f=['a','e','b','d','c']
+f1=sorted(f,reverse=True)
+print(f1)
+
 print('*arrange given list by length')
 i=['bcde','cd','def','a']
 j=sorted(i,key=len)
@@ -1617,6 +1629,24 @@ print('*to find no of rows and columns')
 a=[[1,1,0,1],[1,0,1,0],[0,0,0,1]]
 print(len(a))						# to find no of rows
 print(len(a[0]))					# to find no of columns
+
+print('***to find max/min in row and column')
+matrix = [[7,8],[1,2]]
+x=len(matrix)
+y=len(matrix[0])
+col=[]
+col1=[]
+for a in range(x):
+    print(min(matrix[a]))			#get min value in row
+
+for b in range(y):
+    for a in range(x):
+        col1.append(matrix[a][b])
+	col.append(max(col1))			#get max value in column
+    col1=[]
+print(col)
+
+
 
 
 

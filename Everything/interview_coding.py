@@ -364,7 +364,7 @@ for x in a:
 			b=x+y+z
 			print(b)
 
-#string : all possible combination without repeation
+#string :all possible combination without repeating itself
 a='abc'
 for x in a:
 	for y in a:

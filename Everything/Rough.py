@@ -174,16 +174,161 @@ print('###657')
 
 
 # print('##811')
-# print(bin(7)[2:])					#note
+# print(bin(7)[2:])
 
 
 
-print(bin(5))
+# import collections
+# cpdomains=["9001 discuss.leetcode.com"]
+# counter = collections.Counter()
+# for cpdomain in cpdomains:
+# 	print('cpdomain:',cpdomain)
+# 	c, *domains = cpdomain.replace(" ",".").split(".")
+# 	print('count:',c)
+# 	print('domain',domains)
+# 	for i in range(len(domains)):
+# 		counter[".".join(domains[i:])] += int(c)
+# print([" ".join((str(v), k)) for k, v in counter.items()])
+
+
+
+# import collections
+# cpdomains=["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"]
+# counter = collections.Counter()
+# for cpdomain in cpdomains:
+# 	print('cpdomain:',cpdomain)
+# 	c, *domains = cpdomain.replace(" ",".").split(".")
+# 	print('count:',c)
+# 	print('domain',domains)
+# 	for i in range(len(domains)):
+# 		#print(counter[".".join(domains[i:])])
+# 		print('c:',int(c))
+# 		counter[".".join(domains[i:])] += int(c)
+# 		print(counter[".".join(domains[i:])])
+# print([" ".join((str(v), k)) for k, v in counter.items()])
+
+#print(collections.Counter[".".join(['discuss','leetcode','com'][0:])])
+
+# s="hehe hehe hehe hehe"
+# out=''
+# split1=s.split(' ')
+# for x in range(len(split1)):
+#     y=split1[x][::-1]
+#     out += y
+#     if x != (len(split1)-1):
+#         out += ' '
+# print (out)
+
+ 
+print('##665')
+#nums=[4,2,1]			#False
+#nums=[4,2,3]			#true
+#nums=[4,2,1]			#f
+#nums=[-1,4,2,3]			#t
+# pick 1, rest find min, that if biiger right , if smaller left
+# fianl : find min and max, start from min then min+1 if present should be right not count 1 then min+2...if you find 2 ans next both shoudl be on right
+
+#nums=[13,14,12,14]			#f
+nums=[1,1,1]
+nums_len=len(nums)
+# count = 0
+# if nums_len==1 or nums_len==2:
+#     print(True)
+# else:
+# 	maximum=max(nums)
+# 	minimum=min(nums)
+# 	nums_sort=sorted(nums)
+# 	print(nums_sort)
+# 	for x in range(len(nums_sort)-1):
+# 		a=[i for i in range(len(nums)) if nums[i] == nums_sort[x]]
+# 		b=[i for i in range(len(nums)) if nums[i] == nums_sort[x+1]]
+# 		print('x:',x,'a:',a,'b:',b)
+# 		a_len=len(a)
+# 		b_len=len(b)
+# 		for x in range(a_len):
+# 			for y in range(b_len):
+# 				if a[x] > b[y]:
+# 					count+=1
+# 		print(count)
+
+# 	if count > 1:
+# 		print(False)
+# 	else:
+# 		print(True)
+
+
+
+nums=[1,1,1]
+# nums_len=len(nums)
+# count = 0
+# if nums_len==1 or nums_len==2:
+#     print(True)
+# else:
+# 	maximum=max(nums)
+# 	minimum=min(nums)
+# 	nums_sort=sorted(nums)
+# 	print(nums_sort)
+# 	for x in nums_sort:
+# 		a=[i for i in range(len(nums)) if nums[i] == x]
+# 		b=[i for i in range(len(nums)) if nums[i] == (x+1)]
+# 		print('x:',x,'a:',a,'b:',b)
+# 		a_len=len(a)
+# 		b_len=len(b)
+# 		for x in range(a_len):
+# 			for y in range(b_len):
+# 				if a[x] > b[y]:
+# 					count+=1
+# 		print(count)
+
+# 	if count > 1:
+# 		print(False)
+# 	else:
+# 		print(True)
+
+
+# nums=[1,3,5,2,4]
+# one, two = nums[:], nums[:]
+# print('one:',one)
+# print('two:',two)
+# for i in range(len(nums) - 1):
+# 	print('i:',i)
+# 	if nums[i] > nums[i + 1]:
+# 		one[i] = nums[i + 1]
+# 		print('one[i]:',one[i])
+# 		two[i + 1] = nums[i]
+# 		print('two[i+1]:',two[i+1])
+# 		break
+# print('one:',one)
+# print(sorted(one))
+# print('two:',two)
+# print(sorted(two))
+# print(one == sorted(one) or two == sorted(two))
+
+# candies = [2,3,5,1,3]
+# extraCandies = 3
+# ma = max(candies)
+# print([x+extraCandies >= ma for x in candies])
+
+
+# x=max(candies)
+# y=len(candies)
+# out=[]
+# # for a in range(y):
+# #     if candies[a]+ extraCandies >= x:
+# #         out.append(True)
+# #     else:
+# #         out.append(False)
+# # return out
 
 
 
 
-
-
-
-
+# for x in arr:
+#     for y in arr:
+#         if x!=y:
+#             a=x-y
+#             z=[abs(a)]
+#             print(z)
+z=min([abs(x-y)for x in arr for y in arr if x!=y])
+g=[[x,y]for x in arr for y in arr if abs(x-y)==z]
+print(g)

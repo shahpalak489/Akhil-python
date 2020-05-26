@@ -763,8 +763,11 @@ print(c)
 
 print('*replace by location')
 a='abcdabcd'
-b=a[4:].replace('a','x',1)
+b=a[4:].replace('a','x',1)			# here 1 is occurance
 print(b)
+
+print('* to delete characters in string')
+# use replace
 
 print('***to make upper case')
 print('- for string')
@@ -1595,7 +1598,9 @@ print(type(b))
 print(b)
 
 #regular expression
-
+import re
+a='test.email+a+lex@leetcode.com'
+print(re.sub('@','*',a))					#to replace
 
 # Treenode
 

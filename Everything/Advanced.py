@@ -1,6 +1,6 @@
 print("**Comprehensions**")
-print("**List Comprehensions**")
 
+print("**List Comprehensions**")
 l1=[x for x in range(5)]
 print(l1)
 
@@ -17,11 +17,64 @@ print(x)
 x=[i*2 for i in tuple1]
 print(x)
 
+print('*multiple expressions .... with comprehension')
+A=[4,2,5,7]
+out1,out2=[],[]
+[(out1.append(A[x]),out2.append(A[x])) for x in range(len(A))]
+print(out1)
+print(out2)
+
+#same as
+for x in range(len(A)):
+    out1.append(A[x])
+    out2.append(A[x])
+print(out1)
+print(out2)
+
+print('*if ... with comprehension')
 x=[i*2 for i in tuple1 if i==4]
 print(x)
 
 x=[i*3 for i in tuple1 if (i*3)<12]
 print(x)
+
+p=[a for a in range(10) if a>5]
+print(p)
+#same as
+for a in range(10):
+	if a>5:
+		print(a)
+
+print('*if....else with comprehension')
+r=['a more 5' if a>5 else 'a less 5'for a in range(10)]
+print(r)
+#same as 
+for a in range(10):
+	if a>5:
+		print('a more 5')
+	else:
+		print('a less 5')
+
+print('*if....if  with comprehension')
+s=[i for i in range(10) if i%2==0 if i%4==0]
+print(s)
+#same as
+for i in range(10):
+	if i%2==0:
+		if i%4==0:
+			print(i)
+
+print('*if ...break with comprehension')
+
+
+print('*for...for loop with Comprehension')
+a=['asa','dsa','dsd']
+for x in a:
+	for y in x:
+		print(y)
+#same as
+m=[y for x in a for y in x]
+print(m)
 
 print("**Set comprehension**")
 List1=[1,2,3,4,5]
@@ -30,6 +83,7 @@ print(x)
 
 x={i*2 for i in List1}
 print(x)
+
 
 x={i*2 for i in List1 if i==4}
 print(x)

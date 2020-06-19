@@ -321,14 +321,27 @@ nums=[1,1,1]
 # # return out
 
 
+S = "loveleetcode"
+C = 'e'
+out,out1=[],[]
+#print(S.index('e',5))
+no=[x for x in range(len(S)) if S[x]==C]
+# for x in range(len(S)):
+# 	for y in no:
+# 		out.append(abs(y-x))
+# 	out1.append(min(out))
+# 	out=[]
+# print(out1)
+
+#[((out.append(abs(y-x)) for y in no),out1.append(min(out)),out=[])for x in range(len(S))]
 
 
-# for x in arr:
-#     for y in arr:
-#         if x!=y:
-#             a=x-y
-#             z=[abs(a)]
-#             print(z)
-z=min([abs(x-y)for x in arr for y in arr if x!=y])
-g=[[x,y]for x in arr for y in arr if abs(x-y)==z]
-print(g)
+from collections import Counter
+x='akhil'
+#print(Counter(x))
+
+licensePlate = "1s3 PSt"
+words = ["step", "steps", "stripe", "stepple"]
+#print(Counter(licensePlate))
+
+

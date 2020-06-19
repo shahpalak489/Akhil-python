@@ -789,6 +789,11 @@ print('***to give corresponding number to string')
 print(list(enumerate(a)))
 print(tuple(enumerate(a)))
 
+print('*to get values of enumerate')
+S = "loveleetcode"
+for x,y in enumerate(S):
+	print(x,y)
+
 print('***how many times given alphabet present in string')
 print('***return count of character')
 print('- for string')
@@ -930,6 +935,18 @@ while a<5:
 	if a==3:
 		continue
 	print(a)
+
+print('* while... multiple condition')
+n=4102
+if n==2:
+    print([1,1])
+else:
+    A=1
+    B=0
+    while '0' in str(B) or '0' in str(A):
+        A+=1
+        B=n-A
+    print([A,B])
 
 print("***for vs while")
 # for when we have starting value , ending value by incremental / decremental
@@ -1651,7 +1668,36 @@ for b in range(y):
     col1=[]
 print(col)
 
+print('*calendar')
+import calendar
+c=calendar.TextCalendar(calendar.MONDAY)
+str=c.formatmonth(2019,8)
+#print(str)
 
+print('*string to timestamp - strptime')
+from datetime import datetime
+str = '9/15/18'
+date_object = datetime.strptime(str, '%m/%d/%y')
+print(date_object)
 
+str='02,aug,2010'
+date_object=datetime.strptime(str,'%d,%b,%Y')
+print(date_object)
+
+print('*timestamp to string - strftime')
+import datetime
+y=datetime.datetime(2020,6,18).strftime('%A')
+y=datetime.datetime(2020,6,18).strftime('%b/%d/%Y')
+print(y)
+
+print('*to convert from one date format to another')
+from datetime import datetime
+x=datetime.strptime("2013-1-25", '%Y-%m-%d').strftime('%m/%d/%y')
+print(x)
+
+print('*todays date')
+from datetime import datetime
+y=datetime.today().strftime('%c')
+print(y)
 
 

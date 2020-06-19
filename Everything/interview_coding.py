@@ -119,16 +119,21 @@ print("***fibonacci")
 # (aagad na 2 numbers no sarvado)
 # 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …….
 
-def FibonacciNumbers(n): 
-    f1 = 0
-    f2 = 1
-    if (n < 1): 
-        return
-    for x in range(0, n): 
-        print(f2, end = " ") 
-        next = f1 + f2 
-        f1 = f2 
-        f2 = next
+print('give nth fibonacci number')
+def FibonacciNumbers(N):
+        f1,f2,f3=0,1,0
+        out=[]
+        out.append(f2)
+        if N==0:
+            return 0
+        else:
+            for x in range(0,N):
+                f3=f1+f2
+                f1=f2
+                f2=f3
+                out.append(f3)
+            return(out[N-1])
+
 print(FibonacciNumbers(7))
 
 print("***first 15 numbers")

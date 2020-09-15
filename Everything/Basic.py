@@ -12,16 +12,16 @@ print(esal)
 print('* to print next line')
 print("Hello\nWorld!")
 
+print('*print 2 lines together')
+print(eid,end='') 				 # this will print next line, in same line
+print(' ',ename)
+
 print('*print hard code value and variable together')
 print('Emp id=',eid)
 print('Emp name=',ename)
 print('Emp sal=',esal)
 
 print('Emp id=',eid,'Emp name=',ename,'Emp sal=',esal)
-
-print('*print 2 lines together')
-print(eid,end='') 				 # this will print next line, in same line
-print(' ',ename)
 
 print('*print with separator')
 print(10,20,30,sep='*')
@@ -44,8 +44,8 @@ print(d2)
 print('***formate specifier')		#mainly use as variable in print statement
 '''
 Method 1
-int 	float		string    
-%d 	%g   %f 	  %s
+int 		float		string    #make sure %g is for int or float?
+%d 	%g   	%f 	  		%s
 
 Method 2
 {}
@@ -56,8 +56,8 @@ eid,ename,esal=111,'ratan',100.45
 print('*print int,string,float with formate specifier')
 # for % , if %d is first its value must be first...so its sequence is important
 
-print('%d %s %g' %(eid,ename,esal))					#format
-print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))
+print('%d %s %g' %(eid,ename,esal))								#format
+print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))	#real time example
 
 # difference between %g and %f
 # %f prints upto 12 digits while %g prints data upto 6 digits only
@@ -128,7 +128,8 @@ default(10,20) #here z=5 because while calling we gave x=10,y=20
 default(y=10,x=2) #if we change sequence of variable then we need to specify x=2 
 
 #VVIMP
-#default(20,y=40,30) # Invalid : once we give y=40 then rest of all argument must be z=something .we can not put just 30 
+#default(20,y=40,30) # Invalid : once we give y=40 then rest of all argument must be z=something.
+																	#we can not put 30 after y=40
 
 default(50,60,z=10)  # valid
 
@@ -178,9 +179,9 @@ def inner1():
 print('*function with n number of arguments')
 print('*function with n arguments alone,at begining,at end')
 #case 1
-def multiple(*a):					# for n number of arguments use *
+def multi(*a):					# for n number of arguments use *
 	print(a)
-multiple(1,2,3,4)
+multi(1,2,3,4)
 
 def star(*ar):
 	for x in ar:
@@ -245,14 +246,14 @@ f2 = function_that_returns() 				# this will call function_that_returns
 print("IMP - to access return values assign variable to function calling")
 print("and print the variable because retuen assigns value to function") 
 print("so we need to print calling function ")
+
 print(f1) 
 # or
-
-print(function_that_prints()) 
+print(function_that_prints())			#see its answer 
 
 print(f2)
 # or
-print(function_that_returns())
+print(function_that_returns())			#see its answer
  
 print("example 2")
 def no_return(x,y):
@@ -260,7 +261,7 @@ def no_return(x,y):
     return c
 print(no_return(4,5))
 
-print('*Multiple return statement')
+print('* Multiple return statement')
 def disp():
 	print('good morning')
 	return 10
@@ -290,6 +291,7 @@ print('*when local and global variable has same name then priority goes to local
 #Example 1
 b=100
 print(b)
+
 def scope():
 	b=200
 	print(b)
@@ -303,7 +305,7 @@ def sarvado(g,h):
 sarvado(2,3)
 
 #case 3 
-print('*for local variables get global variable value when both variables are same name')
+print('* how local variables get global variable value when both variables are same name?')
 #example 1
 g,h=10,20
 def sarvado(g,h):
@@ -318,7 +320,7 @@ def m1():
 m1()
 
 #case 4
-print('*to create global variable inside function')
+print('*to declare global variable, inside function')
 def disp3():
 	global s 
 	s='ratan'
@@ -327,14 +329,14 @@ disp3()						#IMP: function must be executed to declare global variable
 print(s)
 
 #Case 5 
-print('*to update Global variable value')
+print('* how to update Global variable value, inside function?')
 name='ratan'
 def outer():
 	name1='durga'
 	def inner():
-		name1='sunny'
+		name1='sunny'			#IMP: this will not update global variable value
 		global name
-		name='ratan IT'
+		name='ratan IT'			#IMP: this will update global variable value
 	print(name1) 
 	inner()
 	print(name1)
@@ -342,7 +344,7 @@ outer()
 print(name)
 
 #case 6 (VV IMP)
-print('*once we use global variable inside function we can not declare same variable as local variable')
+print('*once we use global variable,inside function we can not declare same variable as local variable')
 
 # below code will give error
 '''
@@ -369,9 +371,9 @@ aki9()
 print(AKI)
 '''
 
-#case 8 - VV IMP
-print('*to chnage parent function variable value from child function' )
-#example 1
+# case 8 - VV IMP
+print('*to change parent function variable value, from child function' )
+# example 1
 def m1():
 	a=20
 	def m2():
@@ -380,18 +382,17 @@ def m1():
 	m2()				#this function calling is must to update value of a
 	print(a)
 m1()
-
-#example 2
-# in below example we are changing name1 variable value, inside child function using nonlocal keyword
+# example 2
+# in below example we are changing name1 variable value inside child function, using nonlocal keyword
 # because of this name1 value changes foreever
 name='ratan'
 def outer():
 	name1='durga'
 	def inner():
-		nonlocal name1  # this will update parent name1 variable
+		nonlocal name1  	# this will update parent name1 variable
 		name1='sunny'
 		global name
-		name='ratan IT'
+		name='ratan IT'		# this will update global variable value
 	print(name1) 
 	inner()					#this function calling is must to update value of name1
 	print(name1)
@@ -409,7 +410,7 @@ print(x*y)
 print(y-x)
 print(y/x)
 
-print('sum,averge,mean')
+print('* sum,averge,mean')
 a=[12,52,52]
 
 #sum
@@ -423,11 +424,11 @@ import statistics
 b=statistics.mean(a)
 print(b)
 
-print("*exponent")
+print("* exponent")
 #method 1
 x=10
 n=2
-print(x**2)
+print(x**2)				# equal to 10 rest to 2
 
 #method 2
 x=10
@@ -457,11 +458,13 @@ print('ratan' != 'anu')
 print("***assignment operator")
 # +=, -=, *= ,/=
 x += y
+
 #Example-1
 x=10
 y=20
 x+=y
 print(x)
+
 #example-2
 x=0
 for y in [1,2,3]:
@@ -526,7 +529,7 @@ print(x==1 or y==3)
 print(x==1 and y==3)
 
 print('***to check given value present or not and gets True/false')
-x="california"											# Membership operator
+x="california"							# Membership operator
 print('z' in x)
 print('z' not in x)
 
@@ -541,15 +544,10 @@ print('- for string')
 a='welcome to RatanIT'
 print(a.find('Ratan'))
 print(a.find('anu')) 
+print(a.find('t',10,15))		# return index of 't' between 10 to 15 index
 
-print('***to get index of alphabet/string')
-#returns index of given word
-print('- For string')
-print(a.index('come'))
-
-print('*to get index of alphabet/string in given range')
-print(a.index('t',10,15))		# return index of 't' between 10 to 15 index
-#print(a.index('anu'))			#this will return error bcoz 'anu' is not in a
+#for string find is recommended bcoz if search object not available it will return '-1'
+#for string index is not recommended bcoz if search object is not available it will throw an error
 
 print('- for List')
 l1=['ratan','anu','durga','ratan']
@@ -604,7 +602,6 @@ print(a is not b)
 
 print('***string-regular expression')
 
-
 print('***get remaing value after division')
 											#Modulus
 a=10
@@ -620,11 +617,15 @@ b=3
 print(a//b)
 
 print('***to get few alphabets of string // to get few objects from list/set/tuple without for loop')
-print('slice')
+print('*** MMIMP: slice')
 print('- for string')
+
 # -7 -6 -5 -4 -3 -2 -1  		#negative indexing
 s= 'ratanIT'
 # 0 1 2 3 4 5 6 				#positive indexing
+
+#starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
+#starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
 
 print(s[2])
 print(s[2:4])
@@ -659,32 +660,17 @@ print(L1[:-2])
 print(L1[-3:])
 print(L1[:])
 
-print('* index with variable -list')
-x=2
-arr=[17,18,5,4,6,1]
-a=list(range(len(arr)-1))
-out=[]
-for x in a:
-    out.append(max(arr[x+1:]))
-out.append('-1')
-return out
-
-print('* index with variable - string')
-arr='ratanIT'
-x=2
-a=list(range(len(arr)-1))
-out=[]
-for x in a:
-    out.append(max(arr[x+1:]))
-out.append('-1')
-print(out)
-
 print('*** VV IMP - negative indexing')
 list1=['a1','b2','c3','d4','5re']
 #https://www.quora.com/What-is-negative-index-in-Python
-print(list1[-4:-2:-1])		#	starting point:end point:move right if its positive and move left if its negative
+#starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
+print(list1[-2:-4:-1])
+print(list1[-2:-4:1])
+
 print("*** MM IMP")
-print(list1[-4:-2:1])		#	starting point:end point:move right if its positive and move left if its negative
+#starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
+print(list1[-4:-2:1])
+print(list1[-4:-2:-1])
 
 print("- for tuple")
 list1=('a1','b2','c3','d4','5re')
@@ -694,24 +680,46 @@ print(list1[10:])
 print(list1[:10])
 print(list1[1:4:2])
 
-print("***MM IMP")
+#starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
 print(list1[-4:-2:-1])
-print("***MM IMP")
+print(list1[-4:-2:-1])
+
+print("*** MM IMP")
+#starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
+print(list1[-4:-2:1])
 print(list1[-4:-2:1])
 
 #slice With dics -- not possible
 #slice with set -- not possible
 
-print('***to break string')
-											#split
-print('- for string')
+print('* index with variable -list')		#SEE
+x=2
+arr=[17,18,5,4,6,1]
+a=list(range(len(arr)-1))
+out=[]
+for x in a:
+    out.append(max(arr[x+1:]))
+out.append('-1')
+print(out)
+
+print('* index with variable - string')		#SEE
+arr='ratanIT'
+x=2
+a=list(range(len(arr)-1))
+out=[]
+for x in a:
+    out.append(max(arr[x+1:]))
+out.append('-1')
+print(out)
+
+print('*to break string')		#split
 a="india"
 print(a.split('d'))
 
-print('*to break string with separator')
-print('+'.join(a.split('d')))			# this will split and place '+' in between
+print('* to break string with '+' separator')
+print('+'.join(a.split('d')))	
 
-print('- for list')
+print('- for list: to break list in middle')
 list1=[10,20,30,40]
 length=len(list1)
 length_avg=length//2
@@ -794,8 +802,7 @@ S = "loveleetcode"
 for x,y in enumerate(S):
 	print(x,y)
 
-print('***how many times given alphabet present in string')
-print('***return count of character')
+print('*** how many times given alphabet present in string')
 print('- for string')
 a='ratanratan'
 print(a.count('r'))				#count 'r' in a
@@ -1632,20 +1639,20 @@ print(re.sub('@','*',a))					#to replace
 
 print('***matrix')
 print('*to create multi dimension matrix')
-val = [0] * n  								#n is row
-for x in range (n):
-    val[x] = [0] * m  						#m is column
-print(val)
+# val = [0] * n  								#n is row
+# for x in range (n):
+#     val[x] = [0] * m  						#m is column
+# print(val)
 
-print('*to access value in matrix')
-val[1][2] 				# row 1, column 2
+# print('*to access value in matrix')
+# val[1][2] 				# row 1, column 2
 
-print('*to add 1 to all rows')
-for m1 in list(range(m)):
-    val[a][m1]=val[a][m1]+1
+# print('*to add 1 to all rows')
+# for m1 in list(range(m)):
+#     val[a][m1]=val[a][m1]+1
 
-for n1 in list(range(n)):
-    val[n1][b]=val[n1][b]+1
+# for n1 in list(range(n)):
+#     val[n1][b]=val[n1][b]+1
 
 print('*to find no of rows and columns')
 a=[[1,1,0,1],[1,0,1,0],[0,0,0,1]]
@@ -1664,7 +1671,8 @@ for a in range(x):
 for b in range(y):
     for a in range(x):
         col1.append(matrix[a][b])
-	col.append(max(col1))			#get max value in column
+    col.append(max(col1))
+	#get max value in column
     col1=[]
 print(col)
 
@@ -1677,14 +1685,19 @@ str=c.formatmonth(2019,8)
 print('*string to timestamp - strptime')
 from datetime import datetime
 str = '9/15/18'
-date_object = datetime.strptime(str, '%m/%d/%y')
-print(date_object)
+x = datetime.strptime(str, '%m/%d/%y')
+print(x)
 
 str='02,aug,2010'
-date_object=datetime.strptime(str,'%d,%b,%Y')
-print(date_object)
+x=datetime.strptime(str,'%d,%b,%Y')
+print(x)
 
-print('*timestamp to string - strftime')
+#datetime(year,month,day)
+import datetime
+y=datetime.datetime(2020,6,18)
+print(y)
+
+print('*to convert timestamp in different format')
 import datetime
 y=datetime.datetime(2020,6,18).strftime('%A')
 y=datetime.datetime(2020,6,18).strftime('%b/%d/%Y')

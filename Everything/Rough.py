@@ -138,7 +138,7 @@ str1 = "01010101010"
 #     print('count =',count0)
 # print(count)
 
-print('###657')
+#print('###657')
 # a='UD'
 # U=1
 # D=-1
@@ -220,7 +220,7 @@ print('###657')
 # print (out)
 
  
-print('##665')
+#print('##665')
 #nums=[4,2,1]			#False
 #nums=[4,2,3]			#true
 #nums=[4,2,1]			#f
@@ -336,12 +336,76 @@ no=[x for x in range(len(S)) if S[x]==C]
 #[((out.append(abs(y-x)) for y in no),out1.append(min(out)),out=[])for x in range(len(S))]
 
 
-from collections import Counter
-x='akhil'
-#print(Counter(x))
+# from collections import Counter
+# x='akhil'
+# #print(Counter(x))
 
-licensePlate = "1s3 PSt"
-words = ["step", "steps", "stripe", "stepple"]
-#print(Counter(licensePlate))
+# licensePlate = "1s3 PSt"
+# words = ["step", "steps", "stripe", "stepple"]
+# #print(Counter(licensePlate))
 
+# ops=["5","2","C","D","+"]
+# out=[]
+# for x in range(len(ops)):
+# 	print(x)
+# 	if ops[x]=='C':
+# 		out.pop()
+# 	elif ops[x]=='+':
+# 		out.append(int(out[-1])+int(out[-2]))
+# 	elif ops[x]=='D':
+# 		out.append(int(out[-1])*2)
+# 	else:
+# 		out.append(int(ops[x]))
+# 	print(out)
 
+# print('496')
+# s="I speak Goat Latin"
+# for x in s.split(' '):
+# 	if x[0].casefold()=='a' or x[0].casefold()=='e' or x[0].casefold()=='i' or x[0].casefold()=='o' or x[0].casefold()=='u':
+# 		out.append(x+'ma')
+# 	else:
+# 		out.append(x[1:]+x[0]+'ma')
+
+# print(out)
+
+# --------------------------------------------------------------------
+print('*to break string')		#split
+a="india"
+print(a.split('d'))
+
+print('* to break string with '+' separator')
+print('+'.join(a.split('d')))	
+
+print('- for list: to break list in middle')
+list1=[10,20,30,40]
+length=len(list1)
+length_avg=length//2
+list2=list1[:length_avg]
+print(list2)
+
+print("***concatenate")
+print('-two string')
+b=" is a Country"
+print(a+b)
+
+print('-Numbers(Int and Float)')
+'''
+we can concatenate int and float because they both are numbers
+we can concatenate int and float to boolean because boolean has assigned values 0 and 1
+'''
+print(10+10.5)
+print(10+True)
+print(10+False)
+print(20.5+True)
+
+print('- string and number/float/bool')
+'''
+print(10+'ratan')				not able to concatenate string and number/float/bool
+print(10.5+'tata')
+'''
+
+print('- two list')
+l1=[10,20,30]
+l2=[40,50,60]
+l3= l1+l2
+print(l3)

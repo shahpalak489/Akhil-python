@@ -368,44 +368,32 @@ no=[x for x in range(len(S)) if S[x]==C]
 
 # print(out)
 
-# --------------------------------------------------------------------
-print('*to break string')		#split
-a="india"
-print(a.split('d'))
 
-print('* to break string with '+' separator')
-print('+'.join(a.split('d')))	
+#----------------------------------------------------
+import pandas as pd
+import numpy as np
 
-print('- for list: to break list in middle')
-list1=[10,20,30,40]
-length=len(list1)
-length_avg=length//2
-list2=list1[:length_avg]
-print(list2)
+#pd.set_option('display.max_rows', 20)
+pd.set_option('display.max_columns', 50)
+pd.set_option('display.width', 227)
 
-print("***concatenate")
-print('-two string')
-b=" is a Country"
-print(a+b)
+df1=pd.read_csv('Testdata1.csv')
+df2=pd.read_csv('Testdata2.csv')
 
-print('-Numbers(Int and Float)')
-'''
-we can concatenate int and float because they both are numbers
-we can concatenate int and float to boolean because boolean has assigned values 0 and 1
-'''
-print(10+10.5)
-print(10+True)
-print(10+False)
-print(20.5+True)
+data = {'Name': ['Jai', 'Princi', 'Gaurav', 'Anuj'], 
+        'Height': [5.1, 6.2, 5.1, 5.2], 
+        'Qualification': ['Msc', 'MA', 'Msc', 'Msc']} 
+df = pd.DataFrame(data) 
 
-print('- string and number/float/bool')
-'''
-print(10+'ratan')				not able to concatenate string and number/float/bool
-print(10.5+'tata')
-'''
+#Method 1
+df.insert(2, "Age", [21, 23, 24, 21], True) 
+print(df)
 
-print('- two list')
-l1=[10,20,30]
-l2=[40,50,60]
-l3= l1+l2
-print(l3)
+print("*****")
+#Method 2
+df['Address'] = ['Delhi', 'Bangalore', 'Chennai', 'Patna']
+print(df)
+
+
+
+

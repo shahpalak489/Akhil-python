@@ -3,6 +3,26 @@
 print("***CLASS")
 #https://www.youtube.com/watch?v=qSDiHI1kP98
 
+print('***Python identifiers - nomenclature of class,function rules')
+'''
+Rule 1 :a-z , A-Z , _    -should not start with numberic , should not allow special characters
+Class Myclass123 - valid
+Class 123Myclass - Invalid
+Class Myclass_123 - valid
+Class Myclass*123 - invalid
+
+Rule 2 : case sensitive
+
+Rule 3 : No lenght limit
+
+Rule 4 : Duplicates not allowed             # duplicates allowed only in variable
+
+Rule 5 : kewords not allowed
+self=100                                    #not allowed
+
+Rule 6 : Possible to take pre defined class names as identifiers but not recommended
+'''
+
 print("***variables")
 #to create class
 class School:

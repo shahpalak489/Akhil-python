@@ -370,30 +370,22 @@ no=[x for x in range(len(S)) if S[x]==C]
 
 
 #----------------------------------------------------
-import pandas as pd
-import numpy as np
-
-#pd.set_option('display.max_rows', 20)
-pd.set_option('display.max_columns', 50)
-pd.set_option('display.width', 227)
-
-df1=pd.read_csv('Testdata1.csv')
-df2=pd.read_csv('Testdata2.csv')
-
-data = {'Name': ['Jai', 'Princi', 'Gaurav', 'Anuj'], 
-        'Height': [5.1, 6.2, 5.1, 5.2], 
-        'Qualification': ['Msc', 'MA', 'Msc', 'Msc']} 
-df = pd.DataFrame(data) 
-
-#Method 1
-df.insert(2, "Age", [21, 23, 24, 21], True) 
-print(df)
-
-print("*****")
-#Method 2
-df['Address'] = ['Delhi', 'Bangalore', 'Chennai', 'Patna']
-print(df)
 
 
+A=[4,2,5,7]
+out1,out2=[],[]
+# for x in range(len(A)):
+#     out1.append(A[x])
+#     out2.append(A[x])
+# print(out1)
+# print(out2)
+
+#same as
+def akhil():
+	yield 1
+	yield 2
+	yield 3
+for i in akhil():
+	print (i)
 
 

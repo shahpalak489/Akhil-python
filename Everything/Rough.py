@@ -371,21 +371,66 @@ no=[x for x in range(len(S)) if S[x]==C]
 
 #----------------------------------------------------
 
+print('*** regular expression')
+'''
+search by alphabet
+finditer  =
 
-A=[4,2,5,7]
-out1,out2=[],[]
-# for x in range(len(A)):
-#     out1.append(A[x])
-#     out2.append(A[x])
-# print(out1)
-# print(out2)
+search by word
+match  = search in first word only  
+search  = search in entire string and return first match
+findall = search in entire string and return all matches in list
 
-#same as
-def akhil():
-	yield 1
-	yield 2
-	yield 3
-for i in akhil():
-	print (i)
+*  =  zero or more 
++  =  one or more
+?  =  zero or one
+
+[a-z]  = all chars from a-z
+[abc]  = a,b,c only
+[0-9]  = all digits from 0-9
+  ^    = except
+^abc   = except a,b,c  
+
+
+'''
+import re
+
+# match - search only at first word
+x=re.match('ratan','ratan sir')
+print(x.group())
+
+x=re.match('ratan','hi ratan sir')
+print(x)
+
+#search
+x=re.search('ratan','ratan sir')
+print(x.group())
+
+x=re.search('ratan','hi ratan sir')
+print(x.group())
+
+#findall
+x=re.findall('ratan','ratan sir ratan')
+print(x)
+
+x=re.findall('ratan','hi ratan sir')
+print(x)
+
+#symbols
+result= re.search("[abc]*soft","ratan sir how dabsoft are you?")
+#print(result)
+
+result= re.search("[a-j]*w","ratan sir how dabsoft are you?")
+#print(result.group())
+
+result= re.search("[^abc]?soft","ratan sir how dabsoft are you?")
+#print(result.group())
+
+
+
+
+
+
+
 
 

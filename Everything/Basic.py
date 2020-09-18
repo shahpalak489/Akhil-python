@@ -794,8 +794,6 @@ b=10
 print(a is b)
 print(a is not b)
 
-print('***string-regular expression')
-
 print('***get remaing value after division')
 											#Modulus
 a=10
@@ -1672,10 +1670,21 @@ print(d1)
 d1={111:['ratan','tata'],222:'anu',333:'durga'}		#list allowed as dict values
 print(d1)
 
-#regular expression
+print('*** regular expression')
+
 import re
 a='test.email+a+lex@leetcode.com'
 print(re.sub('@','*',a))					#to replace
+
+
+#Return a list containing every occurrence of "ai":
+txt = "The rain in Spain"
+x = re.findall("ai", txt)
+print(x)
+
+
+
+
 
 # Treenode
 
@@ -2285,11 +2294,6 @@ a=['a','b','c']
 b=str(a)
 print(type(b))
 print(b)
-
-#regular expression
-import re
-a='test.email+a+lex@leetcode.com'
-print(re.sub('@','*',a))					#to replace
 
 # Treenode
 

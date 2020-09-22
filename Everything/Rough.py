@@ -373,10 +373,8 @@ no=[x for x in range(len(S)) if S[x]==C]
 
 print('*** regular expression')
 '''
-search by alphabet
+**functions
 finditer  =
-
-search by word
 match  = search in first word only  
 search  = search in entire string and return first match
 findall = search in entire string and return all matches in list
@@ -402,14 +400,14 @@ print(x.group())
 x=re.match('ratan','hi ratan sir')
 print(x)
 
-#search
+#search - search entire string anf return only first occurance
 x=re.search('ratan','ratan sir')
 print(x.group())
 
 x=re.search('ratan','hi ratan sir')
 print(x.group())
 
-#findall
+#findall - search entire string and return all occurance in list
 x=re.findall('ratan','ratan sir ratan')
 print(x)
 
@@ -417,20 +415,59 @@ x=re.findall('ratan','hi ratan sir')
 print(x)
 
 #symbols
-result= re.search("[abc]*soft","ratan sir how dabsoft are you?")
-#print(result)
+print('#1- * applies to [^abc]')
+#find 'soft' and before that zero or more occurance of anything other than a,b or c 
+result1= re.search("[^abc]*soft","ratan sir xx yysoft are you?")
+print(result1.group())
 
-result= re.search("[a-j]*w","ratan sir how dabsoft are you?")
-#print(result.group())
+result1= re.findall("[^abc]*soft","ratan sir xx yysoft are you?")
+print(result1)
 
-result= re.search("[^abc]?soft","ratan sir how dabsoft are you?")
-#print(result.group())
+print('#2- * applies to [a-j]')
+#find 'w' and before that zero or more occurance of a-j and space')
+result2= re.search("[a-z ]*w","ratan sir howy dabsoft are you?")
+print(result2.group())
+
+print('#3 - ? applies to [^abc]')
+#find 'soft' and befor that zero or one occurance of anything other than a,b or c')
+result3= re.search("[^abc]?soft","ratan sir how axyzsoft are you?")
+print(result3.group())
+
+print('#4 ')
+#find 'soft' and after that zero or one occurance of anything other than a,b or c')
+result4= re.findall("[^abc]*soft","ratan sir how aghsoft are ssoft are you?")
+print(result4)
+
+print('---4a -output start from 1st soft from left side')
+result4= re.findall("soft[^abc]*","ratan sir how aghsoft soft are you?")
+print(result4)
+
+print('---4b - output start from 1st soft from right side')
+#find 'soft' and after that zero or one occurance of anything other than a,b or c')
+result4= re.findall("soft[^abc]*","ratan sir how softer ssoft why are you?")
+print(result4)
+
+print('---4c')
+#first charatter must be [a-k] second character must be [0369] and 
+#after than zero or more characters of [a-zA-Z0-9#] that means * applies to [a-zA-Z0-9#]')
+result5= re.findall("[a-k][0369][a-zA-Z0-9#]*","hi how are a9hjhsshbh why")
+print(result5)
+
+print('IMP---')
+# below also accept space so it goes all the way right
+result5= re.findall("[a-k][0369][a-zA-Z0-9# ]*","hi how are a9you hsshbh")
+print(result5)
+
+print('IMP---')
+# below also accept space so it goes all the way right
+result5= re.findall("[a-zA-Z][a-zA-Z0-9_][a-zA-Z0-9_][a-zA-Z0-9_]*[^_]","D8fh_")
+print(result5)
+
+print('----')
+result6=re.findall(r"_\B","hi_")
+print(result6)
 
 
-
-
-
-
-
-
-
+#https://www.geeksforgeeks.org/password-validation-in-python/
+reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$"
+     

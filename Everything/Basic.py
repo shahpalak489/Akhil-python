@@ -1697,7 +1697,9 @@ print(x)
 #SQL pivot
 
 
+#exception handling
 
+# default except - if we have default except than why we create except with specific erro type in video 32
 
 #--------------------------------------------------------------------------------------
 #ratan classes

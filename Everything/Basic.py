@@ -1683,20 +1683,396 @@ x = re.findall("ai", txt)
 print(x)
 
 
+#----------------------------------------------------
+
+print('*** regular expression')
+'''
+**functions
+finditer  =
+match  = search in first word only  
+search  = search in entire string and return first match
+findall = search in entire string and return all matches in list
+
+*  =  zero or more 
++  =  one or more
+?  =  zero or one
+
+[a-z]  = all chars from a-z
+[abc]  = a,b,c only
+[0-9]  = all digits from 0-9
+  ^    = except
+^abc   = except a,b,c  
+
+
+'''
+import re
+
+# match - search only at first word
+x=re.match('ratan','ratan sir')
+print(x.group())
+
+x=re.match('ratan','hi ratan sir')
+print(x)
+
+#search - search entire string anf return only first occurance
+x=re.search('ratan','ratan sir')
+print(x.group())
+
+x=re.search('ratan','hi ratan sir')
+print(x.group())
+
+#findall - search entire string and return all occurance in list
+x=re.findall('ratan','ratan sir ratan')
+print(x)
+
+x=re.findall('ratan','hi ratan sir')
+print(x)
+
+#symbols
+print('#1- * applies to [^abc]')
+#find 'soft' and before that zero or more occurance of anything other than a,b or c 
+result1= re.search("[^abc]*soft","ratan sir xx yysoft are you?")
+print(result1.group())
+
+result1= re.findall("[^abc]*soft","ratan sir xx yysoft are you?")
+print(result1)
+
+print('#2- * applies to [a-j]')
+#find 'w' and before that zero or more occurance of a-j and space')
+result2= re.search("[a-z ]*w","ratan sir howy dabsoft are you?")
+print(result2.group())
+
+print('#3 - ? applies to [^abc]')
+#find 'soft' and befor that zero or one occurance of anything other than a,b or c')
+result3= re.search("[^abc]?soft","ratan sir how axyzsoft are you?")
+print(result3.group())
+
+print('#4 ')
+#find 'soft' and after that zero or one occurance of anything other than a,b or c')
+result4= re.findall("[^abc]*soft","ratan sir how aghsoft are ssoft are you?")
+print(result4)
+
+print('---4a -output start from 1st soft from left side')
+result4= re.findall("soft[^abc]*","ratan sir how aghsoft soft are you?")
+print(result4)
+
+print('---4b - output start from 1st soft from right side')
+#find 'soft' and after that zero or one occurance of anything other than a,b or c')
+result4= re.findall("soft[^abc]*","ratan sir how softer ssoft why are you?")
+print(result4)
+
+print('---4c')
+#first charatter must be [a-k] second character must be [0369] and 
+#after than zero or more characters of [a-zA-Z0-9#] that means * applies to [a-zA-Z0-9#]')
+result5= re.findall("[a-k][0369][a-zA-Z0-9#]*","hi how are a9hjhsshbh why")
+print(result5)
+
+print('IMP---')
+# below also accept space so it goes all the way right
+result5= re.findall("[a-k][0369][a-zA-Z0-9# ]*","hi how are a9you hsshbh")
+print(result5)
+
+print('IMP---')
+# below also accept space so it goes all the way right
+result5= re.findall("[a-zA-Z][a-zA-Z0-9_][a-zA-Z0-9_][a-zA-Z0-9_]*[^_]","D8fh_")
+print(result5)
+
+print('----')
+result6=re.findall(r"_\B","hi_")
+print(result6)
+
+
+#https://www.geeksforgeeks.org/password-validation-in-python/
+reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$"
+     
+
+#exception handling
+# default except - if we have default except than why we create except with specific erro type in video 32
+
+
+
+print('*** threading')
+# check video 39 @ 7.00 - which shows 3 things run parallel - main code, thread1 and thread2
+
+# We need threadig to perform multiple tasks same time parellaly
+# example: video game multiplayers
+
+# Advantage: it will reduce Processor load and performance will iprove
+
+print('*Example:1 create and execute thread')
+# Creating Thread
+import threading
+
+def print_square(num):
+	print(num*num)
+
+def print_cube(num):
+	print(num*num*num)
+
+t1=threading.Thread(target=print_square,args=(10,))
+t2=threading.Thread(target=print_cube,args=(5,))
+
+# starts the thread
+t1.start()
+t2.start()
+
+
+print('*Example:2 short cut of example 1')
+from threading import Thread
+
+def print_square(num):
+	print(num*num)
+
+t1=threading.Thread(target=print_square,args=(10,))
+
+# starts the thread
+t1.start()
+
+print('*Example 3')
+import threading
+def disp1():
+	for x in range(10):
+		print("Ratan world Thread")
+
+def disp2():
+	for x in range(10):
+		print("Anu Thread")
+
+#create the thread
+t1=threading.Thread(target=disp1)
+t2=threading.Thread(target=disp2)
+
+#start the thread
+t1.start()
+t2.start()
+
+print('*Example 4 - Main thread and how to get status of created threads')
+import threading
+# Main thread = default thread (where we run all code by dfault. every code has 1 main thread)
+# user defined thread = thread1 , thread2 ....
+#to get main thread
+print(threading.main_thread())
+
+#new thread created - Thread 1
+t1=threading.Thread()
+#to get status of thread 1
+print(t1)
+
+t1.start()
+#to get statu of thread 1
+print(t1)
+
+print('*example 5 - threads can only be started once')
+# below example will give error bcoz running same thread twice
+# import threading
+
+# t1=threading.Thread()
+# t1.start()
+# t1.start()				
+
+print('*Example 6 - printing after 3 sec')
+def disp():
+	print(' it is printing after 3 sec')
+
+t1=threading.Timer(3,disp)
+t1.start()
+
+print('*Example 7 - give user defined name to thread ')
+import threading
+print(threading.main_thread())
+
+def f1():
+	print('Thread-name',threading.currentThread())
+
+def f2():
+	print('Thread-name',threading.currentThread())
+
+#default thread name are thread1, thread2 see below
+t1=threading.Thread(target=f1)
+t2=threading.Thread(target=f2)
+
+t1.start()
+t2.start()
+
+# give user defined name to thread
+t1=threading.Thread(target=f1,name='ratan')
+t2=threading.Thread(target=f2,name='durga')
+
+t1.start()
+t2.start()
+
+print('*Example 8 - to stop/wait execution')
+import threading , time
+
+def disp():
+	print('good morning...')
+	time.sleep(2)
+	print('good evening')
+
+t1=threading.Thread(target=disp)
+t1.start()
+
+print('*Example 9 - multiple thread')
+import threading, time
+
+def disp():
+	print('good morning..')
+	time.sleep(2)
+	print('good night')
+
+for x in range(5):
+	t=threading.Thread(target=disp)
+	t.start()
+
+print('*Example 10 - create list of thread')
+import threading, time
+
+def disp():
+	print('good morning..')
+	time.sleep(2)
+	print('good night')
+
+threads=[]
+for x in range(5):
+	t=threading.Thread(target=disp)
+	threads.append(t)
+	t.start()
+
+time.sleep(3)
+print(threads)			
+
+print('*example 11 - to halt threading execution')
+import threading, time
+
+def disp1():
+	for x in range(10):
+		print("Thread 1 running")
+		time.sleep(1)
+
+def disp2():
+	for x in range(10):
+		print("Thread 2 running")
+		time.sleep(1)
+
+#create the thread
+t1=threading.Thread(target=disp1)
+t2=threading.Thread(target=disp2)
+
+#case 1
+t1.start()
+t1.join()	  #this will run only thread t1 and it will hold rest of all threads(main,t2) till t1 finish
+t2.start()
+print('rest app')  #IMP:as soon as t1 thread complete t2 and main will strat at same time
+
+#case 2
+t1.start()
+t1.join()	#this will run only thread t1 and it will hold rest of all threads(main,t2) till t1 finish
+t2.start()
+t2.join()	#this will run only thread t2 and it will hold rest of all threads(main) till t2 finish
+print('rest app')
+
+#case 3 MMIMP
+t1.start()
+t1.join(2)	# this will hold rest of all threads(main,t2) for 2 seconds and after that 
+			# all threads(main,t1,t2) will run together again
+t2.start()
+print('rest app')
+
+print('*example 12: get name and count of running threads')
+import threading, time
+def disp1():
+	for x in range(5):
+		print("ratan IT")
+		time.sleep(10)
+
+def disp2():
+	print("Durga soft")
+
+t1=threading.Thread(target=disp1)
+t2=threading.Thread(target=disp2)
+
+t1.start()
+t2.start()
+
+print(threading.active_count()) 	#gives no of threads running this time
+for x in threading.enumerate():
+	print("running threads:",x.getName()) #gives name of threads running this time
+
+print('*example 13 - threading with class')
+import threading
+class MyThread(threading.Thread):
+	def run(self):
+		for x in range(10):
+			print('hi sir')
+
+t=MyThread()
+t.start()
+
+print('*example 14 - ')
+import threading
+class MyThread(threading.Thread):
+	def run(self):
+		for x in range(3):
+			print('hi sir')
+
+t1=MyThread()
+t2=MyThread()
+t3=MyThread()
+t1.start()
+t2.start()
+t3.start()
+
+print(threading.active_count())
+
+print('*example 15 - ')
+import threading
+class MyThread1(threading.Thread):
+	def run(self):
+		print('good morning')
+
+class MyThread2(threading.Thread):
+	def run(self):
+		print('good evening')
+
+class MyThread3(threading.Thread):
+	def run(self):
+		print('good night')
+
+t1=MyThread1()
+t2=MyThread2()
+t3=MyThread3()
+t1.start()
+t2.start()
+t3.start()
+
+print('*example 16 - ')
+import threading
+class MyThread1(threading.Thread):
+	def run(self):
+		print('good morning:',threading.currentThread().getName())
+
+class MyThread2(threading.Thread):
+	def run(self):
+		print('good evening',threading.currentThread().getName())
+
+class MyThread3(threading.Thread):
+	def run(self):
+		print('good night',threading.currentThread().getName())
+
+MyThread1(name='ratan').start()
+MyThread2(name='durga').start()
+MyThread3(name='sravya').start()
+
+
+
+
+
+
+
 
 
 
 # Treenode
-
-
-
 # Listnode 
 # length?
-
-
 #SQL pivot
-
-
-#exception handling
-
-# default except - if we have default except than why we create except with specific erro type in video 32

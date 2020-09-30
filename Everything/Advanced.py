@@ -390,6 +390,4 @@ print('Binary tree from list :\n',
 
 
 
-print('***Multiple threading')
-# check video 39 @ 7.00 - which shows 3 things run parallel - main code, thread1 and thread2
 

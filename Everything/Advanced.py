@@ -1,8 +1,5 @@
 print("*** Comprehensions")
 
-print('** convert List Comprehensions to others')
-
-
 print("** convert Set comprehensions to others ")
 List1=[1,2,3,4,5]
 x={i for i in List1}
@@ -20,6 +17,7 @@ x={i:i*3 for i in List1 if (i*3)<12}
 print(x)
 
 print("**IMP: below comprehension examples can use for LIST, SET , DICTIONARY ")
+print('* comprehension with for loop')
 # for x in range(5):
 #	print(x)
 
@@ -82,7 +80,7 @@ print('* if....if  in comprehension')
 s=[i for i in range(10) if i%2==0 if i%4==0]
 print(s)
 
-print('* if....else in comprehension')
+print('*see- if....else in comprehension')
 # for a in range(10):
 # 	if a>5:
 # 		print('a more 5')
@@ -93,7 +91,32 @@ print('* if....else in comprehension')
 r=['a more 5' if a>5 else 'a less 5'for a in range(10)]
 print(r)
 
-print('* if ...break with comprehension')
+# convert below in comprehenion  -------------------------------------------------------------------
+
+# string='ABCDCXCDC'
+# sub_string='CDC'
+# y=0
+# total=0
+# for x in range(len(string)):
+#     if string.find(sub_string,y,len(string)) == -1:
+#         pass
+#     else:
+#         #print(string.find(sub_string,y,len(string)))
+#         y = string.find(sub_string,y,len(string))+1
+#         #print('y',y)
+#         total += 1
+# return total
+
+
+# string='ABCDCXCDC'
+# sub_string='CDC'
+# y=0
+# total=0
+# total=['hi'(if string.find(sub_string,y,len(string)) == -1) else (y=string.find(sub_string,y,len(string))+1,total += 1) for x in range(len(string))]
+# print(total)
+
+#=----------------------------------------------------------------------------------------
+print('*see- if ...break with comprehension')
 
 
 print('* for...for loop with Comprehension')

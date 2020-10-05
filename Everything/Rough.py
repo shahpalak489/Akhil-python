@@ -384,7 +384,41 @@ no=[x for x in range(len(S)) if S[x]==C]
 # 	a=x.keys()
 # 	print(x.keys())
 
+s="#$%@^&*kjnk svskjnbui h 4oi3hheuh /dfh uidshvhdsuihv suihc 0hrem89m4c02mw4xo;,wh fwhncoishmxlxfkjsahnxu83v 08 n8OHOIHIOMOICWHOFCMHEOFMCOEJMC0J09C 03J J3L;JMFC3JM3JC3'JIOO9MMJ099U N090N9 OOHOLNHNLLKNLKNKNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNNKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333000000000000000000000000000000000000000000000000000000000000000000000000000"
+s=123
+a='' 
+b=''
+for x in str(s):
+    if str(x).isalpha() == True:
+        a=True
+        break
+else:
+    a=False
 
+for x in str(s):
+    if str(x).isdigit() == True:
+        b=True
+        break
+else:
+    b=False
 
+if (a==True) or (b==True):
+	print(True)
+else:
+	print(False)
+print(a)
+print(b)
 
+for x in str(s):
+    if str(x).islower() == True:
+        print(True)
+        break
+else:
+    print(False)    
 
+for x in str(s):
+    if str(x).isupper() == True:
+        print(True)
+        break
+else:
+    print(False)

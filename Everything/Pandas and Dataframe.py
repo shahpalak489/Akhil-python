@@ -145,6 +145,7 @@ print("***see -trim")
 
 #Method 2 see
 #df[df.columns] = df.apply(lambda x: x.str.strip())
+
 print("***see - LTRIM")
 #LTRIM=df.b.str.strip()
 #print(LTRIM)

@@ -731,8 +731,8 @@ x=['india','ab','ssss']
 print ("ab" in x)
 
 print('***to check given value present or not and gets its index')
-# difference between in and Find --> in returns true / false , find returns indexing of given word
-# if avaiable returns index else returns -1
+# difference between in and Find --> in returns true / false , 
+# 						find returns indexing of given word if avaiable returns index else returns -1
 
 print('- for string')
 a='welcome to RatanIT'
@@ -1458,7 +1458,7 @@ print('*to delete by object location')
 l1=['ratan','durga',10,10.5]
 l1.pop()			# by default it will remove last one
 print(l1)
-l1.pop(1)			# this will remobe index 1 object
+l1.pop(1)			# this will remove index 1 object
 print(l1)
 #l1.pop(10)			# pop index out of range
 

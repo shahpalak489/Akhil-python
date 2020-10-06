@@ -1671,17 +1671,14 @@ d1={111:['ratan','tata'],222:'anu',333:'durga'}		#list allowed as dict values
 print(d1)
 
 print('*** regular expression')
-
 import re
 a='test.email+a+lex@leetcode.com'
 print(re.sub('@','*',a))					#to replace
-
 
 #Return a list containing every occurrence of "ai":
 txt = "The rain in Spain"
 x = re.findall("ai", txt)
 print(x)
-
 
 #----------------------------------------------------
 
@@ -2064,6 +2061,152 @@ MyThread2(name='durga').start()
 MyThread3(name='sravya').start()
 
 
+print('*** Eroor and exception handling')
+print('* it will check exception from top to bottom')
+#example 1
+try:
+	print(' i am try block')	# this will be executed as normal
+	print(10/0)			# if we have error in try block it will move to except block
+except:
+	print(10/5)
+print('rest of app')
+
+#example 2  # if the except block not mathed
+try:
+	print('i am try block')	# this will be executed as normal
+	print(10/0)		#if we have error in try block it will move to except block
+except TypeError as e:
+	print(10/5)		#except block will give error becaue we asked it to support 'TypeError' and we got ZerDivisionError
+print('rest of app') 
+
+#example 3      # if no error it will not execute except block
+try:
+	print(' i am try block')	# this will be executed as normal
+except:
+	print(10/5)
+print('rest of app')
+
+#exaple 4   #only try block not allowed
+try:
+	print(' i am try block')	# this will be executed as normal
+
+#example 5	#in between blocks statments not possible
+try:
+	print(' i am try block')	# this will be executed as normal
+print('hi')		#invalid
+except:
+	print(10/5)
+print('rest of app')
+
+#example 6 #once we have error in try block rest of try block will not execute
+try:
+	print(10+'ratan')
+	print('annu')
+except:
+	print('ratanIT.com')
+print('rest of app')
+
+#example:7  #try - except - else block  #if no error in try block it will execute else block
+#scenario 1    # below else block will execute
+try:
+	print(10/2)
+except ArithmeticError as e:
+	print('ratanit.com')
+else:
+	print(' no exception in try block')
+print('rest of app')
+
+#scenario 2 	#below else block will not execute bcoz try block has error
+try:
+	print(10/0)
+except ArithmeticError as e:
+	print('ratanit.com')
+else:
+	print(' no exception in try block')
+print('rest of app')
+
+#scenario 3 	try block with no error and break statement
+# here else block will execute bcoz there is no error in try block
+try:
+	print(10/2)
+	for x in range(10):
+	if x==2:
+		break
+except ArithmeticError as e:
+	print('ratanit.com')
+else:
+	print(' no exception in try block')
+print('rest of app')
+
+#example 8 # univeral except block
+try:
+	print(10/'ratan')	
+except ArithmeticError as e: 		#error not matching so this will not be executed
+	print('ratanit.com')
+except ValueError as f:		 		#error not matching so this will not be executed
+	print(' durgasoft.com')
+except:				#this default except block will be excuted as its universal except block
+	print('i am default except block')
+else:
+	print('no exception in try block')
+print('rest of app')
+
+#example 9  # we can combine 2 error code as well
+try:
+	print(10/'ratan')	
+except ArithmeticError,ValueError as e: 			#2 error codes are combined here
+	print('ratanit.com')
+except:			
+	print('i am default except block')
+else:
+	print('no exception in try block')
+print('rest of app')
+
+#example 10 	# MMIMP
+#Baseexception - this will accept all exception 
+try:
+	print(10/'ratan')	
+except BaseException as e: 			#this will handle all exceptions
+	print('ratanit.com')
+else:
+	print('no exception in try block')
+print('rest of app')
+
+#example 11     # child excpet error must be first and parent except error at the end
+
+try:
+	print(10/'ratan')	
+except ArithmeticError as e: 	# its child exception error so it must be before parent exception error
+	print('ratanit.com')
+except BaseException as f:		# Baseexception is parent exception errro , it must be last
+	print(' durgasoft.com')
+else:
+	print('no exception in try block')
+print('rest of app')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2137,6 +2280,15 @@ num1= int(input('Enter first num:'))
 num2= int(input('Enter second num:'))
 total=num1+num2
 print('total:',total)
+
+print('* take multiple inputs ')
+# 2
+# Harsh 25 26.5 28
+# Anurag 26 28 30
+
+n = int(input())                # this will take 2 as input(first line)				
+name, *line = input().split()	# this will take 'Harsh' as name and '25 26.5 28' as *line	
+
 '''
 
 print('***Range')						# logic same as index

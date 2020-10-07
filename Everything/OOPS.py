@@ -1,4 +1,8 @@
 #https://github.com/gurupratap-matharu/Bike-Rental-System
+
+# object needs to give all var values to beacome object
+# self means object itslef
+# check if user defined fun with __ __ run by itself?
  
 print("***CLASS")
 #https://www.youtube.com/watch?v=qSDiHI1kP98

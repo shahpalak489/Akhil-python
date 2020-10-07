@@ -85,8 +85,6 @@ str1 = "01010101010"
 # out1.append(out2)
 # print(out1)
 
-
-
 # l = []
 # l.append([1,2,3])
 # l.append([4,5,6])
@@ -176,8 +174,6 @@ str1 = "01010101010"
 # print('##811')
 # print(bin(7)[2:])
 
-
-
 # import collections
 # cpdomains=["9001 discuss.leetcode.com"]
 # counter = collections.Counter()
@@ -189,8 +185,6 @@ str1 = "01010101010"
 # 	for i in range(len(domains)):
 # 		counter[".".join(domains[i:])] += int(c)
 # print([" ".join((str(v), k)) for k, v in counter.items()])
-
-
 
 # import collections
 # cpdomains=["900 google.mail.com", "50 yahoo.com", "1 intel.mail.com", "5 wiki.org"]
@@ -255,7 +249,6 @@ nums_len=len(nums)
 # 		print(False)
 # 	else:
 # 		print(True)
-
 
 
 nums=[1,1,1]
@@ -384,5 +377,3 @@ no=[x for x in range(len(S)) if S[x]==C]
 # 	a=x.keys()
 # 	print(x.keys())
 
-
- 

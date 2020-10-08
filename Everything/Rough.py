@@ -377,3 +377,40 @@ no=[x for x in range(len(S)) if S[x]==C]
 # 	a=x.keys()
 # 	print(x.keys())
 
+class School:
+	song="jan gana mana"
+	fund="govt of india"
+
+	def __init__(hi,first_langugae,managed_by,age):			#self is not must but recomm
+		hi.mine=first_langugae				#must
+		hi.why=managed_by
+		hi.age=age
+
+	def border_country(self,country):
+		pass
+
+	def increase_age(self):
+		print(self.age +5)
+
+
+Gujarat=School('gujarati','govt of Gujarat',40)
+Karnataka=School('kannada','govt of Karnataka',50)
+
+print(Gujarat.increase_age())
+
+
+
+
+
+
+
+# in inheritance what happens to parent __init__ ?
+# child class __init__ must have all parent class __init__ variables
+# priority == grandchild > child > parent
+# super 
+
+
+
+
+
+

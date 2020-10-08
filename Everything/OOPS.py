@@ -1,11 +1,20 @@
 #https://github.com/gurupratap-matharu/Bike-Rental-System
 
-# object needs to give all var values to beacome object
-# self means object itslef
-# check if user defined fun with __ __ run by itself?
- 
 print("***CLASS")
 #https://www.youtube.com/watch?v=qSDiHI1kP98
+
+'''
+class:  logical entity
+        Blue Print of object
+        we can create multiple objects based on single blue print
+        syntax: class {class name}
+        
+object: physical entity represent memory
+                                            MM IMP:
+                                            Function inside Class called Method
+                                            constructor --> __init__  --> execute by itself
+                                            method --> we have to call to execute this  
+'''
 
 print('***Python identifiers - nomenclature of class,function rules')
 '''
@@ -27,24 +36,25 @@ self=100                                    #not allowed
 Rule 6 : Possible to take pre defined class names as identifiers but not recommended
 '''
 
-print("***variables")
+print("*Basic info of class")
 #to create class
 class School:
-#class variable (properties name and values both are 
-#same for instances)
-	song="jan gana mana"
-	fund="govt of india"
+#class variable (when properties name and values both are same for all functions)
+    song="jan gana mana"
+    fund="govt of india"
 
-	print("***instance variables") #(when properties name same but 
-	#values different for instances)
-	def __init__(self,first_langugae,managed_by):
-		self.first_langugae=first_langugae
-		self.managed_by=managed_by
+    print("*instance variables") #(when properties name same but values different for function)
+    def __init__(self,first_langugae,managed_by):
+        self.first_langugae=first_langugae
+        self.managed_by=managed_by
 
-#see 
-#(when properties name are different for any instance)
-	def border_country(self,country):
-		pass
+    def border_country(self,country):
+        self.country=country
+        print(self.country)
+
+# object needs to give all __init__ var values to beacome object
+print('*MMIMP - self of class = object itslef')
+print('*object can access __init__ variables values, class variables values, class functions')
 
 #to create object
 Gujarat=School('gujarati','govt of Gujarat')
@@ -53,228 +63,34 @@ Karnataka=School('kannada','govt of Karnataka')
 #to access object properties
 print(Gujarat.song)
 print(Karnataka.first_langugae)
-#see 
-#print(Gujarat.border_country('india'))
+Gujarat.border_country('india')
 
-print("***Encapsulation") #(to make variable/function private for class
-#that means can not access value / can not call)
-#define by double underscore(__)
-#https://www.youtube.com/watch?v=TFLo9m0jFEg
-class Encapsulation:
-	def __init__(self):
-		self.a=123
-		self._a=456
-		self.__a=789
-Encaps=Encapsulation()
+class Person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
 
-print(Encaps.a)
-print(Encaps._a)
-# can not access __a value
-#print(Encaps.__a)
+    def change_name(self,new_name):
+        self.name=new_name
 
-#see
-#to access __a value 
-print(Encaps._Encapsulation__a)
+    def older(self):
+        self.age=self.age+1
 
-print("***example without encapsulation")
-class Car1:
-	def __init__(self,speed,color):
-		self.speed=speed
-		self.color=color
-ford=Car1(200,'red')
-honda=Car1(250,'blue')
-audi=Car1(300,'balck')
-# here i can access speed value  
-print(ford.speed) 
+    def younger(self):
+        self.age=self.age-1
 
+p1 = Person('john',23)
+print(p1.name)
+p1.change_name('bob')
+print(p1.name)
+p1.older()
+print(p1.age)
+p1.older()                      # to access functions of class
+print(p1.age)
+p1.younger()                    # to access functions of class
+print(p1.age)
 
-print("***example with encapsulation")
-class Car2:
-	def __init__(self,speed,color):
-		self.__speed=speed
-		self.__color=color
-ford=Car2(200,'red')
-honda=Car2(250,'blue')
-audi=Car2(300,'balck')
-#can not access __speed value from class
-#print(ford.__speed)
-
-#getter and setter with encapsulation
-class Car2:
-	def __init__(self,speed,color):
-		self.__speed=speed
-		self.__color=color
-
-	def set_speed(self,value):
-		self.__speed = value
-
-	def get_speed(self):
-		return self.__speed
-
-	def __get_speed2(self):
-		return self.__speed
-
-ford=Car2(200,'red')
-honda=Car2(250,'blue')
-audi=Car2(275,'balck')
-  
-ford.set_speed(300)
-ford.__speed=400
-# can not access __speed atribute but if i assign that value
-#to function by using return i can access function value
-print(ford.get_speed())
-
-print("***IMP")
-print("can not access function get_speed2 value because its private")
-#print(ford.get_speed2())
-print("can not call get_speed2 because its private")
-#ford.get_speed2()
-
-print("***single inheritance")
-#parent class
-class Father:
-	def __init__(self,fname,lname):
-		self.fname=fname
-		self.lname=lname
-	def printname(self):
-		print(self.fname,self.lname)
-
-x=Father('akhil','shah')
-x.printname()
-
-#to create child class
-class Son(Father):
-	pass
-y=Son('palak','shah')
-y.printname()
-
-print("***Multiple Inheritance")
-#example 1
-
-#parentclass1
-class Person:  
-    #defining constructor  
-    def __init__(self, personName, personAge):  
-        self.name = personName  
-        self.age = personAge  
-
-     #defining class methods  
-    def showName(self):  
-        print(self.name)  
-  
-    def showAge(self):  
-        print(self.age)  
-   
-#parentclass2
-class Student: # Person is the  
-    def __init__(self, studentId):  
-        self.studentId = studentId  
-  
-    def getId(self):  
-        return self.studentId  
-
-#childclass
-class Resident(Student,Person):
-# you have to give all variables from all parent
-# we can change name but number of variables and sequence will remain same  
-    def __init__(self, name, age, id):  
-        Person.__init__(self, name, age)  
-        Student.__init__(self, id)  
-    
-# Create an object of the subclass  
-resident1 = Resident('John', 30, '102')  
-resident1.showName()  
-print(resident1.getId())  
-
-#example 2
-class A:  
-    def __init__(self):  
-        self.name = 'John'  
-        self.age = 23  
-  
-    def getName(self):  
-        return self.name  
-  
-class B:  
-    def __init__(self):  
-        self.name = 'Richard'  
-        self.id = '32'  
-  
-    def getName(self):  
-        return self.name  
-  
-class C(A, B):  
-    def __init__(self):  
-        A.__init__(self)  
-        B.__init__(self)  
-  
-    def getName(self):  
-        return self.name  
-  
-C1 = C()  
-print(C1.getName())  
-
-'''
-In the constructor of C, the first constructor called 
-is the one of A. So, the value of name in C becomes 
-same as the value of name in A. But after that, when 
-the constructor of B is called, the value of name in 
-C is overwritten by the value of name in B. So, the 
-name attribute of C retains the value ‘Richard’ when 
-printed. 
-'''
-
-print("***Multilevel Inheritance")
-class Base(object):       
-    # Constructor 
-    def __init__(self, name): 
-        self.name = name 
-  
-    # To get name 
-    def getName(self): 
-        return self.name 
-  
-#Inherited or Sub class (Note Person in bracket) 
-class Child(Base):       
-    # Constructor 
-    def __init__(self, name, age): 
-        Base.__init__(self, name) 
-        self.age = age 
-  
-    # To get name 
-    def getAge(self): 
-        return self.age 
-  
-# Inherited or Sub class (Note Person in bracket) 
-class GrandChild(Child):       
-    # Constructor 
-    def __init__(self, name, age, address): 
-        Child.__init__(self, name, age) 
-        self.address = address 
-  
-    # To get address 
-    def getAddress(self): 
-        return self.address         
-  
-# Driver code 
-g = GrandChild("Geek1", 23, "Noida")   
-print(g.getName(), g.getAge(), g.getAddress())
-
-
-'''Ratan            # need to verify
-class:  logical entity
-        Blue Print of object
-        we can create multiple objects based on single blue print
-        syntax: class {class name}
-        
-object: physical entity represent memory
-                                            MM IMP:
-                                            Function inside Class called Method
-                                            constructor --> __init__  --> execute by itself
-                                            method --> we have to call to execute this  
-'''
-
-#example 1
+print('*example 1')
 '''
 #python 2.7  : class is not child class of object
 class Myclass1:
@@ -300,7 +116,7 @@ print(issubclass(Myclass1,object))          #true
 print(issubclass(Myclass2,object))          #true
 print(issubclass(Myclass3,object))          #true
 
-#Example 2             
+print('*Example 2')             
 print('declaring function inside the class')
 class Myclass:
     def disp1(self):    
@@ -456,7 +272,7 @@ class Myclass:
     name='durga'
     def __init__(self,name):
          print('good morning',name)
-        print('good evening',self.name)
+         print('good evening', self.name)
 
 c=Myclass('ratan')              #give variable while creating instance bcoz __init__ has 1 variable
 
@@ -556,7 +372,174 @@ class Mycalss():
 #del c2                      # to execute __del__ all c1,c2,c3 must be del
 #del c3                      # otherwise it will not execute __del__
 
-print('Inheritance')               # getting properties from parent class
+print('***Inheritance')               # getting properties from parent class
+
+#------------------------------ratan start
+print('*inheritance types')
+#1.single Inheritance           #mother has 1 child
+class Parent:
+    pass
+class child(Parent):
+    pass
+
+#2.Multilevel Inheritance       # grandfather, father, child
+class A:
+    pass
+class B(A):
+    pass
+class C(B):
+    pass
+
+#3.Multiple Inheritance     #father and mother has 1 child
+class A:
+    pass
+class B:
+    pass
+class C(A,B):
+    pass
+
+#4.Hierachial Inheritance   #father has 2 child
+class A:
+    pass
+class B(A):
+    pass
+class C(A):
+    pass
+
+#5.Hybrid inheritance    #combination of multiple and Hirerchial 
+
+#-------------------------------ratan end
+
+print("***single inheritance")
+#parent class
+class Father:
+    def __init__(self,fname,lname):
+        self.fname=fname
+        self.lname=lname
+    def printname(self):
+        print(self.fname,self.lname)
+
+x=Father('akhil','shah')
+x.printname()
+
+#to create child class
+class Son(Father):
+    pass
+y=Son('palak','shah')
+y.printname()
+
+print("***Multiple Inheritance")
+#example 1
+
+#parentclass1
+class Person:  
+    #defining constructor  
+    def __init__(self, personName, personAge):  
+        self.name = personName  
+        self.age = personAge  
+
+     #defining class methods  
+    def showName(self):  
+        print(self.name)  
+  
+    def showAge(self):  
+        print(self.age)  
+   
+#parentclass2
+class Student: # Person is the  
+    def __init__(self, studentId):  
+        self.studentId = studentId  
+  
+    def getId(self):  
+        return self.studentId  
+
+#childclass
+class Resident(Student,Person):
+# you have to give all variables from all parent
+# we can change name but number of variables and sequence will remain same  
+    def __init__(self, name, age, id):  
+        Person.__init__(self, name, age)  
+        Student.__init__(self, id)  
+    
+# Create an object of the subclass  
+resident1 = Resident('John', 30, '102')  
+resident1.showName()  
+print(resident1.getId())  
+
+#example 2
+class A:  
+    def __init__(self):  
+        self.name = 'John'  
+        self.age = 23  
+  
+    def getName(self):  
+        return self.name  
+  
+class B:  
+    def __init__(self):  
+        self.name = 'Richard'  
+        self.id = '32'  
+  
+    def getName(self):  
+        return self.name  
+  
+class C(A, B):  
+    def __init__(self):  
+        A.__init__(self)  
+        B.__init__(self)  
+  
+    def getName(self):  
+        return self.name  
+  
+C1 = C()  
+print(C1.getName())  
+
+'''
+In the constructor of C, the first constructor called 
+is the one of A. So, the value of name in C becomes 
+same as the value of name in A. But after that, when 
+the constructor of B is called, the value of name in 
+C is overwritten by the value of name in B. So, the 
+name attribute of C retains the value ‘Richard’ when 
+printed. 
+'''
+
+print("***Multilevel Inheritance")
+class Base(object):       
+    # Constructor 
+    def __init__(self, name): 
+        self.name = name 
+  
+    # To get name 
+    def getName(self): 
+        return self.name 
+  
+#Inherited or Sub class (Note Person in bracket) 
+class Child(Base):       
+    # Constructor 
+    def __init__(self, name, age): 
+        Base.__init__(self, name) 
+        self.age = age 
+  
+    # To get name 
+    def getAge(self): 
+        return self.age 
+  
+# Inherited or Sub class (Note Person in bracket) 
+class GrandChild(Child):       
+    # Constructor 
+    def __init__(self, name, age, address): 
+        Child.__init__(self, name, age) 
+        self.address = address 
+  
+    # To get address 
+    def getAddress(self): 
+        return self.address         
+  
+# Driver code 
+g = GrandChild("Geek1", 23, "Noida")   
+print(g.getName(), g.getAge(), g.getAddress())
+
 #exampe 1            #skip
 
 #example 2       
@@ -685,39 +668,6 @@ class Myclass():
 a=Myclass()
 a.disp2()                   
 
-print('inheritance types')
-#1.single Inheritance           #mother has 1 child
-class Parent:
-    pass
-class child(Parent):
-    pass
-
-#2.Multilevel Inheritance       # grandfather, father, child
-class A:
-    pass
-class B(A):
-    pass
-class C(B):
-    pass
-
-#3.Multiple Inheritance     #father and mother has 1 child
-class A:
-    pass
-class B:
-    pass
-class C(A,B):
-    pass
-
-#4.Hierachial Inheritance   #father has 2 child
-class A:
-    pass
-class B(A):
-    pass
-class C(A):
-    pass
-
-#5.Hybrid inheritance    #combination of multiple and Hirerchial 
-
 #example 7          Multilevel inheritance example
 
 class A:
@@ -832,8 +782,35 @@ print(isinstance(c,object))         #c has relation with object ?             #y
 print(isinstance(p,object))         #p has relation with object?              #yes, all parent class is child of object
 print(isinstance(p,child))          #p has relation with child?                 #no. it can go upward only no downward
 
-#polymorphism
 
+print('*MRO (method resolution order)')
+# MRO decideds hirarchy / priority level in python inheritance
+class A:
+    def process(self):
+        print('A process()')
+
+class B(A):
+    pass
+
+class C(A):
+    def process(self):
+        print('C process()')
+
+class D(B,C):
+    pass
+
+obj = D()
+#obj.process()
+print(D.mro())
+
+# D -> B -> A -> Object -> c -> A -> object                     #invalid
+# but super class can not be before sub class so
+# D -> B -> c -> A -> object                                    #valid
+
+#https://www.youtube.com/watch?v=tViLEZXUO3U&feature=youtu.be&ab_channel=srikanthpragada
+#http://www.srikanthtechnologies.com/blog/python/mro.aspx#:~:text=Method%20Resolution%20Order%20(MRO)%20is,lets%20examine%20a%20few%20cases.
+
+print('*polymorphism')
 #example 1          
 print('#over riding variables')
 #case 1
@@ -853,7 +830,6 @@ class Child(Parent):
     pass
 c=Child()                       #here priority goes to Parent class name variable.
 print(c.name)
-
 
 print('#over riding methods')
 #case 1
@@ -924,7 +900,9 @@ def bike_speed(name):
 
 bike_speed(u)
 
-# encapsulation              #process of binding properties and methods as single unit
+print('*encapsulation')              #process of binding properties and methods as single unit
+
+#-----------------------ratan start
 #case 1
 print('* private class variable can access within class only')
 
@@ -1006,7 +984,82 @@ b=B()
 b.add()
 b.mul()
 
-#abstract
+# -------------------ratan end
+
+print("***Encapsulation") #(to make variable/function private for class
+#that means can not access value / can not call)
+#define by double underscore(__)
+#https://www.youtube.com/watch?v=TFLo9m0jFEg
+class Encapsulation:
+    def __init__(self):
+        self.a=123
+        self._a=456
+        self.__a=789
+Encaps=Encapsulation()
+
+print(Encaps.a)
+print(Encaps._a)
+# can not access __a value
+#print(Encaps.__a)
+
+#see
+#to access __a value 
+print(Encaps._Encapsulation__a)
+
+print("***example without encapsulation")
+class Car1:
+    def __init__(self,speed,color):
+        self.speed=speed
+        self.color=color
+ford=Car1(200,'red')
+honda=Car1(250,'blue')
+audi=Car1(300,'balck')
+# here i can access speed value  
+print(ford.speed) 
+
+print("***example with encapsulation")
+class Car2:
+    def __init__(self,speed,color):
+        self.__speed=speed
+        self.__color=color
+ford=Car2(200,'red')
+honda=Car2(250,'blue')
+audi=Car2(300,'balck')
+#can not access __speed value from class
+#print(ford.__speed)
+
+#getter and setter with encapsulation
+class Car2:
+    def __init__(self,speed,color):
+        self.__speed=speed
+        self.__color=color
+
+    def set_speed(self,value):
+        self.__speed = value
+
+    def get_speed(self):
+        return self.__speed
+
+    def __get_speed2(self):
+        return self.__speed
+
+ford=Car2(200,'red')
+honda=Car2(250,'blue')
+audi=Car2(275,'balck')
+  
+ford.set_speed(300)
+ford.__speed=400
+# can not access __speed atribute but if i assign that value
+#to function by using return i can access function value
+print(ford.get_speed())
+
+print("***IMP")
+print("can not access function get_speed2 value because its private")
+#print(ford.get_speed2())
+print("can not call get_speed2 because its private")
+#ford.get_speed2()
+
+print('*abstract')
 from abc import ABC,abstractmethod
 class Person(ABC):
     @abstractmethod

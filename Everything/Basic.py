@@ -12,14 +12,19 @@ print(eid)
 print(ename)
 print(esal)
 
-print('* to print next line')
+print('* for string - to print in next line')
 print("Hello\nWorld!")
+
+print('*for variable - to print in next line')
+a='hi'
+b=10
+print(a,b,sep='\n')
 
 print('*print 2 lines together')
 print(eid,end='') 				 # this will print next line, in same line
 print(' ',ename)
 
-print('*print hard code value and variable together')
+print('*print hard coded value and variable together')
 print('Emp id=',eid)
 print('Emp name=',ename)
 print('Emp sal=',esal)
@@ -43,67 +48,6 @@ print(d1)
 print('*what is output if we print duplicate keys,duplicate values')
 d2={111:'ratan',111:'surya',222:'surya'}	  #duplicate keys will be override  	#duplicate values will be ok
 print(d2)
-
-print('***formate specifier')		#mainly use as variable in print statement
-'''
-Method 1
-int 		float		string    #make sure %g is for int or float?
-%d 	%g   	%f 	  		%s
-
-Method 2
-{}
-'''
-
-eid,ename,esal=111,'ratan',100.45
-
-print('*print int,string,float with formate specifier')
-# for % , if %d is first its value must be first...so its sequence is important
-
-print('%d %s %g' %(eid,ename,esal))								#format
-print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))	#real time example
-
-# difference between %g and %f
-# %f prints upto 12 digits while %g prints data upto 6 digits only
-a=123.456879
-print('value of a=%g'%(a)) 
-
-a=123456.87958418641684888
-print('value of a=%f'%(a)) 
-
-print('*print {} python specifier example')
-#{} is very flexible 
-print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
-print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
-
-d1={1:'ratan',3:'anu',4:'surya',2:'durga'}
-for key in sorted(d1.keys()):
-	print("key=%d values=%s"%(key,d1[key]))
-	
-print("***Datatypes")
-'''
-Number : int float : 10,20   5.25, 10.29
-string : str : 'ratan' "ratan"
-Boolean : bool : True  False 
-				   1    0
-'''
-
-evalue = 12
-ename = 'ratan'
-esalary = 100.92
-ebool=True
-
-print('*how to know which Datatypes (number, string ,boolean, List, tuple or Dics)')
-print(type(evalue))
-print(type(ename))
-print(type(esalary))
-print(type(ebool))
-
-L1=[10,20,30,40]
-print(L1)
-print(type(L1))
-
-d1={111:'ratan',222:'durga'}
-print(type(d1))
 
 print('***INPUT')
 
@@ -334,6 +278,69 @@ print('*to get hexa decimal value')
 print('hexa deciaml values')
 c=20
 print(hex(c))
+
+print("***Datatypes")
+'''
+Number : int float : 10,20   5.25, 10.29
+string : str : 'ratan' "ratan"
+Boolean : bool : True  False 
+				   1    0
+'''
+
+evalue = 12
+ename = 'ratan'
+esalary = 100.92
+ebool=True
+
+print('*how to know which Datatypes (number, string ,boolean, List, tuple or Dics)')
+print(type(evalue))
+print(type(ename))
+print(type(esalary))
+print(type(ebool))
+
+L1=[10,20,30,40]
+print(L1)
+print(type(L1))
+
+d1={111:'ratan',222:'durga'}
+print(type(d1))
+
+print('***formate specifier')		#mainly use to print varibles in statement
+'''
+Method 1
+int -->%d ,	%g	  			#see -  %g is for int or float?
+float-->%f	
+string-->%s    
+
+
+Method 2
+{}
+'''
+
+eid,ename,esal=111,'ratan',100.45
+
+print('*print int,string,float with formate specifier')
+# for % , if %d is first its value must be first...so its sequence is important
+
+print('%d %s %g' %(eid,ename,esal))								#format
+print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))	#real time example
+
+# difference between %g and %f
+# %f prints upto 12 digits while %g prints data upto 6 digits only
+a=123.456879
+print('value of a=%g'%(a)) 
+
+a=123456.87958418641684888
+print('value of a=%f'%(a)) 
+
+print('*print {} python specifier example')
+#{} is very flexible 
+print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
+print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
+
+d1={1:'ratan',3:'anu',4:'surya',2:'durga'}
+for key in sorted(d1.keys()):
+	print("key=%d values=%s"%(key,d1[key]))
 
 print("***function")
 print('*give function syntax')

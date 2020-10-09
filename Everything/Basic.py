@@ -5,9 +5,6 @@ print(keyword.kwlist)
 ''' for 2.x we dont need parenthesis to print while 3.x requires parenthesis
     because we can see in 2.x print is keyword while in 3.x print is not keyword'''
 
-print('***absolute')
-print(abs(-72.50))
-
 print("***print")
 print('*print string,int and float')
 eid,ename,esal=111,'ratan',100.45
@@ -474,6 +471,10 @@ print(s1.rstrip('#').lstrip('@'))
 print(s1.lstrip('IT'))		# i can not remove IT here because its in middle of string
 
 print("***arithmetic Operator")
+
+print('* absolute')
+print(abs(-72.50))
+
 # +,-,*,/
 x=10
 y=20

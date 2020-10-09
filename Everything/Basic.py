@@ -105,6 +105,236 @@ print(type(L1))
 d1={111:'ratan',222:'durga'}
 print(type(d1))
 
+print('***INPUT')
+
+'''
+print('* take input as string and then do concatenate')
+a=input('A=')				#IMP:  Input takes all value as string
+b=input('B=')				#thats why this example will give string as result (eg:1020)
+print(a+b)
+
+eid= int(input('eid:'))			# convert input value as int
+ename=input('ename:')
+esal=float(input('esal:'))		# convert input value as float
+
+print('Example-1')
+num1= input('Enter first num:')		
+num2= input('Enter second num:')
+total=num1+num2
+print('total:',total)
+
+# below example will give int as result
+
+print('* take input as int and then do concatenate')
+print('example-2')
+num1= int(input('Enter first num:'))
+num2= int(input('Enter second num:'))
+total=num1+num2
+print('total:',total)
+'''
+
+print("***arithmetic Operator")
+
+print('* absolute')
+print(abs(-72.50))
+
+# +,-,*,/
+x=10
+y=20
+print(x+y)
+print(x*y)
+print(y-x)
+print(y/x)
+
+print('* sum,averge,mean')
+a=[12,52,52]
+
+#sum
+print(sum(a))
+
+#average
+print(sum(a)/len(a))
+
+#mean
+import statistics
+b=statistics.mean(a)
+print(b)
+
+print('***get maximum and minimum values in list')
+l1=[10,20,30]
+print(max(l1))
+print(min(l1))
+
+l2=['ratan','anu','durga']		#decide by ASCI value
+print(max(l2))		
+print(min(l2))
+
+l3=[10,'ratan']				#TypeError: '>' not supported between instances of 'str' and 'int'
+#print(max(l3))				# can not compare heterogenous objects	
+#print(min(l3))				# can not compare heterogenous objects
+
+print('* get maximum and minimum values in dics')
+d1={1:'ratan',2:'durga',3:'anu',4:'surya'}
+print(max(d1))
+print(min(d1))
+
+d2={'ratan':1,'durga':2,'anu':3,'surya':4}
+print(max(d2))
+print(min(d2))
+
+#doest work with heterogenous dics
+d3={1:'ratan',2:'durga','anu':3,'surya':4}	#TypeError: '>' not supported between instances of 'str' and 'int'
+#print(max(d3))
+#print(min(d3))
+
+print('* get maximum and minimum values between 2 numbers')
+print(max(2,10))
+
+print("* exponent")
+#method 1
+x=10
+n=2
+print(x**2)				# equal to 10 rest to 2
+
+#method 2
+x=10
+n=2
+print(pow(10,2))		# equal to 10 rest to 2
+
+print('***get remaing value after division')				#Modulus
+a=10
+b=3
+c=2
+print(a%b)  			# a/b
+print(a%c)  			# a/c
+
+print('***after performing the division, get results in the lower integer close to result')
+											#floor division 
+a=10
+b=3
+print(a//b)
+
+print("***relation operator")
+# <, >, <= ,>= !=
+print('- for number')
+f=30
+g=23
+print(f<g)
+print(f>g)
+print(f==g)
+print(f<=g)
+print(f>=g)
+print(f!=g)
+
+print('- for string') 		# compare based on ASCI value
+print('ratan' > 'anu')
+print('ratan' < 'anu')
+print('ratan' >= 'anu')
+print('ratan' <= 'anu')
+print('ratan' == 'anu')
+print('ratan' != 'anu')
+
+print("***assignment operator")
+# +=, -=, *= ,/=
+x += y
+
+#Example-1
+x=10
+y=20
+x+=y
+print(x)
+
+#example-2
+x=0
+for y in [1,2,3]:
+	x += y
+print(x)
+
+#explanation
+'''
+x=0+1=1
+x=1+2=3
+x=3+3=6
+'''
+
+x-=y
+#Example 
+x=0
+for y in [1,2,3]:
+	x -= y
+print(x)
+
+#explanation
+'''
+x=0-1=-1
+x=-1-2=-3
+x=-3-3=-6
+'''
+
+x*=y
+#Example
+x=2
+for y in [1,2,3]:
+	x *= y
+print(x)
+
+#explanation
+'''
+x=2*1=2
+x=2*2=4
+x=4*3=12
+'''
+
+x/=y
+#Example
+x=4
+for y in [1,2,3]:
+	x /= y
+print(x)
+
+#explanation
+'''
+x=4/1=4
+x=4/2=2
+x=2/3=0.6
+'''
+
+print('***Number systems')
+'''
+binary : base 2
+octal  : base 8
+decimal : base 10
+Hexa decimal : base 16
+
+binary system: allows 0 and 1
+octal form: allows 0 to 7
+decimal : allows 0 to 9
+hexa decimal: allows 0 to 9 and a to f
+'''
+
+print('* to get ASCI values')
+print('see-ASCI value')
+c=5
+#print(ord(c))
+
+c=f
+#print(ord(c))
+
+print('*to get binary value')
+print('binary values')
+c=112
+print(bin(c))
+
+print('*to get octal value')
+print('octal values')
+c=20
+print(oct(c))
+
+print('*to get hexa decimal value')
+print('hexa deciaml values')
+c=20
+print(hex(c))
+
 print("***function")
 print('*give function syntax')
 def aki():
@@ -421,34 +651,6 @@ print(name)
 
 print('*see video10:30.00 - difference between global and nonlocal')
 
-print('***INPUT')
-
-'''
-print('* take input as string and then do concatenate')
-a=input('A=')				#IMP:  Input takes all value as string
-b=input('B=')				#thats why this example will give string as result (eg:1020)
-print(a+b)
-
-eid= int(input('eid:'))			# convert input value as int
-ename=input('ename:')
-esal=float(input('esal:'))		# convert input value as float
-
-print('Example-1')
-num1= input('Enter first num:')		
-num2= input('Enter second num:')
-total=num1+num2
-print('total:',total)
-
-# below example will give int as result
-
-print('* take input as int and then do concatenate')
-print('example-2')
-num1= int(input('Enter first num:'))
-num2= int(input('Enter second num:'))
-total=num1+num2
-print('total:',total)
-'''
-
 print('***how to know length ')
 print('- for string')
 s='    ratan IT   '
@@ -469,159 +671,6 @@ print(s1.lstrip('@'))		# to remove @ at begining
 print(s1.rstrip('#'))		# to remove # at the end
 print(s1.rstrip('#').lstrip('@'))
 print(s1.lstrip('IT'))		# i can not remove IT here because its in middle of string
-
-print("***arithmetic Operator")
-
-print('* absolute')
-print(abs(-72.50))
-
-# +,-,*,/
-x=10
-y=20
-print(x+y)
-print(x*y)
-print(y-x)
-print(y/x)
-
-print('* sum,averge,mean')
-a=[12,52,52]
-
-#sum
-print(sum(a))
-
-#average
-print(sum(a)/len(a))
-
-#mean
-import statistics
-b=statistics.mean(a)
-print(b)
-
-print('***get maximum and minimum values in list')
-l1=[10,20,30]
-print(max(l1))
-print(min(l1))
-
-l2=['ratan','anu','durga']		#decide by ASCI value
-print(max(l2))		
-print(min(l2))
-
-l3=[10,'ratan']				#TypeError: '>' not supported between instances of 'str' and 'int'
-#print(max(l3))				# can not compare heterogenous objects	
-#print(min(l3))				# can not compare heterogenous objects
-
-print('* get maximum and minimum values in dics')
-d1={1:'ratan',2:'durga',3:'anu',4:'surya'}
-print(max(d1))
-print(min(d1))
-
-d2={'ratan':1,'durga':2,'anu':3,'surya':4}
-print(max(d2))
-print(min(d2))
-
-#doest work with heterogenous dics
-d3={1:'ratan',2:'durga','anu':3,'surya':4}	#TypeError: '>' not supported between instances of 'str' and 'int'
-#print(max(d3))
-#print(min(d3))
-
-print('* get maximum and minimum values between 2 numbers')
-print(max(2,10))
-
-print("* exponent")
-#method 1
-x=10
-n=2
-print(x**2)				# equal to 10 rest to 2
-
-#method 2
-x=10
-n=2
-print(pow(10,2))		# equal to 10 rest to 2
-
-print("***relation operator")
-# <, >, <= ,>= !=
-print('- for number')
-f=30
-g=23
-print(f<g)
-print(f>g)
-print(f==g)
-print(f<=g)
-print(f>=g)
-print(f!=g)
-
-print('- for string') 		# compare based on ASCI value
-print('ratan' > 'anu')
-print('ratan' < 'anu')
-print('ratan' >= 'anu')
-print('ratan' <= 'anu')
-print('ratan' == 'anu')
-print('ratan' != 'anu')
-
-print("***assignment operator")
-# +=, -=, *= ,/=
-x += y
-
-#Example-1
-x=10
-y=20
-x+=y
-print(x)
-
-#example-2
-x=0
-for y in [1,2,3]:
-	x += y
-print(x)
-
-#explanation
-'''
-x=0+1=1
-x=1+2=3
-x=3+3=6
-'''
-
-x-=y
-#Example 
-x=0
-for y in [1,2,3]:
-	x -= y
-print(x)
-
-#explanation
-'''
-x=0-1=-1
-x=-1-2=-3
-x=-3-3=-6
-'''
-
-x*=y
-#Example
-x=2
-for y in [1,2,3]:
-	x *= y
-print(x)
-
-#explanation
-'''
-x=2*1=2
-x=2*2=4
-x=4*3=12
-'''
-
-x/=y
-#Example
-x=4
-for y in [1,2,3]:
-	x /= y
-print(x)
-
-#explanation
-'''
-x=4/1=4
-x=4/2=2
-x=2/3=0.6
-'''
 
 print('***to check memory location and data comparison')
 '''
@@ -794,20 +843,6 @@ a=10
 b=10
 print(a is b)
 print(a is not b)
-
-print('***get remaing value after division')
-											#Modulus
-a=10
-b=3
-c=2
-print(a%b)  			# a/b
-print(a%c)  			# a/c
-
-print('***after performing the division, get results in the lower integer close to result')
-											#floor division 
-a=10
-b=3
-print(a//b)
 
 print('***to get few alphabets of string // to get few objects from list/set/tuple without for loop')
 print('*** MMIMP: slice')
@@ -1532,42 +1567,6 @@ print('***None')			# None allowed in keys and values both
 d2={None:None}
 print(d2)
 
-print('***Number systems')
-'''
-binary : base 2
-octal  : base 8
-decimal : base 10
-Hexa decimal : base 16
-
-binary system: allows 0 and 1
-octal form: allows 0 to 7
-decimal : allows 0 to 9
-hexa decimal: allows 0 to 9 and a to f
-'''
-
-print('* to get ASCI values')
-print('see-ASCI value')
-c=5
-#print(ord(c))
-
-c=f
-#print(ord(c))
-
-print('*to get binary value')
-print('binary values')
-c=112
-print(bin(c))
-
-print('*to get octal value')
-print('octal values')
-c=20
-print(oct(c))
-
-print('*to get hexa decimal value')
-print('hexa deciaml values')
-c=20
-print(hex(c))
-
 print('***matrix')
 print('*to create multi dimension matrix')
 # val = [0] * n  								#n is row
@@ -1672,18 +1671,6 @@ d1={111:['ratan','tata'],222:'anu',333:'durga'}		#list allowed as dict values
 print(d1)
 
 print('*** regular expression')
-import re
-a='test.email+a+lex@leetcode.com'
-print(re.sub('@','*',a))					#to replace
-
-#Return a list containing every occurrence of "ai":
-txt = "The rain in Spain"
-x = re.findall("ai", txt)
-print(x)
-
-#----------------------------------------------------
-
-print('*** regular expression')
 '''
 **functions
 finditer  =
@@ -1703,6 +1690,16 @@ findall = search in entire string and return all matches in list
 
 
 '''
+
+import re
+a='test.email+a+lex@leetcode.com'
+print(re.sub('@','*',a))					#to replace
+
+#Return a list containing every occurrence of "ai":
+txt = "The rain in Spain"
+x = re.findall("ai", txt)
+print(x)
+
 import re
 
 # match - search only at first word
@@ -1779,17 +1776,11 @@ print('----')
 result6=re.findall(r"_\B","hi_")
 print(result6)
 
-
 #https://www.geeksforgeeks.org/password-validation-in-python/
 reg = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!#%*?&]{6,20}$"
      
 
-#exception handling
-# default except - if we have default except than why we create except with specific erro type in video 32
-
-
-
-print('*** threading')
+print('*** Threading')
 # check video 39 @ 7.00 - which shows 3 things run parallel - main code, thread1 and thread2
 
 # We need threadig to perform multiple tasks same time parellaly
@@ -1814,10 +1805,8 @@ t2=threading.Thread(target=print_cube,args=(5,))
 t1.start()
 t2.start()
 
-
 print('*Example:2 short cut of example 1')
 from threading import Thread
-
 def print_square(num):
 	print(num*num)
 
@@ -2061,8 +2050,9 @@ MyThread1(name='ratan').start()
 MyThread2(name='durga').start()
 MyThread3(name='sravya').start()
 
+print('*** exception handling')
+# default except - if we have default except than why we create except with specific erro type in video 32
 
-print('*** Eroor and exception handling')
 print('* it will check exception from top to bottom')
 print('*example 1')
 try:

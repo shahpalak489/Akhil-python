@@ -57,9 +57,12 @@ a=input('A=')				#IMP:  Input takes all value as string
 b=input('B=')				#thats why this example will give string as result (eg:1020)
 print(a+b)
 
-eid= int(input('eid:'))			# convert input value as int
+print('* convert input value to int')
+eid= int(input('eid:'))			
 ename=input('ename:')
-esal=float(input('esal:'))		# convert input value as float
+
+print('* convert input value to float')
+esal=float(input('esal:'))		
 
 print('Example-1')
 num1= input('Enter first num:')		
@@ -69,7 +72,7 @@ print('total:',total)
 
 # below example will give int as result
 
-print('* take input as int and then do concatenate')
+print('* take input as int and then do sum')
 print('example-2')
 num1= int(input('Enter first num:'))
 num2= int(input('Enter second num:'))
@@ -78,11 +81,7 @@ print('total:',total)
 '''
 
 print("***arithmetic Operator")
-
-print('* absolute')
-print(abs(-72.50))
-
-# +,-,*,/
+print('+,-,*,/')
 x=10
 y=20
 print(x+y)
@@ -90,7 +89,10 @@ print(x*y)
 print(y-x)
 print(y/x)
 
-print('* sum,averge,mean')
+print('* absolute')
+print(abs(-72.50))
+
+print('* sum,averge,mean for list')
 a=[12,52,52]
 
 #sum
@@ -104,11 +106,12 @@ import statistics
 b=statistics.mean(a)
 print(b)
 
-print('***get maximum and minimum values in list')
+print('*** maximum and minimum values in list for integer')
 l1=[10,20,30]
 print(max(l1))
 print(min(l1))
 
+print('* maximum and minimum values in list for string')
 l2=['ratan','anu','durga']		#decide by ASCI value
 print(max(l2))		
 print(min(l2))
@@ -138,12 +141,12 @@ print("* exponent")
 #method 1
 x=10
 n=2
-print(x**2)				# equal to 10 rest to 2
+print(x**n)				# equal to 10 rest to 2
 
 #method 2
 x=10
 n=2
-print(pow(10,2))		# equal to 10 rest to 2
+print(pow(x,n))		# equal to 10 rest to 2
 
 print('***get remaing value after division')				#Modulus
 a=10
@@ -1958,12 +1961,20 @@ t1.join()	  #this will run only thread t1 and it will hold rest of all threads(m
 t2.start()
 print('rest app')  #IMP:as soon as t1 thread complete t2 and main will strat at same time
 
+#create the thread
+t1=threading.Thread(target=disp1)
+t2=threading.Thread(target=disp2)
+
 #case 2
 t1.start()
 t1.join()	#this will run only thread t1 and it will hold rest of all threads(main,t2) till t1 finish
 t2.start()
 t2.join()	#this will run only thread t2 and it will hold rest of all threads(main) till t2 finish
 print('rest app')
+
+#create the thread
+t1=threading.Thread(target=disp1)
+t2=threading.Thread(target=disp2)
 
 #case 3 MMIMP
 t1.start()
@@ -2069,13 +2080,13 @@ except:
 	print(10/5)
 print('rest of app')
 
-print('* example 2  #if the except block not mathed')
-try:
-	print('i am try block')	# this will be executed as normal
-	print(10/0)		#if we have error in 'try block' it will move to 'except block'
-except TypeError as e:
-	print(10/5)		#except block will give error becaue we asked it to support 'TypeError' and we got ZerDivisionError
-print('rest of app') 
+print('* example 2  #if the except block not matched')
+# try:
+# 	print('i am try block')	# this will be executed as normal
+# 	print(10/0)		#if we have error in 'try block' it will move to 'except block'
+# except TypeError as e:
+# 	print(10/5)		#except block will give error becaue we asked it to support 'TypeError' and we got ZerDivisionError
+# print('rest of app') 
 
 print('* example 3   #if no error it will not execute "except block"')
 try:
@@ -2085,16 +2096,16 @@ except:
 print('rest of app')
 
 print('* exaple 4   #only try block not allowed')
-try:
-	print(' i am try block')	# this will be executed as normal
+# try:
+# 	print(' i am try block')	# this will give an error
 
-print('*example 5	#in between blocks statments not possible')
-try:
-	print(' i am try block')	# this will be executed as normal
-print('hi')		#invalid
-except:
-	print(10/5)
-print('rest of app')
+print('* example 5 - #in between blocks statments not possible ')
+# try:
+# 	print(' i am try block')	# this will be executed as normal
+# print('hi')					#invalid
+# except:
+# 	print(10/5)
+# print('rest of app')
 
 print('*example 6 #once we have error in try block rest of try block will not execute')
 try:
@@ -2128,8 +2139,8 @@ print('rest of app')
 try:
 	print(10/2)
 	for x in range(10):
-	if x==2:
-		break
+		if x==2:
+			break
 except ArithmeticError as e:
 	print('ratanit.com')
 else:
@@ -2152,7 +2163,7 @@ print('rest of app')
 print('* example 9  # we can combine 2 error code as well')
 try:
 	print(10/'ratan')	
-except ArithmeticError,ValueError as e: 			#2 error codes are combined here
+except (ArithmeticError,ValueError) as e: 			#2 error codes are combined here
 	print('ratanit.com')
 except:			
 	print('i am default except block')
@@ -2227,51 +2238,52 @@ finally:
 	print('finally')
 
 #case 3				#finally will be executed eventhough in code error
-try:
-	print(10/0)
-except ValueError as a:
-	print('except')
-finally:
-	print('finally')
+# try:
+# 	print(10/0)
+# except ValueError as a:
+# 	print('except')
+# finally:
+# 	print('finally')
 
 #case 4				#in this case also finally will be executed
-try:
-	print(10/0)
-except ValueError as a:
-	print(10/0)
-finally:
-	print('finally')
+# try:
+# 	print(10/0)
+# except ValueError as a:
+# 	print(10/0)
+# finally:
+# 	print('finally')
 
 #case 5 			# only try block with finally block allowed
-try:
-	print(10/2)
-finally:
-	print('finally')
+# try:
+# 	print(10/2)
+# finally:
+# 	print('finally')
 
 print('*example 15 - when finally block will not execute')
 #case 1				#here code get error before try block so finally block will not execute
-print(10/0)
-try:
-	print(10/2)
-finally:
-	print('finally')
+# print(10/0)
+# try:
+# 	print(10/2)
+# finally:
+# 	print('finally')
 
 #case 2    			#see - exit will stop execution of all remaining code
-import os
-try:
-	print(10/2)
-	os._exit(0)
-finally:
-	print('finally')
+# import os
+# try:
+# 	print(10/2)
+# 	os._exit(0)
+# finally:
+# 	print('finally')
 
 print('* interview question')
-try:
-	return 10
-except:
-	return 20
-finally:
-	return 30
-
+def hi():
+	try:
+		return 10
+	except:
+		return 20
+	finally:
+		return 30
+hi()
 #ans is 30
 
 print('*example 16 - Raise - to create user defined exception ')
@@ -2285,12 +2297,12 @@ class InvalidAgeException(Exception):
 		self.msg=msg
 
 #step 2: use the user defined exception in our project
-def status(age):
-	if age>20:
-		print('eligible for marriage')
-	else:
-		raise InvalidAgeException("not eligible for marriage")
-status(10)
+# def status(age):
+# 	if age>20:
+# 		print('eligible for marriage')
+# 	else:
+# 		raise InvalidAgeException("not eligible for marriage")
+# status(10)
 
 
 # Treenode

@@ -284,7 +284,7 @@ print(hex(c))
 
 print("***Datatypes")
 '''
-Number : int float : 10,20   5.25, 10.29
+Number : int & float : 10,20 & 5.25, 10.29
 string : str : 'ratan' "ratan"
 Boolean : bool : True  False 
 				   1    0
@@ -295,7 +295,7 @@ ename = 'ratan'
 esalary = 100.92
 ebool=True
 
-print('*how to know which Datatypes (number, string ,boolean, List, tuple or Dics)')
+print('*how to know its Datatypes (number, string ,boolean, List, tuple or Dics)')
 print(type(evalue))
 print(type(ename))
 print(type(esalary))
@@ -310,22 +310,26 @@ print(type(d1))
 
 print('***formate specifier')		#mainly use to print varibles in statement
 '''
-Method 1
+Method:1 (recommended)
+{}   
+
+Method:2
 int -->%d ,	%g	  			#see -  %g is for int or float?
 float-->%f	
-string-->%s    
-
-
-Method 2
-{}
+string-->%s 
 '''
 
 eid,ename,esal=111,'ratan',100.45
 
-print('*print int,string,float with formate specifier')
-# for % , if %d is first its value must be first...so its sequence is important
+#Method:1 (recommended)
+print('*print int,string,float with {} format specifier')		
+#{} is very flexible 
+print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
+print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
 
-print('%d %s %g' %(eid,ename,esal))								#format
+#Method:2
+print('*print int,string,float with % format specifier')
+# for % , if %d is first its value must be first...so its sequence is important
 print('emp id =%d emp name =%s emp sal=%g' %(eid,ename,esal))	#real time example
 
 # difference between %g and %f
@@ -335,11 +339,6 @@ print('value of a=%g'%(a))
 
 a=123456.87958418641684888
 print('value of a=%f'%(a)) 
-
-print('*print {} python specifier example')
-#{} is very flexible 
-print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
-print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
 
 d1={1:'ratan',3:'anu',4:'surya',2:'durga'}
 for key in sorted(d1.keys()):
@@ -361,40 +360,50 @@ def addition (x,y):
 addition(3,5)
 
 print('*function with default argument')
-#IMP:first give non-default value then default value
-
+print('variable value priority: variable value while calling > variable default value')
 def default(x,y=25,z=5):  
 	print(x+y+z)
 
-default(10)   #here y=25,z=5 default value and x=10 because we gave w value while calling  
+default(10)   #here y=25,z=5 default value and x=10 because we gave x value while calling  
 default(10,20) #here z=5 because while calling we gave x=10,y=20
 default(y=10,x=2) #if we change sequence of variable then we need to specify x=2 
 
-#VVIMP
-#default(20,y=40,30) # Invalid : once we give y=40 then rest of all argument must be z=something.
-																	#we can not put 30 after y=40
+print('*VIMP:first give non-default value then default value')
+#default(20,y=40,30) 			#Invalid : once we give y=40 then rest of all argument must be 
+								#z=something we can not put 30 after y=40
 
-default(50,60,z=10)  # valid
+default(50,60,z=10)  			# valid
 
 print("***to call function")
 #IMP: '()' this symbol call function
-#VVV IMP: always call funcation after its defined
+print('VVV IMP: always call funcation after its defined')
 
+#method 1 (all methods are important)
 def a1():
 	print("a1")
-a1() 					# this will call function a1
+a1() 							# this will call function a1
 
+#method 2
 print("***IMP")
 def akhil():
 	print("akhil")
 a3=akhil() 						# this will call akhil function
-   
+
+#method 3   
 def a(x):
 	print(x+10)
 b=a
 b(2) 					 		# this will call function a
 
 print("*to call 1 function inside another function")
+def outside():
+	def inside():
+		print("i am inside") #step2
+	print("i am outside") #step1
+	inside() # this will call function inside
+outside() # this will call function outside
+
+print("*to call 2 different functions same time")
 def g():
     print("Hi, it's me 'g'")
     print("Thanks for calling me")
@@ -404,24 +413,14 @@ def f(func):
     func() 						#func=g  #step2: this will call function g
 f(g) 							#step 1: this will call function f
 
-print("*function within function")
-def outside():
-	def inside():
-		print("i am inside") #step2
-	print("i am outside") #step1
-	inside() # this will call function inside
-outside() # this will call function outside
-
-print("*No call")
+print("*see - why it will Not call?")
 def inner1(): 
     print("Hello, this is before function execution") 
-    func() # this will not call func unction
+    func() 						# this will not call func unction
     print("This is after function execution")
     return inner1
 
 print('*function with n number of arguments')
-print('*function with n arguments alone,at begining,at end')
-#case 1
 def multi(*a):					# for n number of arguments use *
 	print(a)
 multi(1,2,3,4)
@@ -431,7 +430,7 @@ def star(*ar):
 		print(x)
 star(10,20,30)
 
-#case 2
+print('*function with n arguments at begining,at end')
 def star(car,*arg):
 	print(car)
 	for x in arg:
@@ -442,30 +441,26 @@ def star(*b,car):
 	print(car)
 	for x in b:
 		print(x)
-star(49,81,car='accord') #in this case, use keyword arguments 
+star(49,81,car='accord') 			#in this case, use keyword arguments 
 
-#case 3
 def star(name='ratan',*b):
 	print(name)
 	for x in b:
 		print(x)
-star(35,94,100)  # here name=35,and *b=94,100
+star(35,94,100)  					#here name=35,and *b=94,100
 
-#case 4
 def star(name1,name='ratan',*b):
 	print(name1)
 	for x in b:
 		print(x)
-star(35,94,100,90)  #here name1=35,name=94 and *b=100,90
+star(35,94,100,90)  				#here name1=35,name=94 and *b=100,90
 
-#case 5
 def star(name1,*b,name='ratan'):
 	print(name1)
 	for x in b:
 		print(x)
-star(35,94,100,90)  #here name1=35 and *b=94,100,90
+star(35,94,100,90)  				#here name1=35 and *b=94,100,90
 
-#case 3
 def star(name1,*b,name='ratan'):
 	print(name1)
 	for x in b:

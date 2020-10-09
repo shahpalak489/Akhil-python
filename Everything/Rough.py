@@ -382,13 +382,9 @@ no=[x for x in range(len(S)) if S[x]==C]
 a='hi'
 b=10
 c=10.3
-
 l1=[1,2,3,4,5]
-
 d1={1:'hi',2:'hi'}
-
 l2=['ratan','anu','durga']		#decide by ASCI value
-
 d2={'ratan':1,'durga':2,'anu':3,'surya':4}
+eid,ename,esal=111,'ratan',100.45
 
-print(10//2)

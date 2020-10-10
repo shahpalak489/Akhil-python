@@ -308,6 +308,22 @@ print(type(L1))
 d1={111:'ratan',222:'durga'}
 print(type(d1))
 
+print('***variable')
+evalue,esalary,expect=10,20,30  
+evalue=esalary=expect=10
+
+print('*re assigning variable value')
+a=10
+print(a)
+
+a=100
+print(a)
+
+print('*delete variable')
+v=10
+print(v)
+del v
+
 print('***formate specifier')		#mainly use to print varibles in statement
 '''
 Method:1 (recommended)
@@ -476,69 +492,52 @@ def function_that_returns():
     return "I returned"
     print("after return")
 
-print("IMP - The return statement terminates the execution of a function")
+print("*MMIMP - The return statement terminates the execution of a function")
 print("IMP - function calling  will give only print values,not return values ")
 f1 = function_that_prints() 				#this will call function_that_prints
 f2 = function_that_returns() 				# this will call function_that_returns
 
-print("IMP - to access return values assign variable to function calling")
-print("and print the variable because retuen assigns value to function") 
+print("*IMP - to access return values assign function calling to variable")
+print("and print the variable because return assigns value to function") 
 print("so we need to print calling function ")
 
 print(f1) 
-# or
+print('**')
 print(function_that_prints())			#see its answer 
 
+print('**')
 print(f2)
-# or
+print('**')
 print(function_that_returns())			#see its answer
  
 print("example 2")
 def no_return(x,y):
     c = x + y
     return c
-print(no_return(4,5))
+h1=no_return(4,5)
+print(h1)
 
 print('* Multiple return statement')
 def disp():
 	print('good morning')
 	return 10
-	return 20			    #ignored
-	print('good evening')		    #ignored
-
+	return 20			    			#ignored
+	print('good evening')		    	#ignored
 disp()
 
-# default return value is none
-
-print('***variable')
-evalue,esalary,expect=10,20,30  
-evalue=esalary=expect=10
-
-print('*re assigning variable value')
-a=10
-print(a)
-
-a=100
-print(a)
-
-print('*delete variable')
-
-v=10
-print(v)
-del v
+print('*default return value is none')
 
 print("***local & global variable")
-
 #case 1
-print('*all function can use global variable value')
+print('*all function can access global variable value and local var just for that function')
 name='ratan'  					# global variable
 def disp1():
 	print('good morning',name)
+disp1()
 
 def disp2(value1,value2):
 	print(value1+value2)        # local variable
 	print('good afternoon',name)
-disp1()
 disp2(3,10)
 
 #case 2 
@@ -584,7 +583,7 @@ disp3()						#IMP: function must be executed to declare global variable
 print(s)
 
 #Case 5 
-print('* how to update Global variable value, inside function?')
+print('* to update Global variable value, inside function')
 name='ratan'
 def outer():
 	name1='durga'
@@ -600,7 +599,6 @@ print(name)
 
 #case 6 (VV IMP)
 print('*once we use global variable,inside function we can not declare same variable as local variable')
-
 # below code will give error
 '''
 name='ratan'
@@ -655,6 +653,166 @@ outer()
 print(name)
 
 print('*see video10:30.00 - difference between global and nonlocal')
+
+print('***to get few alphabets of string // to get few objects from list/set/tuple without for loop')
+print('*** MMIMP: slice')
+print('- for string')
+
+# -7 -6 -5 -4 -3 -2 -1  		#negative indexing
+s= 'ratanIT'
+# 0 1 2 3 4 5 6 				#positive indexing
+
+#starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
+#starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
+
+print('#use slice to get below commented answers with positive indexing')
+#t
+#ta
+#aa
+#rata
+#tanIT
+#ratanIT
+
+print(s[2])
+print(s[2:4])
+print(s[1:4:2])
+print(s[:4])			#MMIMP: start point not given so it will start from all the way left
+print(s[2:])			#MMIMP: end point not given so it will end all the way right
+print(s[:])
+# print(s[9])  			#Indexerror: string out of range
+
+s= 'ratanIT'
+print('#use slice to get below commented answers with negative indexing')
+# I
+# tanI
+# ratanI
+# tanIT
+# ratanIT
+
+print(s[-2])
+print(s[-5:-1])
+print(s[:-1])
+print(s[-5:])
+print(s[:])
+# print(s[-8])  			#Indexerror: string out of range
+
+print('- For List')
+  # -5 -4 -3 -2 -1
+L1=[10,20,30,40,50]
+  # 0  1  2  3  4
+print('#use slice to get below commented answers with positive indexing')
+# 40
+# [20, 30]
+# [10, 30]
+# [20, 30, 40, 50]
+# [10, 20]
+# [10, 20, 30, 40, 50]
+
+print(L1[3])
+print(L1[1:3])
+print(L1[:3:2])
+print(L1[1:])
+print(L1[:2])
+print(L1[:])
+#print(L1[8])	Indexerror: list index out of range
+
+print('#use slice to get below commented answers with negative indexing')
+# 40
+# [20, 30]
+# [10, 20, 30]
+# [30, 40, 50]
+# [10, 20, 30, 40, 50]
+
+print(L1[-2])
+print(L1[-4:-2])
+print(L1[:-2])
+print(L1[-3:])
+print(L1[:])
+
+print('*** VV IMP - negative indexing')
+list1=['a1','b2','c3','d4','5re']
+#https://www.quora.com/What-is-negative-index-in-Python
+#starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
+
+# ['d4', 'c3']
+# []
+
+print(list1[-2:-4:-1])
+print(list1[-2:-4:1])
+
+print("*** MM IMP")
+#starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
+# ['b2', 'c3']
+# []
+
+print(list1[-4:-2:1])
+print(list1[-4:-2:-1])
+
+print("- for tuple")
+list1=('a1','b2','c3','d4','5re')
+# c3
+# ('c3', 'd4', '5re')
+# ()
+# ('a1', 'b2', 'c3', 'd4', '5re')
+# ('b2', 'd4')
+
+print(list1[2])
+print(list1[2:7])
+print(list1[10:])
+print(list1[:10])
+print(list1[1:4:2])
+
+#starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
+# ()
+# ()
+
+print(list1[-4:-2:-1])
+print(list1[-4:-2:-1])
+
+print("*** MM IMP")
+#starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
+# ('b2', 'c3')
+# ('b2', 'c3')
+
+print(list1[-4:-2:1])
+print(list1[-4:-2:1])
+
+#slice With dics -- not possible
+#slice with set -- not possible
+
+print('*index with variable -list')		#SEE
+x=2
+arr=[17,18,5,4,6,1]
+a=list(range(len(arr)-1))
+out=[]
+for x in a:
+    out.append(max(arr[x+1:]))
+out.append('-1')
+print(out)
+
+print('* index with variable - string')		#SEE
+arr='ratanIT'
+x=2
+a=list(range(len(arr)-1))
+out=[]
+for x in a:
+    out.append(max(arr[x+1:]))
+out.append('-1')
+print(out)
+
+print('*to break string')		#split
+a="india"
+print(a.split('d'))
+
+print('* to break string with '+' separator')
+print('+'.join(a.split('d')))	
+
+print('- for list: to break list in middle')
+list1=[10,20,30,40]
+length=len(list1)
+length_avg=length//2
+list2=list1[:length_avg]
+print(list2)
 
 print('***how to know length ')
 print('- for string')
@@ -848,116 +1006,6 @@ a=10
 b=10
 print(a is b)
 print(a is not b)
-
-print('***to get few alphabets of string // to get few objects from list/set/tuple without for loop')
-print('*** MMIMP: slice')
-print('- for string')
-
-# -7 -6 -5 -4 -3 -2 -1  		#negative indexing
-s= 'ratanIT'
-# 0 1 2 3 4 5 6 				#positive indexing
-
-#starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
-#starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
-
-print(s[2])
-print(s[2:4])
-print(s[1:4:2])
-print(s[:4])			#MMIMP: start point not given so it will start from all the way left
-print(s[2:])			#MMIMP: end point not given so it will end all the way right
-print(s[:])
-# print(s[9])  			#Indexerror: string out of range
-
-print(s[-2])
-print(s[-5:-1])
-print(s[:-1])
-print(s[-5:])
-print(s[:])
-# print(s[-8])  			#Indexerror: string out of range
-
-print('- For List')
-  # -5 -4 -3 -2 -1
-L1=[10,20,30,40,50]
-  # 0  1  2  3  4
-print(L1[3])
-print(L1[1:3])
-print(L1[:3:2])
-print(L1[1:])
-print(L1[:2])
-print(L1[:])
-#print(L1[8])	Indexerror: list index out of range
-
-print(L1[-2])
-print(L1[-4:-2])
-print(L1[:-2])
-print(L1[-3:])
-print(L1[:])
-
-print('*** VV IMP - negative indexing')
-list1=['a1','b2','c3','d4','5re']
-#https://www.quora.com/What-is-negative-index-in-Python
-#starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
-print(list1[-2:-4:-1])
-print(list1[-2:-4:1])
-
-print("*** MM IMP")
-#starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
-print(list1[-4:-2:1])
-print(list1[-4:-2:-1])
-
-print("- for tuple")
-list1=('a1','b2','c3','d4','5re')
-print(list1[2])
-print(list1[2:7])
-print(list1[10:])
-print(list1[:10])
-print(list1[1:4:2])
-
-#starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
-print(list1[-4:-2:-1])
-print(list1[-4:-2:-1])
-
-print("*** MM IMP")
-#starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
-print(list1[-4:-2:1])
-print(list1[-4:-2:1])
-
-#slice With dics -- not possible
-#slice with set -- not possible
-
-print('* index with variable -list')		#SEE
-x=2
-arr=[17,18,5,4,6,1]
-a=list(range(len(arr)-1))
-out=[]
-for x in a:
-    out.append(max(arr[x+1:]))
-out.append('-1')
-print(out)
-
-print('* index with variable - string')		#SEE
-arr='ratanIT'
-x=2
-a=list(range(len(arr)-1))
-out=[]
-for x in a:
-    out.append(max(arr[x+1:]))
-out.append('-1')
-print(out)
-
-print('*to break string')		#split
-a="india"
-print(a.split('d'))
-
-print('* to break string with '+' separator')
-print('+'.join(a.split('d')))	
-
-print('- for list: to break list in middle')
-list1=[10,20,30,40]
-length=len(list1)
-length_avg=length//2
-list2=list1[:length_avg]
-print(list2)
 
 print("***concatenate")
 print('-two string')

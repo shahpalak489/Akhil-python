@@ -388,3 +388,6 @@ l2=['ratan','anu','durga']		#decide by ASCI value
 d2={'ratan':1,'durga':2,'anu':3,'surya':4}
 eid,ename,esal=111,'ratan',100.45
 
+list1=('a1','b2','c3','d4','5re')
+print(list1[-4:-2:1])
+print(list1[-4:-2:1])

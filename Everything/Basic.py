@@ -764,23 +764,19 @@ print(list1[1:4:2])
 
 #starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
 # ()
-# ()
 
-print(list1[-4:-2:-1])
 print(list1[-4:-2:-1])
 
 print("*** MM IMP")
 #starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
 # ('b2', 'c3')
-# ('b2', 'c3')
 
-print(list1[-4:-2:1])
 print(list1[-4:-2:1])
 
 #slice With dics -- not possible
 #slice with set -- not possible
 
-print('*index with variable -list')		#SEE
+print('***index with variable -list')		#SEE
 x=2
 arr=[17,18,5,4,6,1]
 a=list(range(len(arr)-1))
@@ -790,7 +786,7 @@ for x in a:
 out.append('-1')
 print(out)
 
-print('* index with variable - string')		#SEE
+print('*** index with variable - string')		#SEE
 arr='ratanIT'
 x=2
 a=list(range(len(arr)-1))
@@ -800,11 +796,11 @@ for x in a:
 out.append('-1')
 print(out)
 
-print('*to break string')		#split
+print('*** to break string')		#split
 a="india"
 print(a.split('d'))
 
-print('* to break string with '+' separator')
+print('*** to break string with '+' separator')
 print('+'.join(a.split('d')))	
 
 print('- for list: to break list in middle')
@@ -823,19 +819,29 @@ print('- for list')
 l1=[10,'ratan',10.5]
 print(len(l1))
 
-print('***how to remove space')
-print(s.strip()) 		#to remove space at begining and at the end
+print('***to remove space')
+print('*to remove space at begining')
+s='    ratan IT   '
+print(s.lstrip())
+
+print('*to remove space at end')
+s='    ratan IT   '
+print(s.rstrip())
+
+print('*to remove space at begining and at end together')
+s='    ratan IT   '
+print(s.strip()) 		
 print(len(s.strip()))
 
-print('***how to remove characters')
-s1='@@@ratan IT####'					#characters can be remove at begining or end.. not from middle
+print('***how to remove characters at begining or at end')
+s1='@@@ratan IT####'		#characters can be remove at begining or end.. not from middle
 print(len(s1))
 print(s1.lstrip('@'))		# to remove @ at begining
 print(s1.rstrip('#'))		# to remove # at the end
 print(s1.rstrip('#').lstrip('@'))
 print(s1.lstrip('IT'))		# i can not remove IT here because its in middle of string
 
-print('***to check memory location and data comparison')
+print('***see- to check memory location and data comparison #why same location?  why different location when we run everytime')
 '''
 id() : print memory location
 is, is not : memory comparison : return boolean    		#it compares data as well as memory location
@@ -854,13 +860,13 @@ print(id(name3))
 
 print('**')
 print(name1 is name2)				
-print(name1 is name3)				#same string value-->save at same memory location thats why here its true
+print(name1 is name3)			#string value equal-->save at same memory location thats why here its true
 print(name1 is not name2)
 print(name1 is not name3)
 
 print('**')
 print(name1==name2)
-print(name1==name3)
+print(name1==name3)				
 print(name1!= name2)
 print(name1!= name3)
 
@@ -928,15 +934,14 @@ print(111 not in d1)
 print(11 not in d1)
 
 print("***Logical operator")
-#and,or
 x=2
 y=3
 print(x>1 and y>2)
 print(x==1 or y==3)
 print(x==1 and y==3)
 
-print('***to check given value present or not and gets True/false')
-x="california"							# Membership operator
+print('***to check given data present or not and gets True/false')
+x="california"												# Membership operator
 print('z' in x)
 print('z' not in x)
 
@@ -944,8 +949,8 @@ x=['india','ab','ssss']
 print ("ab" in x)
 
 print('***to check given value present or not and gets its index')
-# difference between in and Find --> in returns true / false , 
-# 						find returns indexing of given word if avaiable returns index else returns -1
+# difference between in and Find --> 'in' returns true / false , while 'find' returns 
+# indexing of given word if avaiable else returns -1
 
 print('- for string')
 a='welcome to RatanIT'
@@ -1012,7 +1017,7 @@ print('-two string')
 b=" is a Country"
 print(a+b)
 
-print('-Numbers(Int and Float)')
+print('-Int and Float')
 '''
 we can concatenate int and float because they both are numbers
 we can concatenate int and float to boolean because boolean has assigned values 0 and 1
@@ -1050,12 +1055,12 @@ print('- for string')
 c=a.replace('a','a is country')
 print(c)
 
-print('*replace by location')
+print('*** to replace alphabets by location')
 a='abcdabcd'
 b=a[4:].replace('a','x',1)			# here 1 is occurance
 print(b)
 
-print('* to delete characters in string')
+print('*** to delete characters in string')
 # use replace
 
 print('***to make upper case')
@@ -1097,11 +1102,12 @@ l1=[10,20,30,10,10]
 print(l1.count(10))
 
 print('***to check if string start/end with given alphabets')
-print('***to check if string start/end with given alphabets in given range')
 string1='Welcome to RatanIT'
 print(string1.startswith('Welcome'))
-print(string1.startswith('come',3,10))
 print(string1.endswith('IT'))
+
+print('* to check if string start/end with given alphabets in given range')
+print(string1.startswith('come',3,10))
 print(string1.endswith('IT',10,18))
 print(string1.endswith('IT',10,17))
 
@@ -1138,6 +1144,7 @@ print('***sorted')
 print('* arrange in ascending by sorted')
 f=['a','e','b','d','c']
 f1=sorted(f)
+print(f1)
 
 print('* arrange in descending by sorted')
 f=['a','e','b','d','c']
@@ -1740,8 +1747,6 @@ findall = search in entire string and return all matches in list
 [0-9]  = all digits from 0-9
   ^    = except
 ^abc   = except a,b,c  
-
-
 '''
 
 import re

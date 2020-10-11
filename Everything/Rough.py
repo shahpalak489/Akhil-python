@@ -382,12 +382,39 @@ no=[x for x in range(len(S)) if S[x]==C]
 a='hi'
 b=10
 c=10.3
-l1=[1,2,3,4,5]
+l1=[1,2,3,4]
 d1={1:'hi',2:'hi'}
 l2=['ratan','anu','durga']		#decide by ASCI value
 d2={'ratan':1,'durga':2,'anu':3,'surya':4}
 eid,ename,esal=111,'ratan',100.45
 
 list1=('a1','b2','c3','d4','5re')
-print(list1[-4:-2:1])
-print(list1[-4:-2:1])
+
+
+print('- For string')
+name1='ratan'
+name2='anu'
+name3='ratan'
+
+print(id(name1))
+print(id(name2))
+print(id(name3))
+
+print('**')
+print(name1 is name2)				
+print(name1 is name3)			#string value equal-->save at same memory location thats why here its true
+print(name1 is not name2)
+print(name1 is not name3)
+
+print('**')
+print(name1==name2)
+print(name1==name3)
+print(name1!= name2)
+print(name1!= name3)
+
+print('**')
+print('ra' in name1)
+print('durga' in name1)
+print('ra' not in name1)
+print('durga' not in name1)
+

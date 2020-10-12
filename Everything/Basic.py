@@ -940,35 +940,35 @@ print(x>1 and y>2)
 print(x==1 or y==3)
 print(x==1 and y==3)
 
-print('***to check given data present or not and gets True/false')
-x="california"												# Membership operator
-print('z' in x)
-print('z' not in x)
-
-x=['india','ab','ssss']
-print ("ab" in x)
-
-print('***to check given value present or not and gets its index')
-# difference between in and Find --> 'in' returns true / false , while 'find' returns 
-# indexing of given word if avaiable else returns -1
-
-print('- for string')
+print('***to check given value present or not')		
+print('-for string if value present returns index else -1')
 a='welcome to RatanIT'
 print(a.find('Ratan'))
 print(a.find('anu')) 
 print(a.find('t',10,15))		# return index of 't' between 10 to 15 index
 
-#for string find is recommended bcoz if search object not available it will return '-1'
-#for string index is not recommended bcoz if search object is not available it will throw an error
+# print('-for string it returns True/False') 
+# x="california"												# Membership operator
+# print('z' in x)
+# print('z' not in x)
 
-print('- for List')
+print('- for List it returns index')
 l1=['ratan','anu','durga','ratan']
 print(l1.index('ratan'))		# by default search first 'ratan'
 print(l1.index('ratan',2))		# search 'ratan' from index 2
 print(l1.index('ratan',2,4))	# search 'ratan' from index 2 to 4
+#for string index is not recommended bcoz if search object is not available it will throw an error
 
-print('***see- to check if data is alpha ,numeric or alpha-numeric') 
-print('*see- why alpha numberic doesnt work with space') 	
+# print('- for List it returns True/False') 
+# x="california"												# Membership operator
+# print('z' in x)
+# print('z' not in x)
+
+x=['india','ab','ssss']
+print ("ab" in x)
+
+print('***Only for string:to check if data is alpha ,numeric or alpha-numeric') 
+print('*IMP: in python space is not alphabetic nor digit so space will always returns false')	
 string1='HelloPython'		
 print(string1.isalpha())
 
@@ -987,7 +987,7 @@ print(string5.isalnum())
 string6='RatanIT'				#see - why its true?
 print(string6.isalnum())
 
-print('***check if string is upper case, lower case or it has space')
+print('***only for string : check if string is upper case, lower case or it is space')
 string1='hellopython'
 print(string1.islower())
 
@@ -1013,54 +1013,59 @@ print(a is b)
 print(a is not b)
 
 print("***concatenate")
-print('-two string')
+print('-two strings')
 b=" is a Country"
 print(a+b)
 
 print('-Int and Float')
 '''
-we can concatenate int and float because they both are numbers
-we can concatenate int and float to boolean because boolean has assigned values 0 and 1
+IMP: we can concatenate int and float because they both are numbers
+IMP: we can concatenate int and float to boolean because True has assigned value 1 and Flase has 0
 '''
 print(10+10.5)
 print(10+True)
 print(10+False)
 print(20.5+True)
 
-print('- string and number/float/bool')
+print('-string and number/float/bool')
 '''
 print(10+'ratan')				not able to concatenate string and number/float/bool
 print(10.5+'tata')
 '''
 
-print('- two list')
+print('-two list')
 l1=[10,20,30]
 l2=[40,50,60]
 l3= l1+l2
 print(l3)
 
-# what is this?
-print("***Replication")
-print('- for string')
+print("***to replicate / to repeat n number of times")
+print('-for string')
 a='Hi'
 print(a*2)
 
-print('- for list')
+print('-for list')
 l1=[10,20,30]
 l2=l1*2
 print(l2)
 
-print('***to replace few alphabets with other alphabets in string')
-print('- for string')
+print('***to replace few data with other data')
+print('-for string')
 c=a.replace('a','a is country')
 print(c)
 
-print('*** to replace alphabets by location')
+print('*replace only at 1st occurance')
 a='abcdabcd'
-b=a[4:].replace('a','x',1)			# here 1 is occurance
+b=a.replace('a','x',1)			# here 1 is occurance
 print(b)
 
-print('*** to delete characters in string')
+print('***to replace alphabets by location')
+print('-for string')
+a1='hello'
+n=1								#location
+print(a1[:n]+"fg"+a1[(n+1):])
+
+print('***to delete characters in string')
 # use replace
 
 print('***to make upper case')
@@ -1075,48 +1080,49 @@ print('***to make uppercase lower case and lower case to upper case')
 print('- For String')
 print(a.swapcase())
 
-print('***see - to make all capital letters')
+print('***converts the first character of a string to capital (uppercase) letter')
 print('- for string')
-#print(a.Capitalize())
+print(a.capitalize())
 
-print('***to give corresponding number to string')
+print('***to give corresponding number to data')
 print(list(enumerate(a)))
 print(tuple(enumerate(a)))
 
 print('*to get values of enumerate')
 S = "loveleetcode"
+s1=enumerate(S)
+print(list(s1))
+
+# OR
 for x,y in enumerate(S):
 	print(x,y)
 
-print('*** how many times given alphabet present in string')
+print('*** how many times given data present')
 print('- for string')
 a='ratanratan'
 print(a.count('r'))				#count 'r' in a
 print(a.count('ratan'))			#count 'ratan' in a
-print(a.count('a',1,7))			#count 'a' between 1 and 7 position
-print(a.count('ratan',2,7))		#count 'ratan' between 2 and 7 position
+print(a.count('a',1,7))			#count 'a' from index 1 to 6
+print(a.count('ratan',2,7))		#count 'ratan' from index 2 to 6
 
-print('***how many times given object present in list/set/tuple')
 print('- for list')
 l1=[10,20,30,10,10]
 print(l1.count(10))
 
-print('***to check if string start/end with given alphabets')
+print('***to check if string start/end with given data')
 string1='Welcome to RatanIT'
 print(string1.startswith('Welcome'))
 print(string1.endswith('IT'))
 
-print('* to check if string start/end with given alphabets in given range')
-print(string1.startswith('come',3,10))
-print(string1.endswith('IT',10,18))
-print(string1.endswith('IT',10,17))
+print('*to check if string start/end with given data in given range')
+print(string1.startswith('come',3,10))		#check string1 startswith 'come' from index 3
+print(string1.endswith('IT',10,18))			#check string1 endswith 'IT' at index 17
+print(string1.endswith('IT',10,17))			#check string1 endswith 'IT' at index 16
 
-print('***to arrange by ACS/Desc')
-print('*** to arrnage by any logic')
-''' IMP
-just to arrange by asc or desc ---> sort 			#it chnages object itself
-to arrange with any other logic ---> sorted 		#it crates new object with changes
-'''
+print('***to arrange by acs/desc')
+#IMP: sort --> it chnages object itself
+#     sorted --> it creates new object		#d for .. create new
+
 print('-For List')
 print('*arrange number in asc order')
 a=[1,4,5,3,2]
@@ -1140,16 +1146,18 @@ print(f)
 
 print('***IMP: if we declare 2 lists same then if we sort any one it will sort both in this case use sorted')
 
-print('***sorted')
-print('* arrange in ascending by sorted')
+print('*arrange in ascending order in new object')
 f=['a','e','b','d','c']
 f1=sorted(f)
 print(f1)
-
-print('* arrange in descending by sorted')
+ 
+print('*arrange in descending order in new object')
 f=['a','e','b','d','c']
 f1=sorted(f,reverse=True)
 print(f1)
+
+print('***to arrnage by any logic')
+#to arrange with any other logic ---> sorted 		#it crates new object with changes
 
 print('*arrange given list by length')
 i=['bcde','cd','def','a']
@@ -1174,11 +1182,6 @@ print(sorted(d1.keys()))
 print(sorted(d1.values()))
 print(sorted(d1.items()))
 
-print('***arrange list in reverse order without using sort')
-l1=[10,20,30]
-l1.reverse()
-print(l1)
-
 print('-for list of Dictionary')  # almost same as list
 from operator import itemgetter
 list1=[ {'name':'akhil','year':1987, 'age':32},
@@ -1188,6 +1191,11 @@ list1=[ {'name':'akhil','year':1987, 'age':32},
 
 list2=sorted(list1,key=itemgetter('year'))
 print(list2)
+
+print('***arrange list in reverse order without using sort')
+l1=[10,20,30]
+l1.reverse()
+print(l1)
 
 print("***Conditional statement")
 x=3

@@ -6,7 +6,7 @@ print("***CLASS")
 '''
 class:  logical entity
         Blue Print of object
-        we can create multiple objects based on single blue print
+        we can create multiple objects from single class(blue print)
         syntax: class {class name}
         
 object: physical entity represent memory
@@ -36,33 +36,32 @@ self=100                                    #not allowed
 Rule 6 : Possible to take pre defined class names as identifiers but not recommended
 '''
 
-print("*Basic info of class")
-#to create class
+print("***to create class with class variable and instance variable")
 class School:
 #class variable (when properties name and values both are same for all functions)
     song="jan gana mana"
     fund="govt of india"
 
-    print("*instance variables") #(when properties name same but values different for function)
+    #instance variables     #when properties name same but values different for function
     def __init__(self,first_langugae,managed_by):
-        self.first_langugae=first_langugae
+        self.first_langugae=first_langugae          #making it class varible so that all func can access
         self.managed_by=managed_by
 
     def border_country(self,country):
         self.country=country
         print(self.country)
 
-# object needs to give all __init__ var values to beacome object
-print('*MMIMP - self of class = object itslef')
-print('*object can access __init__ variables values, class variables values, class functions')
+print('*MMIMP: object needs to give only __init__ parameter values to beacome object')
+print('*MMIMP: self of class = object itslef')
+print('*MMIMP: object can access __init__ parameters values, class variables values, class functions')
 
-#to create object
+print('*to create object')
 Gujarat=School('gujarati','govt of Gujarat')
 Karnataka=School('kannada','govt of Karnataka')
 
-#to access object properties
+print('*to access class properties')
 print(Gujarat.song)
-print(Karnataka.first_langugae)
+print(Gujarat.first_langugae)
 Gujarat.border_country('india')
 
 class Person:
@@ -91,20 +90,6 @@ p1.younger()                    # to access functions of class
 print(p1.age)
 
 print('*example 1')
-'''
-#python 2.7  : class is not child class of object
-class Myclass1:
-    pass
-class Myclass2():
-    pass
-class   Myclass3(object):
-    pass
-
-print(issubclass(Myclass1,object))      #false
-print(issubclass(Myclass2,object))      #false
-print(issubclass(Myclass3,object))      #true
-'''
-
 #python 3.7 : by default class is child class of object 
 class Myclass1:
     pass
@@ -153,7 +138,7 @@ self mentions that this function belongs to this class
 that means that function can access class variables and that class all properties
 '''
 
-print('example 5 : local variables, class variables, global variables')
+print('*example 5 : local variables, class variables, global variables')
 i,j=100,200                         #to declare global variable
 class Myclass():
     a,b=10,20                       #to declare class variables
@@ -165,7 +150,7 @@ class Myclass():
 c=Myclass()
 c.add(50,60)
 
-print('example 6 : same name of local , global and class variable')
+print('*example 6 :same name of local,global and class variable')
 i,j=100,200                                     #to declare global variable
 class Myclass():
     i,j=10,20                                   #to declare class variables
@@ -179,7 +164,7 @@ c.add(50,60)
 
 #example 7 - skip
 
-print('example 8 - named and nameless object')
+print('*example 8 - named and nameless object')
 class Myclass():
     def disp(self):
         print('how are you?')
@@ -189,7 +174,7 @@ c1.disp()
 
 Myclass().disp()                #name less object
 
-print('example 9') 
+print('*example 9') 
 '''
 id() : print memory location
 is, is not : memory comparison : return boolean         #it compares data as well as memory location
@@ -211,7 +196,7 @@ print(id(c3))
 print(c1 is c2)
 print(c1 is c3)
 
-print('example 10')      #class variable value is related to each object  
+print('*example 10')      #class variable value is related to each object  
 class Myclass():
     name='ratan'
 
@@ -219,16 +204,12 @@ c1=Myclass()
 c2=Myclass()
 
 print(c1.name)          #ratan
-
 c1.name='durga'
 print(c1.name)          #durga      
-
 print(c2.name)          #ratan   
-#c1.name is different than c2.name so when we chnage c1.name its doesnt affect c2.name
-
-# see - what is the importance of self ?? 
+print('c1.name is different than c2.name so when we chnage c1.name its doesnt affect c2.name') 
  
-print('example 11')           
+print('*example 11')           
 #constructor -->  __init__  --> execute by itself when we create instance
 class myclass:
     def m1(self):
@@ -239,13 +220,13 @@ class myclass:
 c1=myclass()                # when we create instance this will execute __init__ by it self
 c1.m1()     
 
-#IMP example 12                 # to convert local var into class var
+print('*IMP example 12 - to convert local var into class var')
 class Myclass():
-    def values(self,value1,value2):  #local variables(value1,value2) limited to this function only 
+    def values(self,value1,value2):   #local variables(value1,value2) limited to this function only 
         print(value1)
         print(value2)
 
-  #class variable    local variable
+        #local variable --> class variable
         self.value1=value1 
         self.value2=value2
     def add(self):
@@ -255,7 +236,7 @@ c1=Myclass()
 c1.values(8,9)
 c1.add()
 
-#example 13
+print('*example 13-to call one method inside another method')
 class Myclass():
     def m1(self):          
         print('class m1')
@@ -267,32 +248,29 @@ class Myclass():
 c1=Myclass()
 c1.m1()
 
-#example 14                             #constructor with local variable
+print('*example 14-constructor with local variable')
 class Myclass:
     name='durga'
     def __init__(self,name):
          print('good morning',name)
          print('good evening', self.name)
 
-c=Myclass('ratan')              #give variable while creating instance bcoz __init__ has 1 variable
+c=Myclass('ratan')       #here init self is object 'c' and init name parameter should be given
 
-#example 15                     
-#conversion of local var to class var
+print('*example 15 - conversion of local var to class var')
 class operation:
     def __init__ (self,val1,val2):   #local variables(val1,val2) limited to this function only 
         print(val1)
         print(val2)
-
         self.val3=val1           #conversion of local var to class var
         self.val4=val2
-
     def add(self):
         print(self.val3+self.val4)
 
 c=operation(10,20)
 c.add()
 
-#example 16      
+print('*example 16')      
 class Emp:
     def __init__(self,eid,ename,esal):
         self.eid=eid
@@ -305,7 +283,7 @@ class Emp:
 c=Emp('ss','gg','aa')
 c.disp()
 
-#example 17         #__str__  -->  this will be executed when we print instance( here c instance)
+#example 17         #__str__  -->  this will be executed when we print instance(here c instance)
                     # works only with return and string
 #case 1
 class Myclass:
@@ -349,7 +327,7 @@ class Emp:
 c=Emp('ss','gg','aa')
 print(c)
 
-#example 19                 __del__  --> executed when we del object
+#example 19                 __del__  --> executed when we del object/intance
 class Myclass():
     def __del__(self):
         print(" object destroyed")
@@ -410,9 +388,8 @@ class C(A):
 
 #-------------------------------ratan end
 
-print("***single inheritance")
-#parent class
-class Father:
+print("*single inheritance")
+class Father:                               #parent class
     def __init__(self,fname,lname):
         self.fname=fname
         self.lname=lname
@@ -422,13 +399,12 @@ class Father:
 x=Father('akhil','shah')
 x.printname()
 
-#to create child class
-class Son(Father):
+class Son(Father):      #to create child class
     pass
-y=Son('palak','shah')
+y=Son('palak','shah')  #to create child class parent class init parameter + parent class init parameter
 y.printname()
 
-print("***Multiple Inheritance")
+print("*Multiple Inheritance")
 #example 1
 
 #parentclass1
@@ -446,7 +422,7 @@ class Person:
         print(self.age)  
    
 #parentclass2
-class Student: # Person is the  
+class Student:  
     def __init__(self, studentId):  
         self.studentId = studentId  
   
@@ -455,9 +431,8 @@ class Student: # Person is the
 
 #childclass
 class Resident(Student,Person):
-# you have to give all variables from all parent
-# we can change name but number of variables and sequence will remain same  
-    def __init__(self, name, age, id):  
+                #we can change parameter name but number of parameter and sequence will remain same  
+    def __init__(self, name, age, id):          #child parent init has both parent' init parameters 
         Person.__init__(self, name, age)  
         Student.__init__(self, id)  
     
@@ -494,17 +469,14 @@ class C(A, B):
 C1 = C()  
 print(C1.getName())  
 
-'''
-In the constructor of C, the first constructor called 
-is the one of A. So, the value of name in C becomes 
-same as the value of name in A. But after that, when 
-the constructor of B is called, the value of name in 
-C is overwritten by the value of name in B. So, the 
-name attribute of C retains the value ‘Richard’ when 
-printed. 
+''' see - 
+In the constructor of C, the first constructor called is the init of A. So, the value of name in C 
+becomes same as the value of name in A. But after that, when the constructor of B is called, 
+the value of name in C is overwritten by the value of name in B. So, the name attribute of C
+retains the value ‘Richard’ when printed. 
 '''
 
-print("***Multilevel Inheritance")
+print("*Multilevel Inheritance")
 class Base(object):       
     # Constructor 
     def __init__(self, name): 
@@ -514,7 +486,6 @@ class Base(object):
     def getName(self): 
         return self.name 
   
-#Inherited or Sub class (Note Person in bracket) 
 class Child(Base):       
     # Constructor 
     def __init__(self, name, age): 
@@ -525,7 +496,6 @@ class Child(Base):
     def getAge(self): 
         return self.age 
   
-# Inherited or Sub class (Note Person in bracket) 
 class GrandChild(Child):       
     # Constructor 
     def __init__(self, name, age, address): 
@@ -542,8 +512,8 @@ print(g.getName(), g.getAge(), g.getAddress())
 
 #exampe 1            #skip
 
-#example 2       
-#better to create child class objects so that we can access child and parents both methods
+print('*example 2')       
+print('*IMP: better to create child class objects so that we can access child and parents both methods')
 class Parent():
     def m1(self):
         print('parent m1() method')
@@ -555,11 +525,11 @@ class child(Parent):
 p=Parent()
 p.m1()
 
-c=child()
+c=child()           #here child class instance can access both function 
 c.m1()
 c.m2()
 
-#example 3
+print('*example 3')
 print('*to access parent class variable from child class when variabes name unique')
 class Parent():
     a,b=10,20
@@ -574,7 +544,7 @@ class child(Parent):
 c=child()
 c.add(1000,2000)
 
-#example 4
+print('*example 4 VVIMP')
 print('*IMP: to access parent class variable from child class when variabes name same')
 a,b=500,5000
 class Parent():
@@ -590,7 +560,7 @@ class child(Parent):
 c=child()
 c.add(1000,2000)
 
-#example 5 
+print('*example 5 ')
 print('*to access/call parent class method from child class method ')
 class Parent():
     def m1(self):

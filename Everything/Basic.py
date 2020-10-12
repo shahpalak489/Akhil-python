@@ -1202,11 +1202,11 @@ x=3
 y=3
 z=5
 
-print("*if")
+print("*if......")
 if x==3 and y==3:
 	print("x and y are 3")
 
-print("*if..else")
+print("*if.....else")
 #case 1
 if (x==z):
 	print("x and z are same")
@@ -1238,11 +1238,10 @@ else:
 
 print('***Range')						# logic same as index
 '''
-Rule: start from first value upto second value and if third value is 
-	  positive move left to right and if third value is negative then
-	  move right to left 
+Rule: start from first value to second value with third value interval and if third value is 
+	  positive move right and if third value is negative then move left 
 '''
-for x in range(5):
+for x in range(4):
 	print(x)
 
 for x in range(6,10):
@@ -1261,7 +1260,7 @@ for x in range(-15,-27,-5):
 	print(x)
 
 print("***for Loop")
-print("*for range")
+print("*for loop with range")
 for k in range(8):
 	print(k) 
 for u in range(13,19):
@@ -1269,11 +1268,12 @@ for u in range(13,19):
 for no in range (102,130,5):
  	print(no)
 
-print("*for List") 
+print("*for loop with List") 
 fruit=["banana","apple","orange"]
 for aki in fruit:
  	print(aki) 
 
+print('*get index 1 to 3 of list with for loop')
 L1=[10,20,30,40]
 for x in L1[1:3]:
 	print(x)
@@ -1282,32 +1282,33 @@ L2=[[1,2,3],['ratan','anu','tata']]
 for x,y,z in L2:
 	print(x,y,z)
 
-print("*for ...break") #(it will stop 'for loop')
+print('*to exit for loop')
+#use break			 		#it will stop 'for loop'
 car=[2,15,19,20]
 for x in car:
  	print(x)
  	if (x==15):
    		break
- 
-print("*for...in...continue")# ( this will not run remaining steps but will continue for loop)
+
+print('*how to leave rest steps of loop and moves to next loop in for loop') 
+#continue       
 for y in fruit:
 	if (y=="apple"):
    	   continue
 	print(y)
  
-print("*for.....else")
+print("*IMP:for.....else")
 for z in range (5,10):
 	print(z)
 else:
  	print("Finally finished!")
 
-print('*IMP: For ...loop - increment 2 variables at same time')
+print('*IMP: Loop 2 variables together')
 a=3
 b=5
-c=7
 for x in range(a):
-    for y,z in zip(range(b), range(c)):				#MMIMP: to loop 2 variables at same time
-        print('x:',x,' y:',y,' z:',z)
+    for y in range(b):				#MMIMP: to loop 2 variables at same time
+        print('x:',x,' y:',y)
 
 print("***while loop")
 n = 25
@@ -1315,7 +1316,7 @@ while n > 20:
     print (n)
     n = n-1
 
-print("*While...break**") #it will stop the while execution
+print("*to stop while loop")
 i = 200
 while i < 215:
  print(i)
@@ -1331,8 +1332,8 @@ while a<10:
 		break
 	a+= 1 
 
-print("*while...continue**") 
-#it will start exceution from begining like here when i=3 its not printing i value
+print('*how to leave rest steps of while loop and moves to next loop in while loop') 
+#continue
 a=1
 while a<5:
 	a+= 1
@@ -1340,7 +1341,7 @@ while a<5:
 		continue
 	print(a)
 
-print('* while... multiple condition')
+print('*while... multiple condition')
 n=4102
 if n==2:
     print([1,1])
@@ -1352,26 +1353,26 @@ else:
         B=n-A
     print([A,B])
 
-print("***for vs while")
+print("***wheh to use for and when to use while")
 # for when we have starting value , ending value by incremental / decremental
 # while is to check if condition is true or not
 
 print('***packing')
-print('*convert 2 list into dics')
+print('*convert 2 list into dict')
 l1=[1,2,3,4]							 
 l2=['ratan','durga','anu','ratanIT']
 x=zip(l1,l2)			
 d=dict(x)
 print(d)
 
-print('*convert 2 tuple into dics')
+print('*convert 2 tuple into dict')
 l1=(1,2,3,4)							 
 l2=('ratan','durga','anu','ratanIT')
 x=zip(l1,l2)			
 d=dict(x)
 print(d)
 
-print('*convert 2 set into dics')
+print('*convert 2 set into dict')
 l1={1,2,3,4}							 
 l2={'ratan','durga','anu','ratanIT'}
 x=zip(l1,l2)			
@@ -1379,26 +1380,32 @@ d=dict(x)
 print(d)
 
 print('***Unpacking') 
-print('-for list')		#List --> variables #it will break list and assigns values to variables
+print('-to break list and assigns values to variables')
+#method 1 (recommended bcoz its universal)
 L1=[10,10.4,'ratan']
 a,b,c=L1
 print(a,b,c)
 print(type(a),type(b),type(c))
 
+#method 2
+L1=[10,10.4,'ratan']
+a=L1[0]
+print(a)
+
 #IMP
 L2=[10,20,30]
-#a,b=L2		#this will give an error, need exact number of variables for unpacking 
+#a,b=L2					#this will give an error, need exact number of variables for unpacking 
 
-print('-for dics')
+print('-to break dict and assigns values to variables')
 d1={1:'aaa',2:'bbb'}
 a,b=d1
-print(a,b)				# dics will unpack only keys
+print(a,b)				# dict will unpack only keys
 
 d2={1:'aaa'}
 c=d2
 print(c)
 
-print('*see - advanced')
+print('-to break list of list and assign values to variables')
 L2=[[1,2,'ratan'],[3,'tata']]
 a,b=L2
 print(type(a))
@@ -1407,7 +1414,8 @@ print(b[1])
 
 print('***convert Datatypes')
 print("*to convert int/float to string")
-#x=str(y)
+c=10.5
+print(type(str(c)))
 
 print("*to convert List to Tuple")
 List1=['a','b','c','d']
@@ -1434,17 +1442,10 @@ Tuple1=('a','b','c','d')
 set1=set(Tuple1)
 print(set1)
 
-print("*to convert Tuple to Dics ")
+print("*to convert Tuple to Dict ")
 Tuple1=('a','b','c','d')
 Dict2={i:i*2 for i in Tuple1}
 print(Dict2)
-
-print('* to convert int to string')
-a=234
-b=str(a)
-print(type(b))
-
-print('*to convert int to list')
 
 print('*to convert string to list')
 a='abc'
@@ -1485,12 +1486,10 @@ for i in d1.items():
 for x,y in d1.items():
 	print(x,'-',y)
 
-print(d1.get(111))
-
-print('*to access value by keys in Dictionary ')
+print('*to access value by keys in Dictionary')
 
 d1={111:'ratan',222:'anu',333:'durga',444:'ratanIT'}
-#method 1  		#MM IMP
+#method 1  				#MM IMP
 d1.get(111,'hi')		#get the value of 111 and if 111 not available in dict, return 'hi'
 
 print(d1.setdefault(333,'jj')) 
@@ -1504,7 +1503,7 @@ print(a,b,c,d)
 r=d1[444]
 print(r)
 
-print('*to access value in list of Dictionary')
+print('*IMP: to access value in list of Dictionary')
 from operator import itemgetter
 list1=[ {'name':'akhil','year':1987, 'age':32},
         {'name':'palak','year':1993, 'age':27},
@@ -1513,16 +1512,11 @@ list1=[ {'name':'akhil','year':1987, 'age':32},
 
 print(list1[0]['age'])
 
-print('* to access values in list of list')
+print('*to access values in list of list')
 a=[[1,2],[3,4],[5,6]]
 print(a[0][1])
 
 print('***to access data in (Nested/sub list/Multi dimension) List,tuple,set')
-'''
-IMP
-to access data In dataframe use loc, iloc
-'''
-
 #      0	   1
 L1=[[10,20],['ratan','tata']]
 #    0  1    0  1 
@@ -1534,12 +1528,7 @@ print(type(L1[1][1]))
 print(L1[0][1])
 print(L1[1][1])
 
-print('***create another copy of list')
-l1=[10,20,30]
-l2=l1.copy()
-print(l2)
-
-print('-For list')
+print('***Modification ')
 print('*add one entire list into another list')
 l1=[10,20,30]
 l2=[40,50,60]
@@ -1589,7 +1578,6 @@ l1=[10,20,30]
 l1.clear()
 print(l1)
 
-print('-for Dict')
 print('*in dict to add object at the end')
 d3={}
 d3[111]='ratan'
@@ -1621,6 +1609,20 @@ d1={1:'aaa',2:'bbb'}
 d2={3:'ccc',4:'ddd'}
 x={**d1,**d2}
 print(x)
+
+print('***MMIMP - deep copy and shallow copy')
+print('*Shallow copy')
+l1=[45,84,99,9]
+l2=l1
+l2.append(66)
+print(l1)
+
+print('*deep copy')
+import copy
+l3=copy.deepcopy(l1)
+l3.append(60000)
+print(l3)
+print(l1)
 
 print('***override')
 print('-Dics')

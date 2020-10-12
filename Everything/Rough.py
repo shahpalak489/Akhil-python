@@ -383,8 +383,8 @@ a1='lhello'
 b=10
 c=10.3
 d=True
-l1=[1,2,3,4]
-l2=[45,84,99]
+l1=(1,2,3,4)
+l2=[45,84,99,9]
 d1={1:'hi',2:'hi'}
 l3=['ratan','anu','durga']		#decide by ASCI value
 d2={'ratan':1,'durga':2,'anu':3,'surya':4}
@@ -392,8 +392,19 @@ eid,ename,esal=111,'ratan',100.45
 
 T1=('a1','b2','c3','d4','5re')
 
-a='abcdabcdSSLL'
-print(a1.endswith("o",2,6))
+g=20
+class me:
+	c=50
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
 
-l3=sorted(l2,reverse=True)
-print(l3)
+	def add_age(self,hi):
+		print (self.age+1)
+		print(g)
+		print(self.c)
+		print(hi)	
+
+p1=me('akhil',33)
+p1.add_age('hello')
+

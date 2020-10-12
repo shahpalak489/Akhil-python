@@ -38,22 +38,18 @@ Rule 6 : Possible to take pre defined class names as identifiers but not recomme
 
 print("***to create class with class variable and instance variable")
 class School:
-#class variable (when properties name and values both are same for all functions)
-    song="jan gana mana"
+    song="jan gana mana" #class variable (when properties name and values both are same for all functions)
     fund="govt of india"
-
-    #instance variables     #when properties name same but values different for function
-    def __init__(self,first_langugae,managed_by):
-        self.first_langugae=first_langugae          #making it class varible so that all func can access
+    def __init__(self,first_langugae,managed_by): #instance variables  #when properties name same but values different for function
+        self.first_langugae=first_langugae        #converting instance(local) variable to class varible so that all func can access
         self.managed_by=managed_by
-
     def border_country(self,country):
         self.country=country
         print(self.country)
 
-print('*MMIMP: object needs to give only __init__ parameter values to beacome object')
+print('*MMIMP: while creating object ,it must needs to give only __init__ parameter values')
 print('*MMIMP: self of class = object itslef')
-print('*MMIMP: object can access __init__ parameters values, class variables values, class functions')
+print('*MMIMP: object can access __init__ parameters, class variables ,class functions')
 
 print('*to create object')
 Gujarat=School('gujarati','govt of Gujarat')
@@ -101,8 +97,7 @@ print(issubclass(Myclass1,object))          #true
 print(issubclass(Myclass2,object))          #true
 print(issubclass(Myclass3,object))          #true
 
-print('*Example 2')             
-print('declaring function inside the class')
+print('*Example 2- declaring function inside the class')
 class Myclass:
     def disp1(self):    
         print('good morning')
@@ -116,7 +111,7 @@ c.disp2('Ratan')
 
 #???  IMP see-instance method vs. Static method vs. Class method
 
-print('example 3')         #instance and static method
+print('*see- example 3 instance and static method')
 class Myclass:
     def m1(self):
         print('instance method')
@@ -128,15 +123,12 @@ class Myclass:
 
 c=Myclass()
 c.m1()                      #to call instance method
-
 Myclass.m2()                #to call static method
 
 #example 4 - skip
 
-'''MMIMP : importnace of self
-self mentions that this function belongs to this class
-that means that function can access class variables and that class all properties
-'''
+'''MMIMP : importnace of self: self mentions that this function belongs to this class so that 
+function can access class variables and that class all properties'''
 
 print('*example 5 : local variables, class variables, global variables')
 i,j=100,200                         #to declare global variable
@@ -196,7 +188,7 @@ print(id(c3))
 print(c1 is c2)
 print(c1 is c3)
 
-print('*example 10')      #class variable value is related to each object  
+print('*example 10')      #class variable is related to each object  
 class Myclass():
     name='ratan'
 
@@ -217,7 +209,7 @@ class myclass:
     def __init__(self):
         print('0 arg constructor')
 
-c1=myclass()                # when we create instance this will execute __init__ by it self
+c1=myclass()                #when we create instance __init__ will be executed by it self
 c1.m1()     
 
 print('*IMP example 12 - to convert local var into class var')
@@ -226,8 +218,7 @@ class Myclass():
         print(value1)
         print(value2)
 
-        #local variable --> class variable
-        self.value1=value1 
+        self.value1=value1              #local variable --> class variable
         self.value2=value2
     def add(self):
         print(self.value1+self.value2)
@@ -255,7 +246,7 @@ class Myclass:
          print('good morning',name)
          print('good evening', self.name)
 
-c=Myclass('ratan')       #here init self is object 'c' and init name parameter should be given
+c=Myclass('ratan')       #here self is object 'c' and init parameter-"name" should be given
 
 print('*example 15 - conversion of local var to class var')
 class operation:
@@ -283,8 +274,8 @@ class Emp:
 c=Emp('ss','gg','aa')
 c.disp()
 
-#example 17         #__str__  -->  this will be executed when we print instance(here c instance)
-                    # works only with return and string
+print('*example 17')  #__str__  -->  this will be executed when we print instance(here c instance)
+                      # works only with return and string
 #case 1
 class Myclass:
     pass
@@ -314,7 +305,7 @@ class Myclass:
 c=Myclass()
 #print(c)                        __str__ returned non-string (type NoneType)
 
-#example 18             #to exeute method with __str__
+print('*example 18')             #to exeute method with __str__
 class Emp:
     def __init__(self,eid,ename,esal):
         self.eid=eid
@@ -327,17 +318,16 @@ class Emp:
 c=Emp('ss','gg','aa')
 print(c)
 
-#example 19                 __del__  --> executed when we del object/intance
+print('*see - example 19: i can delete object without del func then what is use of it')
+#__del__  --> executed when we del object/intance
 class Myclass():
     def __del__(self):
         print(" object destroyed")
-
 #xx1=Myclass()
 #xx2=Myclass()
-
 #del xx1                         # this will execute __del__
 
-#example 20             #to execute __del__ --> all same objects must be call to delete
+print('*see-example 20')             #to execute __del__ --> all same objects must be call to delete
 class Mycalss():
     def __del__(self):
         print('object destroyed')
@@ -399,9 +389,9 @@ class Father:                               #parent class
 x=Father('akhil','shah')
 x.printname()
 
-class Son(Father):      #to create child class
+class Son(Father):     #to create child class
     pass
-y=Son('palak','shah')  #to create child class parent class init parameter + parent class init parameter
+y=Son('palak','shah')  #to create child class object give parent class init parameter + own init parameter
 y.printname()
 
 print("*Multiple Inheritance")
@@ -431,8 +421,8 @@ class Student:
 
 #childclass
 class Resident(Student,Person):
-                #we can change parameter name but number of parameter and sequence will remain same  
-    def __init__(self, name, age, id):          #child parent init has both parent' init parameters 
+    #we can change parameter name but number of parameter and sequence will remain same  
+    def __init__(self, name, age, id):          #child parent init has both parent's init parameters 
         Person.__init__(self, name, age)  
         Student.__init__(self, id)  
     

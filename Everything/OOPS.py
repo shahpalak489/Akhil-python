@@ -763,6 +763,7 @@ obj = D()
 #obj.process()
 print(D.mro())
 
+Print('*MMIMP logic')
 # D -> B -> A -> Object -> c -> A -> object                     #invalid
 # but super class can not be before sub class so
 # D -> B -> c -> A -> object                                    #valid

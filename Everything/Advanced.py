@@ -118,7 +118,6 @@ print(r)
 #=----------------------------------------------------------------------------------------
 print('*see- if ...break with comprehension')
 
-
 print('* for...for loop with Comprehension')
 a=['asa','dsa','dsd']
 # for x in a:

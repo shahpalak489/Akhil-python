@@ -392,19 +392,18 @@ eid,ename,esal=111,'ratan',100.45
 
 T1=('a1','b2','c3','d4','5re')
 
-g=20
-class me:
-	c=50
-	def __init__(self,name,age):
-		self.name=name
-		self.age=age
 
-	def add_age(self,hi):
-		print (self.age+1)
-		print(g)
-		print(self.c)
-		print(hi)	
 
-p1=me('akhil',33)
-p1.add_age('hello')
+
+
+
+
+
+
+
+
+
+
+
+
 

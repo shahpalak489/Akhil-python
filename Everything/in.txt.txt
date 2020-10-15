@@ -1,0 +1,64 @@
+1. Write a function that takes a string and a character which is not an alphabet and
+   returns a list of all words that start with that character.
+
+   Don't worry about upper case or lower case character.
+
+   For example:
+     get_words( "I see oranges in the orchard", "o") will return ["oranges","orchard"]
+
+     get_words("Hi my name is Henry") will return ["Hi", "Henry"]
+
+
+2. Write code to copy everything from one text file to another.
+
+3. Write a function that can take any number of arguments.
+   If I pass some numbers to the function it must return the sum of all those numbers.
+
+   For example:-  
+     add_nums( 3, 6, 7)  returns 16
+
+4. Write a function that takes a dictionary as an argument and checks if 
+   'name' property exists in the dictionary. If it exists it adds another property called
+   has_name as True, otherwise call has_name as False.
+
+
+5. Create the following classes:
+
+	2 class properties each
+	2 instance properties each
+	2 methods each.
+
+	Vehicle, Car, BMW 
+
+6. Given a package structure like this.
+
+
+sound/                          Top-level package
+      __init__.py               Initialize the sound package
+      formats/                  Subpackage for file format conversions
+              __init__.py
+              wavread.py
+              wavwrite.py
+              aiffread.py
+              aiffwrite.py
+              auread.py
+              auwrite.py
+              ...
+      effects/                  Subpackage for sound effects
+              __init__.py
+              echo.py
+              surround.py
+              reverse.py
+              ...
+      filters/                  Subpackage for filters
+              __init__.py
+              equalizer.py
+              vocoder.py
+              karaoke.py
+
+
+i) How will you import soundbar function from karaoke.py
+
+ii) How will you import the entire echo module.
+
+iii) How will you import wavread and auwrite modules only.

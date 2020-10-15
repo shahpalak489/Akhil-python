@@ -1740,6 +1740,242 @@ print(d1)
 d1={111:['ratan','tata'],222:'anu',333:'durga'}		#list allowed as dict values
 print(d1)
 
+print('*** exception handling')
+# default except - if we have default except than why we create except with specific erro type in video 32
+
+print('* it will check exception from top to bottom')
+print('*example 1')
+try:
+	print(' i am try block')	# this will be executed as normal
+	print(10/0)			# if we have error in try block it will move to except block
+except:
+	print(10/5)
+print('rest of app')
+
+print('* example 2  #if the except block not matched')
+# try:
+# 	print('i am try block')	# this will be executed as normal
+# 	print(10/0)		#if we have error in 'try block' it will move to 'except block'
+# except TypeError as e:
+# 	print(10/5)		#except block will give error becaue we asked it to support 'TypeError' and we got ZerDivisionError
+# print('rest of app') 
+
+print('* example 3   #if no error it will not execute "except block"')
+try:
+	print(' i am try block')	# this will be executed as normal
+except:
+	print(10/5)
+print('rest of app')
+
+print('* exaple 4   #only try block not allowed')
+# try:
+# 	print(' i am try block')	# this will give an error
+
+print('* example 5 - #in between blocks statments not possible ')
+# try:
+# 	print(' i am try block')	# this will be executed as normal
+# print('hi')					#invalid
+# except:
+# 	print(10/5)
+# print('rest of app')
+
+print('*example 6 #once we have error in try block rest of try block will not execute')
+try:
+	print(10+'ratan')
+	print('annu')
+except:
+	print('ratanIT.com')
+print('rest of app')
+
+print('*example:7  #try - except - else block  #if no error in try block it will execute else block')
+#scenario 1    # below else block will execute
+try:
+	print(10/2)
+except ArithmeticError as e:
+	print('ratanit.com')
+else:
+	print(' no exception in try block')
+print('rest of app')
+
+#scenario 2 	#below else block will not execute bcoz try block has error
+try:
+	print(10/0)
+except ArithmeticError as e:
+	print('ratanit.com')
+else:
+	print(' no exception in try block')
+print('rest of app')
+
+#scenario 3 	try block with no error and break statement
+# here else block will execute bcoz there is no error in try block
+try:
+	print(10/2)
+	for x in range(10):
+		if x==2:
+			break
+except ArithmeticError as e:
+	print('ratanit.com')
+else:
+	print(' no exception in try block')
+print('rest of app')
+
+print('*example 8 # univeral except block')
+try:
+	print(10/'ratan')	
+except ArithmeticError as e: 		#error not matching so this will not be executed
+	print('ratanit.com')
+except ValueError as f:		 		#error not matching so this will not be executed
+	print(' durgasoft.com')
+except:				          #this default except block will be excuted as its universal except block
+	print('i am default except block')
+else:
+	print('no exception in try block')
+print('rest of app')
+
+print('*example 9: we can combine 2 error code as well')
+try:
+	print(10/'ratan')	
+except (ArithmeticError,ValueError) as e: 			#2 error codes are combined here
+	print('ratanit.com')
+except:			
+	print('i am default except block')
+else:
+	print('no exception in try block')
+print('rest of app')
+
+print('* example 10 	#MMIMP #Baseexception - this will accept all exception' )
+try:
+	print(10/'ratan')	
+except BaseException as e: 			#this will handle all exceptions
+	print('ratanit.com')
+else:
+	print('no exception in try block')
+print('rest of app')
+
+print('*example 11    #child excpet error must be first and parent except error at the end')
+
+try:
+	print(10/'ratan')	
+except ArithmeticError as e: 	# its child exception error so it must be before parent exception error
+	print('ratanit.com')
+except BaseException as f:		# Baseexception is parent exception errro , it must be last
+	print(' durgasoft.com')
+else:
+	print('no exception in try block')
+print('rest of app')
+
+print("*example 12 - nested try block")
+
+# try:
+# 	print('outer try block')
+# 	n=int(input('enter a number :'))
+# 	print(10/n)
+# 	try:
+# 		print('inner try')
+# 		print('ratan'+10)
+# 	except BaseException as a:
+# 		print('durgasoft.com')
+# 	else:
+# 		print('inner else block')
+# except BaseException as b:
+# 	print('ratanIT.com')
+# else:
+# 	print("outer else block")
+# print('rest of the applications.....')
+
+print('*example 13 - handling exception while calling function')
+def m1():
+	print(10/0)
+
+try:
+	m1()
+except BaseException as a:
+	print(10/5)
+
+print('*example 14 - finally block will be executed in all scenario')
+#case1
+try:
+	print(10/2)
+except BaseException as a:
+	print('except')
+finally:
+	print('finally')
+
+#case 2
+try:
+	print(10/0)
+except BaseException as a:
+	print('except')
+finally:
+	print('finally')
+
+#case 3				#finally will be executed eventhough in code error
+# try:
+# 	print(10/0)
+# except ValueError as a:
+# 	print('except')
+# finally:
+# 	print('finally')
+
+#case 4				#in this case also finally will be executed
+# try:
+# 	print(10/0)
+# except ValueError as a:
+# 	print(10/0)
+# finally:
+# 	print('finally')
+
+#case 5 			# only try block with finally block allowed but not recommended
+# try:
+# 	print(10/2)
+# finally:
+# 	print('finally')
+
+print('*example 15 - when finally block will not execute')
+#case 1				#here code get error before try block so finally block will not execute
+# print(10/0)
+# try:
+# 	print(10/2)
+# finally:
+# 	print('finally')
+
+#case 2    			#see - exit will stop execution of all remaining code
+# import os
+# try:
+# 	print(10/2)
+# 	os._exit(0)
+# finally:
+# 	print('finally')
+
+print('* interview question')
+def hi():
+	try:
+		return 10
+	except:
+		return 20
+	finally:
+		return 30
+hi()
+#ans is 30
+
+print('*example 16 - Raise - to create user defined exception ')
+#Excepttion 2 types
+#system defined exceptions are TypeError,BaseException ...
+#to create user defined errors use 'Raise'
+
+#step 1: create the user defined exception
+class InvalidAgeException(Exception):
+	def __init__(self,msg):
+		self.msg=msg
+
+#step 2: use the user defined exception in our project
+# def status(age):
+# 	if age>20:
+# 		print('eligible for marriage')
+# 	else:
+# 		raise InvalidAgeException("not eligible for marriage")
+# status(10)
+
 print('*** regular expression')
 '''
 **functions
@@ -2126,241 +2362,7 @@ MyThread1(name='ratan').start()
 MyThread2(name='durga').start()
 MyThread3(name='sravya').start()
 
-print('*** exception handling')
-# default except - if we have default except than why we create except with specific erro type in video 32
 
-print('* it will check exception from top to bottom')
-print('*example 1')
-try:
-	print(' i am try block')	# this will be executed as normal
-	print(10/0)			# if we have error in try block it will move to except block
-except:
-	print(10/5)
-print('rest of app')
-
-print('* example 2  #if the except block not matched')
-# try:
-# 	print('i am try block')	# this will be executed as normal
-# 	print(10/0)		#if we have error in 'try block' it will move to 'except block'
-# except TypeError as e:
-# 	print(10/5)		#except block will give error becaue we asked it to support 'TypeError' and we got ZerDivisionError
-# print('rest of app') 
-
-print('* example 3   #if no error it will not execute "except block"')
-try:
-	print(' i am try block')	# this will be executed as normal
-except:
-	print(10/5)
-print('rest of app')
-
-print('* exaple 4   #only try block not allowed')
-# try:
-# 	print(' i am try block')	# this will give an error
-
-print('* example 5 - #in between blocks statments not possible ')
-# try:
-# 	print(' i am try block')	# this will be executed as normal
-# print('hi')					#invalid
-# except:
-# 	print(10/5)
-# print('rest of app')
-
-print('*example 6 #once we have error in try block rest of try block will not execute')
-try:
-	print(10+'ratan')
-	print('annu')
-except:
-	print('ratanIT.com')
-print('rest of app')
-
-print('*example:7  #try - except - else block  #if no error in try block it will execute else block')
-#scenario 1    # below else block will execute
-try:
-	print(10/2)
-except ArithmeticError as e:
-	print('ratanit.com')
-else:
-	print(' no exception in try block')
-print('rest of app')
-
-#scenario 2 	#below else block will not execute bcoz try block has error
-try:
-	print(10/0)
-except ArithmeticError as e:
-	print('ratanit.com')
-else:
-	print(' no exception in try block')
-print('rest of app')
-
-#scenario 3 	try block with no error and break statement
-# here else block will execute bcoz there is no error in try block
-try:
-	print(10/2)
-	for x in range(10):
-		if x==2:
-			break
-except ArithmeticError as e:
-	print('ratanit.com')
-else:
-	print(' no exception in try block')
-print('rest of app')
-
-print('*example 8 # univeral except block')
-try:
-	print(10/'ratan')	
-except ArithmeticError as e: 		#error not matching so this will not be executed
-	print('ratanit.com')
-except ValueError as f:		 		#error not matching so this will not be executed
-	print(' durgasoft.com')
-except:				#this default except block will be excuted as its universal except block
-	print('i am default except block')
-else:
-	print('no exception in try block')
-print('rest of app')
-
-print('* example 9  # we can combine 2 error code as well')
-try:
-	print(10/'ratan')	
-except (ArithmeticError,ValueError) as e: 			#2 error codes are combined here
-	print('ratanit.com')
-except:			
-	print('i am default except block')
-else:
-	print('no exception in try block')
-print('rest of app')
-
-print('* example 10 	#MMIMP #Baseexception - this will accept all exception' )
-try:
-	print(10/'ratan')	
-except BaseException as e: 			#this will handle all exceptions
-	print('ratanit.com')
-else:
-	print('no exception in try block')
-print('rest of app')
-
-print('*example 11    #child excpet error must be first and parent except error at the end')
-
-try:
-	print(10/'ratan')	
-except ArithmeticError as e: 	# its child exception error so it must be before parent exception error
-	print('ratanit.com')
-except BaseException as f:		# Baseexception is parent exception errro , it must be last
-	print(' durgasoft.com')
-else:
-	print('no exception in try block')
-print('rest of app')
-
-print("*example 12 - nested try block")
-
-# try:
-# 	print('outer try block')
-# 	n=int(input('enter a number :'))
-# 	print(10/n)
-# 	try:
-# 		print('inner try')
-# 		print('ratan'+10)
-# 	except BaseException as a:
-# 		print('durgasoft.com')
-# 	else:
-# 		print('inner else block')
-# except BaseException as b:
-# 	print('ratanIT.com')
-# else:
-# 	print("outer else block")
-# print('rest of the applications.....')
-
-print('*example 13 - handling exception while calling function')
-def m1():
-	print(10/0)
-
-try:
-	m1()
-except BaseException as a:
-	print(10/5)
-
-print('* example 14 - finally block = always executed')
-#case1
-try:
-	print(10/2)
-except BaseException as a:
-	print('except')
-finally:
-	print('finally')
-
-#case 2
-try:
-	print(10/0)
-except BaseException as a:
-	print('except')
-finally:
-	print('finally')
-
-#case 3				#finally will be executed eventhough in code error
-# try:
-# 	print(10/0)
-# except ValueError as a:
-# 	print('except')
-# finally:
-# 	print('finally')
-
-#case 4				#in this case also finally will be executed
-# try:
-# 	print(10/0)
-# except ValueError as a:
-# 	print(10/0)
-# finally:
-# 	print('finally')
-
-#case 5 			# only try block with finally block allowed
-# try:
-# 	print(10/2)
-# finally:
-# 	print('finally')
-
-print('*example 15 - when finally block will not execute')
-#case 1				#here code get error before try block so finally block will not execute
-# print(10/0)
-# try:
-# 	print(10/2)
-# finally:
-# 	print('finally')
-
-#case 2    			#see - exit will stop execution of all remaining code
-# import os
-# try:
-# 	print(10/2)
-# 	os._exit(0)
-# finally:
-# 	print('finally')
-
-print('* interview question')
-def hi():
-	try:
-		return 10
-	except:
-		return 20
-	finally:
-		return 30
-hi()
-#ans is 30
-
-print('*example 16 - Raise - to create user defined exception ')
-#Excepttion
-#system defined exceptions are TypeError,BaseException ...
-#to create user defined errors use 'Raise'
-
-#step 1: create the user defined exception
-class InvalidAgeException(Exception):
-	def __init__(self,msg):
-		self.msg=msg
-
-#step 2: use the user defined exception in our project
-# def status(age):
-# 	if age>20:
-# 		print('eligible for marriage')
-# 	else:
-# 		raise InvalidAgeException("not eligible for marriage")
-# status(10)
 
 
 # Treenode

@@ -124,7 +124,6 @@ is, is not : memory comparison : return boolean         #it compares data as wel
 == , !=  : data comparison : return boolean
 in, not in : check data available or not : return boolean
 '''
-
 class Myclass():
     pass
 
@@ -198,7 +197,7 @@ class Myclass:
 c=Myclass('ratan')       #here self is object 'c' and init parameter-"name" should be given
 
 print('*example 15 - ')
-print("***to create class with class variable and instance variable")
+print("*to create class with class variable and instance variable")
 class School:
     song="jan gana mana" #class variable (when properties name and values both are same for all functions)
     fund="govt of india"
@@ -327,8 +326,6 @@ class Mycalss():
 #del c3                      # otherwise it will not execute __del__
 
 print('***Inheritance')               # getting properties from parent class
-
-#------------------------------ratan start
 print('*inheritance types')
 #1.single Inheritance           #mother has 1 child
 class Parent:
@@ -361,8 +358,6 @@ class C(A):
     pass
 
 #5.Hybrid inheritance    #combination of multiple and Hirerchial 
-
-#-------------------------------ratan end
 
 print("*single inheritance")
 class Father:                               #parent class
@@ -451,7 +446,6 @@ becomes same as the value of name in A. But after that, when the constructor of 
 the value of name in C is overwritten by the value of name in B. So, the name attribute of C
 retains the value ‘Richard’ when printed. 
 '''
-
 print("*Multilevel Inheritance")
 class Base(object):       
     # Constructor 
@@ -615,7 +609,6 @@ a=Myclass()
 a.disp2()                   
 
 #example 7          Multilevel inheritance example
-
 class A:
     def m1(self):
         print('m1 method')
@@ -745,8 +738,6 @@ class C(A):
 class D(B,C):
     pass
 
-obj = D()
-#obj.process()
 print(D.mro())
 
 Print('*MMIMP logic')

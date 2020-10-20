@@ -70,19 +70,40 @@ T1=('a1','b2','c3','d4','5re')
 print("Hello\nWorld!")
 
 
-print('- For string')
-name1='ratan'
-name2='anu'
-name3='ratan'
+print('***MMIMP - deep copy and shallow copy')
+print('*Shallow copy')
+l1=[45,84,99,9]
+l2=l1
+l2.append(66)
+print(l1)
 
-print(id(name1))
-print(id(name2))
-print(id(name3))
-
-print(name1!= name2)
-print(name1!= name3)
-
-
+print('*deep copy')
+import copy
+l3=copy.deepcopy(l1)
+l3.append(60000)
+print(l3)
+print(l1)
 
 
 
+
+
+print('*MRO (method resolution order)')
+# MRO decideds hirarchy / priority level in python inheritance
+class A:
+    def process(self):
+        print('A process()')
+
+class B(A):
+    pass
+
+class C(A):
+    def process(self):
+        print('C process()')
+
+class D(B,C):
+    pass
+
+#obj = D()
+#obj.process()
+print(D.mro())

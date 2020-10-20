@@ -1688,7 +1688,7 @@ for b in range(y):
     col1=[]
 print(col)
 
-print('*calendar')
+print('*see-calendar')
 import calendar
 c=calendar.TextCalendar(calendar.MONDAY)
 str=c.formatmonth(2019,8)
@@ -1727,7 +1727,8 @@ print(y)
 
 print('***List datatype properties')
 '''
-1. represent group of objects :homogenus(same data type of objects) & heterogrnous( different data types of object)
+1. represent group of objects :
+homogenus(same data type of objects) & heterogrnous( different data types of object)
 example: homogenous L1=[10,20,30]  heterogenous L2=[10,'ratan',10.05]
 2. indexing : forward and backward
 3. duplicate objects allowed
@@ -1783,7 +1784,7 @@ print('* exaple 4   #only try block not allowed')
 # try:
 # 	print(' i am try block')	# this will give an error
 
-print('* example 5 - #in between blocks statments not possible ')
+print('* example 5 - #regular code between blocks statments not possible ')
 # try:
 # 	print(' i am try block')	# this will be executed as normal
 # print('hi')					#invalid
@@ -2017,7 +2018,6 @@ x = re.findall("ai", txt)
 print(x)
 
 import re
-
 # match - search only at first word
 x=re.match('ratan','ratan sir')
 print(x.group())

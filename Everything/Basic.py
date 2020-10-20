@@ -46,8 +46,8 @@ d1={111:'ratan',222:'anu',333:'durga'}
 print(d1)
 
 print('*what is output if we print duplicate keys,duplicate values')
-d2={111:'ratan',111:'surya',222:'surya'}	  #duplicate keys will be override  	#duplicate values will be ok
-print(d2)
+d2={111:'ratan',111:'surya',222:'surya'}	  
+print(d2)							#duplicate keys will be override  	#duplicate values will be ok
 
 print('***INPUT')
 
@@ -129,6 +129,7 @@ d2={'ratan':1,'durga':2,'anu':3,'surya':4}
 print(max(d2))
 print(min(d2))
 
+#heterogenous = different data types
 #doest work with heterogenous dics
 d3={1:'ratan',2:'durga','anu':3,'surya':4}	#TypeError: '>' not supported between instances of 'str' and 'int'
 #print(max(d3))
@@ -340,8 +341,8 @@ eid,ename,esal=111,'ratan',100.45
 #Method:1 (recommended)
 print('*print int,string,float with {} format specifier')		
 #{} is very flexible 
-print('emp id ={} emp name ={} emp sal={}'.format(eid,ename,esal))
-print('emp id ={2} emp name ={0} emp sal={1}'.format(eid,ename,esal))
+print('emp id is {} emp name is {} emp sal is {}'.format(eid,ename,esal))
+print('emp id is {2} emp name  is {0} emp sal is {1}'.format(eid,ename,esal))
 
 #Method:2
 print('*print int,string,float with % format specifier')
@@ -530,13 +531,13 @@ print('*default return value is none')
 print("***local & global variable")
 #case 1
 print('*all function can access global variable value and local var just for that function')
-name='ratan'  					# global variable
+name='ratan'  							#global variable
 def disp1():
 	print('good morning',name)
 disp1()
 
 def disp2(value1,value2):
-	print(value1+value2)        # local variable
+	print(value1+value2)        		#local variable
 	print('good afternoon',name)
 disp2(3,10)
 
@@ -625,7 +626,7 @@ print(AKI)
 '''
 
 # case 8 - VV IMP
-print('*to change parent function variable value, from child function' )
+print('*to change parent function variable value, from child function')
 # example 1
 def m1():
 	a=20
@@ -681,7 +682,9 @@ print(s[2:])			#MMIMP: end point not given so it will end all the way right
 print(s[:])
 # print(s[9])  			#Indexerror: string out of range
 
+# -7 -6 -5 -4 -3 -2 -1  		#negative indexing
 s= 'ratanIT'
+# 0 1 2 3 4 5 6 				#positive indexing
 print('#use slice to get below commented answers with negative indexing')
 # I
 # tanI
@@ -717,6 +720,9 @@ print(L1[:])
 #print(L1[8])	Indexerror: list index out of range
 
 print('#use slice to get below commented answers with negative indexing')
+  # -5 -4 -3 -2 -1
+L1=[10,20,30,40,50]
+  # 0  1  2  3  4
 # 40
 # [20, 30]
 # [10, 20, 30]
@@ -729,8 +735,10 @@ print(L1[:-2])
 print(L1[-3:])
 print(L1[:])
 
-print('*** VV IMP - negative indexing')
+print('*VV IMP - negative increment in slicing')
+#      -5    -4   -3   -2    -1
 list1=['a1','b2','c3','d4','5re']
+#		0	  1    2    3     4
 #https://www.quora.com/What-is-negative-index-in-Python
 #starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
 
@@ -738,18 +746,20 @@ list1=['a1','b2','c3','d4','5re']
 # []
 
 print(list1[-2:-4:-1])
-print(list1[-2:-4:1])
+print(list1[-2:-4:1])				# blank output
 
-print("*** MM IMP")
+print("* MM IMP")
 #starting point:end point:if starting point to end point is moving right this value should be positive otherwise it will return []  
 # ['b2', 'c3']
 # []
 
 print(list1[-4:-2:1])
-print(list1[-4:-2:-1])
+print(list1[-4:-2:-1])				# blank output
 
 print("- for tuple")
+#       -5   -4   -3   -2    -1
 list1=('a1','b2','c3','d4','5re')
+#       0    1    2     3    4
 # c3
 # ('c3', 'd4', '5re')
 # ()
@@ -763,8 +773,10 @@ print(list1[:10])
 print(list1[1:4:2])
 
 #starting point:end point:if starting point to end point is moving left this value should be negative otherwise it will return []  
+#       -5   -4   -3   -2    -1
+list1=('a1','b2','c3','d4','5re')
+#       0    1    2     3    4
 # ()
-
 print(list1[-4:-2:-1])
 
 print("*** MM IMP")
@@ -860,7 +872,7 @@ print(id(name3))
 
 print('**')
 print(name1 is name2)				
-print(name1 is name3)			#string value equal-->save at same memory location thats why here its true
+print(name1 is name3)	  #string value equal-->save at same memory location thats why here its true
 print(name1 is not name2)
 print(name1 is not name3)
 

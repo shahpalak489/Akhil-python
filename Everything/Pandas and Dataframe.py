@@ -114,7 +114,7 @@ print("*** is null for whole dataframe")
 ISnull=df1.isna()
 print(ISnull)
 
-print("*** new - is null column")
+print("*** is null for column")
 ISnull=df1[df1.origin.isna()]
 print(ISnull)
 
@@ -122,7 +122,7 @@ print("*** is not null for whole DataFrame")
 ISnotnull=df1.notna()
 print(ISnotnull)
 
-print("*** new - is not null column")
+print("*** is not null for column")
 ISnotnull=df1[df1.origin.notna()]
 print(ISnotnull)
 
@@ -169,12 +169,12 @@ print("*** see - replace")
 print("*** see - reverse(not imp)")
 
 print("*** If/case ")
-print("*** update with if...than ")
+print("* update with if...than ")
 # if df1.price > 201 than 'price_level'= 'costly'
 df1.loc[df1.Price > 201,['Price_level']] = 'costly'
 print(df1.iloc[:5,-4:])
 
-print("*** update with if...than...else")
+print("* update with if...than...else")
 # if df1.price > 201 then price_level= costly else price_level= cheaper
 df1.Price_level = np.where(df1.Price > 201,'costly','cheaper')
 print(df1.iloc[:5,-4:])

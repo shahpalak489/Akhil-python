@@ -209,7 +209,6 @@ print(list(filter(lambda x:x%2==0,l1))) #means each l1's object is x and if x%2=
 
 print('* ex 4 - filter')
 l1=['ratan','anu','durga','ratan']
-
 # def m1(x):
 # 	if x=='ratan':
 # 		return True
@@ -219,7 +218,7 @@ l1=['ratan','anu','durga','ratan']
 # print(a)
 
 # same as
-b=list(filter(lambda x:x=='ratan',l1))		#this means each l1's object is x and if x=ratan returns x
+b=list(filter(lambda x:x=='ratan',l1))	#this means each l1's object is x and if x=ratan returns x
 print(b)
 
 print('* ex 5 :map')
@@ -271,21 +270,19 @@ print(list(map(lambda x:len(x),words)))		#means words object consider as x and r
 # example 9
 # see - reduce 
 
-
 # example 10
-
 
 print("***Iterators ")
 ''' list is inbuilt Iteraotr because we can use For..In Loop, iter() and __next__() on List.
 	that's why List , Tuple , set, disctionary are inbuilt iterators
 '''
 
-print("* for on In-built Iterators")
+print("*for on In-built Iterators")
 num=[7,8,9,5] 
 for i in num:
 	print (i)
 
-print("* next on In-built Iterator")
+print("*next on In-built Iterator")
 it=iter(num)
 print(it.__next__())
 print(it.__next__()) 
@@ -330,7 +327,7 @@ print(values.__next__())
 print(values.__next__())
 print(values.__next__())
 
-print("** Decorator ")
+print("***see- Decorator ")
 print("* if 2 names are equal their functions are equal")
 def succ(x):
 	return x + 1
@@ -408,8 +405,3 @@ print('\nList from binary tree :',
 
 print('Binary tree from list :\n', 
       binary_tree.properties)
-
-
-
-
-

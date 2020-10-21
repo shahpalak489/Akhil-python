@@ -1,3 +1,4 @@
+
 #fibonacci
 #array rotation
 
@@ -394,12 +395,6 @@ T1=('a1','b2','c3','d4','5re')
 
 
 print('HI')
-
-
-
-
-
-
 
 
 

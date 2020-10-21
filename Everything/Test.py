@@ -1,39 +1,69 @@
 #Question 5
 class Vehicle:
-	vehicle_class='4 wheeler'			
-	def __init__(self,Vehicle1,Vehicle2):
-		self.Vehicle1=Vehicle1
-		self.Vehicle2=Vehicle2
-	def method1(self,Vehicle3):
-		print('method1')
-	def method2(self,Vehicle4):
-		print('method2')
+	def __init__(self,size,weight):
+		self.size=size
+		self.weight=weight
+	def Tire_size(self,Tire_size):
+		print('Tire_size: ',Tire_size )
+	def windows_count(self,windows_count):
+		print('windows_count: ',windows_count)
 
 class Car(Vehicle):
-	Car_class='Honda'	
-	def __init__(self,Vehicle1,Vehicle2,Car1,Car2):
-		Vehicle.__init__(self,Vehicle1,Vehicle2)
-		self.Car1=Car1
-		self.Car2=Car2
-	def method3(self,Car3):
-		print('method3')
-	def method4(self,Car4):
-		print('method4')
+	def __init__(self,size,weight,Make,Model):
+		Vehicle.__init__(self,size,weight)
+		self.Make=Make
+		self.Model=Model
+	def color(self,color):
+		print('color is:',color)
+
 
 class BMW(Car):
-	vehicle1='4 wheeler'			
-	vehicle2='2 wheeler'
-	def __init__(self,Vehicle1,Vehicle2,Car1,Car2,BMW1,BMW2):
-		Car.__init__(self,Vehicle1,Vehicle2,Car1,Car2)
-		self.BMW1=BMW1
-		self.BMW2=BMW2
-	def method5(self,BMW3):
-		print('method5')
-	def method6(self,BMW4):
-		print('method6')
+	def __init__(self,size,weight,Make,Model,price,horsepower):
+		Car.__init__(self,size,weight,Make,Model)
+		self.price=price
+		self.horsepower=horsepower
+	def seat_color(self,seat_color):
+		print('seat_color is:',seat_color)
+
+my_bmw=BMW(25,1000,'BMW','Mseries',50000,1500)
+my_bmw.Tire_size(50)
+my_bmw.color('blue')
+my_bmw.seat_color('brown')
 
 
-my_bmw=BMW('big','small','tesla','Benz','Series4','series5')
-my_bmw.method6('series6')
-my_bmw.method4('series6')
-my_bmw.method2('series6')
+
+
+
+out=[]
+for x in range(100):
+	if x %3 ==0:
+		out.append(x)
+
+out.sort(reverse=True)
+print(out)
+
+
+data=[5,7,9,11]
+def incremental(values):
+	length=len(values)
+	diff=values[1]-values[0]
+	for x in range(length-1):
+		if values[x+1]-values[x]==diff:
+			return True
+	else:
+		return False
+
+nums=[2,3,7,11,15]
+target=9
+
+def same_as_target(values,target):
+	for x in range(len(values)):
+		for y in range(len(values)):
+			if values[x]+values[y]==target:
+				return [x,y]
+
+final=same_as_target(nums,target)
+print(final)
+
+
+

@@ -36,55 +36,6 @@ self=100                                    #not allowed
 Rule 6 : Possible to take pre defined class names as identifiers but not recommended
 '''
 
-print("***to create class with class variable and instance variable")
-class School:
-    song="jan gana mana" #class variable (when properties name and values both are same for all functions)
-    fund="govt of india"
-    def __init__(self,first_langugae,managed_by): #instance variables  #when properties name same but values different for function
-        self.first_langugae=first_langugae        #converting instance(local) variable to class varible so that all func can access
-        self.managed_by=managed_by
-    def border_country(self,country):
-        self.country=country
-        print(self.country)
-
-print('*MMIMP: while creating object ,it must needs to give only __init__ parameter values')
-print('*MMIMP: self of class = object itslef')
-print('*MMIMP: object can access __init__ parameters, class variables ,class functions')
-
-print('*to create object')
-Gujarat=School('gujarati','govt of Gujarat')
-Karnataka=School('kannada','govt of Karnataka')
-
-print('*to access class properties')
-print(Gujarat.song)
-print(Gujarat.first_langugae)
-Gujarat.border_country('india')
-
-class Person:
-    def __init__(self,name,age):
-        self.name=name
-        self.age=age
-
-    def change_name(self,new_name):
-        self.name=new_name
-
-    def older(self):
-        self.age=self.age+1
-
-    def younger(self):
-        self.age=self.age-1
-
-p1 = Person('john',23)
-print(p1.name)
-p1.change_name('bob')
-print(p1.name)
-p1.older()
-print(p1.age)
-p1.older()                      # to access functions of class
-print(p1.age)
-p1.younger()                    # to access functions of class
-print(p1.age)
-
 print('*example 1')
 #python 3.7 : by default class is child class of object 
 class Myclass1:
@@ -173,7 +124,6 @@ is, is not : memory comparison : return boolean         #it compares data as wel
 == , !=  : data comparison : return boolean
 in, not in : check data available or not : return boolean
 '''
-
 class Myclass():
     pass
 
@@ -213,19 +163,17 @@ c1=myclass()                #when we create instance __init__ will be executed b
 c1.m1()     
 
 print('*IMP example 12 - to convert local var into class var')
-class Myclass():
-    def values(self,value1,value2):   #local variables(value1,value2) limited to this function only 
-        print(value1)
-        print(value2)
-
-        self.value1=value1              #local variable --> class variable
-        self.value2=value2
+class operation:
+    def __init__ (self,val1,val2):   #local variables(val1,val2) limited to this function only 
+        print(val1)
+        print(val2)
+        self.val3=val1           #conversion of local var to class var
+        self.val4=val2
     def add(self):
-        print(self.value1+self.value2)
+        print(self.val3+self.val4)
 
-c1=Myclass()
-c1.values(8,9)
-c1.add()
+c=operation(10,20)
+c.add()
 
 print('*example 13-to call one method inside another method')
 class Myclass():
@@ -248,18 +196,55 @@ class Myclass:
 
 c=Myclass('ratan')       #here self is object 'c' and init parameter-"name" should be given
 
-print('*example 15 - conversion of local var to class var')
-class operation:
-    def __init__ (self,val1,val2):   #local variables(val1,val2) limited to this function only 
-        print(val1)
-        print(val2)
-        self.val3=val1           #conversion of local var to class var
-        self.val4=val2
-    def add(self):
-        print(self.val3+self.val4)
+print('*example 15 - ')
+print("*to create class with class variable and instance variable")
+class School:
+    song="jan gana mana" #class variable (when properties name and values both are same for all functions)
+    fund="govt of india"
+    def __init__(self,first_langugae,managed_by): #instance variables  #when properties name same but values different for function
+        self.first_langugae=first_langugae        #converting instance(local) variable to class varible so that all func can access
+        self.managed_by=managed_by
+    def border_country(self,country):
+        self.country=country
+        print(self.country)
 
-c=operation(10,20)
-c.add()
+print('*MMIMP: while creating object ,it must needs to give only __init__ parameter values')
+print('*MMIMP: self of class = object itslef')
+print('*MMIMP: object can access __init__ parameters, class variables ,class functions')
+
+print('*to create object')
+Gujarat=School('gujarati','govt of Gujarat')
+Karnataka=School('kannada','govt of Karnataka')
+
+print('*to access class properties')
+print(Gujarat.song)
+print(Gujarat.first_langugae)
+Gujarat.border_country('india')
+
+class Person:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+
+    def change_name(self,new_name):
+        self.name=new_name
+
+    def older(self):
+        self.age=self.age+1
+
+    def younger(self):
+        self.age=self.age-1
+
+p1 = Person('john',23)
+print(p1.name)
+p1.change_name('bob')
+print(p1.name)
+p1.older()
+print(p1.age)
+p1.older()                      # to access functions of class
+print(p1.age)
+p1.younger()                    # to access functions of class
+print(p1.age)
 
 print('*example 16')      
 class Emp:
@@ -341,8 +326,6 @@ class Mycalss():
 #del c3                      # otherwise it will not execute __del__
 
 print('***Inheritance')               # getting properties from parent class
-
-#------------------------------ratan start
 print('*inheritance types')
 #1.single Inheritance           #mother has 1 child
 class Parent:
@@ -375,8 +358,6 @@ class C(A):
     pass
 
 #5.Hybrid inheritance    #combination of multiple and Hirerchial 
-
-#-------------------------------ratan end
 
 print("*single inheritance")
 class Father:                               #parent class
@@ -465,7 +446,6 @@ becomes same as the value of name in A. But after that, when the constructor of 
 the value of name in C is overwritten by the value of name in B. So, the name attribute of C
 retains the value ‘Richard’ when printed. 
 '''
-
 print("*Multilevel Inheritance")
 class Base(object):       
     # Constructor 
@@ -629,7 +609,6 @@ a=Myclass()
 a.disp2()                   
 
 #example 7          Multilevel inheritance example
-
 class A:
     def m1(self):
         print('m1 method')
@@ -759,8 +738,6 @@ class C(A):
 class D(B,C):
     pass
 
-obj = D()
-#obj.process()
 print(D.mro())
 
 Print('*MMIMP logic')

@@ -29,3 +29,41 @@ my_bmw=BMW(25,1000,'BMW','Mseries',50000,1500)
 my_bmw.Tire_size(50)
 my_bmw.color('blue')
 my_bmw.seat_color('brown')
+
+
+
+
+
+out=[]
+for x in range(100):
+	if x %3 ==0:
+		out.append(x)
+
+out.sort(reverse=True)
+print(out)
+
+
+data=[5,7,9,11]
+def incremental(values):
+	length=len(values)
+	diff=values[1]-values[0]
+	for x in range(length-1):
+		if values[x+1]-values[x]==diff:
+			return True
+	else:
+		return False
+
+nums=[2,3,7,11,15]
+target=9
+
+def same_as_target(values,target):
+	for x in range(len(values)):
+		for y in range(len(values)):
+			if values[x]+values[y]==target:
+				return [x,y]
+
+final=same_as_target(nums,target)
+print(final)
+
+
+

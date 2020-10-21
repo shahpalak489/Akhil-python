@@ -1,6 +1,6 @@
 print('one list more than 30 , one list less than 30')
 l1=[10,20,30,10.8,90,100,150]
-l2=[]
+l2=[]			#see - move this inside for loop
 l3=[]
 for x in l1:
     if x <= 30:
@@ -32,7 +32,7 @@ for x in range(10):
     if x%2 == 0:
         print(x)
 
-print('create 2 lists(one list from 1st index and second list from second index) from one list ')
+print('* create 2 lists(one list from 1st index and second list from second index) from one list ')
 l1=[[1,2],['ratan','anu'],[10.5,50.9]]
 l3=[]
 l4=[]
@@ -53,12 +53,11 @@ common("apple","banana") --> "a"
 
 '''
 
+print('Revert Dictioanry mapping')
+data={'a':1,'b':2}
 
-#Revert Dictioanry mapping
-map1={'a':1,'b':2}
-
-map2={y:x for x,y in map1.items()}
-print(map2)
+data2={y:x for x,y in data.items()}
+print(data2)
 
 print("***Palindrome(start to end and end to start is same")
 # Input : malayalam
@@ -86,7 +85,7 @@ def isAnagram(s, t):
         print("anagram is possible")
         #print(Counter(s))
         #print(Counter(t))
-        if Counter(s) == Counter(t): # counter comes from count
+        if Counter(s) == Counter(t): 				#counter comes from count
             print("it is a anagram")
         else:
             print("length is same but not anagram")
@@ -99,8 +98,7 @@ print("***Fizzbuzz")
 #Python program to print Fizz Buzz 
 #loop for 100 times i.e. range 
 for i in range(20):  
-    # number divisible by 15 (divisible  
-    # by both 3 & 5), print 'FizzBuzz'
+    # number divisible by 15 (divisible by both 3 & 5), print 'FizzBuzz'
     if i % 15 == 0:  
         print("FizzBuzz")                                          
         continue
@@ -148,7 +146,7 @@ for i in range(15):
 
 #fibonnaci first 10 with generator
 
-# sum of values
+print('sum of variables')
 def sum(x,y):
 	z=x+y
 	print(z) 
@@ -198,7 +196,7 @@ else:
 	print(str(n)+' is prime number')
 
 #split list and add first section to end
-list1=[10,20,30,40]
+list1=[10,20,30,40]								#we can use pop() as well
 length=len(list1)
 length_avg=length//2
 list2=list1[:length_avg]
@@ -237,7 +235,7 @@ print(y)
 
 #second biggest interger
 list1=[1,3,4,5,2,5]
-list2=set(list1)
+list2=set(list1)					#this will remove duplicates
 list3=list(list2)
 #print(list2)
 l=len(list3)
@@ -273,7 +271,6 @@ for x in list1:
 		list3.append(x)
 print(list2)
 print(list3)
-
 
 #count odd and even number
 list1=[2,15,20,78]
@@ -311,7 +308,7 @@ s1=s.split(' ')
 s1=s1[::-1]
 print(s1)
 str1=''
-for x in s1:
+for x in s1:				#we can use join as well
 	str1+= x
 	str1+= ' '
 print(str1)
@@ -339,7 +336,7 @@ for x in s1:
 		s2=s2+x
 print(s2)
 
-# swap characters in a String
+# swap 5th and 9th characters in a String
 i=5
 j=9
 s='palin/dro.me'
